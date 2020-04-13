@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="person-rest-services" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTCreateGuestUser">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">guestIdentityHandler.logIn</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTMemberPasswordResetByAdmin">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">personHandler.MemberPasswordResetByAdmin</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTMemberPasswordResetByAdminOnBehalf">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">personHandler.MemberPasswordResetByAdminOnBehalf</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTMemberRoleAssign">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">personHandler.MemberRoleAssign</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTMemberRoleUnassign">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">personHandler.MemberRoleUnassign</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTPersonChangeServiceAddressAdd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">personHandler.updatePersonContact</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTUserRegistrationAdminAdd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">personHandler.UserRegistrationAdminAddCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTUserRegistrationAdminUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">personHandler.UserRegistrationAdminUpdateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="LangCurrChange">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">personHandler.langCurrChange</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTCreateGuestUser">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">guestIdentityHandler.logIn</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTPersonChangeServiceCheckoutProfileUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">personHandler.updateCheckoutProfile</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTUserRegistrationUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">personHandler.updatePerson</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="RESTupdateMemberUser">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">personHandler.updateMemberUser</param>
+        </action>
+    </package>
+</struts>

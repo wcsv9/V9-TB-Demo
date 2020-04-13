@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="order-services" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderChangeServiceAddPreConfigurationToCart">
+            <param name="authenticate">0:0</param>
+            <param name="parameter">order.addPreConfigurationToCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderChangeServiceGiftInfoUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.updateOrderGiftInfo</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderChangeServiceItemAdd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.addOrderItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderChangeServiceItemDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.deleteOrderItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderChangeServiceItemUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.updateOrderItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderChangeServicePIAdd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.addPaymentInstruction</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderChangeServicePIDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.removePaymentInstruction</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderChangeServicePIUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.updatePaymentInstruction</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderChangeServiceReceiptChange">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.changeReceipt</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderChangeServiceRewardOptionUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.updateRewardOption</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderChangeServiceScheduledOrderCancel">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.cancelScheduledOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderChangeServiceShipInfoUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.updateOrderShippingInfo</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderProcessServiceOrderCancel">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.cancelShoppingCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderProcessServiceOrderPrepare">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.prepareOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderProcessServiceOrderSchedule">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.scheduleOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderProcessServiceOrderSubmit">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.submitOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxOrderProcessServiceRecurringOrderSubmit">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">spsorder.submitRecurringOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxAction" name="AjaxSSFSOrderCopy">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.order.commands.SSFSOrderCopyCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderChangeServiceAddConfigurationToCart">
+            <param name="authenticate">0:0</param>
+            <param name="parameter">order.addConfigurationToCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderChangeServiceAddPreConfigurationToCart">
+            <param name="authenticate">0:0</param>
+            <param name="parameter">order.addPreConfigurationToCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderChangeServiceItemAdd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.addOrderItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderChangeServiceItemDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.deleteOrderItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderChangeServiceItemUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.updateOrderItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderChangeServicePIAdd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.addPaymentInstruction</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderChangeServicePIDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.removePaymentInstruction</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderChangeServicePIUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.updatePaymentInstruction</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderChangeServiceRewardOptionUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.updateRewardOption</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderChangeServiceScheduledOrderCancel">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.cancelScheduledOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderChangeServiceShipInfoUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.updateOrderShippingInfo</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderChangeServiceUpdateConfigurationToCart">
+            <param name="authenticate">0:0</param>
+            <param name="parameter">order.updateConfigurationInCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="OrderPerHourCollectAndFeed">
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.order.commands.OrderPerHourCollectAndFeedCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderProcessServiceOrderCancel">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.cancelShoppingCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderProcessServiceOrderPrepare">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.prepareOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderProcessServiceOrderSchedule">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.scheduleOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderProcessServiceOrderSubmit">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.submitOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="OrderProcessServiceRecurringOrderSubmit">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">spsorder.submitRecurringOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ProcessExpiredPunchoutPaymentExtCustomizationCmd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.payment.scheduler.commands.ProcessExpiredPunchoutPaymentExtCustomizationCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="PunchoutPaymentRepay">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.repay</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="RequisitionListConfigurationUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.requisitionlist.commands.RequisitionListConfigurationUpdateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="RequisitionListCreateFromCSV">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.requisitionlist.commands.RequisitionListCreateFromCSVCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SSFSOrderCopy">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.order.commands.SSFSOrderCopyCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ScheduledOrderExport">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.order.commands.export.ScheduledOrderExportCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SterlingOMSUpdateSystemState">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.integration.sterling.oms.commands.SterlingOMSUpdateSystemStateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="UnlockStaleOrdersInBatch">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.order.commands.UnlockStaleOrdersInBatchCmd</param>
+        </action>
+    </package>
+</struts>

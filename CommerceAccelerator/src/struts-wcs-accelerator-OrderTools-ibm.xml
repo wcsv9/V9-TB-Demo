@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-accelerator" name="OrderTools-ibm" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="CSRCustomerInfoCreate">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.tools.optools.user.commands.CSRCustomerInfoCreateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="CSROrderPrepare">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:0</param>
+            <param name="parameter">com.ibm.commerce.tools.optools.order.commands.CSROrderPrepareCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="CSROrderProcess">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:0</param>
+            <param name="parameter">com.ibm.commerce.tools.optools.order.commands.CSROrderProcessCmd</param>
+        </action>
+    </package>
+</struts>

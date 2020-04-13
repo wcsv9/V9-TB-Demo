@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity name="xxx">
+    <!-- Uncomment the following mapping and put customized data config below here-->
+    <!--<field column="COLUMN1" name="matchField1"/>-->
+    <!--<field column="COLUMN2" name="matchField2"/>-->
+</entity>

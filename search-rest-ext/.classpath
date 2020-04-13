@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry path="WebContent/WEB-INF/classes" kind="output"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="src" path="/search-core">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="/foundation-stub">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="/classic-foundation-stub">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="/search-api">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-jdk14/1.7.7/38e90528bca630cfa3ef295718848c67ba3dba44/slf4j-jdk14-1.7.7-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-jdk14/1.7.7/25d160723ea37a6cb84e87cd70773ff02997e857/slf4j-jdk14-1.7.7.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-jdk14/1.7.7/e239bbd69185df9422e6f8fcc0f09170fc8e91c1/slf4j-jdk14-1.7.7-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/net.sourceforge.nekohtml/nekohtml/1.9.21/df2921aa9ca0c1d3639bfe73d2dadcacb6dae4a2/nekohtml-1.9.21-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/net.sourceforge.nekohtml/nekohtml/1.9.21/6841b177ab20385a9e9e0c83be3bf8711a6bc5e4/nekohtml-1.9.21.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/net.sourceforge.nekohtml/nekohtml/1.9.21/c709a1bb7ee51044b76799a71479cee7ad61397c/nekohtml-1.9.21-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/xerces/xercesImpl/2.10.0/3776e74cb2ceb96394a53138e9947a45d744ab35/xercesImpl-2.10.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/xerces/xercesImpl/2.10.0/9161654d2afe7f9063455f02ccca8e4ec2787222/xercesImpl-2.10.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/xerces/xercesImpl/2.10.0/b004b323aee29e494436cc2ad51e12121818ba2e/xercesImpl-2.10.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.solr/solr-solrj/7.3.1/e1202f4860622d2a2fc61135638a2b7ff0b00006/solr-solrj-7.3.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.solr/solr-solrj/7.3.1/b82c4b775fdddefd1bc39583a396d93453f89144/solr-solrj-7.3.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.solr/solr-solrj/7.3.1/934dd60a42b77c90bea34ef5056fb4fb028ecdc5/solr-solrj-7.3.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.commerce.cf/cf-base/9.0.1.8-SNAPSHOT/e3470522506ba63284d1ad9c79a8f5ce6958af7c/cf-base-9.0.1.8-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.commerce.cf/cf-datacache/9.0.1.8-SNAPSHOT/283e811d2fdf7111187e5be382e84549e10bcea9/cf-datacache-9.0.1.8-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.commerce.cf/cf-datacache-api/9.0.1.8-SNAPSHOT/d9318f118e2df1ca9088f82739da24e6b261ba62/cf-datacache-api-9.0.1.8-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.commerce.cf/cf-rest/9.0.1.8-SNAPSHOT/4b598853956ecefdae7ad621901cb9ad72196832/cf-rest-9.0.1.8-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.commerce.cf/cf-rest-client/9.0.1.8-SNAPSHOT/a4395d4fb41ac8fb6837a1ab3b5d9a8ba7a642f7/cf-rest-client-9.0.1.8-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.commerce.cf/cf-wcf/9.0.1.8-SNAPSHOT/aebe647f4d6fbabce47528818988531528029a56/cf-wcf-9.0.1.8-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.commerce.cf/cf-performance-profiler/9.0.1.8-SNAPSHOT/e9e26e313f4200586a60f97b3b0f1fa71ecf3a0a/cf-performance-profiler-9.0.1.8-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.commerce.security/security-encryption/2.0-SNAPSHOT/fc8a4550e8ff46fcb0fb299f0d81e033d14c6a81/security-encryption-2.0-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.netflix.hystrix/hystrix-core/1.5.2/2b479a670a82ef8ca4bfc6dbb844bf38a67ac655/hystrix-core-1.5.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.netflix.hystrix/hystrix-core/1.5.2/9c2c14256c639d565e9f24dd91832c5d0f06d6a2/hystrix-core-1.5.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.netflix.hystrix/hystrix-core/1.5.2/669f8947096527d893d54527c2fdc9602bdbe483/hystrix-core-1.5.2-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.7/10fc71db0437051f660d44a45f36dfe383e647c8/HdrHistogram-2.1.7-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.7/de7fc22a215f3881a673591b35790218ea3039a6/HdrHistogram-2.1.7.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.7/1f3235a0b68bcff88ae71a00167520234d499390/HdrHistogram-2.1.7-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.1/403c0215220d990f2856904658185a7b5ba8b521/rxjava-1.1.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.1/b494968f6050d494de55dc3ce005e59c7eb40012/rxjava-1.1.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.1/a87fc8b743602a979dff474b05f95b0f0b72ab21/rxjava-1.1.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.zookeeper/zookeeper/3.5.4-beta/ce4dedbb9c748d2ff132202b5d761363506dd6ec/zookeeper-3.5.4-beta-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.zookeeper/zookeeper/3.5.4-beta/653557260d275a00aed4f07a0bf24bfaa93beba3/zookeeper-3.5.4-beta.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.zookeeper/zookeeper/3.5.4-beta/c10737fb80abab0e144acee312288efbf94fa211/zookeeper-3.5.4-beta-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-dbutils/commons-dbutils/1.7/38e00df900c6c0dd01dec42ad411ff44de10ac0b/commons-dbutils-1.7-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-dbutils/commons-dbutils/1.7/a2d6e515aa87e5d38f6b3003e70b13c1b1f19ca0/commons-dbutils-1.7.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-dbutils/commons-dbutils/1.7/23ba15ea4ff18419fb17715e8956846b863c2d9d/commons-dbutils-1.7-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis/1.4.01/5502da0c4c0a7916a604356ef19394ccfa30cd4b/xml-apis-1.4.01-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis/1.4.01/3789d9fada2d3d458c4ba2de349d48780f381ee3/xml-apis-1.4.01.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis/1.4.01/bec4716e07b42754be3c0eca6705714893c97f37/xml-apis-1.4.01-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.5/caf033a4a7c37b4a8ff3ea084cba591539b0b69/commons-io-2.5-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.5/2852e6e05fbb95076fc091f6d1780f1f8fe35e0f/commons-io-2.5.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.5/b219c20b7b44a4da22cb1898bfc6bfbb100f33c7/commons-io-2.5-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.6.1/8fab23986ea8886af34818daf32a718e81dc98ba/commons-math3-3.6.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.6.1/e4ba98f1d4b3c80ec46392f25e094a6a2e58fcbf/commons-math3-3.6.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.6.1/2e894b7acae199b5dff08bb596334594b5f23c28/commons-math3-3.6.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.3/4969730c661fff76fa7f9d4c7c61545817f5b033/httpclient-4.5.3-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.3/d1577ae15f01ef5438c5afc62162457c00a34713/httpclient-4.5.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.3/feaf46a8d8f2da5f87d8164069cc3e865875e3b2/httpclient-4.5.3-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.6/57cc0a7af46d66754e632bddc558a913b9e66ac3/httpcore-4.4.6-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.6/e3fd8ced1f52c7574af952e2e6da0df8df08eb82/httpcore-4.4.6.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.6/31b01ef06400e3d48200d46ea3ca454ebbe8312f/httpcore-4.4.6-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.3/1464bba4356346fbb8b71827a90b16c85b927542/httpmime-4.5.3-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.3/889fd6d061bb63b99dd5c6aba35a555ae863de52/httpmime-4.5.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.3/10d8899f971409a6f2829bd0cc9f061ff9f5d207/httpmime-4.5.3-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.noggit/noggit/0.8/5b56cc7f36ee1d2e2a6a50eabb1e32ff3ec2aca1/noggit-0.8-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.noggit/noggit/0.8/ba4ad65a62d7dfcf97a8d42c82ae7d8824f9087f/noggit-0.8.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.noggit/noggit/0.8/dc13c842ea1946824ef306eec6b08f5df2dba8d0/noggit-0.8-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.24/4bdf69b0b7d3553dfe144e9d74cd256b79e5d4d4/jcl-over-slf4j-1.7.24-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.24/e6a8629079856a2aa7862c6327ccf6dd1988d7fc/jcl-over-slf4j-1.7.24.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.24/46e765292dadf56531c7388e623f4c6f58095465/jcl-over-slf4j-1.7.24-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/ad97fe8faaf01a3d3faacecd58e8fa6e78a973ca/guava-18.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/418be347c254422b51adee3cacb10e3f69e279ec/guava-18.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.commerce.cf/cf-persistence/9.0.1.8-SNAPSHOT/8d260fe5d69ef309e2b3156b252ff4f96d3323e5/cf-persistence-9.0.1.8-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/3f15fff45d57656685abfee9e8302bf14580044c/commons-codec-1.9-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/9ce04e34240f674bc72680f8b843b1457383161a/commons-codec-1.9.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/d103169e712eb2473072d53636b0c3bc380b8afb/commons-codec-1.9-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.mitre.dsmiley.httpproxy/smiley-http-proxy-servlet/1.7/5e9260e75105f006d11def052d84d83b0684c704/smiley-http-proxy-servlet-1.7-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.mitre.dsmiley.httpproxy/smiley-http-proxy-servlet/1.7/92580b81a06031485f0d822f2f49148855ffd7eb/smiley-http-proxy-servlet-1.7.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.mitre.dsmiley.httpproxy/smiley-http-proxy-servlet/1.7/6ee167a497ab882cd124a3bdac5780a44aad1a9c/smiley-http-proxy-servlet-1.7-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.9.8/78430356aa8c7a1227f97c544e6248630a47a17a/jackson-annotations-2.9.8-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.9.8/ba7f0e6f8f1b28d251eeff2a5604bed34c53ff35/jackson-annotations-2.9.8.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.9.8/a8a33d4fb6be35d4a6f0b1db2840fd9978011361/jackson-annotations-2.9.8-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.9.8/f66792d499a6fea6c7a743558f940e0ebf775ce3/jackson-databind-2.9.8-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.9.8/11283f21cc480aa86c4df7a0a3243ec508372ed2/jackson-databind-2.9.8.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.9.8/a1dea243882227fc27c350a5b25ca76ef4ecb7d7/jackson-databind-2.9.8-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.9.8/e7c8373052c050e8a955dde17fc70ea7f26df812/jackson-jaxrs-json-provider-2.9.8-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.9.8/cbfb046b70f764aed65426db19a3b8984482a86e/jackson-jaxrs-json-provider-2.9.8.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.9.8/b7aafaf07a2e94ef2aabf7376dcda8f27875a006/jackson-jaxrs-json-provider-2.9.8-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-jersey2-jaxrs/1.5.7/143f04a346d6d60bcec3d453cadc2eb86e894a8b/swagger-jersey2-jaxrs-1.5.7-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-jersey2-jaxrs/1.5.7/87adaa08a07746d89aa67d45f003360012d900ca/swagger-jersey2-jaxrs-1.5.7.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-jersey2-jaxrs/1.5.7/ea316f845fd302fe7ff70f6807a2cf223bea3202/swagger-jersey2-jaxrs-1.5.7-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.github.bohnman/squiggly-filter-jackson/1.3.8/a19fb878c60a28e11fbe3587d203bff08c037952/squiggly-filter-jackson-1.3.8-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.github.bohnman/squiggly-filter-jackson/1.3.8/7a53e7969d1987741f76e0e5b2e788310ec1e588/squiggly-filter-jackson-1.3.8.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.github.bohnman/squiggly-filter-jackson/1.3.8/3a82d9eb5e9057fff73361a6ff21538e91e3bb99/squiggly-filter-jackson-1.3.8-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/net.jodah/failsafe/1.0.4/952ba0e0d2840037f5b147ee6041d2fbd61e9fcb/failsafe-1.0.4-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/net.jodah/failsafe/1.0.4/bae697c8cf83cfb8ee5c8a5cc1877f010e7a337/failsafe-1.0.4.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/net.jodah/failsafe/1.0.4/f88731cbd1ffbcc9224b102ba6d2bbe070fe91b8/failsafe-1.0.4-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.icu/icu4j/56.1/634afbfd9a9c2e041dc886d056c64c92755564e6/icu4j-56.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.icu/icu4j/56.1/8dd6671f52165a0419e6de5e1016400875a90fa9/icu4j-56.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.icu/icu4j/56.1/a29391894e2227b084afe912987d0c129529a7a4/icu4j-56.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.commerce.cf/cf-common-entities/9.0.1.8-SNAPSHOT/d0792905d4461594339fffb859c737849d1d4e64/cf-common-entities-9.0.1.8-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka_2.10/0.8.2.1/d69dc218b32f9b37f2101a6c0691a2488e8e64d8/kafka_2.10-0.8.2.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka_2.10/0.8.2.1/1f1b63dbdac7ede6560675936cb8d88d9cf19c3a/kafka_2.10-0.8.2.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka_2.10/0.8.2.1/3ed82de608b454ff8e4e387965301b4aaf3179d2/kafka_2.10-0.8.2.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.commerce.cf/cf-common/9.0.1.8-SNAPSHOT/447e2c6adcd34864412a912f83628bd88c6c38af/cf-common-9.0.1.8-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.netflix.archaius/archaius-core/0.4.1/f1c72c442d4c4aed0d1b57b568cfa360af6c75bd/archaius-core-0.4.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.netflix.archaius/archaius-core/0.4.1/69e956ddf4543c989461352a214f32a014abd64a/archaius-core-0.4.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.netflix.archaius/archaius-core/0.4.1/b94549516ea0a38045bab9ca3117b8960ea39c4d/archaius-core-0.4.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.9.8/ecaea301e166a0b48f11615864246de739b6619b/jackson-core-2.9.8-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.9.8/f5a654e4675769c716e5b387830d19b501ca191/jackson-core-2.9.8.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.9.8/acc65b3b6e07784dc1760fa4e460238eb2a9073a/jackson-core-2.9.8-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.9.8/4672a5a0d77ba2a6930415f167f73ac33195049/jackson-jaxrs-base-2.9.8-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.9.8/113dc616852ea990255d3a820d1006ac2531ae7/jackson-jaxrs-base-2.9.8.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.9.8/aba0212bcd9ae6f876032717e396159e3d792fc0/jackson-jaxrs-base-2.9.8-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.9.8/b68061d95e61cc7c4a574f449cd9db7bad66d75b/jackson-module-jaxb-annotations-2.9.8-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.9.8/da08815ba1c7f7b435e7df02b7bf98327bad2fd4/jackson-module-jaxb-annotations-2.9.8.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.9.8/575e1a2a77b830cd3c369931b71b653114314a43/jackson-module-jaxb-annotations-2.9.8-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-jaxrs/1.5.7/89cf25cf0787b7be6818d28f7abe2e926559858d/swagger-jaxrs-1.5.7-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-jaxrs/1.5.7/492820b2d2d4f175d308fe459da880a75e0ebc9e/swagger-jaxrs-1.5.7.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-jaxrs/1.5.7/8d16059e4c42bbaaebb79db1e8a662decbc1628a/swagger-jaxrs-1.5.7-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-servlet-core/2.1/9da8135f49ee530a7de099f4cca33a4ae1f0e65e/jersey-container-servlet-core-2.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-servlet-core/2.1/1a9f32b0315cbc1f7656e86fc8110fbd2b9fe353/jersey-container-servlet-core-2.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-servlet-core/2.1/f1275cb75ee27f095a19a95ec2cedd02822ea20d/jersey-container-servlet-core-2.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-multipart/2.1/94ac34ece78494ce88cfa03207ad3f9e614e17e/jersey-media-multipart-2.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-multipart/2.1/b644da29cd7d03ae716920e6478e5783bfc3f1f9/jersey-media-multipart-2.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-multipart/2.1/63cc384f03e4aea8bbcca33d4e62b41ba90b0008/jersey-media-multipart-2.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils/1.9.3/9d70af7c5982bd09c33efa97ac98cee6363ba0f0/commons-beanutils-1.9.3-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils/1.9.3/c845703de334ddc6b4b3cd26835458cb1cba1f3d/commons-beanutils-1.9.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils/1.9.3/84b8fbacdf1e778d700c49057ddc876bea234839/commons-beanutils-1.9.3-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/net.jcip/jcip-annotations/1.0/d853625d8001c00d40abed553e670279504699f9/jcip-annotations-1.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/net.jcip/jcip-annotations/1.0/afba4942caaeaf46aab0b976afd57cc7c181467e/jcip-annotations-1.0.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.commerce.cf/cf-user-entities/9.0.1.8-SNAPSHOT/25ddcc60de1a0c54b34d8d677f7cbd537e064ecd/cf-user-entities-9.0.1.8-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-annotations/1.5.7/14d37551ba93730d86def5729568492a9777bee9/swagger-annotations-1.5.7-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-annotations/1.5.7/53ee7b9a9795b13b3ec281d45502e65a3b0ea83c/swagger-annotations-1.5.7.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-annotations/1.5.7/576d7af0bf2e9ebae78e4f1e8e86a43bc3058967/swagger-annotations-1.5.7-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.yammer.metrics/metrics-core/2.2.0/6bdc9ec38b662632d7597d6f22942fb2dd2f5c4d/metrics-core-2.2.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.yammer.metrics/metrics-core/2.2.0/f82c035cfa786d3cbec362c38c22a5f5b1bc8724/metrics-core-2.2.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.yammer.metrics/metrics-core/2.2.0/5a9e7c65a5052499ff0feaf2aff6da0f0ca7c899/metrics-core-2.2.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.10.4/59908ab93978c1f546d3db5e05b42994b63ad515/scala-library-2.10.4-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.10.4/9aae4cb1802537d604e03688cab744ff47b31a7d/scala-library-2.10.4.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.10.4/65ea516350ef372223140c25636ccb5de24c0b87/scala-library-2.10.4-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/3.2/4a74770be766ef5cb994493e540936e2771efead/jopt-simple-3.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/3.2/d625f12ba08083c8c16dcedd5396ec730e9e77ab/jopt-simple-3.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/3.2/995eb75a40a2176c584392602b3b41bee8e7d4f7/jopt-simple-3.2-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.101tec/zkclient/0.3/3650b170a9c33fd3ebdf8b797112e00f9317f0e8/zkclient-0.3-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.101tec/zkclient/0.3/dedcf2b53fb742adba7080ac3aed781694ba616e/zkclient-0.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.101tec/zkclient/0.3/fef0432726b0965279fe520cd8bdeb7eca12f704/zkclient-0.3-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.commerce.cf/cf-user/9.0.1.8-SNAPSHOT/1f00e1f3f8f1486e8bbf3262d00b2ff9afa082/cf-user-9.0.1.8-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.commerce.cf/cf-kafka/9.0.1.8-SNAPSHOT/32f5db939c21e3c4c864ae722023f2d4ac85a122/cf-kafka-9.0.1.8-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.17/9d064d7d42ee1d04ae07ad23025b4f9616652eed/commons-compress-1.17-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.17/474c20609032e7f815ef534cd8174d2e400d9a8d/commons-compress-1.17.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.17/b9225416371a8cd195f344f081f68862cb7f69a3/commons-compress-1.17-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-csv/1.2/9eab4ea5bdf1a2da060cd86549a9c1231104c653/commons-csv-1.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-csv/1.2/bfb42d67ff2e16c78c3c322f4fb7c73fbed1965c/commons-csv-1.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-csv/1.2/502b5d4eaf5106e37695ecba2fd3b1baf327305f/commons-csv-1.2-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-configuration/commons-configuration/1.8/e4dbd8ad69e07fa7f28688f92d773a429143060b/commons-configuration-1.8-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-configuration/commons-configuration/1.8/6cce40435bcd8018018f16898de01976b319941a/commons-configuration-1.8.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-configuration/commons-configuration/1.8/32df3960932c09beb3331cb6a9e32e3f5e4b0fd7/commons-configuration-1.8-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/2.4.5/e72d41838bd7eec1fbe32d8fdc978a637d673f3a/jackson-dataformat-yaml-2.4.5-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/2.4.5/918e84a84ee0b202bb74bab590119b01bbea9830/jackson-dataformat-yaml-2.4.5.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/2.4.5/28cdd8d320902fa257c938841312c77b6222c8dc/jackson-dataformat-yaml-2.4.5-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.dataformat/jackson-dataformat-xml/2.4.5/1bc576f9bfdae5b64088a61310d592b994f8941c/jackson-dataformat-xml-2.4.5-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.dataformat/jackson-dataformat-xml/2.4.5/535f27c7e322abc54c9758b50df1594f31ee6524/jackson-dataformat-xml-2.4.5.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.dataformat/jackson-dataformat-xml/2.4.5/60808526b787697efc14dad76184a693c299314d/jackson-dataformat-xml-2.4.5-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-core/1.5.7/417a081e14eae1bb3eb585d14b5bba83b970cd52/swagger-core-1.5.7-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-core/1.5.7/ee7a4d81bc910bb48d8399b0c5449b64c7bb495a/swagger-core-1.5.7.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-core/1.5.7/b27fd2e9ab992aa5cb717753f9d73e26bec60c88/swagger-core-1.5.7-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.reflections/reflections/0.9.10/606b8587dab0bf1776b896003f2a2fa0470bb105/reflections-0.9.10-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.reflections/reflections/0.9.10/c7f4ea230aedc757ca1499ebcfb2953c81cf8b67/reflections-0.9.10.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.reflections/reflections/0.9.10/5787fbf43893c23777776a36127ab2a12bc6da4/reflections-0.9.10-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/javax.inject/2.2.0-b10/bc382b36fe084e3dcaa94afc82bf37b6bf6017e5/javax.inject-2.2.0-b10-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/javax.inject/2.2.0-b10/5a8bad709404aa09f04573062d491e0e9c6aada0/javax.inject-2.2.0-b10.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/javax.inject/2.2.0-b10/5e58d6c27d20d5749b97b37eb932cbeef64ed98d/javax.inject-2.2.0-b10-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.1/46c7ccf75d2c83fa0db23b821118215d76f6e446/jersey-server-2.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.1/abff7c3fa455bfd09d4e40d5c5236cf897b0587f/jersey-server-2.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.1/3349570304517416bd6d2fa9134fb1913ab9682c/jersey-server-2.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.1/1cce4478352bbc49223723cd9bd484edac9226cc/jersey-common-2.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.1/9bf4c679208361a2b67b4f7ca5e9be968805d987/jersey-common-2.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.1/5ff52c3a930b34a7e9483723fde12f3260b2d68c/jersey-common-2.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.ws.rs/javax.ws.rs-api/2.0/6800b5f794beb9809d8fef83d21e157b0db6ee19/javax.ws.rs-api-2.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.ws.rs/javax.ws.rs-api/2.0/61f0983eb190954ccdede31e786a9e0bd9767c4a/javax.ws.rs-api-2.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.ws.rs/javax.ws.rs-api/2.0/6ef353d0ae6d7ff28364670825f5a7724214f76c/javax.ws.rs-api-2.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.jvnet.mimepull/mimepull/1.8/cae16f7cf52f11f72894493f23c108839247c950/mimepull-1.8-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.jvnet.mimepull/mimepull/1.8/e0b2ed6e9ccaafe3e96294a181c09e3aae18aa90/mimepull-1.8.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.jvnet.mimepull/mimepull/1.8/4113ffb4e24b78da31cabbfaff80b2fa6dcdfe20/mimepull-1.8-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/ecf26c7507d67782a3bbd148d170b31dfad001aa/commons-logging-1.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/83033ee697035dfb9ce3503e1ac0c5a33021e503/commons-logging-1.2-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.2/78c50ebda5784937ca1615fc0e1d0cb35857d572/commons-collections-3.2.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.2/8ad72fe39fa8c91eaaf12aadb21e0c3661fe26d5/commons-collections-3.2.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.2/ea9a113ab0147c4d48dda62dff207be07374c590/commons-collections-3.2.2-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-streams/1.0.1/6dfa42367ed76b968748200c692f4d3fc029a4d8/kafka-streams-1.0.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-streams/1.0.1/b7ae3c5380feac2f79304964efda8e59d3beb4ba/kafka-streams-1.0.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-streams/1.0.1/d1cbbb89a1f2125f99e186c99fbeac0376a520e/kafka-streams-1.0.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/67313d715fbf0ea4fd0bdb69217fb77f807a8ce5/commons-lang-2.6-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/ce1edb914c94ebc388f086c6827e8bdeec71ac2/commons-lang-2.6.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/2519e88918ab30dcdee1b1b66f0a1014b0e055ec/commons-lang-2.6-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.12/f86c67beb22f7d1edb5d6c6a3c4dab77a23234da/snakeyaml-1.12-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.12/ebe66a6b88caab31d7a19571ad23656377523545/snakeyaml-1.12.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.12/639243bb10cce7169869f6d37d3b176541428e97/snakeyaml-1.12-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-joda/2.4.5/370c2e6144cd9c63cd5f96894e4df98ab28b8455/jackson-datatype-joda-2.4.5-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-joda/2.4.5/830f7e1a9d69674900d1fa066d6ba27112ec6ca9/jackson-datatype-joda-2.4.5.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-joda/2.4.5/a4dbe542244249c27d1d0223581282f050d6a7e3/jackson-datatype-joda-2.4.5-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-models/1.5.7/4368b8ef750cb10a68810d95ecc942a59247ef1f/swagger-models-1.5.7-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-models/1.5.7/a583cce5e09a1f5c77a7d2276ffdce445ac36fbd/swagger-models-1.5.7.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-models/1.5.7/61323be4bfc871f76d84b426175d14661eb3c032/swagger-models-1.5.7-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.1.0.Final/7d49b53caed9bd81d172807c3e096d24f3c57090/validation-api-1.1.0.Final-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.1.0.Final/8613ae82954779d518631e05daa73a6a954817d5/validation-api-1.1.0.Final.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.1.0.Final/9f3d019c10d629fa8259af61ac83e88bb186c4e9/validation-api-1.1.0.Final-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.18.2-GA/7163084913aa7399e4ce2cbc3ee5c00ac2b1f35f/javassist-3.18.2-GA-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.18.2-GA/1180a90fbad732b60fb728a6bbe8fcb3151423d7/javassist-3.18.2-GA.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.18.2-GA/d0e676f1407a226f978018fee1418d4d50dabb64/javassist-3.18.2-GA-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/annotations/2.0.1/9ef6656259841cebfb9fb0697bb122ada4485498/annotations-2.0.1.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/2.1/5eb505b17a556a15a77a1b2f5fad5276a2a7aed8/jersey-client-2.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/2.1/60b306834276ffccf254d69c0c891539d5678e5/jersey-client-2.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/2.1/c476fc9ff5548f823b7fc60e1b4f751158040297/jersey-client-2.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-api/2.2.0-b10/b300c3196f4f03758ffa925be1f08d9c9f5b4f32/hk2-api-2.2.0-b10-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-api/2.2.0-b10/e9195cf471fdfc4ce98c23261815e37002b49eb7/hk2-api-2.2.0-b10.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-api/2.2.0-b10/bc176aabc7dfb7758e61dc35f44d43a52749f3ac/hk2-api-2.2.0-b10-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-locator/2.2.0-b10/bd3691d34c1d22cfad2e98d750fd50b6c1a9d32e/hk2-locator-2.2.0-b10-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-locator/2.2.0-b10/880c694fc93f06cdcf0fe6f4410748c161aa7f38/hk2-locator-2.2.0-b10.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-locator/2.2.0-b10/c027ef98732fadd32fa8dbbe3254efb3a86582fe/hk2-locator-2.2.0-b10-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/ad18a02db08eaee697f812e333f692fc51129e4a/javax.annotation-api-1.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/479c1e06db31c432330183f5cae684163f186146/javax.annotation-api-1.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/1064ee6b28b926dfa355f9db146a33d1111a7bf1/javax.annotation-api-1.2-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/osgi-resource-locator/1.0.1/b5685f8eaa7d83351b185a82a92abcd1b8b87fc8/osgi-resource-locator-1.0.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/osgi-resource-locator/1.0.1/4ed2b2d4738aed5786cfa64cba5a332779c4c708/osgi-resource-locator-1.0.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/osgi-resource-locator/1.0.1/a6d15475ace6ec17ded38a9f565b17b2cde36e8e/osgi-resource-locator-1.0.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/connect-json/1.0.1/2c67471fc5130c2eed0b10dbe46a0fd0a7189b2f/connect-json-1.0.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/connect-json/1.0.1/c0268a5090ab214805348c7e4db4322a47141950/connect-json-1.0.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/connect-json/1.0.1/d652fad4ffdef673eccced2360ffe802921599b3/connect-json-1.0.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.rocksdb/rocksdbjni/5.7.3/6ebe61c1667d225afe01a250bed1f1018898a158/rocksdbjni-5.7.3-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.rocksdb/rocksdbjni/5.7.3/421b44ad957a2b6cce5adedc204db551831b553d/rocksdbjni-5.7.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.rocksdb/rocksdbjni/5.7.3/aa414c862c4936340ab5927b20708b37ae86daf7/rocksdbjni-5.7.3-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.2/ad622e3cfe39319ea53b183aa5615f96ff346584/joda-time-2.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.2/a5f29a7acaddea3f4af307e8cf2d0cc82645fd7d/joda-time-2.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.2/c3293e04facc30556dc0b5a2367491dd2ec3ea5d/joda-time-2.2-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-utils/2.2.0-b10/5777b32bd26546b7b878d9b4f8fd76c2842ed369/hk2-utils-2.2.0-b10-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-utils/2.2.0-b10/44268685f068db170e207df6736a7b5bafe29dce/hk2-utils-2.2.0-b10.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-utils/2.2.0-b10/778d87d90b9957a8b2a449000fa3053a74489150/hk2-utils-2.2.0-b10-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/asm-all-repackaged/2.2.0-b10/c7703485ae4074dff70d1d1aa79857aeb4135ee7/asm-all-repackaged-2.2.0-b10-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/asm-all-repackaged/2.2.0-b10/aa630e8775a07d192f24c3da2bb33c8453df03c7/asm-all-repackaged-2.2.0-b10.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/asm-all-repackaged/2.2.0-b10/e867fb1d2b3353ceb3a641793d4efa524a149af0/asm-all-repackaged-2.2.0-b10-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/cglib/2.2.0-b10/da92ae6b25983006f3cadae3047ea20324ccfef3/cglib-2.2.0-b10-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/cglib/2.2.0-b10/a8d64568ca383a28775a721968b834f6e2f5749a/cglib-2.2.0-b10.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/cglib/2.2.0-b10/6195b69ce04026fb819c53e062add6ea219c0871/cglib-2.2.0-b10-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/connect-api/1.0.1/d7b7b264927ea3d1d01580ee9c705dddb8373014/connect-api-1.0.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/connect-api/1.0.1/c2592f70ef2e185463f374a5a7577c7bf35482c1/connect-api-1.0.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/connect-api/1.0.1/de830f972d2df797f77b294453a102737d304e03/connect-api-1.0.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/a00123f261762a7c5e0ec916a2c7c8298d29c400/javax.inject-1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/70ec961c25111ed9015d1af77772d96383c2d238/javax.inject-1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.25/d6f907c4254a49f40fa46005b65bc97261ad9e46/slf4j-log4j12-1.7.25-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.25/110cefe2df103412849d72ef7a67e4e91e4266b4/slf4j-log4j12-1.7.25.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.25/96a1fadadec11de44fdf8f0e20f3f61160f0b109/slf4j-log4j12-1.7.25-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-cli/commons-cli/1.2/6c5459816530a1962ac18cd315cc775b1b384329/commons-cli-1.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-cli/commons-cli/1.2/2bf96b7aa8b611c177d329452af1dc933e14501c/commons-cli-1.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-cli/commons-cli/1.2/314265b6bc75d2c6d601d2842af702d211390d13/commons-cli-1.2-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.yetus/audience-annotations/0.5.0/51aa3138d72781ef879e9cb660daab3ac7c52c60/audience-annotations-0.5.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.yetus/audience-annotations/0.5.0/55762d3191a8d6610ef46d11e8cb70c7667342a3/audience-annotations-0.5.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.yetus/audience-annotations/0.5.0/8f704cf7d9882104d71a5f3367b7b5b6b14f9410/audience-annotations-0.5.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/962153db4a9ea71b79d047dfd1b2a0d80d8f4739/slf4j-api-1.7.25-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/da76ca59f6a57ee3102f8f9bd9cee742973efa8a/slf4j-api-1.7.25.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/f003e89ddebdbaca5cf3fc7cc0c67c88c2ca1a3c/slf4j-api-1.7.25-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.4/b49dafc9cfef24c356827f322e773e7c26725dd2/commons-lang3-3.4-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.4/5fe28b9518e58819180a43a850fbc0dd24b7c050/commons-lang3-3.4.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.4/75412eddcd8c9f4d338e09966b6df2f01c7df9ff/commons-lang3-3.4-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.jcraft/jsch/0.1.54/91d6069df9be9e076bdb124e82fc2a9af9547616/jsch-0.1.54-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.jcraft/jsch/0.1.54/da3584329a263616e277e15462b387addd1b208d/jsch-0.1.54.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.jcraft/jsch/0.1.54/9e71314a75d177e36afeb8ab1d796a3efa8293f4/jsch-0.1.54-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/1.0.1/c482a69aa4563abfa721b6e4077e8d21b9efea2c/kafka-clients-1.0.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/1.0.1/eba862d2316ef36e599dee6ebc956981f95c7ea2/kafka-clients-1.0.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/1.0.1/36114b3e7d7507a2fb496155b83b18f37a77cfe0/kafka-clients-1.0.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.lz4/lz4-java/1.4/4497150930c7d3da08ad023a5977499c6dc8985c/lz4-java-1.4-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.lz4/lz4-java/1.4/9bedb74f461a87ff2161bdf0778ad8ca6bad3e1c/lz4-java-1.4.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.lz4/lz4-java/1.4/ff7d67b403f46dbb6e53cf3b5523a861b0e06e1b/lz4-java-1.4-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/677abe279b68c5e7490d6d50c6951376238d7d3e/log4j-1.2.17-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/5af35056b4d257e4b64b9e8069c0746e8b08629f/log4j-1.2.17.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/c10c20168206896442f3192d5417815df7fcbf9a/log4j-1.2.17-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.4/b507648171bcddabef5955dafcd6995c330a8501/snappy-java-1.1.4-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.4/d94ae6d7d27242eaa4b6c323f881edbb98e48da6/snappy-java-1.1.4.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.4/1d828b9302cbadc11721a98682190bb03d2aebf0/snappy-java-1.1.4-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.7/acd62e31cc314266e73eebed0b6dd7ea974a0ed/slf4j-api-1.7.7-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.7/2b8019b6249bb05d81d3a3094e468753e2b21311/slf4j-api-1.7.7.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.7/f7f3d9c6e2f145a2cc37931c4b604c7f5e96c6c/slf4j-api-1.7.7-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.basics/1.2.12/c22620f7bcf20565d6c1f8aa0a6fd75aa62f61c4/com.ibm.websphere.appserver.api.basics-1.2.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.clusterMember/1.0.12/e50314be668fa5deb75a2ab582b648e4cb011b75/com.ibm.websphere.appserver.api.clusterMember-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.collectiveController/1.5.12/2770a16d1357eb55c699ca50f3fa189a95fce609/com.ibm.websphere.appserver.api.collectiveController-1.5.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.config/1.2.12/43a2ae01dcfda67be9c789e629df162f9eaa2900/com.ibm.websphere.appserver.api.config-1.2.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.connectionpool/1.0.12/d334b0bab89a91695afcda795384579fe0a0919e/com.ibm.websphere.appserver.api.connectionpool-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.constrainedDelegation/1.0.12/95bc093d5ad988c1af74fdfd28efeaaa3b2476fc/com.ibm.websphere.appserver.api.constrainedDelegation-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.distributedMap/2.0.12/6d908193450f06aba6daab0b5df636786007bb7c/com.ibm.websphere.appserver.api.distributedMap-2.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.dynamicRouting/1.0.12/87c53786fd0da3ad4ce40e0d7a1f9c9be355c8ff/com.ibm.websphere.appserver.api.dynamicRouting-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.ejbcontainer/1.0.12/4190c04de3736808bd7b6d706cbc545dd970d0dd/com.ibm.websphere.appserver.api.ejbcontainer-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.endpoint/1.0.12/3d722c86358c9ec3a26a7bf7dad8d226e5756b97/com.ibm.websphere.appserver.api.endpoint-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.hpel/2.0.12/405b09641e26ba0088beb58e40c4d49dadacb455/com.ibm.websphere.appserver.api.hpel-2.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.j2eemanagement/1.1.12/e8331c09654743b486488f4b000706486ca9cb5f/com.ibm.websphere.appserver.api.j2eemanagement-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.jaxrs/1.0.12/1ddfd18f12add5b4eb4836a558adedd4c831031f/com.ibm.websphere.appserver.api.jaxrs-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.jaxrs20/1.0.12/f89f3896dedde7b839707c1a36f6532ff269030e/com.ibm.websphere.appserver.api.jaxrs20-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.json/1.0.12/dc0be4207655a176ffad0c3155e8a5754c8bb681/com.ibm.websphere.appserver.api.json-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.kernel.service/1.0.12/6b3553bbc0a858667b4ecaf683796b5758424669/com.ibm.websphere.appserver.api.kernel.service-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.messaging/1.0.12/34bb6a8dabc481466d4870e34a1bc0003016478e/com.ibm.websphere.appserver.api.messaging-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.monitor/1.1.12/e0025a75ce1f0813925ed105c68cac794bd7b258/com.ibm.websphere.appserver.api.monitor-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.oauth/1.2.12/8e862d35dcfb8dc98fba2732eda563eb38bc0bc4/com.ibm.websphere.appserver.api.oauth-1.2.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.oidc/1.0.12/2ed28c9fa1d54bf06a8b28e43dec643ec316ec77/com.ibm.websphere.appserver.api.oidc-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.persistence/1.0.12/753c2664b6f5a7085f3e1c178cad8c6930822435/com.ibm.websphere.appserver.api.persistence-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.restConnector/1.1.12/28ed6086cd90129b5a12d2ec157e526b328af016/com.ibm.websphere.appserver.api.restConnector-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.saml20/1.0.12/1ff9e2a8a137549cabbe034a5e6d2b21d18203d5/com.ibm.websphere.appserver.api.saml20-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.scalingController/1.0.12/4d76d02c220e2e99b951b798fdc8c742af4ddc5f/com.ibm.websphere.appserver.api.scalingController-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.scalingMember/1.0.12/e8c7d40d9fba61c9e89a8a067097605450994d58/com.ibm.websphere.appserver.api.scalingMember-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.security/1.2.12/449e61c934e8a0b9f671e131d3549b974dad9006/com.ibm.websphere.appserver.api.security-1.2.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.security.authorization.saf/1.0.12/e4dd5b2c02b112ac9d1970e12ecf350ddffc6df5/com.ibm.websphere.appserver.api.security.authorization.saf-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.security.registry.saf/1.0.12/db6da5af7710d7f232f7848d0d57ca603db68c13/com.ibm.websphere.appserver.api.security.registry.saf-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.securityClient/1.0.12/4135053573949ad7e48d877cb48940d70ae74c93/com.ibm.websphere.appserver.api.securityClient-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.servlet/1.1.12/eff125d54b89b9ce009f4e0fa133a7a6463a2c86/com.ibm.websphere.appserver.api.servlet-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.sessionstats/1.0.12/5f814c5b402bb51691ee5ba4004c3b3f6f2bcbe7/com.ibm.websphere.appserver.api.sessionstats-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.sipServlet.1.1/1.0.12/7937c95e2fdde3f5a2f14d461cf81360b6ac781e/com.ibm.websphere.appserver.api.sipServlet.1.1-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.sipServletSecurity.1.0/1.0.12/ad3fbf4c36d165c80b1ee67a9f584bb42fee22a5/com.ibm.websphere.appserver.api.sipServletSecurity.1.0-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.transaction/1.1.12/80c86caa2a920432b02ba55517adb91b198e040f/com.ibm.websphere.appserver.api.transaction-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.webCache/1.1.12/bcdc60fe542b6400c651bed5788945085b0b0102/com.ibm.websphere.appserver.api.webCache-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.webcontainer.security.app/1.1.12/f4988325181c5183ad714c7c832f75590dc38028/com.ibm.websphere.appserver.api.webcontainer.security.app-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.wsoc/1.0.12/83b931678a80aeea26081659ae14a525641e65/com.ibm.websphere.appserver.api.wsoc-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.api.zosLocalAdapters/1.0.12/119438db18ad8df076aef8c7b405f2f0a0e14db0/com.ibm.websphere.appserver.api.zosLocalAdapters-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.anno/1.0.12/56d2e074706c29128b26f4930b4e3c5de82dd082/com.ibm.websphere.appserver.spi.anno-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.application/1.0.12/846822e12787b9ed4116b0869de034ac2fe7ce0e/com.ibm.websphere.appserver.spi.application-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.artifact/1.2.12/5ae7f803ae32db4d32d29039edebe758145a516f/com.ibm.websphere.appserver.spi.artifact-1.2.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.classloading/1.2.12/f8e0450836ed378874a5bc2c9315a0afd8c136d3/com.ibm.websphere.appserver.spi.classloading-1.2.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.collectiveMember/1.1.12/f1c6eaadf675b7c118aa2de245a362d117a8da51/com.ibm.websphere.appserver.spi.collectiveMember-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.containerServices/2.0.12/7be1ec91d57a08c67c989ed810b667a09b7fbe82/com.ibm.websphere.appserver.spi.containerServices-2.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.globalhandler/1.0.12/bff5f71bd07ae05af418a86dfd037cb0d05a3b6c/com.ibm.websphere.appserver.spi.globalhandler-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.httptransport/1.1.12/3121141915c0a1b192d47cc5f4fac4ff52d22900/com.ibm.websphere.appserver.spi.httptransport-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.javaeedd/1.1.12/cf1dafe84021e19bb881fc05474cc5e6227ce268/com.ibm.websphere.appserver.spi.javaeedd-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.jsp/1.0.12/73c9143867c7791352b945bd1645dab3d37bd45d/com.ibm.websphere.appserver.spi.jsp-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.kernel.embeddable/1.1.12/85d8d92a3192e83b520f0c5740080a3a76063624/com.ibm.websphere.appserver.spi.kernel.embeddable-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.kernel.filemonitor/1.0.12/350740ea6ce5f88e68a029b5574b4d2fa31da994/com.ibm.websphere.appserver.spi.kernel.filemonitor-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.kernel.metatype/1.0.12/f6999dce028e0f7fa9a9f4fae3fb19e3019b7e1d/com.ibm.websphere.appserver.spi.kernel.metatype-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.kernel.service/1.4.12/dc071064e4daa556e046e85f3ab20f6d6414a46c/com.ibm.websphere.appserver.spi.kernel.service-1.4.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.logging/1.1.12/833de9dff774a70cde272cbc7b8a1269d800236c/com.ibm.websphere.appserver.spi.logging-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.oauth/1.1.12/bcae07087bffaef75e58c2c70b7837570a7dd2cc/com.ibm.websphere.appserver.spi.oauth-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.restHandler/1.4.12/532ed795f2153b3e156ec412f1473be4920c7042/com.ibm.websphere.appserver.spi.restHandler-1.4.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.saml20/1.0.12/33be6ea9a3453728b5669e20cfb07154378f645f/com.ibm.websphere.appserver.spi.saml20-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.scalingController/1.0.12/e3bc66e46c07af42027bcaa9011fe3aedd5e1a54/com.ibm.websphere.appserver.spi.scalingController-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.servlet/2.0.12/651a523bb9afd9cb1c3af707c1748c8b015a7b52/com.ibm.websphere.appserver.spi.servlet-2.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.ssl/1.1.12/a0ef34dc1a2fe4938413e5163771d24ffb5128cb/com.ibm.websphere.appserver.spi.ssl-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.threading/1.1.12/76831de23ce3de897589c460becefe68ee0411ac/com.ibm.websphere.appserver.spi.threading-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.timedOperations/1.0.12/d8ae636442619de04d2780b3aa1267251fbb1c81/com.ibm.websphere.appserver.spi.timedOperations-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.transaction/1.1.12/18382e7247a8c468458bf147d650c098abc2f706/com.ibm.websphere.appserver.spi.transaction-1.1.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.webCache/1.0.12/a305d3c0435156be310a345b0da861840dcc61da/com.ibm.websphere.appserver.spi.webCache-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.wsat/1.0.12/a4892a83dadf45ba210289875072379bba81a92b/com.ibm.websphere.appserver.spi.wsat-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.websphere.appserver.spi.zosConnect/1.0.12/73d64f140b96b191a580a628a96e4070ef012d18/com.ibm.websphere.appserver.spi.zosConnect-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.ws.java.mediaServerControl.1.0/1.0.12/356c241cefe6a84ae5ae55451b8781e55bed226a/com.ibm.ws.java.mediaServerControl.1.0-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/com.ibm.websphere.appserver.api/com.ibm.ws.java.sipServlet.1.1/1.0.12/29c5e882d73aaa1658d0544f1be327aa61a25245/com.ibm.ws.java.sipServlet.1.1-1.0.12.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.batch/javax.batch-api/1.0/fdde8fdbf88afaa185558c711bd5cd6dfdd459f9/javax.batch-api-1.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.batch/javax.batch-api/1.0/65392d027a6eb369fd9fcd1b75cae150e25ac03c/javax.batch-api-1.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.batch/javax.batch-api/1.0/fe6b76061836a2984a3a8e85d51bfae58f372092/javax.batch-api-1.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.enterprise/cdi-api/1.2/4cab20de4e3b6796a814e9173d165ba2a177d001/cdi-api-1.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.enterprise/cdi-api/1.2/53bba91dc3968adf411e076df020cf207283d7dc/cdi-api-1.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.enterprise/cdi-api/1.2/753bed1ddb85417757708bfd62c6bb31615a396b/cdi-api-1.2-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.enterprise.concurrent/javax.enterprise.concurrent-api/1.0/8aa8081a9aeaed2f54717e53155306a1785d5a73/javax.enterprise.concurrent-api-1.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.enterprise.concurrent/javax.enterprise.concurrent-api/1.0/c392610c40aa3e0e7b57c47a1b561d4b3f974fac/javax.enterprise.concurrent-api-1.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.enterprise.concurrent/javax.enterprise.concurrent-api/1.0/3ee6033e61c83a5ca82804dc07b8c03952782f4e/javax.enterprise.concurrent-api-1.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.resource/javax.resource-api/1.7/8404dc3da719ee0a9cebff2a183a2da4a4eb2719/javax.resource-api-1.7-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.resource/javax.resource-api/1.7/ae40e0864eb1e92c48bf82a2a3399cbbf523fb79/javax.resource-api-1.7.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.resource/javax.resource-api/1.7/8ce5471f29982a58e93a6ca33c63258b08b34d49/javax.resource-api-1.7-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.ejb/javax.ejb-api/3.2/24d3f4bc3af9eec058a5069c6e64aef35d0cd021/javax.ejb-api-3.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.ejb/javax.ejb-api/3.2/6da48d715f67cd6ad55e96cc55030532d35062f1/javax.ejb-api-3.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.ejb/javax.ejb-api/3.2/28b1827516a1d9010817cfea1b8201c2a84db4b1/javax.ejb-api-3.2-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.el/javax.el-api/3.0.0/47e51cd2f414ff54840b250985c3bce6f6e9d389/javax.el-api-3.0.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.el/javax.el-api/3.0.0/60a59edc89f93d57541da31ee1c83428ab1cdcb3/javax.el-api-3.0.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.el/javax.el-api/3.0.0/72b9a2e72aa91bb3b7569dc9bb6584b81723457a/javax.el-api-3.0.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.interceptor/javax.interceptor-api/1.2/8f4532cfd20c53e5fb482fa263c29d26c7ff1777/javax.interceptor-api-1.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.interceptor/javax.interceptor-api/1.2/a5c058610aebacc1eb89c89e8fde2a978090e374/javax.interceptor-api-1.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.interceptor/javax.interceptor-api/1.2/935c08f6b163d73a7ae33996ccad7cf9bc28756a/javax.interceptor-api-1.2-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.security.jacc/javax.security.jacc-api/1.5/98c85f5a957b317e16142533334ccf74c242d378/javax.security.jacc-api-1.5-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.security.jacc/javax.security.jacc-api/1.5/5cfdc878b7a5a533f373493be9f7b24e34c01800/javax.security.jacc-api-1.5.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.security.jacc/javax.security.jacc-api/1.5/48c9042871701f2acef999e23b39c684e8fff4/javax.security.jacc-api-1.5-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.security.auth.message/javax.security.auth.message-api/1.1/72be0883135da0851114198fb219364054a64355/javax.security.auth.message-api-1.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.security.auth.message/javax.security.auth.message-api/1.1/bb172e8ffde9fc1b0abee5ae38dc6f5b68493ce2/javax.security.auth.message-api-1.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.security.auth.message/javax.security.auth.message-api/1.1/d0b855840bff0c81285fc161fba7a1bff3831902/javax.security.auth.message-api-1.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.2/bb17675f5f7bb5654e95962944ca1e3620963460/jaxb-api-2.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.2/bcf23b1d858c6f69d67c851d497984d25345d0b1/jaxb-api-2.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.xml.ws/jaxws-api/2.2/ba22919ad19ea7979484b4ed897fb6f4534b744c/jaxws-api-2.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.xml.ws/jaxws-api/2.2/49b4adad1a276bd9c156f3cf49542381e834809b/jaxws-api-2.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.jms/javax.jms-api/2.0/a9535e0aec788d2b20137e217edf1a0524d6d1e7/javax.jms-api-2.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.jms/javax.jms-api/2.0/cda766292e16077da794020ecc3fcde9273acb8f/javax.jms-api-2.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.jms/javax.jms-api/2.0/28a30486e3f9e3026bff6634dcb302bf04af0e4f/javax.jms-api-2.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.faces/javax.faces-api/2.2-m12/b9297db064f8ac32924cbd0144a4cc58cd0d106/javax.faces-api-2.2-m12-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.faces/javax.faces-api/2.2-m12/83c8f7aa84949a8cc8a8a321b67dbe19ea87b30c/javax.faces-api-2.2-m12.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.faces/javax.faces-api/2.2-m12/11e4427018ec786addd2458f0d43f7a14bfab074/javax.faces-api-2.2-m12-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.json/javax.json-api/1.0/fbe493e2f03a114cca5d7e9ab7de837654b91135/javax.json-api-1.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.json/javax.json-api/1.0/a74939ecbf7294b40accb4048929577f5ddcee2/javax.json-api-1.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.json/javax.json-api/1.0/544bf120b386404bda3833a5afa6f3cd9188ec14/javax.json-api-1.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.servlet.jsp/javax.servlet.jsp-api/2.3.0/f80ba8fc7b0f74330bb478bf06aacc4153e926ec/javax.servlet.jsp-api-2.3.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.servlet.jsp/javax.servlet.jsp-api/2.3.0/3795334f4306b194003e16dfba4111a0467a49bd/javax.servlet.jsp-api-2.3.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.servlet.jsp/javax.servlet.jsp-api/2.3.0/5ad03483e93ebcbc1ea7676c2efce24eaf25e074/javax.servlet.jsp-api-2.3.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/taglibs/standard/1.0/a918c729d246de5cc39ed16f17f8f1bf8ba0feb1/standard-1.0.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.servlet/jstl/1.2/2f5877ef15adb721421e80f5aa2b6fe069eec8ed/jstl-1.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.servlet/jstl/1.2/74aca283cd4f4b4f3e425f5820cda58f44409547/jstl-1.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.mail/javax.mail-api/1.5.0/611e806567b7394e401ca473b4fc804738aec4f0/javax.mail-api-1.5.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.mail/javax.mail-api/1.5.0/26be70c239de259e726851d8d91d538b3abbb767/javax.mail-api-1.5.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.mail/javax.mail-api/1.5.0/88c7e2b758ca517565e37019822ff017e7f37e9f/javax.mail-api-1.5.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.management.j2ee/javax.management.j2ee-api/1.1.1/56e25698cecdadd443db5e21454ada839abed948/javax.management.j2ee-api-1.1.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.management.j2ee/javax.management.j2ee-api/1.1.1/dfa282cea1495277168697cb5c349ec29f82947c/javax.management.j2ee-api-1.1.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.management.j2ee/javax.management.j2ee-api/1.1.1/714d6439e7de6c683b83e0c4271da7b278b04adc/javax.management.j2ee-api-1.1.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/javax.persistence/2.1.0/da95a959929234c57b988644696c065d79774fc4/javax.persistence-2.1.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/javax.persistence/2.1.0/5bab675816dbe0f64bb86004b108bf2a00292358/javax.persistence-2.1.0.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/ab3976d4574c48d22dc1abf6a9e8bd0fdf928223/javax.servlet-api-3.1.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/7898c2d7d0779c852dea51cb75a446eeb932eb1b/javax.servlet-api-3.1.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.transaction/javax.transaction-api/1.2/5d1fb3fe056fe51e6f6ed9b4ef4898a774ed69c0/javax.transaction-api-1.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.transaction/javax.transaction-api/1.2/d81aff979d603edd90dcd8db2abc1f4ce6479e3e/javax.transaction-api-1.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.transaction/javax.transaction-api/1.2/6dce121925912a437b0dcc7261e9ca68f8bfbd6f/javax.transaction-api-1.2-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.websocket/javax.websocket-api/1.1/c2c8923b5cc02e5ff9eb100fc718b582efb164e2/javax.websocket-api-1.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.websocket/javax.websocket-api/1.1/eeeb68631711256418dfbb47b11c731b6c8f6235/javax.websocket-api-1.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.websocket/javax.websocket-api/1.1/5714d844cc094bd44d7ff27f72fde5455511c28d/javax.websocket-api-1.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/wsdl4j/wsdl4j/1.6.3/cd1f9241025a8456a07bcf6df4a3c1826d59555c/wsdl4j-1.6.3-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/wsdl4j/wsdl4j/1.6.3/6d106a6845a3d3477a1560008479312888e94f2f/wsdl4j-1.6.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/wsdl4j/wsdl4j/1.6.3/fecb6f65a963d664941e4aba7b711588cc59e7cf/wsdl4j-1.6.3-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.aries.proxy/org.apache.aries.proxy/1.0.0/a4d794cfb201b687ccf749e673df70a6fcc384ea/org.apache.aries.proxy-1.0.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.aries.proxy/org.apache.aries.proxy/1.0.0/1b4ddb9b6af09b2b5e33656c48ca8e3a5f9152e6/org.apache.aries.proxy-1.0.0.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.aries.jndi/org.apache.aries.jndi.api/1.0.0/abfe2fa88ffb8b2d651402f3f9c4d559baf7f007/org.apache.aries.jndi.api-1.0.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.aries.jndi/org.apache.aries.jndi.api/1.0.0/c7ea2d5f48291edb20cd896b0b58c88e42092aa5/org.apache.aries.jndi.api-1.0.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.aries.jndi/org.apache.aries.jndi.api/1.0.0/e59fa9ac4a9c07dadccad9d69337efda96ac8ee3/org.apache.aries.jndi.api-1.0.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.aries.transaction/org.apache.aries.transaction.blueprint/1.0.0/4a8e3d4a30dd6f29574637c37c947091fd5d4f7c/org.apache.aries.transaction.blueprint-1.0.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.aries.transaction/org.apache.aries.transaction.blueprint/1.0.0/270c8b063f331b7becb0d6658c83c54969c54e70/org.apache.aries.transaction.blueprint-1.0.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.aries.transaction/org.apache.aries.transaction.blueprint/1.0.0/e3be662ec599eb8fa9ba5ab85953065763290e7e/org.apache.aries.transaction.blueprint-1.0.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/eclipselink/2.6.0/6a37519aa8ce95727ec6d59ea510b26a225618b8/eclipselink-2.6.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/eclipselink/2.6.0/9970a032f5b12668664a11809fcfd594a1ec3fbb/eclipselink-2.6.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/eclipselink/2.6.0/bfc74a175ecab48925a2d32ec01c531637af117d/eclipselink-2.6.0-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-jaxrs/1.6.2/842da7f7231aa90308c85f6eb1a817276546b55c/jackson-jaxrs-1.6.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-jaxrs/1.6.2/7185148a1b3c21ca25f8f68fe204147938d8cfa0/jackson-jaxrs-1.6.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.6.2/999e50d73838085f8af54605dc300e992655175c/jackson-core-asl-1.6.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.6.2/4071dbeb02b3b9f377b1bcf7e584ecf9bad42fdd/jackson-core-asl-1.6.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.6.2/13e1e147438bcb6d0f6d8a41c5d7efb50969ce55/jackson-mapper-asl-1.6.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.6.2/d94db8569d61a1ec31cd0338450409771d25577e/jackson-mapper-asl-1.6.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-xc/1.6.2/728a9b157f7289a8a6c3910bacb5571ab2a3a6b0/jackson-xc-1.6.2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-xc/1.6.2/76beecb75ea0acd1662b85e1e8a9de8a16ff6893/jackson-xc-1.6.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.openjpa/openjpa/2.2.0/d0582821870cea2f7ab9bc789f82fcd017f22c/openjpa-2.2.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.openjpa/openjpa/2.2.0/ff600e56c562fc0efe3ec76e342d97cd72b0b6fc/openjpa-2.2.0.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-annotations/1.5.3/b11acbae35cac7322cea4c133cef4c49ca8a9e40/swagger-annotations-1.5.3-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-annotations/1.5.3/607d9721d7a0796bd79a58ceda61cb370115227/swagger-annotations-1.5.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-annotations/1.5.3/83401e7fdbc2915de0c51a97b6b937aad431a92c/swagger-annotations-1.5.3-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.3/bd3975547ae313d9436c3315740e6ba213236a20/httpclient-4.3-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.3/abe99a8183c7c154ba1fd0f4b6a3bd42ae67d115/httpclient-4.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.3/79227b88a024ec8f48f0c66535e5c9c166d5ee06/httpclient-4.3-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.3/738a12248cd70aa816499cb6b42dd493bc3a34cd/httpcore-4.3-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.3/11393498b38e9695d0850cac26fde5613ae268b9/httpcore-4.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.3/6c399cdc4dbaad20ed01edfa4abc4cd73f3c4136/httpcore-4.3-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.xml.stream/stax-api/1.0-2/dd58a0151c110e27c6c18abd45b01792f46d3fcd/stax-api-1.0-2-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.xml.stream/stax-api/1.0-2/d6337b0de8b25e53e81b922352fbea9f9f57ba0b/stax-api-1.0-2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1/3697e9f67a2ed7ac5f589cff30f21173299440/activation-1.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1/e6cb541461c2834bdea3eb920f1884d1eb508b50/activation-1.1.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.xml.soap/saaj-api/1.3.1/958287385e1658abc6e899144000083c0a002841/saaj-api-1.3.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.xml.soap/saaj-api/1.3.1/312f996061bef2bc88a58a7f61b284f97003ac77/saaj-api-1.3.1.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.annotation/jsr250-api/1.0/9b1fba77edd118e13c42bda43d3c993dadd52c25/jsr250-api-1.0-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.annotation/jsr250-api/1.0/5025422767732a1ab45d93abfea846513d742dcf/jsr250-api-1.0.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.jws/jsr181-api/1.0-MR1/91949f9602ca47ff97f3b269076335a615e0d5e3/jsr181-api-1.0-MR1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/javax.jws/jsr181-api/1.0-MR1/401cc1d0e5f0d8f4d0532a54928ceaa27ec21258/jsr181-api-1.0-MR1.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/commonj.sdo/2.1.1/6de70daec63068c07df2a87507cafb2cc34ef2b1/commonj.sdo-2.1.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/commonj.sdo/2.1.1/90d4c89ce0a69f58619f1a247bbf420122139ff5/commonj.sdo-2.1.1.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.json/1.0.4/ef782abad0d3f1d30644c4023a6bbc6fe371e23a/javax.json-1.0.4-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.json/1.0.4/3178f73569fd7a1e5ffc464e680f7a8cc784b85a/javax.json-1.0.4.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.json/1.0.4/fdbe247c2f712862e8ba7ea9266b062e6c0f361c/javax.json-1.0.4-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.4/2b8c4b3035e45520ef42033e823c7d33e4b4402c/commons-lang-2.4-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.4/16313e02a793435009f1e458fa4af5d879f6fb11/commons-lang-2.4.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.4/bb93922b0796902b3683fa38e554b2d2c75c8a34/commons-lang-2.4-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/fa095ef874374e5b2a11f8b06c26a5d68c7cb3a4/commons-collections-3.2.1-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-3.2.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/7891420ba5a4ad1385076993f090bc3ead095fa4/commons-collections-3.2.1-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/net.sourceforge.serp/serp/1.13.1/737a7b53f80fa2a4265d647a9417bd9ea671a592/serp-1.13.1.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-pool/commons-pool/1.5.4/3e226507788e09f02eef641e868624fb823af6e6/commons-pool-1.5.4-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-pool/commons-pool/1.5.4/75b6e20c596ed2945a259cea26d7fadd298398e6/commons-pool-1.5.4.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-pool/commons-pool/1.5.4/4710cbbd141a42705af9b8831d7176b434630a6c/commons-pool-1.5.4-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/asm/asm/3.2/9bc1511dec6adf302991ced13303e4140fdf9ab7/asm-3.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.3/28bb0405fddaf04f15058fbfbe01fe2780d7d3b6/commons-logging-1.1.3-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.3/f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f/commons-logging-1.1.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.3/8a9805acc4e492afb6a400b6e32cfd98ed263caa/commons-logging-1.1.3-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.6/61e9f9d11fe3e12ec62f633006e99d75fd7f19c8/commons-codec-1.6-sources.jar" kind="lib" path="/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.6/b7f0fc8f61ecadeb3695f0b9464755eee44374d4/commons-codec-1.6.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/gitlab-runner/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.6/3c2c41ec5e3ca4131f83cf611f5fd837892220bd/commons-codec-1.6-javadoc.jar!/"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+</classpath>

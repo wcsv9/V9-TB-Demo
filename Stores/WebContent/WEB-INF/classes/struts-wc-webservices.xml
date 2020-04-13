@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="wc-webservices" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="AcknowledgeFinancialTransaction">
+            <result name="AcknowledgeFinancialTransaction/0/-10">
+                <param name="direct">true</param>
+                <param name="implClassName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommandImpl</param>
+                <param name="interfaceName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommand</param>
+                <param name="location">webservices/OAGIS/9.0/BODs/AcknowledgeFinancialTransaction.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="AcknowledgeOrder">
+            <result name="AcknowledgeOrder/0/-10">
+                <param name="direct">true</param>
+                <param name="implClassName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommandImpl</param>
+                <param name="interfaceName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommand</param>
+                <param name="location">webservices/OAGIS/9.0/BODs/AcknowledgeOrder.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="AcknowledgePaymentInstruction">
+            <result name="AcknowledgePaymentInstruction/0/-10">
+                <param name="direct">true</param>
+                <param name="implClassName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommandImpl</param>
+                <param name="interfaceName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommand</param>
+                <param name="location">webservices/OAGIS/9.0/BODs/AcknowledgePaymentInstruction.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ConfirmBOD">
+            <result name="ConfirmBOD/0/-10">
+                <param name="direct">true</param>
+                <param name="implClassName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommandImpl</param>
+                <param name="interfaceName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommand</param>
+                <param name="location">webservices/OAGIS/9.0/BODs/ConfirmBOD.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="RespondFinancialTransaction">
+            <result name="RespondFinancialTransaction/0/-10">
+                <param name="direct">true</param>
+                <param name="implClassName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommandImpl</param>
+                <param name="interfaceName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommand</param>
+                <param name="location">webservices/OAGIS/9.0/BODs/RespondFinancialTransaction.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ShowCredit">
+            <result name="ShowCredit/0/-10">
+                <param name="direct">true</param>
+                <param name="implClassName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommandImpl</param>
+                <param name="interfaceName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommand</param>
+                <param name="location">webservices/OAGIS/9.0/BODs/ShowCredit.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ShowPayment">
+            <result name="ShowPayment/0/-10">
+                <param name="direct">true</param>
+                <param name="implClassName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommandImpl</param>
+                <param name="interfaceName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommand</param>
+                <param name="location">webservices/OAGIS/9.0/BODs/ShowPayment.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ShowPaymentInstruction">
+            <result name="ShowPaymentInstruction/0/-10">
+                <param name="direct">true</param>
+                <param name="implClassName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommandImpl</param>
+                <param name="interfaceName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommand</param>
+                <param name="location">webservices/OAGIS/9.0/BODs/ShowPaymentInstruction.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+    </package>
+</struts>

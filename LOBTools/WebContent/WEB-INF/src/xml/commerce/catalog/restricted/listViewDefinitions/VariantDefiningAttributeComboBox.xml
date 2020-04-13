@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ =================================================================
+  Licensed Materials - Property of IBM
+
+  WebSphere Commerce
+
+  (C) Copyright IBM Corp. 2015, 2016 All Rights Reserved.
+
+  US Government Users Restricted Rights - Use, duplication or
+  disclosure restricted by GSA ADP Schedule Contract with
+  IBM Corp.
+ =================================================================
+-->
+
+<Definitions>
+
+	<!---
+		This class represents a combo box used for selecting an attribute value
+		for a variant defining attribute.
+
+		This code is not customizable.
+		
+		@keywords private
+	-->
+	<ComboBox classDefinition="true" definitionName="cmc/catalog/VariantAttributeComboBox" useCompactPadding="true">
+		<dependency localName="StringUtil" moduleName="cmc/foundation/StringUtil"/>
+		<dependency localName="NumericValuesComparator" moduleName="cmc/catalog/NumericValuesComparator"/>
+		<dependency localName="GlobalizationUtil" moduleName="cmc/foundation/GlobalizationUtil"/>
+		<dependency localName="StringValuesComparator" moduleName="cmc/catalog/StringValuesComparator"/>
+	
+		<!---
+			This method overrides the 'createComboBox', 'updateValue' and 'openList' methods of the parent class 
+			'cmc/foundation/ComboBox' to display a dynamic list of defining attribute allowed values.
+			
+			The attribute allowed values are obtained from the parent product's defining attributes
+			and their allowed values.
+						 
+			The comboBox will use the property 'attrValValue' to store the user's selected 
+			attribute value from the list of possible attribute values.
+			
+			@keywords private
+		-->
+		<method args="e" name="createComboBox">
+			<![CDATA[
+			if (typeof(e) == "undefined") e = null;
+			]]>
+		</method>
+
+		<!--- @keywords private -->
+		<method name="updatePropertyValues">
+			<![CDATA[
+			
+			if(this.parent && this.parent.parent && this.parent.parent.o && !this.parent.parent.o.newObject){
+			   this.enabled=false;
+			   return;
+			}
+			this._initializingComboBox = true;
+			this.values = [];
+			if (this.parent.column.attributeObject) {
+
+				var attributeDataType = null;
+				var attributeAllowedValueType = null;
+				var attributeAllowedValuePropertyName = null;
+				 
+				attributeDataType = this.parent.column.attributeObject.getPropertyValue("attrDataType", "AttributeDictionaryAttributes");
+					if (attributeDataType == "String") {
+						attributeAllowedValueType = "AttributeDictionaryAttributeStringValueAlias";
+					}
+					else if (attributeDataType == "Integer") {
+						attributeAllowedValueType = "AttributeDictionaryAttributeIntegerValueAlias";
+					}
+					else if (attributeDataType == "Float") {
+						attributeAllowedValueType = "AttributeDictionaryAttributeFloatValueAlias";
+					}
+
+				if (attributeDataType != null) {
+					var definingAttributeAllowedValues = null;
+					
+					definingAttributeAllowedValues = this.parent.column.attributeObject.getObjects("AttributeDictionaryAttributeWithAllowedValuesAlias/" + attributeAllowedValueType);
+                    this.addItem("", "");
+					for (var i = 0; i < definingAttributeAllowedValues.length; i++) {
+						var allowedValue = definingAttributeAllowedValues[i];
+						var itemValue = null;
+						var displayName = null;
+						
+						itemValue = allowedValue.getPropertyValue("attrValId");
+						displayName = allowedValue.getPropertyValue("value", "AttributeDictionaryAttributeValueDescription");
+						
+						if (itemValue && itemValue.length > 0) {
+							if (attributeDataType == "Float") {
+								displayName = GlobalizationUtil.Singleton.formatNumberToDisplayFormat(displayName, 1);
+							}
+							displayName = StringUtil.Singleton.escapeText(displayName);
+							this.addItem(displayName, itemValue);
+						}
+					}
+					if (attributeDataType == "String") {
+						var caller = this;
+						require(["cmc/foundation/SortUtil"], function(SortUtil) {
+							SortUtil.Singleton.sort(caller.values, StringValuesComparator.Singleton);
+						});
+					}
+					else {
+						var caller = this;
+						require(["cmc/foundation/SortUtil"], function(SortUtil) {
+							SortUtil.Singleton.sort(caller.values, NumericValuesComparator.Singleton);
+						});
+					}
+				}
+			}
+			if (this.property != null) {
+				this.selectItem(this.property.value);
+			}
+			this._initializingComboBox = false;
+			]]>
+		</method>
+		
+		<!---
+			Update and refresh the combo box value with a new cmc/foundation/ModelProperty value.
+		-->
+		<method args="e" name="updateValue">
+			<![CDATA[
+			
+			if (typeof(e) == "undefined") e = null;
+			var value = this.property.value;
+			if (this.selectedValue == null || this.selectedValue.value == "" || value != this.selectedValue.value) {
+				var displayName = value;
+				if (this.parent.column.attributeObject && value != null) {
+					var attributeDataType = null;
+					attributeDataType = this.parent.column.attributeObject.getPropertyValue("attrDataType");
+					if (attributeDataType == "Float") {
+							displayName = GlobalizationUtil.Singleton.formatNumberToDisplayFormat(value, 1);
+					}
+
+					var attributeObject = null;
+					if(this.parent && this.parent.column && this.parent.column.attributeObject && this.parent.column.attributeObject.objectId != "" && this.parent.column.attributeObject.getObject("AttributeDictionaryAttributes")!= null){
+					    attributeObject = this.parent.column.attributeObject.getObject("AttributeDictionaryAttributes");
+					}
+				    if (attributeObject != null) {
+						var attributeValueDefs = attributeObject.objectDefinition.getChildDefinitions("AttributeDictionaryAttributeValueAlias");
+						attributeObject.loadChildren(attributeValueDefs);
+						attributeDataType = this.parent.column.attributeObject.getPropertyValue("attrDataType", "AttributeDictionaryAttributes");
+						var definingAttributeAllowedValue = this.parent.column.attributeObject.getObject("AttributeDictionaryAttributeWithAllowedValuesAlias/AttributeDictionaryAttribute" + attributeDataType + "ValueAlias[attrValId=" + value + "]");
+						if (definingAttributeAllowedValue != null) {
+							displayName = definingAttributeAllowedValue.getPropertyValue("value", "AttributeDictionaryAttributeValueDescription");
+							if (displayName != null) {
+								if (attributeDataType == "Float") {
+									displayName = GlobalizationUtil.Singleton.formatNumberToDisplayFormat(displayName, 1);
+								}
+							}
+							else {
+								displayName = value;
+							}
+						}
+					}				
+				}
+				if (value != null && value != "") {
+					displayName = StringUtil.Singleton.escapeText(displayName);
+					this.selectValue({
+						value: value,
+						displayName: displayName
+					});
+				}
+				else {
+					this.clearSelection();
+				}
+				
+			}
+			this.parent.parent.o.validate();
+			]]>
+		</method>
+		
+		<!---
+			Override openList to update list with latest values.
+			@keywords private
+		-->
+		<method name="openList">
+			<![CDATA[
+			if (this.enabled) {
+				this.updatePropertyValues();
+				this.inherited(arguments);
+			}
+			]]>
+		</method>
+	 </ComboBox>
+	 
+</Definitions>

@@ -1,0 +1,47 @@
+<%--
+ =================================================================
+  Licensed Materials - Property of IBM
+
+  WebSphere Commerce
+
+  (C) Copyright IBM Corp. 2009 All Rights Reserved.
+
+  US Government Users Restricted Rights - Use, duplication or
+  disclosure restricted by GSA ADP Schedule Contract with
+  IBM Corp.
+ =================================================================
+--%>
+<%--  @pre List of CatalogGroup SDOs populated, variable name 'catgroups' --%>
+<c:choose>
+	<c:when test="${recordSetCompleteIndicator!=null}">
+		<objects
+			recordSetCompleteIndicator="${recordSetCompleteIndicator}"
+			recordSetReferenceId="${recordSetReferenceId}"
+			recordSetStartNumber="${recordSetStartNumber}"
+			recordSetCount="${recordSetCount}"
+			recordSetTotal="${recordSetTotal}">
+	</c:when>
+	<c:otherwise>
+		<objects
+			recordSetCompleteIndicator="${showVerb.recordSetCompleteIndicator}"
+			recordSetReferenceId="${showVerb.recordSetReferenceId}"
+			recordSetStartNumber="${showVerb.recordSetStartNumber}"
+			recordSetCount="${showVerb.recordSetCount}"
+			recordSetTotal="${showVerb.recordSetTotal}">
+	</c:otherwise>
+</c:choose>
+<c:set var="serializeParentReferenceObject" value="false"/>
+<c:set var="owningCatalog" value="${param.catalogId}" />
+<c:set var="owningCatalogIdentifier" value="${param.catalogIdentifier}" />
+
+<c:forEach var="catalogGroup" items="${catgroups}">
+	<c:set var="objectType" value="CatalogGroup" />
+	<c:set var="owningStoreId" value="${catalogGroup.catalogGroupIdentifier.externalIdentifier.storeIdentifier.uniqueID}" />
+	<c:if test="${(param.storeId) != owningStoreId}">
+		<c:set var="objectType" value="InheritedCatalogGroup" />
+	</c:if>
+		<jsp:directive.include file="SerializeCatalogGroup.jspf"/>
+
+</c:forEach>
+
+</objects>

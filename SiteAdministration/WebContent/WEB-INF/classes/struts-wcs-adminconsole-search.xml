@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-adminconsole" name="search" namespace="/">       
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="CmdlineInvalidCacheForSearchIndex">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.cache.commands.CmdlineInvalidCacheForSearchIndexCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ContractPriceCalculate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.foundation.dataimport.priceindex.commands.ContractPriceCalculateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ProductDisplayPropertiesUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.search.internal.commands.ProductDisplayPropertiesUpdateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="TriggerMetricFileDownload">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.search.internal.commands.TriggerMetricFileDownloadCmd</param>
+        </action>
+    </package>
+</struts>

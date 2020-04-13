@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product PUBLIC "productId" "dtd/product.dtd">
+<product name="IBM WebSphere Commerce">
+  <id>wc.toolkit.be</id>
+  <version>9.0.1.8</version>
+  <build-info date="23/10/19" level="201910230905dev"/>
+</product>

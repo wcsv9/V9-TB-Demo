@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ =================================================================
+  Licensed Materials - Property of IBM
+
+  WebSphere Commerce
+
+  (C) Copyright IBM Corp. 2016, 2019 All Rights Reserved.
+
+  US Government Users Restricted Rights - Use, duplication or
+  disclosure restricted by GSA ADP Schedule Contract with
+  IBM Corp.
+ =================================================================
+-->
+
+<_config:DIHPreProcessConfig xmlns:_config="http://www.ibm.com/xmlns/prod/commerce/foundation/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ibm.com/xmlns/prod/commerce/foundation/config ../../xsd/wc-dataimport-preprocess.xsd ">         
+  
+    <_config:data-processing-config processor="com.ibm.commerce.foundation.dataimport.preprocess.CopyColumnsDataPreProcessor">
+        <_config:table definition="CREATE TABLE TI_CATGPENREL_#INDEX_SCOPE_TAG# (CATENTRY_ID BIGINT NOT NULL, SEQUENCE VARCHAR(4000), PRIMARY KEY (CATENTRY_ID))" name="TI_CATGPENREL_#INDEX_SCOPE_TAG#"/>
+        <_config:query sql="INSERT INTO TI_CATGPENREL_#INDEX_SCOPE_TAG#
+                            SELECT CATENTRY_ID,
+                                   LISTAGG(SEQUENCE, ';') WITHIN GROUP(ORDER BY CATENTRY_ID) AS SEQUENCE
+                            FROM (
+                                SELECT CATGPENREL.CATENTRY_ID CATENTRY_ID,
+                                       catgpenrel.catalog_id ||'_'|| CATGPENREL.CATGROUP_ID ||'_'|| cast(catgpenrel.sequence as decimal(20,5)) SEQUENCE
+                                FROM CATGPENREL,
+                                     TI_CATENTRY_#INDEX_SCOPE_TAG# CE,
+                                     TI_CGPUB_#INDEX_SCOPE_TAG# CD
+                                WHERE CATGPENREL.CATENTRY_ID = CE.CATENTRY_ID
+                                  AND CATGPENREL.CATGROUP_ID = CD.CATGROUP_ID
+                                  AND CD.PUBLISHED IN (?unpublished?, ?published?)
+                                  AND NOT EXISTS (SELECT 1
+                                                  FROM CATENTREL
+                                                  WHERE CATENTRY_ID_CHILD = CE.CATENTRY_ID
+                                                    AND CATRELTYPE_ID IN ('PRODUCT_ITEM', 'VARIANT_ITEM', 'PRODUCT_VARIANT'))
+                                UNION
+                                SELECT X.CATENTRY_ID_CHILD CATENTRY_ID,
+                                       GP.CATALOG_ID ||'_'|| GP.CATGROUP_ID ||'_'|| cast(GP.SEQUENCE as decimal(20,5)) SEQUENCE
+                                FROM CATGPENREL GP,
+                                     TI_CGPUB_#INDEX_SCOPE_TAG# CD,
+                                     (SELECT CATENTRY_ID_PARENT,
+                                             CATENTRY_ID_CHILD
+                                      FROM TI_CATENTRY_#INDEX_SCOPE_TAG#,
+                                           CATENTREL
+                                      WHERE CATENTRY_ID_CHILD = CATENTRY_ID
+                                        AND CATENTTYPE_ID IN ('ItemBean', 'VariantBean')
+                                        AND CATRELTYPE_ID IN ('PRODUCT_ITEM', 'PRODUCT_VARIANT')) X
+                                WHERE GP.CATGROUP_ID = CD.CATGROUP_ID
+                                  AND CD.PUBLISHED IN (?unpublished?, ?published?)
+                                  AND GP.CATENTRY_ID = X.CATENTRY_ID_PARENT
+                            )
+                            GROUP BY CATENTRY_ID"/>
+        <_config:property name="no_logging_sql" value="alter table #TABLE_NAME# activate not logged initially" />
+    </_config:data-processing-config>
+  
+    <!-- one level catentry parent -->
+    <_config:data-processing-config processor="com.ibm.commerce.foundation.dataimport.preprocess.CopyColumnsDataPreProcessor">
+        <_config:table definition="CREATE TABLE TI_DPCATENTRY_#INDEX_SCOPE_TAG# (CATENTRY_ID BIGINT NOT NULL, CATENTRY_PARENT VARCHAR(1024), ITEM_SEQUENCE DECIMAL(20, 5), PRIMARY KEY (CATENTRY_ID))" name="TI_DPCATENTRY_#INDEX_SCOPE_TAG#"/>
+        <_config:query sql="INSERT INTO TI_DPCATENTRY_#INDEX_SCOPE_TAG#
+                            SELECT CATENTRY_ID_CHILD,
+                                   CATENTRY_ID_PARENT,
+                                   R.SEQUENCE I_SEQ
+                            FROM CATENTREL R,
+                                 TI_CATENTRY_#INDEX_SCOPE_TAG# C
+                            WHERE R.CATENTRY_ID_CHILD = C.CATENTRY_ID 
+                              AND R.CATRELTYPE_ID IN ('PRODUCT_ITEM', 'PRODUCT_VARIANT')"/>
+        <_config:property name="no_logging_sql" value="alter table #TABLE_NAME# activate not logged initially" />
+    </_config:data-processing-config>
+
+    <_config:data-processing-config processor="com.ibm.commerce.foundation.dataimport.preprocess.StaticAttributeDataPreProcessor" fetchSize="500" batchSize="500">
+        <_config:table definition="CREATE TABLE TI_DPVARIANT_#INDEX_SCOPE_TAG# (CATENTRY_ID BIGINT NOT NULL, PARENT_VARIANT VARCHAR(1024), PRIMARY KEY (CATENTRY_ID))" name="TI_DPVARIANT_#INDEX_SCOPE_TAG#"/>
+        <_config:query sql="SELECT CATENTRY_ID_CHILD,
+                                   CATENTRY_ID_PARENT
+                            FROM CATENTREL R,
+                                 TI_CATENTRY_#INDEX_SCOPE_TAG# C
+                            WHERE R.CATENTRY_ID_CHILD = C.CATENTRY_ID
+                              AND R.CATRELTYPE_ID = 'VARIANT_ITEM'
+                            ORDER BY CATENTRY_ID_CHILD"/>
+        <_config:mapping>
+            <_config:key queryColumn="CATENTRY_ID_CHILD" tableColumn="CATENTRY_ID"/>
+            <_config:column-mapping>
+                <_config:column-column-mapping>
+                    <_config:column-column queryColumn="CATENTRY_ID_PARENT" tableColumn="PARENT_VARIANT" />
+                </_config:column-column-mapping>
+            </_config:column-mapping>
+        </_config:mapping>
+    </_config:data-processing-config>
+
+    <_config:data-processing-config processor="com.ibm.commerce.foundation.dataimport.preprocess.StaticAttributeDataPreProcessor" fetchSize="500" batchSize="500">
+        <_config:table definition="CREATE TABLE TI_DCCATENTRY_#INDEX_SCOPE_TAG# (CATENTRY_ID BIGINT NOT NULL, CATENTRY_CHILD BIGINT, PRIMARY KEY (CATENTRY_ID))" name="TI_DCCATENTRY_#INDEX_SCOPE_TAG#"/>
+        <_config:query sql="SELECT CATENTRY_ID_PARENT,
+                                   CATENTRY_ID_CHILD
+                            FROM CATENTREL,
+                                 TI_CATENTRY_#INDEX_SCOPE_TAG#
+                            WHERE CATENTRY_ID_PARENT = CATENTRY_ID
+                              AND CATRELTYPE_ID = 'PRODUCT_ITEM'
+                              AND CATENTRY_ID_PARENT IN (SELECT CATENTRY_ID_PARENT
+                                                         FROM CATENTREL
+                                                              INNER JOIN TI_CATENTRY_#INDEX_SCOPE_TAG# ON (CATENTRY_ID_PARENT = CATENTRY_ID)
+                                                         WHERE CATRELTYPE_ID = 'PRODUCT_ITEM'
+                                                         GROUP BY CATENTRY_ID_PARENT HAVING COUNT(CATENTRY_ID_PARENT) = 1)
+                            ORDER BY CATENTRY_ID_PARENT"/>
+        <_config:mapping>
+            <_config:key queryColumn="CATENTRY_ID_PARENT" tableColumn="CATENTRY_ID"/>
+            <_config:column-mapping>
+                <_config:column-column-mapping>
+                    <_config:column-column queryColumn="CATENTRY_ID_CHILD" tableColumn="CATENTRY_CHILD" />
+                </_config:column-column-mapping>
+            </_config:column-mapping>
+        </_config:mapping>
+    </_config:data-processing-config>
+  
+    <_config:data-processing-config processor="com.ibm.commerce.foundation.dataimport.preprocess.StaticAttributeDataPreProcessor" fetchSize="500" batchSize="500">
+        <_config:table definition="CREATE TABLE TI_COMPONENTS_#INDEX_SCOPE_TAG# (CATENTRY_ID BIGINT NOT NULL, COMPONENTS VARCHAR(4000), PRIMARY KEY (CATENTRY_ID))" name="TI_COMPONENTS_#INDEX_SCOPE_TAG#"/>
+        <_config:query sql="(SELECT CATENTRY_ID_PARENT,
+                                    CATENTRY_ID_CHILD ||'/_/'|| cast(COALESCE(QUANTITY,0) as decimal(20,5)) COMPONENTS,
+                                    CATENTREL.SEQUENCE SEQUENCE
+                             FROM CATENTREL,
+                                  TI_CATENTRY_#INDEX_SCOPE_TAG#
+                             WHERE CATRELTYPE_ID in ('PACKAGE_COMPONENT','BUNDLE_COMPONENT','DK_PDK','PDK_COMPONENT')
+                               AND CATENTREL.CATENTRY_ID_PARENT = TI_CATENTRY_#INDEX_SCOPE_TAG#.CATENTRY_ID)
+                            UNION
+                            (SELECT TI_CATENTRY_#INDEX_SCOPE_TAG#.CATENTRY_ID CATENTRY_ID_PARENT,
+                                    DKPDCCOMPLIST.CATENTRY_ID
+                                    ||'/_/'|| cast(COALESCE(DKPDCCOMPLIST.QUANTITY,0) as decimal(20,5))
+                                    ||'/_/'|| DKPDCCOMPLIST.DKPREDEFCONF_ID
+                                    ||'/_/'|| DKPDCCOMPLIST.DKPDCCOMPLIST_ID
+                                    ||'/_/'|| DKPDCCOMPLIST.GROUPNAME COMPONENTS,
+                                    DKPDCCOMPLIST.SEQUENCE SEQUENCE
+                             FROM DKPDCCATENTREL
+                                  INNER JOIN TI_CATENTRY_#INDEX_SCOPE_TAG# ON (TI_CATENTRY_#INDEX_SCOPE_TAG#.CATENTRY_ID = DKPDCCATENTREL.CATENTRY_ID)
+                                  INNER JOIN DKPDCCOMPLIST ON (DKPDCCOMPLIST.DKPREDEFCONF_ID = DKPDCCATENTREL.DKPREDEFCONF_ID))
+                            ORDER BY CATENTRY_ID_PARENT, SEQUENCE" />
+        <_config:mapping>
+            <_config:key queryColumn="CATENTRY_ID_PARENT" tableColumn="CATENTRY_ID"/>
+            <_config:column-mapping>
+                <_config:column-column-mapping>
+                    <_config:column-column queryColumn="COMPONENTS" tableColumn="COMPONENTS" />
+                </_config:column-column-mapping>
+            </_config:column-mapping>
+        </_config:mapping>           
+    </_config:data-processing-config>
+  
+    <_config:data-processing-config processor="com.ibm.commerce.foundation.dataimport.preprocess.StaticAttributeDataPreProcessor" fetchSize="500" batchSize="500">
+        <_config:table definition="CREATE TABLE TI_PDK_DK_#INDEX_SCOPE_TAG# (CATENTRY_ID_PDK BIGINT NOT NULL, CATENTRY_ID_DK BIGINT NOT NULL, PRIMARY KEY (CATENTRY_ID_PDK))" name="TI_PDK_DK_#INDEX_SCOPE_TAG#"/>
+        <_config:query sql="SELECT CATENTRY_ID_CHILD,
+                                   CATENTRY_ID_PARENT
+                            FROM CATENTREL,
+                                 TI_CATENTRY_#INDEX_SCOPE_TAG#
+                            WHERE CATRELTYPE_ID='DK_PDK'
+                              AND CATENTREL.CATENTRY_ID_CHILD = TI_CATENTRY_#INDEX_SCOPE_TAG#.CATENTRY_ID
+                            ORDER BY CATENTRY_ID_CHILD" />
+        <_config:mapping>
+          <_config:key queryColumn="CATENTRY_ID_CHILD" tableColumn="CATENTRY_ID_PDK"/>
+          <_config:column-mapping>
+            <_config:column-column-mapping>
+                <_config:column-column queryColumn="CATENTRY_ID_PARENT" tableColumn="CATENTRY_ID_DK" />
+            </_config:column-column-mapping>
+            </_config:column-mapping>
+        </_config:mapping>           
+    </_config:data-processing-config>
+  
+    <_config:data-processing-config processor="com.ibm.commerce.foundation.dataimport.preprocess.CopyColumnsDataPreProcessor">
+        <_config:table definition="CREATE TABLE TI_GROUPING_#INDEX_SCOPE_TAG# (CATENTRY_ID BIGINT NOT NULL, GROUPING BIGINT, PRIMARY KEY (CATENTRY_ID))" name="TI_GROUPING_#INDEX_SCOPE_TAG#"/>
+        <_config:query sql="INSERT INTO TI_GROUPING_#INDEX_SCOPE_TAG#
+                            (SELECT CATENTRY_ID,
+                                    CATENTRY_ID_PARENT
+                             FROM CATENTREL R,
+                                  TI_CATENTRY_#INDEX_SCOPE_TAG# C
+                             WHERE R.CATENTRY_ID_CHILD = C.CATENTRY_ID
+                               AND R.CATRELTYPE_ID IN ('PRODUCT_ITEM', 'PRODUCT_VARIANT')
+                             UNION
+                             SELECT CATENTRY_ID,
+                                    CATENTRY_ID CATENTRY_ID_PARENT
+                             FROM TI_CATENTRY_#INDEX_SCOPE_TAG#
+                             WHERE CATENTTYPE_ID in ('ProductBean', 'PackageBean', 'BundleBean', 'DynamicKitBean', 'PredDynaKitBean') 
+                             UNION
+                             SELECT CATGPENREL.CATENTRY_ID CATENTRY_ID,
+                                    CATGPENREL.CATENTRY_ID CATENTRY_ID_PARENT
+                             FROM CATGPENREL 
+                                  INNER JOIN TI_CATENTRY_#INDEX_SCOPE_TAG# ON (TI_CATENTRY_#INDEX_SCOPE_TAG#.CATENTRY_ID=CATGPENREL.CATENTRY_ID)        
+                                  LEFT JOIN CATENTREL ON (CATGPENREL.CATENTRY_ID = CATENTREL.CATENTRY_ID_CHILD)
+                             WHERE TI_CATENTRY_#INDEX_SCOPE_TAG#.CATENTTYPE_ID='ItemBean'
+                               AND CATALOG_ID=#MASTER_CATALOG_ID#
+                               AND CATENTREL.CATENTRY_ID_CHILD IS NULL)" />
+        <_config:property name="no_logging_sql" value="alter table #TABLE_NAME# activate not logged initially" />
+    </_config:data-processing-config>
+
+    <_config:data-processing-config processor="com.ibm.commerce.foundation.dataimport.preprocess.StaticAttributeDataPreProcessor" fetchSize="500" batchSize="500">
+        <_config:table definition="CREATE TABLE TI_GROUPING_VARIANT_#INDEX_SCOPE_TAG# (COMBINEKEY VARCHAR(50) not null, CATENTRY_ID BIGINT NOT NULL, GROUPING_VARIANT BIGINT, PRIMARY KEY (COMBINEKEY))" name="TI_GROUPING_VARIANT_#INDEX_SCOPE_TAG#"/>
+        <_config:query sql="SELECT CATENTRY_ID ||'_'|| CATENTRY_ID_PARENT COMBINEKEY,
+                                   CATENTRY_ID,
+                                   CATENTRY_ID_PARENT
+                            FROM CATENTREL R,
+                                 TI_CATENTRY_#INDEX_SCOPE_TAG# C
+                            WHERE R.CATENTRY_ID_CHILD = C.CATENTRY_ID
+                              AND R.CATRELTYPE_ID = 'VARIANT_ITEM'
+                            ORDER BY CATENTRY_ID" />
+        <_config:mapping>
+            <_config:key queryColumn="COMBINEKEY" tableColumn="COMBINEKEY"/>
+            <_config:column-mapping>
+                <_config:column-column-mapping>
+                    <_config:column-column queryColumn="CATENTRY_ID_PARENT" tableColumn="GROUPING_VARIANT" />
+                    <_config:column-column queryColumn="CATENTRY_ID" tableColumn="CATENTRY_ID" />
+                </_config:column-column-mapping>
+            </_config:column-mapping>
+        </_config:mapping>
+    </_config:data-processing-config>
+
+</_config:DIHPreProcessConfig>

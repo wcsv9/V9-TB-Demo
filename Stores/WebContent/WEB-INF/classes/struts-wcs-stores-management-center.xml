@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="management-center" namespace="/">
+       
+        <action  name="PreviewStore">
+            <result name="success">/tools/preview/StorePreviewer.jsp</result>        
+        </action>
+        
+        <action name="PreviewStoreHeader">
+            <result name="success">/tools/preview/StorePreviewerHeader.jsp</result>
+        </action>
+        
+        <action  name="PreviewTokenCreateURLView">
+            <result name="success">/tools/preview/PreviewTokenCreateURL.jsp</result>
+        </action>
+        
+        <action name="StorePreviewLinkView">
+            <result name="success">/tools/preview/StorePreviewLink.jsp</result>
+        </action>
+        
+        <action name="EmailTemplatePreviewDialog">
+            <result name="success">/tools/preview/EmailTemplatePreviewDialog.jsp</result>
+        </action>
+        
+    </package>
+</struts>

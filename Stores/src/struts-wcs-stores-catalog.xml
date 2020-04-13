@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="catalog" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="DisableRuleBasedCategoryEvaluation">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.catalog.commands.DisableRuleBasedCategoryEvaluationCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="EvaluateRuleBasedCategories">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.catalog.commands.EvaluateRuleBasedCategoriesScheduledCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="PopulateExpressionsForCatalogFilters">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.catalog.commands.PopulateExpressionsForCatalogFiltersCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="RefreshExternalContent">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.catalog.facade.server.commands.ScheduledExternalContentRefreshCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="RuleBasedCategoryEvaluation">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.catalog.commands.RuleBasedCategoryEvaluationCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ScheduledCatalogFilterCategoryImport">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.catalog.commands.ScheduledCatalogFilterCategoryImportCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ScheduledCatalogFilterCatentryImport">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.catalog.commands.ScheduledCatalogFilterCatentryImportCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ScheduledCatalogFilterConditionGroupImport">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.catalog.commands.ScheduledCatalogFilterConditionGroupImportCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ScheduledCatalogFilterConditionImport">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.catalog.commands.ScheduledCatalogFilterConditionImportCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ScheduledCatalogFilterImport">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.catalog.commands.ScheduledCatalogFilterImportCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ScheduledCatalogImport">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.catalog.commands.ScheduledCatalogImportCmd</param>
+        </action>
+		<action class="com.ibm.commerce.struts.v2.BaseAction" name="ScheduledCatalogExport">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.catalog.commands.ScheduledCatalogExportCmd</param>
+        </action>
+    </package>
+</struts>

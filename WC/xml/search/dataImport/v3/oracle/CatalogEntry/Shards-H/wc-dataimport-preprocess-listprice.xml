@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ =================================================================
+  Licensed Materials - Property of IBM
+
+  WebSphere Commerce
+
+  (C) Copyright IBM Corp. 2016, 2019 All Rights Reserved.
+
+  US Government Users Restricted Rights - Use, duplication or
+  disclosure restricted by GSA ADP Schedule Contract with
+  IBM Corp.
+ =================================================================
+-->
+<_config:DIHPreProcessConfig xmlns:_config="http://www.ibm.com/xmlns/prod/commerce/foundation/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ibm.com/xmlns/prod/commerce/foundation/config ../../xsd/wc-dataimport-preprocess.xsd">
+
+<_config:data-processing-config processor="com.ibm.commerce.foundation.dataimport.preprocess.StaticAttributeDataPreProcessor" batchSize="500">
+    <_config:table definition="CREATE TABLE TI_LIST_#INDEX_SCOPE_TAG# (OFFER_ID NUMBER NOT NULL, CATENTRY_ID NUMBER NOT NULL, PRIMARY KEY (OFFER_ID))" name="TI_LIST_#INDEX_SCOPE_TAG#"/>
+    <_config:query sql="(SELECT O.OFFER_ID,
+                               O.CATENTRY_ID
+                        FROM   OFFER O,
+                               (SELECT MAX(O.PRECEDENCE) MAX_PRECEDENCE,
+                                       O.TRADEPOSCN_ID,
+                                       O.CATENTRY_ID
+                                FROM   OFFER O, 
+                                       TRADEPOSCN T,
+                                       STORECENT S,
+									   STORETPC TS,
+                                       TI_CATENTRY_#INDEX_SCOPE_TAG# CE
+                                WHERE T.TRADEPOSCN_ID = TS.TRADEPOSCN_ID
+										AND S.STOREENT_ID = TS.STOREENT_ID
+										AND TS.STTPCUSG_ID = 1
+										AND O.TRADEPOSCN_ID = T.TRADEPOSCN_ID
+										AND O.CATENTRY_ID = S.CATENTRY_ID
+										AND O.CATENTRY_ID = CE.CATENTRY_ID
+										AND (O.STARTDATE IS NULL OR CURRENT_TIMESTAMP &gt; O.STARTDATE)
+										AND (O.ENDDATE IS NULL OR O.ENDDATE &gt; CURRENT_TIMESTAMP)
+										AND O.PUBLISHED = 1 
+										AND (O.MINIMUMQUANTITY IN (1, 0) OR O.MINIMUMQUANTITY IS NULL)
+                                GROUP BY O.TRADEPOSCN_ID,
+                                         O.CATENTRY_ID) FILTER
+                        WHERE  O.TRADEPOSCN_ID = FILTER.TRADEPOSCN_ID
+								AND O.CATENTRY_ID = FILTER.CATENTRY_ID
+								AND O.PRECEDENCE = FILTER.MAX_PRECEDENCE
+								AND (O.STARTDATE IS NULL OR CURRENT_TIMESTAMP &gt; O.STARTDATE)
+								AND (O.ENDDATE IS NULL OR O.ENDDATE &gt; CURRENT_TIMESTAMP)
+								AND O.PUBLISHED = 1)                                                
+						UNION
+						(SELECT O.OFFER_ID,
+                               O.CATENTRY_ID
+                        FROM   OFFER O,
+                               (SELECT MAX(O.PRECEDENCE) MAX_PRECEDENCE,
+                                       O.TRADEPOSCN_ID,
+                                       O.CATENTRY_ID
+                                FROM   OFFER O, 
+                                       TRADEPOSCN T,
+                                       STORECENT S,
+									   STORETPC TS,
+                                       TI_CEPCHILD_#INDEX_SCOPE_TAG# CE
+                                WHERE T.TRADEPOSCN_ID = TS.TRADEPOSCN_ID
+										AND S.STOREENT_ID = TS.STOREENT_ID
+										AND TS.STTPCUSG_ID = 1
+										AND O.TRADEPOSCN_ID = T.TRADEPOSCN_ID
+										AND O.CATENTRY_ID = S.CATENTRY_ID
+										AND O.CATENTRY_ID = CE.CATENTRY_ID
+										AND (O.STARTDATE IS NULL OR CURRENT_TIMESTAMP &gt; O.STARTDATE)
+										AND (O.ENDDATE IS NULL OR O.ENDDATE &gt; CURRENT_TIMESTAMP)
+										AND O.PUBLISHED = 1 
+										AND (O.MINIMUMQUANTITY IN (1, 0) OR O.MINIMUMQUANTITY IS NULL)
+                                GROUP BY O.TRADEPOSCN_ID,
+                                         O.CATENTRY_ID) FILTER
+                        WHERE  O.TRADEPOSCN_ID = FILTER.TRADEPOSCN_ID
+								AND O.CATENTRY_ID = FILTER.CATENTRY_ID
+								AND O.PRECEDENCE = FILTER.MAX_PRECEDENCE
+								AND (O.STARTDATE IS NULL OR CURRENT_TIMESTAMP &gt; O.STARTDATE)
+								AND (O.ENDDATE IS NULL OR O.ENDDATE &gt; CURRENT_TIMESTAMP)
+								AND O.PUBLISHED = 1                                                                                                
+						)
+                        ORDER BY OFFER_ID"/>
+		<_config:mapping>
+		  <_config:key queryColumn="OFFER_ID" tableColumn="OFFER_ID"/>
+		  <_config:column-mapping>
+			<_config:column-column-mapping>
+				<_config:column-column queryColumn="CATENTRY_ID" tableColumn="CATENTRY_ID" />
+			</_config:column-column-mapping>
+		  </_config:column-mapping>
+		</_config:mapping>
+	</_config:data-processing-config>
+    
+	<_config:data-processing-config processor="com.ibm.commerce.foundation.dataimport.preprocess.FinalViewDataPreProcessor" batchSize="500">
+		<_config:table definition="	CREATE VIEW VI_LISTPRICE_#INDEX_SCOPE_TAG# AS SELECT CATENTRY_ID, LISTAGG(PRICE, '||')  WITHIN GROUP(ORDER BY CATENTRY_ID) AS PRICE FROM (
+										(SELECT 
+											L.CATENTRY_ID CATENTRY_ID,  'listprice_'||P.CURRENCY ||':'||P.PRICE PRICE 
+										FROM 
+											OFFERPRICE P, TI_LIST_#INDEX_SCOPE_TAG# L, TI_CATENTRY_#INDEX_SCOPE_TAG# CE 
+										WHERE 
+											P.OFFER_ID = L.OFFER_ID 
+											AND CE.CATENTTYPE_ID &lt;&gt; 'BundleBean' 
+											AND CE.CATENTRY_ID = L.CATENTRY_ID)
+										UNION
+										(SELECT 
+											L.CATENTRY_ID CATENTRY_ID,  'listprice_'||P.CURRENCY ||':'||P.PRICE PRICE 
+										FROM 
+											OFFERPRICE P, TI_LIST_#INDEX_SCOPE_TAG# L, TI_CEPCHILD_#INDEX_SCOPE_TAG# CE 
+										WHERE 
+											P.OFFER_ID = L.OFFER_ID 
+											AND CE.CATENTRY_ID = L.CATENTRY_ID)
+										ORDER BY 
+											CATENTRY_ID, PRICE DESC
+									)GROUP BY CATENTRY_ID" name="VI_LISTPRICE_#INDEX_SCOPE_TAG#"/>
+		<_config:query sql="SELECT 1 CATENTRY_ID FROM CATENTRY WHERE 1=-1"/>
+		<_config:mapping>
+		  <_config:key queryColumn="CATENTRY_ID" tableColumn="CATENTRY_ID"/>
+		  <_config:column-mapping>
+			<_config:column-column-mapping>
+				<_config:column-column queryColumn="PRICE" tableColumn="PRICE"/>
+			</_config:column-column-mapping>
+		  </_config:column-mapping>
+		</_config:mapping>
+	</_config:data-processing-config>
+	
+	<_config:data-processing-config processor="com.ibm.commerce.foundation.dataimport.preprocess.FinalViewDataPreProcessor" batchSize="500">
+		<_config:table definition="	CREATE VIEW VI_LBUNDLEPRICE_#INDEX_SCOPE_TAG# AS SELECT CATENTRY_ID, LISTAGG(PRICE, '||')  WITHIN GROUP(ORDER BY CATENTRY_ID) AS PRICE FROM (
+										SELECT
+											CATENTREL.CATENTRY_ID_PARENT CATENTRY_ID, 'listprice_'||P.CURRENCY ||':'|| SUM(P.PRICE * cast(CATENTREL.QUANTITY as decimal)) PRICE
+										FROM
+											TI_CEPCHILD_#INDEX_SCOPE_TAG# ITEM, CATENTREL, OFFERPRICE P, TI_LIST_#INDEX_SCOPE_TAG# L
+										WHERE
+											P.OFFER_ID = L.OFFER_ID  AND
+											ITEM.CATENTRY_ID = L.CATENTRY_ID AND
+											CATENTREL.CATENTRY_ID_CHILD = ITEM.CATENTRY_ID AND
+											CATENTREL.CATRELTYPE_ID ='BUNDLE_COMPONENT' AND
+											EXISTS(SELECT * FROM TI_CATENTRY_#INDEX_SCOPE_TAG# BUNDLE WHERE BUNDLE.CATENTRY_ID=CATENTREL.CATENTRY_ID_PARENT)
+										GROUP BY 
+											CATENTREL.CATENTRY_ID_PARENT, P.CURRENCY 
+										ORDER BY 
+											CATENTREL.CATENTRY_ID_PARENT
+									)GROUP BY CATENTRY_ID" name="VI_LBUNDLEPRICE_#INDEX_SCOPE_TAG#"/>
+		<_config:query sql="SELECT 1 CATENTRY_ID FROM CATENTRY WHERE 1=-1"/>
+		<_config:mapping>
+		  <_config:key queryColumn="CATENTRY_ID" tableColumn="CATENTRY_ID"/>
+		  <_config:column-mapping>
+			<_config:column-column-mapping>
+				<_config:column-column queryColumn="PRICE" tableColumn="PRICE"/>
+			</_config:column-column-mapping>
+		  </_config:column-mapping>
+		</_config:mapping>
+	</_config:data-processing-config>
+		
+	<_config:data-processing-config processor="com.ibm.commerce.foundation.dataimport.preprocess.FinalViewDataPreProcessor" batchSize="500">
+		<_config:table definition="	CREATE VIEW VI_LDKITPRICE_#INDEX_SCOPE_TAG# AS SELECT CATENTRY_ID, LISTAGG(PRICE, '||')  WITHIN GROUP(ORDER BY CATENTRY_ID) AS PRICE FROM (
+										(SELECT 
+											CATENTREL.CATENTRY_ID_PARENT CATENTRY_ID, 'price_'||P.CURRENCY ||':'|| SUM(P.PRICE * cast(CATENTREL.QUANTITY as decimal)) PRICE
+										FROM 
+											TI_CEPCHILD_#INDEX_SCOPE_TAG# ITEM, CATENTREL, OFFERPRICE P, TI_LIST_#INDEX_SCOPE_TAG# L
+										WHERE
+											P.OFFER_ID = L.OFFER_ID  AND
+											ITEM.CATENTRY_ID=L.CATENTRY_ID AND
+											CATENTREL.CATENTRY_ID_CHILD=ITEM.CATENTRY_ID AND
+											CATENTREL.CATRELTYPE_ID='PDK_COMPONENT' AND			
+											EXISTS(SELECT * FROM TI_CATENTRY_#INDEX_SCOPE_TAG# DK WHERE DK.CATENTRY_ID=CATENTREL.CATENTRY_ID_PARENT)
+										GROUP BY 
+											CATENTREL.CATENTRY_ID_PARENT, P.CURRENCY)
+										UNION
+										(SELECT 
+											DKPDCCATENTREL.CATENTRY_ID, 'price_'||P.CURRENCY ||':'|| SUM(P.PRICE * cast(DKPDCCOMPLIST.QUANTITY as decimal)) PRICE
+			                             FROM 
+											TI_CEPCHILD_#INDEX_SCOPE_TAG# CHILD, DKPDCCATENTREL, DKPDCCOMPLIST, OFFERPRICE P, TI_LIST_#INDEX_SCOPE_TAG# L
+			                             WHERE 
+											CHILD.CATENTRY_ID = DKPDCCOMPLIST.CATENTRY_ID AND
+			                                DKPDCCOMPLIST.DKPREDEFCONF_ID = DKPDCCATENTREL.DKPREDEFCONF_ID AND
+			                                L.CATENTRY_ID = CHILD.CATENTRY_ID AND
+			                                DKPDCCATENTREL.SEQUENCE = 0 AND
+			                                EXISTS (SELECT *
+			                                           FROM TI_CATENTRY_#INDEX_SCOPE_TAG# DYNAMICKIT
+			                                           WHERE DYNAMICKIT.CATENTRY_ID = DKPDCCATENTREL.CATENTRY_ID 
+			                                             AND DYNAMICKIT.CATENTTYPE_ID='DynamicKitBean')
+			                             GROUP BY 
+											DKPDCCATENTREL.CATENTRY_ID,P.CURRENCY)
+									)GROUP BY CATENTRY_ID" name="VI_LDKITPRICE_#INDEX_SCOPE_TAG#"/>
+		<_config:query sql="SELECT 1 CATENTRY_ID FROM CATENTRY WHERE 1=-1"/>
+		<_config:mapping>
+		  <_config:key queryColumn="CATENTRY_ID" tableColumn="CATENTRY_ID"/>
+		  <_config:column-mapping>
+			<_config:column-column-mapping>
+				<_config:column-column queryColumn="PRICE" tableColumn="PRICE"/>
+			</_config:column-column-mapping>
+		  </_config:column-mapping>
+		</_config:mapping>
+	</_config:data-processing-config>
+  
+</_config:DIHPreProcessConfig>
+

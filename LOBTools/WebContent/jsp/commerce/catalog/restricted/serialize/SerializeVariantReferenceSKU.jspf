@@ -1,0 +1,72 @@
+<%--
+ =================================================================
+  Licensed Materials - Property of IBM
+
+  WebSphere Commerce
+
+  (C) Copyright IBM Corp. 2007, 2011 All Rights Reserved.
+
+  US Government Users Restricted Rights - Use, duplication or
+  disclosure restricted by GSA ADP Schedule Contract with
+  IBM Corp.
+ =================================================================
+--%>
+
+<objects
+	recordSetCompleteIndicator="${showVerb.recordSetCompleteIndicator}"
+	recordSetReferenceId="${showVerb.recordSetReferenceId}"
+	recordSetStartNumber="${showVerb.recordSetStartNumber}"
+	recordSetCount="${showVerb.recordSetCount}"
+	recordSetTotal="${showVerb.recordSetTotal}"> <c:if
+	test="${!(empty catalogEntries)}">
+	<c:forEach var="catalogEntry" items="${catalogEntries}">
+
+		<object objectType="VariantReferenceSKU">
+
+			<childCatalogEntryId>
+			<wcf:cdata
+				data="${catalogEntry.catalogEntryIdentifier.uniqueID}_${param.catentryId}" /></childCatalogEntryId>
+			<c:set var="childTypeLocked" value='' />
+			<c:set var="inherited" value="" />
+			<c:if
+				test="${catalogEntry.catalogEntryIdentifier.externalIdentifier.storeIdentifier.uniqueID != param.storeId }">
+				<c:set var="inherited" value="Inherited" />
+				<c:set var="childTypeLocked" value='readonly="true"' />
+			</c:if>
+
+			<c:set var="objectType" value="${inherited}ProductSKU" />
+			<c:set var="childType" value="Child${objectType}" />
+			<%-- Need special handling for Product SKU --%>
+
+			<object objectType="${objectType}">
+
+				<catenttypeId readonly="true"> <wcf:cdata
+					data="${catalogEntry.catalogEntryTypeCode}" /></catenttypeId>
+				<catentryId> <wcf:cdata
+					data="${catalogEntry.catalogEntryIdentifier.uniqueID}" /></catentryId>
+				<ownerId> <wcf:cdata
+					data="${catalogEntry.catalogEntryIdentifier.externalIdentifier.ownerID}" /></ownerId>
+				<objectStoreId> <wcf:cdata
+					data="${catalogEntry.catalogEntryIdentifier.externalIdentifier.storeIdentifier.uniqueID}" /></objectStoreId>
+				<partnumber> <wcf:cdata
+					data="${catalogEntry.catalogEntryIdentifier.externalIdentifier.partNumber}" /></partnumber>
+				<c:forEach var="description" items="${catalogEntry.description}">
+					<object objectType="CatalogEntryDescription">
+						<languageId> <wcf:cdata
+							data="${description.language}" /></languageId>
+						<catalogEntryId> <wcf:cdata
+							data="${catalogEntry.catalogEntryIdentifier.uniqueID}" /></catalogEntryId>
+						<name> <wcf:cdata data="${description.name}" /></name>
+						<sDesc> <wcf:cdata data="${description.shortDescription}" /></sDesc>
+						<lDesc> <wcf:cdata data="${description.longDescription}" /></lDesc>
+						<keyword> <wcf:cdata data="${description.keyword}" /></keyword>
+						<fImage> <wcf:cdata data="${description.fullImage}" /></fImage>
+						<tImage> <wcf:cdata data="${description.thumbnail}" /></tImage>
+					</object>
+				</c:forEach>
+			</object>
+		</object>
+
+	</c:forEach>
+</c:if> </objects>
+

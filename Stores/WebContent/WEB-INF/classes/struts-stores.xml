@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<constant name="struts.action.extension" value=""/> 
+	<constant name="struts.custom.i18n.resources" value="com.ibm.commerce.ras.properties.ecServerMessages,com.ibm.commerce.catalog.ras.properties.WcCatalogUserMessages,com.ibm.commerce.pa.ras.properties.WcPAUserMessages,com.ibm.commerce.search.ras.properties.WcSearchUserMessages,com.ibm.commerce.runtime.ras.properties.WcRuntimeUserMessages,com.ibm.commerce.tools.devtools.ras.properties.WcDevToolsUserMessages,com.ibm.commerce.tools.ras.properties.WcToolsUserMessages,com.ibm.commerce.bi.ras.properties.WcBIUserMessages,com.ibm.commerce.messaging.ras.properties.WcMessagingUserMessages,com.ibm.commerce.portal.ras.properties.WcPortalUserMessages,com.ibm.commerce.approval.ras.properties.WcApprovalUserMessages,com.ibm.commerce.collaboration.ras.properties.WcCollaborationUserMessages,com.ibm.commerce.contract.ras.properties.WcContractUserMessages,com.ibm.commerce.price.ras.properties.WcPriceUserMessages,com.ibm.commerce.ubf.ras.properties.WcUBFUserMessages,com.ibm.commerce.emarketing.ras.properties.WcEMarketingUserMessages,com.ibm.commerce.personalization.ras.properties.WcPersonalizationUserMessages,com.ibm.commerce.rules.ras.properties.WcRulesUserMessages,com.ibm.commerce.member.ras.properties.WcMemberUserMessages,com.ibm.commerce.promotion.ras.properties.WcPromotionUserMessages,com.ibm.commerce.order.ras.properties.WcOrderUserMessages,com.ibm.commerce.payment.ras.properties.WcPaymentUserMessages,com.ibm.commerce.fulfillment.ras.properties.WcFulfillmentUserMessages,com.ibm.commerce.inventory.ras.properties.WcInventoryUserMessages,com.ibm.commerce.ordermanagement.ras.properties.WcOrderManagementUserMessages,com.ibm.commerce.returns.ras.properties.WcReturnsUserMessages,com.ibm.commerce.negotiation.ras.properties.WcNegotiationUserMessages,com.ibm.commerce.rfq.ras.properties.WcRFQUserMessages,com.ibm.commerce.utf.ras.properties.WcUTFUserMessages" />
+
+	
+	<include file="struts-wcs-stores.xml"></include>
+	<include file="struts-wcs-stores-approval-rest-services.xml"></include>
+	<include file="struts-wcs-stores-catalog-services.xml"></include>
+	<include file="struts-wcs-stores-catalog.xml"></include>
+	<include file="struts-wcs-stores-contract-services.xml"></include>
+	<include file="struts-wcs-stores-coupon-rest-services.xml"></include>
+	<include file="struts-wcs-stores-dataload.xml"></include>
+	<include file="struts-wcs-stores-giftcenter-rest-services.xml"></include>
+	<include file="struts-wcs-stores-inventory-services.xml"></include>
+	<include file="struts-wcs-stores-location-services.xml"></include>
+	<include file="struts-wcs-stores-management-center.xml"></include>
+	<include file="struts-wcs-stores-marketing-rest-services.xml"></include>
+	<include file="struts-wcs-stores-marketing-services.xml"></include>
+	<include file="struts-wcs-stores-member-services.xml"></include>
+	<include file="struts-wcs-stores-migrate.xml"></include>
+	<include file="struts-wcs-stores-order-rest-services.xml"></include>
+	<include file="struts-wcs-stores-order-services.xml"></include>
+	<include file="struts-wcs-stores-organization-rest-services.xml"></include>
+	<include file="struts-wcs-stores-pagelayout.xml"></include>
+	<include file="struts-wcs-stores-person-rest-services.xml"></include>
+	<include file="struts-wcs-stores-price-services.xml"></include>
+	<include file="struts-wcs-stores-promotion-rest-services.xml"></include>
+	<include file="struts-wcs-stores-promotion-services.xml"></include>
+	<include file="struts-wcs-stores-requisitionlist-rest-services.xml"></include>
+	<include file="struts-wcs-stores-search.xml"></include>
+	<include file="struts-wcs-stores-seo.xml"></include>
+	<include file="struts-wcs-stores-store-services.xml"></include>
+	<include file="struts-wcs-stores-subscription-rest-services.xml"></include>
+	<include file="struts-wcs-stores-subscription-services.xml"></include>
+	<include file="struts-wcs-stores-wallet-services.xml"></include>
+	<include file="struts-wcs-stores-widgets.xml"></include>
+	<include file="struts-wcs-stores-widgetsV2.xml"></include>	
+	<include file="struts-wc-webservices.xml"></include>
+	<include file="struts-wcs-stores-custom.xml"></include>
+				
+</struts>

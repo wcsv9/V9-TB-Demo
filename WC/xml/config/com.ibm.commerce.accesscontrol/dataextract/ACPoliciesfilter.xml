@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+
+
+<!-- This is the output expected from the filter GUI given a appropriate Filter template file -->
+
+<sqlx>
+
+  <functionDef id="Language" description="Extract Member Group" schemaentity="language">
+    <body>
+      select * from language
+    </body>
+  </functionDef>
+
+  <functionDef id="Mbrgrp" description="Extract Member Group" schemaentity="mbrgrp">
+    <body>
+      select * from mbrgrp
+    </body>
+  </functionDef>
+
+  <functionDef id="Acattr" description="Extract Attribute" schemaentity="acattr">
+    <!-- <paramDef name=":acattrname" type="string" defaultValue="" description="Attribute Name"/> -->
+    <body>
+      select * from acattr order by acattr_id
+    </body>
+  </functionDef> 
+
+  <functionDef id="Acaction" description="Extract Action" schemaentity="acaction">
+    <body>
+      select * from acaction order by acaction_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acrelation" description="Extract Relation" schemaentity="acrelation">
+    <body>
+      select * from acrelation order by acrelation_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acrelgrp" description="Extract Relation Group" schemaentity="acrelgrp">
+    <body>
+      select * from acrelgrp order by acrelgrp_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acrescgry" description="Extract Resource Category" schemaentity="acrescgry">
+    <body>
+      select * from acrescgry order by acrescgry_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acresprim" description="Extract Resource Primary" schemaentity="acresprim">
+    <body>
+      select * from acresprim order by acrescgry_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acresatrel" description="Extract Resource Attribute" schemaentity="acresatrel">
+    <body>
+      select * from acresatrel order by acrescgry_id, acattr_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acresact" description="Extract Resource Action" schemaentity="acresact">
+    <body>
+      select * from acresact order by acrescgry_id, acaction_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acresrel" description="Extract Resource Relation" schemaentity="acresrel">
+    <body>
+      select * from acresrel order by acrescgry_id, acrelation_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acactgrp" description="Extract Action Group" schemaentity="acactgrp">
+    <body>
+      select * from acactgrp order by acactgrp_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acactactgp" description="Extract Action Group Action" schemaentity="acactactgp">
+    <body>
+      select * from acactactgp order by acactgrp_id, acaction_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acresgrp" description="Extract Resource Group" schemaentity="acresgrp">
+    <body>
+      select * from acresgrp order by acresgrp_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acresgpres" description="Extract Resource Group Resource" schemaentity="acresgpres">
+    <body>
+      select * from acresgpres order by acresgrp_id, acrescgry_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acpolicy" description="Extract Policies" schemaentity="acpolicy">
+    <body>
+      select * from acpolicy order by acpolicy_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acpolgrp" description="Extract Policy Group" schemaentity="acpolgrp">
+    <body>
+      select * from acpolgrp order by acpolgrp_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acpolgppol" description="Extract Policy Group Policy" schemaentity="acpolgppol">
+    <body>
+      select * from acpolgppol order by acpolgrp_id, acpolicy_id
+    </body>
+  </functionDef>
+
+  <functionDef id="Acplgpsubs" description="Extract Policy Group Subscription" schemaentity="acplgpsubs">
+    <body>
+      select * from acplgpsubs order by acpolgrp_id, orgentity_id
+    </body>
+  </functionDef>
+
+<!-- Begin Execute Block. The functions referenced here only will be executed by the Extract Engine. -->
+<!-- The functionDef elements are like predefines, whereas execute blocks are the ones executed      -->
+
+  <execute>
+    <function id="Language"/>
+  </execute>
+
+  <execute>
+    <function id="Mbrgrp"/>
+  </execute>  
+
+  <execute>
+    <!--   <param name=":acattrname" value="'status'"/>   -->
+    <function id="Acattr"/>
+  </execute>
+
+  <execute>
+    <function id="Acaction"/>
+  </execute>
+  
+  <execute>
+    <function id="Acrelation"/>
+  </execute>
+
+  <execute>
+    <function id="Acrelgrp"/>
+  </execute>
+
+  <execute>
+    <function id="Acrescgry"/>
+  </execute>
+
+  <execute>
+    <function id="Acresprim"/>
+  </execute>
+
+  <execute>
+    <function id="Acresatrel"/>
+  </execute>
+
+  <execute>
+    <function id="Acresact"/>
+  </execute>
+
+  <execute>
+    <function id="Acresrel"/>
+  </execute>
+
+  <execute>
+    <function id="Acactgrp"/>
+  </execute>
+  
+  <execute>
+    <function id="Acactactgp"/>
+  </execute>
+
+  <execute>
+    <function id="Acresgrp"/>
+  </execute>
+
+  <execute>
+    <function id="Acresgpres"/>
+  </execute>
+
+  <execute>
+    <function id="Acpolicy"/>
+  </execute>
+
+  <execute>
+    <function id="Acpolgrp"/>
+  </execute>
+
+  <execute>
+    <function id="Acpolgppol"/>
+  </execute>
+
+  <execute>
+    <function id="Acplgpsubs"/>
+  </execute>
+
+</sqlx>
+
+

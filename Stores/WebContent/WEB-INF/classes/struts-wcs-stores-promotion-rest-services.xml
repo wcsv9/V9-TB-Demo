@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="promotion-rest-services" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTPromotionCodeApply">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">assigned_promotion_code.applyPromotioncode</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTPromotionCodeRemove">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">assigned_promotion_code.removePromotionCode</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTPromotionCodeApply">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">assigned_promotion_code.applyPromotioncode</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTPromotionCodeRemove">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">assigned_promotion_code.removePromotionCode</param>
+        </action>
+    </package>
+</struts>

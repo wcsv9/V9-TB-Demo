@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-accelerator" name="promotion-services" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="PopulateUniquePromotionCodes">
+            <param name="parameter">com.ibm.commerce.promotion.uniquecode.commands.UniquePromotionCodesPopulateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ScheduledPromotionCodeExport">
+            <param name="parameter">com.ibm.commerce.promotion.commands.ScheduledPromotionCodeExportCmd</param>
+        </action>
+    </package>
+</struts>

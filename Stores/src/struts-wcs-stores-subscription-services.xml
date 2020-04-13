@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="subscription-services" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxSubscriptionChangeServiceSubscriptionCancel">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">subscription.cancelSubscription</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="SubscriptionChangeServiceSubscriptionCancel">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">subscription.cancelSubscription</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SubscriptionSchedulerCmd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.subscription.scheduler.SubscriptionSchedulerCmd</param>
+        </action>
+    </package>
+</struts>

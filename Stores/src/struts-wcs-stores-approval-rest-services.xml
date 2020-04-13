@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="approval-rest-services" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTHandleApproval">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">approval.performAction</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTHandleApprovals">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">approval.performAction</param>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ =================================================================
+  Licensed Materials - Property of IBM
+
+  WebSphere Commerce
+
+  (C) Copyright IBM Corp. 2015 All Rights Reserved.
+
+  US Government Users Restricted Rights - Use, duplication or
+  disclosure restricted by GSA ADP Schedule Contract with
+  IBM Corp.
+ =================================================================
+-->
+<Definitions>
+	<!---
+		@keywords abstract
+	
+		This class provides custom save logic for business objects.
+		The custom save logic is written in the <code>save</code> method.
+		Instances of cmc/foundation/SaveHandler can only be declared as children of an instance
+		of {@link cmc/foundation/ObjectDefinition}. When the framework detects that the business
+		user is attempting to save an object that has an associated save handler,
+		then the save handler will be invoked instead of the standard save logic.
+		
+		<p>The following example demonstrates the declaration of a save handler.
+
+		@START_CODE
+		<class name="cmc/catalog/MerchandingAssociationsSaveHandler" extends="cmc/foundation/SaveHandler">
+			<method name="save" args="object">
+				<![CDATA[
+				//Implementation goes here...
+				]]>
+			</method>
+		</class>
+
+		<OrganizationalObjectDefinition definitionName="ManyToManyMerchandisingAssociation"
+			objectType="ManyToManyMerchandisingAssociation"
+			creatable="true"
+			propertiesDefinition="cmc/catalog/MerchandisingAssociationMapping">
+			<MerchandingAssociationsSaveHandler package="cat"/>
+		</OrganizationalObjectDefinition>
+		@END_CODE
+
+		<p>When an instance of the many to many merchandising association organizational object is
+		saved, the save method on the save handler will be invoked.
+	-->
+	<Node classDefinition="true" definitionName="cmc/foundation/SaveHandler">
+		<!---
+			@keywords private
+			Initialize this class and add this to parent.saveHandler.
+		-->
+		<method name="init">
+			<![CDATA[
+			this.inherited(arguments);
+			this.parent.saveHandler = this;
+			]]>
+		</method>
+
+		<!---
+			@keywords abstract
+			Perform the logic required to save the object.
+			@param cmc/foundation/ModelObject object: the object to be saved
+		-->
+		<method args="object" name="save">
+			<![CDATA[
+
+			]]>
+		</method>
+	</Node>
+
+	<!---
+		@keywords abstract
+	
+		This class provides custom response handling logic for services.
+		The custom response handling logic is written in the <code>handleResponse</code> method.
+		Instances of cmc/foundation/ResponseHandler can only be declared as children of an instance
+		of {@link cmc/foundation/Service}. When the framework receives a response from a service request,
+		then the response handler will be invoked to handle the response. Generally,
+		this involves converting the response into XML and setting the dataXML property of the
+		associated service dataset.
+	-->
+	<Node classDefinition="true" definitionName="cmc/foundation/ResponseHandler">
+		<!---
+			@keywords private
+			Initialize this class and add this to parent.responseHandler.
+		-->
+		<method name="init">
+			<![CDATA[
+			this.inherited(arguments);
+			this.parent.responseHandler = this;
+			]]>
+		</method>
+
+		<!---
+			@keywords abstract
+			Perform the logic required to handle a response.
+			@param cmc/foundation/ServiceDataset ds: dataset
+			@param string responseData: the service response
+		-->
+		<method args="ds, responseData" name="handleResponse">
+			<![CDATA[
+
+			]]>
+		</method>
+		
+		<!---
+			Serialize all of the properties of a JSON object into XML.
+			@param o JSON object
+		-->
+		<method name="serializeProperties" args="o">
+			<![CDATA[
+			var xml = "";
+			for (var i in o) {
+				var propertyType = typeof (o[i]);
+				if (propertyType != "object") {
+					xml += serializeProperty(o,i);
+				}
+			}
+			return xml;
+			]]>
+		</method>
+		
+		<!---
+			Serialize the specified property of a JSON object into XML.
+			@param o object: JSON object
+			@param propertyName string: the name of the property
+		-->
+		<method name="serializeProperty" args="o,propertyName">
+			<![CDATA[
+			return "<" + propertyName + "><![CDATA" + "[" + o[propertyName] + "]" + "]></" + propertyName + ">";
+			]]>
+		</method>
+	</Node>
+	
+	<!---
+		@keywords abstract
+	
+		This class provides custom error response handling logic for services.
+		The custom error response handling logic is written in the <code>handleErrorResponse</code> method.
+		Instances of cmc/foundation/ErrorResponseHandler can only be declared as children of an instance
+		of {@link cmc/foundation/Service}. When the framework receives an error response from a service request,
+		then the error response handler will be invoked to handle the error response. Generally,
+		this involves converting the error response into XML and setting the dataXML property of the
+		associated service dataset.
+	-->
+	<Node classDefinition="true" definitionName="cmc/foundation/ErrorResponseHandler">
+		<!---
+			@keywords private
+			Initialize this class and add this to parent.errorResponseHandler.
+		-->
+		<method name="init">
+			<![CDATA[
+			this.inherited(arguments);
+			this.parent.errorResponseHandler = this;
+			]]>
+		</method>
+
+		<!---
+			@keywords abstract
+			Perform the logic required to handle an error response.
+			@param cmc/foundation/ServiceDataset ds: dataset
+			@param number status response status
+			@param string responseData: the service response data
+		-->
+		<method args="ds,status,responseData" name="handleErrorResponse">
+			<![CDATA[
+
+			]]>
+		</method>
+		
+		<!---
+			Serialize a validation error into XML.
+			@param propertyName string: the property name
+			@param message string: the error message
+		-->
+		<method name="serializeValidationError" args="propertyName,message">
+			<![CDATA[
+			return "<validationError propertyName=\"" + propertyName + "\"><![CDATA" + "[" + message + "]" + "]></validationError>";
+			]]>
+		</method>
+		
+		<!---
+			Serialize an exception into XML.
+			@param code string: the error code
+			@param message string: the error message
+		-->
+		<method name="serializeException" args="code,message">
+			<![CDATA[
+			return "<exception code=\"" + code + "\"><![CDATA" + "[" + message + "]" + "]></exception>";
+			]]>
+		</method>
+	</Node>
+
+	<!---
+		@keywords abstract
+	
+		This class provides custom request handling logic for services.
+		The custom request handling logic is written in the <code>prepareRequest</code> method.
+		Instances of cmc/foundation/RequestHandler can only be declared as children of an instance
+		of {@link cmc/foundation/Service}. When the framework is sending the service request,
+		then the request handler will be invoked to prepare the request content. Generally,
+		this involves converting the resolved arguments into a JSON object and setting the jsonContent property of the
+		associated service dataset.
+	-->
+	<Node classDefinition="true" definitionName="cmc/foundation/RequestHandler">
+		<!---
+			@keywords private
+			Initialize this class and add this to parent.requestHandler.
+		-->
+		<method name="init">
+			<![CDATA[
+			this.inherited(arguments);
+			this.parent.requestHandler = this;
+			]]>
+		</method>
+
+		<!---
+			@keywords abstract
+			Perform the logic required to prepare a request.
+			@param cmc/foundation/ServiceDataset ds: dataset
+		-->
+		<method args="ds" name="prepareRequest">
+			<![CDATA[
+
+			]]>
+		</method>
+	</Node>
+
+	<!---
+		@keywords private
+	
+		This class provides custom logic for creating new business objects.
+		The custom new logic is written in the <code>createNewObject</code> 
+		method. Instances of cmc/foundation/NewHandler can only be declared as children of an instance
+		of {@link cmc/foundation/ObjectDefinition}. When the framework detects that the business
+		user is attempting to create an instance of an object that has an associated new handler,
+		then the new handler will be invoked instead of the standard create new object logic.
+
+		<p>The following example demonstrates the declaration of a new handler.
+
+		@START_CODE
+		<class name="cmc/foundation/ContentVersionNewHandler" extends="cmc/foundation/NewHandler">
+			<method name="createNewObject" args="objectDefinition, parentObject">
+				<![CDATA[
+				//Implementation goes here...
+				]]>
+			</method>
+		</class>
+
+		<ReferenceObjectDefinition
+			definitionName="cmc/foundation/BaseContentVersion"
+			idProperty="versionId"
+			isBaseDefinition="true"
+			copyProtected="true"
+			deferLoad="true"
+			objectType="ContentVersion">
+			<ContentVersionNewHandler/>
+		</ReferenceObjectDefinition>
+		@END_CODE
+	-->
+	<Node classDefinition="true" definitionName="cmc/foundation/NewHandler">
+	
+		<!---
+			@keywords private
+			Initialize this class and add this to parent.newHandler.
+		-->
+		<method name="init">
+			<![CDATA[
+			this.inherited(arguments);
+			this.parent.newHandler = this;
+			]]>
+		</method>
+		
+		<!---
+			@keywords abstract
+			Perform the logic required for the create new object action.
+			@param cmc/foundation/ObjectDefinition objectDefinition the object definition of the object to be created
+			@param cmc/foundation/ModelObject the parent object of the object to be created
+			@return cmc/foundation/ModelObject the new object, or null if the handler creates the object asynchronously
+		-->
+		<method args="objectDefinition, parentObject" name="createNewObject">
+			<![CDATA[
+
+			]]>
+		</method>
+		
+		<!---
+			@keywords private
+			Returns true if this new handler is enabled.
+			
+			@param cmc/foundation/ModelObject the parent object of the object to be created
+			@return boolean: true if the client action is enabled
+		-->
+		<method args="parentObject" name="isEnabled">
+			<![CDATA[
+			return true;
+			]]>
+		</method>
+		
+		<!---
+			@keywords abstract
+			Register a delegate to be executed when enablement condition changes
+			for the specified model object.
+			@param cmc/foundation/ModelObject the parent object of the object to be created
+			@param cmc/foundation/EventHandler del: the delegate
+		-->
+		<method args="parentObject, del" name="registerEnablementDelegate">
+			<![CDATA[
+
+			]]>
+		</method>
+		
+	</Node>
+
+	<!---
+		@keywords abstract
+		This class provides custom logic for creating new business objects.
+		The custom new logic is written in the <code>createNewObject</code> 
+		method. Instances of cmc/foundation/NewReferencedObjectHandler can only be declared
+		as children of an instance of {@link cmc/foundation/PropertyChildListEditor} or
+		{@link cmc/foundation/ChildListEditor}. When the business user creates a new instance
+		of a referenced object in the editor the new handler createNewObject
+		method will be invoked.
+
+		<p>The following example demonstrates the declaration of a new handler.
+
+		@START_CODE
+		<class name="cmc/marketing/NewWebActivityHandler" extends="cmc/foundation/NewReferencedObjectHandler">
+			<method name="createNewObject" args="objectDefinition, parentObject, del=null">
+				<![CDATA[
+				//Implementation goes here...
+				]]>
+			</method>
+		</class>
+		
+		<PropertyChildListEditor 
+			listDefinition="cmc/pagelayout/WebActivityGrid" 
+			name="WebActivity"
+			objectTypes="ChildWebActivity,ChildInheritedWebActivity"
+			promptText="WebActivity" required="false"
+			allowCreateReferencedPrimary="true">
+			<NewMarketingObjectHandler package="cmc/marketing" objectType="RecommendCatentry"/>
+		</PropertyChildListEditor>
+		@END_CODE
+	-->
+	<Node classDefinition="true" definitionName="cmc/foundation/NewReferencedObjectHandler">
+		<!---
+			@keywords private
+			Initialize this class and add this to parent.newReferencedPrimaryObjectHandler.
+		-->
+		<method name="init">
+			<![CDATA[
+			this.inherited(arguments);
+			this.parent.newReferencedPrimaryObjectHandler = this;
+			]]>
+		</method>
+		
+		<!---
+			@keywords abstract
+			Perform the logic required for the create new object action.
+			@param cmc/foundation/ObjectDefinition objectDefinition: the object definition of the object to be created
+			@param cmc/foundation/ModelObject parentObject: the parent object of the objects in the child list editor
+			@param cmc/foundation/EventHandler del: the delegate to be called after the object has been created
+		-->
+		<method args="objectDefinition, parentObject, del" name="createNewObject">
+			<![CDATA[
+			if (typeof(del) == "undefined") del = null;
+
+			]]>
+		</method>
+	</Node>
+	
+	<!---
+		@keywords private
+	
+		This class provides custom logic for opening business objects.
+		The custom new logic is written in the <code>open</code> 
+		method.  Instances of cmc/foundation/OpenHandler can only be declared as children of an instance
+		of {@link cmc/foundation/ObjectDefinition}. When the framework detects that the business
+		user is attempting to open an instance of an object that has an associated open handler,
+		then the open handler will be invoked instead of the standard open object logic.
+
+		<p>The following example demonstrates the declaration of an open handler.
+
+		@START_CODE
+		<class name="TaskGroupHistoryOpenHandler" extends="cmc/foundation/OpenHandler">
+			<method name="open" args="o">
+				<![CDATA[
+				//Implementation goes here...
+				]]>
+			</method>
+		</class>
+
+		<ChildObjectDefinition definitionName="cmc/workspace/TaskGroupHistory"
+			displayName="${wspWorkspaceResources.history}" objectType="TaskGroupHistory" idProperty="taskGroupHistoryId" 
+			copyProtected="true">
+			<TaskGroupHistoryOpenHandler/>
+		</ChildObjectDefinition>
+		@END_CODE
+	-->
+	<Node classDefinition="true" definitionName="cmc/foundation/OpenHandler">
+	
+		<!---
+			@keywords private
+			Initialize this class and add this to parent.newHandler.
+		-->
+		<method name="init">
+			<![CDATA[
+			this.inherited(arguments);
+			this.parent.openHandler = this;
+			]]>
+		</method>
+		
+		<!---
+			@keywords abstract
+			Perform the logic required for the open object action.
+			@param cmc/foundation/ModelObject o: the object to be opened
+			@param boolean select: indicates that the opened object is to be selected
+		-->
+		<method args="o, select" name="open">
+			<![CDATA[
+			if (typeof(select) == "undefined") select = true;
+
+			]]>
+		</method>
+		
+		<!---
+			@keywords private
+			Returns true if this open handler is enabled for the specified
+			model object by evaluating the associated {@link cmc/foundation/EnablementCondition} object.
+			
+			@param cmc/foundation/ModelObject o: the object to be opened
+			@param cmc/foundation/EventHandler del: optional delegate
+			@return boolean: true if the open action is enabled
+		-->
+		<method args="o, del" name="isEnabled">
+			<![CDATA[
+			if (typeof(del) == "undefined") del = null;
+			if (this.enablementCondition) {
+				if (del) {
+					this.enablementCondition.registerDelegate(o, del);
+				}
+				return this.enablementCondition.isEnabled(o);
+			}
+			else {
+				return true;
+			}
+			]]>
+		</method>
+		
+		<!---
+			@keywords abstract
+			Perform the logic required for the open object in compare view action.
+			@param cmc/foundation/ModelObject o: the object to be opened
+		-->
+		<method args="o" name="openInCompareView">
+			<![CDATA[
+
+			]]>
+		</method>
+		
+		<!---
+			@keywords private
+			Returns true if this open handler is enabled for opening objects in the compare view.
+			
+			@param cmc/foundation/ModelObject o: the object to be opened
+			@param cmc/foundation/EventHandler del: optional delegate
+			@return boolean: true if the open action is enabled for open objects in the compare view
+		-->
+		<method args="o, del" name="isOpenInCompareViewEnabled">
+			<![CDATA[
+			if (typeof(del) == "undefined") del = null;
+			if (this.enablementCondition) {
+				if (del) {
+					this.enablementCondition.registerDelegate(o, del);
+				}
+				return this.enablementCondition.isEnabled(o);
+			}
+			else {
+				return true;
+			}
+			]]>
+		</method>
+	</Node>
+</Definitions>

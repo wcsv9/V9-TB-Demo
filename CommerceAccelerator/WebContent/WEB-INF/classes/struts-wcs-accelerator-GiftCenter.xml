@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-accelerator" name="GiftCenter" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="CancelGiftRegistryMessageView">
+            <result name="CancelGiftRegistryMessageView/0/-4">
+                <param name="direct">true</param>
+                <param name="implClassName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommandImpl</param>
+                <param name="interfaceName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommand</param>
+                <param name="location">/Messages/UpdateGiftRegistryMessage.jsp</param>
+                <param name="resourceClassName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommandImpl</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryAddressAuditCmd">
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryAddressAuditCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryAnnouncementPost">
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryAnnouncementPostCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryAuthenticate">
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryAuthenticationCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryCreate">
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryCreateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryDelete">
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryDeleteCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryItemAdd">
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryItemAddCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryItemBase">
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryItemBaseCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryItemDelete">
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryItemDeleteCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryItemUpdate">
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryItemUpdateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryLogoff">
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryLogoffCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryManageAuthenticate">
+            <param name="https">1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryManageAuthenticationCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryOrderProcess">
+            <param name="actionPaths">/GiftRegistryPurchaseRecordAdd</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryOrderProcessCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryProfileBase">
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryProfileBaseCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryPurchaseRecordAdd">
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryPurchaseRecordAddCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryPurchaseRecordUpdate">
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryPurchaseRecordUpdateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryServiceInvokerCmd">
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryServiceInvokerCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryUpdate">
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryUpdateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GiftRegistryValuesAuditCmd">
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.GiftRegistryValuesAuditCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="UpdateGiftRegistryMessageView">
+            <result name="UpdateGiftRegistryMessageView/0/-4">
+                <param name="direct">true</param>
+                <param name="implClassName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommandImpl</param>
+                <param name="interfaceName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommand</param>
+                <param name="location">/Messages/UpdateGiftRegistryMessage.jsp</param>
+                <param name="resourceClassName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommandImpl</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="UserGiftRegistryAdminCreate">
+            <param name="actionPaths">/GiftRegistryCreate</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.UserGiftRegistryAdminCreateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="UserGiftRegistryCreate">
+            <param name="actionPaths">/GiftRegistryCreate</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.giftregistry.commands.UserGiftRegistryCreateCmd</param>
+        </action>
+    </package>
+</struts>

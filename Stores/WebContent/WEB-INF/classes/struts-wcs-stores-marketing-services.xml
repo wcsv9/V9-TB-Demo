@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="marketing-services" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxMarketingTriggerProcessServiceEvaluate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">marketing.evaluateMarketingTrigger</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="CouponsIssueProxy">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.marketing.commands.IssueCouponControllerProxyCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ImportIntelligentOfferAssociations">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.marketing.commands.ImportIntelligentOfferAssociationsCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="MarketingTriggerProcessServiceEvaluate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">marketing.evaluateMarketingTrigger</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SaveMarketingStatistics">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.marketing.internal.runtime.engine.SaveMarketingStatisticsCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ScheduledCustomerSegmentExport">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.marketing.segment.commands.ScheduledCustomerSegmentExportCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SendMarketingTriggers">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.marketing.internal.runtime.engine.SendMarketingTriggersCmd</param>
+        </action>
+    </package>
+</struts>

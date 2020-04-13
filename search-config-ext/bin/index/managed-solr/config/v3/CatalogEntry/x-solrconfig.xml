@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <xi:fallback>
+
+        <!-- for back compat with clients using /update/json and /update/csv. 
+             If you need them, you can uncomment them below. -->
+        <!--   
+        <requestHandler name="/update/json" class="solr.JsonUpdateRequestHandler">
+            <lst name="defaults">
+                <str name="stream.contentType">application/json</str>
+            </lst>
+        </requestHandler>
+        <requestHandler name="/update/csv" class="solr.CSVRequestHandler">
+            <lst name="defaults">
+                <str name="stream.contentType">application/csv</str>
+            </lst>
+        </requestHandler>    
+        -->
+
+        <!-- If you wish to hide files under ${solr.home}/conf, explicitly
+             register the ShowFileRequestHandler using:
+        -->
+        <!--
+        <requestHandler name="/admin/file" class="solr.admin.ShowFileRequestHandler" >
+            <lst name="invariants">
+                <str name="hidden">synonyms.txt</str>
+                <str name="hidden">anotherfile.txt</str>
+            </lst>
+        </requestHandler>
+        -->
+
+        <!--     
+        <searchComponent name="xyz_query" class="xxx.yyy.zzz.solr.component.SearchMultipleQueryComponent">
+            <int name="cacheSize">1320000</int>
+            <str name="referenceField">catentry_id</str>
+            <str name="fastReopen">true</str>
+            <arr name="subCores">
+            </arr>
+        </searchComponent>
+
+        <searchComponent name="xyz_facet" class="xxx.yyy.zzz.solr.component.ChildFacetComponent" />
+        -->
+
+        <!-- 
+        <searchComponent name="suggest" class="solr.SpellCheckComponent">
+            <lst name="spellchecker">
+                <str name="name">suggestDictionary</str>
+                <str name="field">term_suggest</str>
+                <str name="classname">org.apache.solr.spelling.suggest.Suggester</str>
+                <str name="lookupImpl">org.apache.solr.spelling.suggest.tst.TSTLookupFactory</str>
+                <str name="buildOnCommit">true</str>
+            </lst>
+        </searchComponent>
+        <requestHandler name="/suggest" class="org.apache.solr.handler.component.SearchHandler">
+            <lst name="defaults">
+                <str name="wt">json</str>
+                <str name="spellcheck">true</str>
+                <str name="spellcheck.dictionary">suggestDictionary</str>
+                <str name="spellcheck.onlyMorePopular">true</str>
+                <str name="spellcheck.count">10</str>
+                <str name="spellcheck.collate">false</str>
+            </lst>
+            <arr name="components">
+                <str>suggest</str>
+            </arr>
+        </requestHandler>
+        -->
+        
+        <!-- Custom query parsers
+        <queryParser name="rollup" class="xxx.yyy.zzz.solr.qparser.RollupQParserPlugin"/>
+        <queryParser name="parentChild" class="xxx.yyy.zzz.qparser.ParentChildQParserPlugin"/>
+        -->
+
+    </xi:fallback>
+</xi:include>

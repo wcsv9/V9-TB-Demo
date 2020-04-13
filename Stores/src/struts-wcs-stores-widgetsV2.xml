@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="widgetsV2" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="AddToRequisitionListsViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="AddToRequisitionListsViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.PDP_AddToRequisitionLists/AddToRequisitionLists_Ajax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="AjaxAddressBookDetailViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="AjaxAddressBookDetailViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.AddressBookDetail/AddressBookDetailAjax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="AjaxAddressBookListViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="AjaxAddressBookListViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.AddressBookList/AddressBookListAjax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="AjaxOrderListViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="AjaxOrderListViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.OrderList/OrderListAjax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="AjaxRecommendationView">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <result name="AjaxRecommendationView">
+                <param name="location">/Widgets_801/Common/ESpot/AjaxRecommendation.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ApprovalCommentViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="ApprovalCommentViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.ApprovalComment/AjaxApprovalComment.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="AttachmentPaginationListViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="AttachmentPaginationListViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.PDP_AssociatedAssets/AttachmentList.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="BuyerApprovalTableViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="BuyerApprovalTableViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.BuyerApprovalList/AjaxBuyerApprovalList.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="CatalogEntryRecommendationViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="CatalogEntryRecommendationViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.CatalogEntryRecommendation/CatalogEntryRecommendation.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="FindOrdersResultListViewV2">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:0</param>
+            <param name="https">0:1</param>
+            <result name="FindOrdersResultListViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.csr.FindOrders/FindOrdersResultList.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GetApplePayMerchantInfoV2">
+            <param name="https">0:0</param>
+            <result name="GetApplePayMerchantInfoV2">
+                <param name="location">/Widgets_801/Common/ApplePay/GetApplePayMerchantInfo.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GetCSRFAuthTokenV2">
+            <param name="https">0:1</param>
+            <result name="GetCSRFAuthTokenV2">
+                <param name="location">/Widgets_801/Common/ApplePay/GetCSRFAuthToken.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GetInventoryStatusByIDViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="GetInventoryStatusByIDViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.PDP_InventoryAvailability/GetInventoryStatus_Data.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GetOnlineInventoryStatusByIDViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="GetOnlineInventoryStatusByIDViewV2">
+                <param name="location">/Widgets_801/Common/InventoryAvailability/GetOnlineInventory.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GetOrderInfoForApplePayV2">
+            <param name="https">0:1</param>
+            <result name="GetOrderInfoForApplePayV2">
+                <param name="location">/Widgets_801/Common/ApplePay/GetOrderInfoForApplePay.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GetStoreDetailsByIDViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="GetStoreDetailsByIDViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.PDP_InventoryAvailability/GetStoreDetails_Data.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GlobalLoginShopOnBehalfDisplayViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="GlobalLoginShopOnBehalfDisplayViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.GlobalLogin/GlobalLoginShopOnBehalf.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GlobalLoginSignInViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <param name="https">0:1</param>
+            <result name="GlobalLoginSignInViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.GlobalLogin/GlobalLoginSignInRegistration.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="GlobalLoginViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="GlobalLoginViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.GlobalLogin/GlobalLoginOrganizationAndContract.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="IntelligentOfferResultsViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="IntelligentOfferResultsViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.IBMProductRecommendations/IBMProductRecommendations_Result_UI.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="IntelligentOfferViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="IntelligentOfferViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.IBMProductRecommendations/IBMProductRecommendations.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="MSOrderDetailItemTableViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="MSOrderDetailItemTableViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.OrderDetail_ItemTable/AjaxOrderDetail_MSItemTable.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="MultipleWishListSelectionViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="MultipleWishListSelectionViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.WishListActions/WishListActions.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="NumberOfBuyerApprovalsViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="NumberOfBuyerApprovalsViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.MyAccountNavigation/pendingApprovals/AjaxNumberOfBuyerPendingApprovals.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="NumberOfOrderApprovalsViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="NumberOfOrderApprovalsViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.MyAccountNavigation/pendingApprovals/AjaxNumberOfOrderPendingApprovals.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="OrderApprovalTableViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="OrderApprovalTableViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.OrderApprovalList/AjaxOrderApprovalList.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="OrderCommentsListViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="OrderCommentsListViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.csr.OrderComments/OrderComments.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="OrgListDisplayViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="OrgListDisplayViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.OrganizationList/OrganizationList.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="OrgMemberGroupDisplayViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="OrgMemberGroupDisplayViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.OrganizationMemberApprovalGroups/OrganizationMemberApprovalGroups.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="OrgRolesDisplayViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="OrgRolesDisplayViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.OrganizationRoles/OrganizationRoles.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="OrgSearchListDisplayViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="OrgSearchListDisplayViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.OrganizationSearchList/OrganizationSearchList.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="OrgSummaryDisplayViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="OrgSummaryDisplayViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.OrganizationSummary/OrganizationSummary.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="OrganizationUserInfoAddressViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="OrganizationUserInfoAddressViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.OrganizationUserInfo/OrganizationUserAddressAjax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="OrganizationUserInfoDetailsViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="OrganizationUserInfoDetailsViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.OrganizationUserInfo/OrganizationUserDetailsAjax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="OrganizationUsersListViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="OrganizationUsersListViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.OrganizationUsersList/OrganizationUsersListAjax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="ProductListingViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="ProductListingViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.CatalogEntryList/CatalogEntryListAjax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="QuickInfoDetailsViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="QuickInfoDetailsViewV2">
+                <param name="location">/Widgets_801/Common/QuickInfo/QuickInfo.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="RegisteredCustomersListViewV2">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:0</param>
+            <param name="https">0:1</param>
+            <result name="RegisteredCustomersListViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.csr.RegisteredCustomers/RegisteredCustomersList.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="RequisitionListItemTableViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="RequisitionListItemTableViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.RequisitionListItems/AjaxRequisitionListItems.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="RequisitionListsViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="RequisitionListsViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.RequisitionLists/RequisitionListsAjax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SKUListViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="SKUListViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.PDP_SKUList/SKUList_Ajax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SLCitySelectionDisplayViewV2">
+            <param name="https">0:1</param>
+            <result name="SLCitySelectionDisplayViewV2">
+                <param name="location">/Widgets_801/Common/StoreLocatorPopup/CitySelectionDisplay.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SLProvinceSelectionDisplayViewV2">
+            <param name="https">0:1</param>
+            <result name="SLProvinceSelectionDisplayViewV2">
+                <param name="location">/Widgets_801/Common/StoreLocatorPopup/ProvinceSelectionDisplay.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SLResultsViewV2">
+            <param name="https">0:1</param>
+            <result name="SLResultsViewV2">
+                <param name="location">/Widgets_801/Common/StoreLocatorPopup/StoreLocatorResults.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SLSelectedStoreListViewV2">
+            <param name="https">0:1</param>
+            <result name="SLSelectedStoreListViewV2">
+                <param name="location">/Widgets_801/Common/StoreLocatorPopup/SelectedStoreList.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SSOrderDetailItemTableViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="SSOrderDetailItemTableViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.OrderDetail_ItemTable/AjaxOrderDetail_SSItemTable.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SavedOrderInfoViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="SavedOrderInfoViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.SavedOrderInfo/AjaxSavedOrderInfo.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SavedOrderItemTableViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="SavedOrderItemTableViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.SavedOrderItems/AjaxSavedOrderItems.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SearchComponentSKUAutoSuggestViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="SearchComponentSKUAutoSuggestViewV2">
+                <param name="location">/Widgets_801/Common/MyAccountList/DynamicSKUAutoSuggest.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SearchRuleInfoViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="SearchRuleInfoViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.ContentRecommendation/SearchRuleInfoAjax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="SiteContentListViewV2">
+            <param name="credentialsAccepted">0:P</param>
+            <result name="SiteContentListViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.SiteContentList/SiteContentListAjax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="UserMemberGroupManagementViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="UserMemberGroupManagementViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.UserMemberGroupManagement/UserMemberGroupManagementAjax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="UserRoleManagementOrgListViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="UserRoleManagementOrgListViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.UserRoleManagement/orgList/UserRoleManagementOrgListAjax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="UserRoleManagementRoleSelectorViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="UserRoleManagementRoleSelectorViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.UserRoleManagement/RoleSelector/UserRoleManagementRoleSelectorAjax.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="WishListResultDisplayViewV2">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <result name="WishListResultDisplayViewV2">
+                <param name="location">/Widgets_801/com.ibm.commerce.store.widgets.WishListDetail/WishListDetail.jsp</param>
+                <param name="properties">storeDir=no</param>
+            </result>
+        </action>
+    </package>
+</struts>

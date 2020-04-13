@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ =================================================================
+  Licensed Materials - Property of IBM
+
+  WebSphere Commerce
+
+  (C) Copyright IBM Corp. 2018 All Rights Reserved.
+
+  US Government Users Restricted Rights - Use, duplication or
+  disclosure restricted by GSA ADP Schedule Contract with
+  IBM Corp.
+ =================================================================
+-->
+<Definitions>
+	<!---
+		The cmc/foundation/IFrameTool class is the base class for Management Center tools that are implemented
+		as a single page application that are loaded in an iframe. Instances of this class should
+		not be instantiated directly. They must be registered by adding an instance of {@link cmc/foundation/ApplicationMenuItem}
+		to {@link cmc/foundation/ApplicationMenuItems}.
+	-->
+	<Component classDefinition="true" definitionName="cmc/foundation/IFrameTool" height="${this.immediateParent.height}" width="${this.immediateParent.width}" visible="false" initstage="defer">
+		<dependency localName="SingletonRegistry" moduleName="cmc/foundation/SingletonRegistry"/>
+		<dependency localName="FocusUtil" moduleName="cmc/foundation/FocusUtil"/>
+		<dependency localName="EventTimer" moduleName="cmc/shell/EventTimer"/>
+		<dependency localName="Logger" moduleName="cmc/shell/Logger"/>
+		<dependency localName="ContextUtil" moduleName="cmc/foundation/ContextUtil"/>
+		<dependency localName="KeyUtil" moduleName="cmc/foundation/KeyUtil"/>
+		<dependency localName="ViewUtil" moduleName="cmc/foundation/ViewUtil"/>
+		<dependency localName="EventHandler" moduleName="cmc/foundation/EventHandler"/>
+		<dependency localName="RootComponent" moduleName="cmc/RootComponent"/>
+		<dependency localName="MessageLogger" moduleName="cmc/shell/MessageLogger"/>
+		
+		<!---
+			@keywords private
+			Usage is a string identifier that is unique to the tool. 
+			
+			The "usage" attribute is used to filter the stores available to the current user for the  
+			iframe tool. If there are no stores available to the user for an iframe tool instance, 
+			then that tool will not appear in the application menu. This is a required attribute.
+		-->
+		<variable name="usage" type="string"/>
+		<!---
+			@keywords private
+			This attribute contains the src value for the iframe.
+			If the URL does not begin with "/lobtools", then it will be
+			prefixed with the value of the global context value "adminConsoleRoot".
+		-->
+		<variable name="src" type="string"/>
+		<!---
+			@keywords private
+			This attribute is set to true when the iframe tool is opened, set to false when the tool is closed or
+			the user logs out. This attribute is updated by {@link cmc/foundation/ToolPanes} calling "open" and "close".
+		-->
+		<variable name="isOpen" type="boolean" value="false"/>
+		<!---
+			@keywords private
+			
+			This attribute contains a list of frames, or views, in the iframe tool. This attribute is used by the shortcut
+			key	command for frame navigation. 
+		-->		
+		<variable name="framesList" value="${(typeof (SingletonRegistry.bannerAreaWidget) != 'undefined') ? [SingletonRegistry.bannerAreaWidget] : []}"/>
+		<!---
+			@keywords private
+			
+			This attribute contains the index of the frame currently in focus in the {@link cmc/foundation/BusinessObjectEditor#framesList}. 
+		-->		
+		<variable name="frameOnFocusIndex" type="number" value="${-1}"/>
+		<!---
+			@keywords private
+			This attribute indicates if this instance of the iframe tool is active. The default value of this attribute
+			is "true". This attribute is set to false when the tool is closed. 			
+		-->
+		<variable name="active" type="boolean" value="true"/>
+		<!---
+			@keywords private
+			
+			This attribute indicates if the shortcutKeys are registered. The default value for this attribute is "false". 
+		-->			
+		<variable name="keysRegistered" type="boolean" value="false"/>
+		<!---
+			Display name for this business object editor instance. This text will
+			be displayed on the tool tab when the tool is open. This is a required attribute.
+		-->
+		<variable name="displayName" type="string"/>
+		<!---
+			@keywords private
+			A boolean attribute that indicates if the iframe tool respects workspace context set in
+			UserContext.xml. If this is true, then data in this editor is managed within the context of the selected workspace
+			when it is enabled; otherwise data in this editor will always be managed against the base schema.
+			The default value for this attribute is "true". 
+		-->
+		<variable name="respectWorkspaceContext" type="boolean" value="true"/>
+
+		<!---
+			@keywords private
+			Flag that determines whether the tool is available or not when working on a workspace task. The default
+			value of this flag is true.
+		-->
+		<variable name="availableToWorkspaceTasks" type="boolean" value="true"/>
+
+		<!---
+			@keywords private
+			This attribute contains an instance of the context class that is used within the scope of this editor.
+		-->
+		<variable name="localContext" value="${null}"/>
+		
+		<!---
+			This attribute defines the relative URL that contains the main help file for this IFrame tool.
+			This URL is launched when "Context Help" is selected from the "Help" menu.
+			There is no value provided by default for this attribute. 
+		-->
+		<variable name="helpLink" type="string" value=""/>
+		
+		<!--- @keywords private -->
+		<handler name="onconstruct">
+			<![CDATA[
+			this.languageMapping = {
+				"de-DE": "de",
+				"en-US": "en",
+				"es-ES": "es",
+				"fr-FR": "fr",
+				"it-IT": "it",
+				"ja-JP": "ja",
+				"ko-KR": "ko",
+				"pl-PL": "pl",
+				"ru-RU": "ru",
+				"zh-CN": "zh"
+			};
+			if (this.src.indexOf("/lobtools") != 0 && darkFeatures["localAdminConsole"]) {
+				this.src = ContextUtil.Singleton.findContextValue(null, "adminConsoleRoot").value + this.src;
+			}
+			]]>
+		</handler>
+
+		<!--- @keywords private -->
+		<method name="completeInstantiation">
+			<![CDATA[
+			this.inherited(arguments);
+			DefinitionUtil.completeCreateDefinitionChildren(this);
+			]]>
+		</method>
+
+		<!--- @keywords private -->
+		<method name="postCreateDefinitionChildren">
+			<![CDATA[
+			if (this.visible && !this._initialized) {
+				this.initialize();
+			}
+			]]>
+		</method>
+
+		<handler name="onvisible">
+			<![CDATA[
+			if (this.visible && !this.isOpen) {
+				this.open();
+			}
+			]]>
+		</handler>
+
+		<!--- @keywords private -->
+		<method name="initialize">
+			<![CDATA[
+			if (Logger.Singleton.enabled) {
+				Logger.Singleton.entering("com.ibm.commerce.lobtools.foundation.view", "cmc/foundation/IFrameTool", "initialize");
+			}
+			if (typeof (this.displayName) == "undefined") {
+				Logger.Singleton.log("com.ibm.commerce.lobtools.foundation.view", "SEVERE", "cmc/foundation/IFrameTool", "initialize", "Tab name is undefined because the tool is missing required attribute 'displayName', it must be defined in class that extends cmc/foundation/IFrameTool.");
+			}
+			this._initialized = true;
+			this.doKeySaveDel = new EventHandler.Class(this, "doKeySave");
+			this.focusOnFrameDel = new EventHandler.Class(this, "focusOnFrame");
+			this.updateShortcutKeys();
+			this.framesList.push(SingletonRegistry.messageLink);
+			var self = this;
+			window.addEventListener("message", function(e){
+				self.receiveMessage(e);
+			});
+			if (Logger.Singleton.enabled) {
+				Logger.Singleton.exiting("com.ibm.commerce.lobtools.foundation.view", "cmc/foundation/IFrameTool", "initialize");
+			}
+			]]>
+		</method>
+		
+		<!--- @keywords private -->
+		<method name="destroy">
+			<![CDATA[
+			if (Logger.Singleton.enabled) {
+				Logger.Singleton.entering("com.ibm.commerce.lobtools.foundation.view", "cmc/foundation/IFrameTool", "destroy");
+			}
+			if (this.postJwtDel) {
+				this.postJwtDel.disconnectAll();
+				delete this.postJwtDel;
+			}
+			if (this.postRenderViewDataDel) {
+				this.postRenderViewDataDel.disconnectAll();
+				delete this.postRenderViewDataDel;
+			}
+			this.doKeySaveDel.disconnectAll();
+			delete this.doKeySaveDel;
+			this.focusOnFrameDel.disconnectAll();
+			delete this.focusOnFrameDel;
+			this.inherited(arguments);
+			if (Logger.Singleton.enabled) {
+				Logger.Singleton.exiting("com.ibm.commerce.lobtools.foundation.view", "cmc/foundation/IFrameTool", "destroy");
+			}
+			]]>
+		</method>
+
+
+		<!---
+			@keywords private
+			This method is called to open this iframe tool. 
+		-->
+		<method args="store" name="open">
+			<![CDATA[
+			if (typeof(store) == "undefined") store = null;
+			if (store != null || this.visible) {
+				if (!this._initialized) {
+					this.completeInstantiation();
+					this.initialize();
+				}
+				if (!this.isOpen) {
+					this.setVariable("isOpen", true);
+				}
+			}
+			]]>
+		</method>
+
+		<!---
+			@keywords private
+			This method is called when the iframe editor is closed.
+		-->
+		<method name="close">
+			<![CDATA[
+			if (this.isOpen) {
+				this.setVariable("isOpen", false);
+				this.setVariable("frameOnFocusIndex", -1);
+				this.setVariable("active", false);
+			}
+			]]>
+		</method>
+
+		<!---
+			@keywords private
+			This method enables and disables the shortcut keys based on the {@link cmc/foundation/IFrameTool#active} attribute. It
+			is called by the {@link cmc/foundation/IFrameTool#onactive} handler.
+		 -->
+		<method name="updateShortcutKeys">
+			<![CDATA[
+			if (this.active) {
+				this.registerShortcutKeys();
+			}
+			else {
+				this.unregisterShortcutKeys();
+			}
+			]]>
+		</method>
+
+		<!---
+			@keywords private
+			This handler updates the business object editor when it's {@link cmc/foundation/IFrameTool#active} state changes.
+		-->
+		<handler name="onactive">
+			<![CDATA[
+			this.updateShortcutKeys();
+			]]>
+		</handler>
+		
+		<!---
+			@keywords private
+			This method registers the shortcut keys if {@link cmc/foundation/IFrameTool#keysRegistered} is false. It does nothing
+			otherwise.  
+		-->
+		<method name="registerShortcutKeys">
+			<![CDATA[
+			if (!this.keysRegistered) {
+				this.keysRegistered = true;
+				KeyUtil.callOnKeyCombo(this.focusOnFrameDel, ['f7']);
+				KeyUtil.callOnKeyCombo(this.doKeySaveDel, ['f9']);
+				KeyUtil.callOnKeyCombo(this.focusOnFrameDel, ['Control', 'Shift', '7']);
+				KeyUtil.callOnKeyCombo(this.doKeySaveDel, ['Control', 'Shift', '9']);
+			}
+			]]>
+		</method>
+		
+		<!---
+			@keywords private
+			This method unregisters the shortcut keys if {@link cmc/foundation/IFrameTool#keysRegistered} is true. It does nothing
+			otherwise.
+		-->
+		<method name="unregisterShortcutKeys">
+			<![CDATA[
+			if (this.keysRegistered) {
+				this.keysRegistered = false;
+				KeyUtil.removeKeyComboCall(this.focusOnFrameDel, ['f7']);
+				KeyUtil.removeKeyComboCall(this.doKeySaveDel, ['f9']);
+				KeyUtil.removeKeyComboCall(this.focusOnFrameDel, ['Control', 'Shift', '7']);
+				KeyUtil.removeKeyComboCall(this.doKeySaveDel, ['Control', 'Shift', '9']);
+			}
+			]]>
+		</method>
+
+		<!---
+			@keywords private
+			This method takes an input that is a frame's index in {@link cmc/foundation/IFrameTool#framesList}, and moves the focus to
+			the next frame in the {@link cmc/foundation/IFrameTool#framesList}.
+			
+			@param number frameIndex The index of the current frame that is in focus in the {@link cmc/foundation/BusinessObjectEditor#framesList}.
+		-->
+		<method args="frameIndex" name="focusOnFrame">
+			<![CDATA[
+			if (ViewUtil.Singleton.containedInModalView(this)) {
+				if (typeof (frameIndex) == "number") {
+					var frame = this.framesList[frameIndex];
+					if (!frame.visible) {
+						var nextFrameIndex = (frameIndex + 1) % this.framesList.length;
+						this.focusOnFrame(nextFrameIndex);
+					}
+					else {
+						this.setVariable("frameOnFocusIndex", frameIndex);
+						FocusUtil.setFocus(frame, true);
+					}
+				}
+				else if (typeof (SingletonRegistry.toolTabsWidget) == 'undefined' || SingletonRegistry.toolTabsWidget.getCurrentTab() == this.name) {
+					var nextFrameIndex = (this.frameOnFocusIndex + 1) % this.framesList.length;
+					this.focusOnFrame(nextFrameIndex);
+				}
+			}
+			]]>
+		</method>
+
+		<!---
+			@keywords private
+		-->
+		<method args="e" name="doKeySave">
+			<![CDATA[
+			if (typeof(e) == "undefined") e = null;
+			if (ViewUtil.Singleton.containedInModalView(this)) {
+				this.doSave(e);
+			}
+			]]>
+		</method>
+
+		<!---
+			@keywords private
+			This method delegates a save event to the iframe. 
+		-->
+		<method args="e" name="doSave">
+			<![CDATA[
+			if (typeof(e) == "undefined") e = null;
+			if (Logger.Singleton.enabled) {
+				Logger.Singleton.entering("com.ibm.commerce.lobtools.foundation.view", "cmc/foundation/IFrameTool", "doSave");
+			}
+			if (EventTimer.Singleton.enabled) EventTimer.Singleton.start("doSave");
+
+			// pass the save event to the iframe
+
+			if (EventTimer.Singleton.enabled) EventTimer.Singleton.end();
+			if (Logger.Singleton.enabled) {
+				Logger.Singleton.exiting("com.ibm.commerce.lobtools.foundation.view", "cmc/foundation/IFrameTool", "doSave");
+			}
+			]]>
+		</method>
+		
+		<method name="receiveMessage" args="message">
+			<![CDATA[
+			var action = message.data.action;
+			var data = message.data.data;
+			if (action == "FETCH_RENDER_VIEW_DATA") {
+				postRenderViewData();
+			} else if (action == "JWT_FETCH_REQUEST") {
+				RootComponent.Singleton.doSessionTimeout();
+			}
+			else if (action == "DARK_FEATURES_FETCH_REQUEST") {
+				postDarkFeatures();
+			}
+			else if (action == "API_HOST_FETCH_REQUEST") {
+				postApiHost();
+			}
+			else if (action == "POST_STATUS") {
+				if(data.statusType == "success") {
+					MessageLogger.Singleton.logStatus(data.statusContent);
+				} 
+				if(data.statusType == "error") {
+					MessageLogger.Singleton.logException(null, data.statusContent);
+				}
+			} else if (action == "START_PROGRESS_INDICATOR") {
+				if (SingletonRegistry.progressIndicator != undefined) {
+					SingletonRegistry.progressIndicator.startAnimation();
+				}
+			} else if (action == "STOP_PROGRESS_INDICATOR") {
+				if (SingletonRegistry.progressIndicator != undefined) {
+					SingletonRegistry.progressIndicator.stopAnimation();
+				}
+			}
+			else if (action == "SHOW_HELP") {
+				var helpType =data.helpType;
+				if (helpType == "gettingStarted" ) {
+					require(["cmc/shell/HelpManager"], function(HelpManager) {
+						HelpManager.Singleton.openGettingStarted();
+					});
+				} else if (helpType == "infoCenter" ) {
+					require(["cmc/shell/HelpManager"], function(HelpManager) {
+						HelpManager.Singleton.openInfoCenter();
+					});	
+				} else if (helpType == "contextSensitive" ) {
+					require(["cmc/shell/HelpManager"], function(HelpManager) {
+						HelpManager.Singleton.openContextSensitiveHelp();
+					});	
+				}
+			}
+			]]>
+		</method>
+		
+		<!---
+			@keywords private
+			This method posts the API_HOST message to the iframe.
+		-->
+		<method name="postApiHost">
+			<![CDATA[
+			var apiHost = window.location.protocol + "//" + window.location.hostname + ":" + window.location.port;
+			this.iframe.postMessage({
+				"action": "API_HOST",
+				"data": {
+					"apiHost": apiHost
+				}
+			});
+			]]>
+		</method>
+		
+		<!---
+			@keywords private
+			This method posts the DARK_FEATURES message to the iframe.
+		-->
+		<method name="postDarkFeatures">
+			<![CDATA[
+			this.iframe.postMessage({
+				"action": "DARK_FEATURES",
+				"data": {
+					"darkFeatures": darkFeatures
+				}
+			});
+			]]>
+		</method>
+
+		<!---
+			@keywords private
+			This method posts the RENDER_VIEW_DATA message to the iframe.
+		-->
+		<method name="postRenderViewData">
+			<![CDATA[
+			if (this.postRenderViewDataDel) {
+				this.postRenderViewDataDel.disconnectAll();
+			}
+			else {
+				this.postRenderViewDataDel = new EventHandler.Class(this, "postRenderViewData");
+			}
+			var locale = ContextUtil.Singleton.findContextValue(null, "locale", this.postRenderViewDataDel).value.replace("_", "-");
+			var language = this.languageMapping[locale] ? this.languageMapping[locale] : locale;
+			this.iframe.postMessage({
+				"action": "RENDER_VIEW_DATA",
+				"data": {
+					"token": ContextUtil.Singleton.findContextValue(null, "jwt").value,
+					"language": language,
+					"locale": locale
+				}
+			});
+			]]>
+		</method>
+		
+		<!---
+			@keywords private
+			This method posts the JWT message to the iframe.
+		-->
+		<method name="postJwt">
+			<![CDATA[
+			if (this.postJwtDel) {
+				this.postJwtDel.disconnectAll();
+			}
+			else {
+				this.postJwtDel = new EventHandler.Class(this, "postJwt");
+			}
+			var jwt = ContextUtil.Singleton.findContextValue(null, "jwt", this.postJwtDel).value;
+			if (jwt != null) {
+				this.iframe.postMessage({
+					"action": "JWT",
+					"data": {
+						"token": jwt
+					}
+				});
+			}
+			]]>
+		</method>
+		
+		<BaseIFrameComponent name="iframe" height="${this.parent.height}" width="${this.parent.width}" src="${this.parent.isOpen ? this.parent.src : ''}">
+			<handler name="oninit">
+				<![CDATA[
+				this.classroot.postRenderViewData();
+				this.classroot.postJwt();
+				]]>
+			</handler>
+		</BaseIFrameComponent>
+		
+	</Component>
+	
+</Definitions>

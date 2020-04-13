@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="subscription-rest-services" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTRecurringOrSubscriptionCancel">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">subscription.cancelRecurringOrSubscription</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTSubmitRecurringOrSubscription">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">subscription.submitRecurringOrSubscription</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTRecurringOrSubscriptionCancel">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">subscription.cancelRecurringOrSubscription</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTSubmitRecurringOrSubscription">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">subscription.submitRecurringOrSubscription</param>
+        </action>
+    </package>
+</struts>

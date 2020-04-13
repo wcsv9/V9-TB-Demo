@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ComponentPlugins>
+	<plug-in className="com.ibm.commerce.struts.v2.ComponentPlugIn" componentId="giftcenter" clientFacadeClassName="com.ibm.commerce.giftcenter.facade.client.GiftCenterFacadeClient"/>															  
+	
+	<plug-in className="com.ibm.commerce.struts.v2.ComponentPlugIn" componentId="inventory" clientFacadeClassName="com.ibm.commerce.inventory.facade.client.InventoryFacadeClient"/>
+	
+	<plug-in className="com.ibm.commerce.struts.v2.ComponentPlugIn" componentId="location" clientFacadeClassName="com.ibm.commerce.location.facade.client.LocationFacadeClient"/>
+	
+	<plug-in className="com.ibm.commerce.struts.v2.ComponentPlugIn" componentId="marketing" clientFacadeClassName="com.ibm.commerce.marketing.facade.client.MarketingFacadeClient"/>
+	
+	<plug-in className="com.ibm.commerce.struts.v2.ComponentPlugIn" componentId="member" clientFacadeClassName="com.ibm.commerce.member.facade.client.MemberFacadeClient"/>
+	
+	<plug-in className="com.ibm.commerce.struts.v2.ComponentPlugIn" componentId="order" clientFacadeClassName="com.ibm.commerce.order.facade.client.OrderFacadeClient"/>
+	
+	<plug-in className="com.ibm.commerce.struts.v2.ComponentPlugIn" componentId="spsorder" clientFacadeClassName="com.ibm.commerce.order.facade.client.ServiceProviderOrderFacadeClient"/>
+	
+	<plug-in className="com.ibm.commerce.struts.v2.ComponentPlugIn" componentId="subscription" clientFacadeClassName="com.ibm.commerce.subscription.facade.client.SubscriptionFacadeClient"/>
+	
+	<plug-in className="com.ibm.commerce.struts.v2.ComponentPlugIn" componentId="wallet" clientFacadeClassName="com.ibm.commerce.wallet.facade.client.WalletFacadeClient"/>
+	
+	<plug-in className="com.ibm.commerce.struts.v2.VerificationCodePlugInImpl" storeId="0" verCodeValidationClassName="com.ibm.commerce.verification.ChinaStoreVerificationCodeValidation"/>
+	
+</ComponentPlugins>

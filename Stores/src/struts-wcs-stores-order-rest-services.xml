@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="order-rest-services" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxApplePayMerchantValidation">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">merchant.validate</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxApplePayOrderCancel">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.cancelApplePayOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxApplePayOrderProcess">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.processApplePayOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxApplePayOrderUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.updateApplePayOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTAddOrderComment">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.addOrderComment</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTCSROrderCancelAsAdmin">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.csrCancelOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTCSROrderCancelOnbehalf">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.csrCancelOrderOnbehalf</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTMoveOrderItem">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.moveOrderItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderAddConfigurationToCart">
+            <param name="authenticate">0:0</param>
+            <param name="parameter">orderlist.addConfigurationToCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderAddPreConfigurationToCart">
+            <param name="authenticate">0:0</param>
+            <param name="parameter">orderlist.addPreConfigurationToCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderCalculate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.calculateOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderCancel">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.cancelOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderCopy">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.copyOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderCreate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.createOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderItemAdd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.addOrderItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderItemDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.deleteOrderItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderItemUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.updateOrderItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderLock">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.lockCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderLockOnBehalf">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.lockOrderOnBehalf</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderLockTakeOverOnBehalf">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.takeOverLockOrderOnBehalf</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderPIAdd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.addPaymentInstruction</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderPIDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.deletePaymentInstruction</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderPIUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.updatePaymentInstruction</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderPrepare">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.prepareOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderRePay">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.repay</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderRewardOptionUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="defaultProperties">0:mergeProperties=true</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.updateRewardOption</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderShipInfoUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.ajaxUpdateOrderShippingInfo</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderSubmit">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.submitOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderUnlock">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.unlockCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrderUnlockOnBehalf">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.unlockOrderOnBehalf</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTScheduleOrder">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.scheduleOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTSetPendingOrder">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.setPendingOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTTakeOverlock">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.takeOverLockOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="PunchoutPaymentCallBack">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.callback</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTAddOrderComment">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">order.addOrderComment</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTCSROrderCancelAsAdmin">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.csrCancelOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTCSROrderCancelOnbehalf">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.csrCancelOrderOnbehalf</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTMoveOrderItem">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.moveOrderItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderAddConfigurationToCart">
+            <param name="authenticate">0:0</param>
+            <param name="parameter">orderlist.addConfigurationToCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderAddPreConfigurationToCart">
+            <param name="authenticate">0:0</param>
+            <param name="parameter">orderlist.addPreConfigurationToCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderCalculate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.calculateOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderCancel">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.cancelOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderItemAdd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.addOrderItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderItemDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.deleteOrderItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderItemUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.updateOrderItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderLock">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.lockCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderLockOnBehalf">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.lockOrderOnBehalf</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderLockTakeOverOnBehalf">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.takeOverLockOrderOnBehalf</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderPIAdd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.addPaymentInstruction</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderPIDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.deletePaymentInstruction</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderPrepare">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.prepareOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderRePay">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.repay</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderRewardOptionUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.updateRewardOption</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderShipInfoUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.updateOrderShippingInfo</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderSubmit">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.submitOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderUnlock">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.unlockCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderUnlockOnBehalf">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.unlockOrderOnBehalf</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTOrderUpdateConfigurationInCart">
+            <param name="authenticate">0:0</param>
+            <param name="parameter">orderlist.updateConfigurationInCart</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTScheduleOrder">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.scheduleOrder</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTTakeOverlock">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">orderlist.takeOverLockOrder</param>
+        </action>
+    </package>
+</struts>

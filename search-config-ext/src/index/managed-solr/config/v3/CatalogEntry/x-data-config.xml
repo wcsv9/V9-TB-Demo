@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <xi:fallback>
+
+		<!-- Here are CLOB fields that couldn't be changed before 9.0.1.1 and 9.0.0.10.
+		     
+		     We know that CLOB processing is slow.
+		     The purpose of moving them here is let users decide whether to use CLOB in data import.
+		     And it's better to match temporary table fields and the corresponding one in DIH.
+		 -->
+
+		<field column="LONGDESCRIPTION"	name="longDescription" clob="true" />
+        <field column="CATGRPNAME" clob="true" />
+        <field column="ENTGRPPATH" clob="true" />
+        <field column="CNTRPRICE" clob="true" />
+        <field column="DKDEFAULTCONFIG" clob="true" />
+
+		<!-- If you change to use CLOB in preprocessing, make sure uncomment corresponding column below. -->
+
+		<!-- 
+        <field column="NAME_OVR" clob="true" />
+        <field column="SHORTDESC_OVR" clob="true" />
+        <field column="KEYWORD_OVR" clob="true" />
+        <field column="PUBLISHED_OVR" clob="true" />
+
+        <field column="CATENTRY_ATTRIBUTES" clob="true" />
+
+        <field column="ATTRS" clob="true" />
+        <field column="ATTRI" clob="true" />
+        <field column="ATTRF" clob="true" />
+		<field column="SRCHS" clob="true" />
+		<field column="SRCHI" clob="true" />
+		<field column="SRCHF" clob="true" />
+     	-->
+    
+        <!-- Uncomment the following mapping and put customized data config below.
+             If you did the customization previously, you can find them in x:\WCDE_V9\UpdateDelta\9.0.1.n\backup
+        -->
+        <!--<field column="COLUMN1" name="matchField1"/>-->
+        <!--<field column="COLUMN2" name="matchField2"/>-->
+    </xi:fallback>
+</xi:include>
+

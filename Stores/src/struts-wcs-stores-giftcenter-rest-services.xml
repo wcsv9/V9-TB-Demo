@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="giftcenter-rest-services" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTWishListAnnounce">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.announce</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRestWishListAddItem">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.addItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRestWishListChangeState">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.changeState</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRestWishListCreate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.create</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRestWishListCreateWithItem">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.createWithItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRestWishListDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.delete</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRestWishListRemoveItem">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.removeItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRestWishListUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.update</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTWishListAnnounce">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.announce</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RestWishListAddItem">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.addItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RestWishListChangeState">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.changeState</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RestWishListCreate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.create</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RestWishListCreateWithItem">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.createWithItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RestWishListDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.delete</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RestWishListRemoveItem">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.removeItemByProductId</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RestWishListUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">wishlist.update</param>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="requisitionlist-rest-services" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTRequisitionListConfigurationAdd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.addConfiguration</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTRequisitionListConfigurationUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.updateConfiguration</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTRequisitionListCopy">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.copy</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTRequisitionListCreate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.create</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTRequisitionListDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.delete</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTRequisitionListItemDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.updateItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTRequisitionListItemUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.updateItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTRequisitionListSubmit">
+            <param name="authenticate">0:0</param>
+            <param name="defaultProperties">0:mergeProperties=true</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.submit</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTRequisitionListUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="defaultProperties">0:mergeProperties=true</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.update</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTRequisitionListUpdateItem">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.updateItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTRequisitionListConfigurationAdd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.addConfiguration</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTRequisitionListConfigurationUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.updateConfiguration</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTRequisitionListCopy">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.copy</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTRequisitionListCreate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.create</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTRequisitionListDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.delete</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTRequisitionListItemDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.updateItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTRequisitionListItemUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.updateItem</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTRequisitionListSubmit">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.submit</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTRequisitionListUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.update</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTRequisitionListUpdateItem">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">requisitionlist.updateItem</param>
+        </action>
+    </package>
+</struts>

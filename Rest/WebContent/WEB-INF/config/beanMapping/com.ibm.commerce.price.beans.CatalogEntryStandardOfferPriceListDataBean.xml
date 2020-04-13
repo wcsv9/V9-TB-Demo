@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ =================================================================
+  Licensed Materials - Property of IBM
+
+  WebSphere Commerce
+
+  (C) Copyright IBM Corp. 2018 All Rights Reserved.
+
+  US Government Users Restricted Rights - Use, duplication or
+  disclosure restricted by GSA ADP Schedule Contract with
+  IBM Corp.
+ =================================================================
+-->
+<bean>
+	<profiles>
+		<profile name="IBM_StanardOffPrice_Summary">
+			<inputs>
+				<input inputName="currency" methodName="setCurrency" />
+				<input inputName="catEntryIds" methodName="setCatEntryIds" />
+				<input inputName="quantities" methodName="setQuantities" />
+				<input inputName="partNumbers" methodName="setPartNumbers" />
+			</inputs>
+			<outputs >
+				<output methodName="getStandardPrices" outputName="StandardPrice" >
+					<output methodName="getCatentryId" outputName="catentryId" />
+					<output methodName="getPartNumber" outputName="partNumber" />
+					<output methodName="getOffPrices" outputName="offerPrice" >
+						<output methodName="getPrice" outputName="price" >
+							<output methodName="getValue" outputName="value" />
+							<output methodName="getCurrency" outputName="currency" />
+						</output>
+						<output methodName="getQuantity" outputName="quantity" >
+							<output methodName="getValue" outputName="value" />
+							<output methodName="getUOM" outputName="uom" />
+						</output>
+					</output>
+				</output>
+					
+				</outputs>
+		</profile>
+	</profiles>
+</bean>

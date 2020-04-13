@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="search" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="BuildIndex">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.foundation.dataimport.commands.BuildIndexCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="CalculateContractPrice">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.foundation.dataimport.commands.CalculateContractPriceCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="DownloadStatistics">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.scheduler.commands.DownloadStatisticsCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="InvalidateSearchCache">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.scheduler.commands.InvalidateSearchCacheCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="UpdateSearchIndex">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.scheduler.commands.UpdateSearchIndexCmd</param>
+        </action>
+    </package>
+</struts>

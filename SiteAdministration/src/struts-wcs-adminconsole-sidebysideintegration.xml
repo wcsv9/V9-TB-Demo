@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-adminconsole" name="sidebysideintegration" namespace="/">    
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="InventoryAvailabilityAutoLoadFromFiles">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">com.ibm.commerce.inventory.facade.server.commands.InventoryAvailabilityAutoLoadFromFilesCmdImpl</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="OrderRetransfer">
+            <param name="authenticate">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.order.commands.OrderRetransferCmd</param>
+        </action>
+    </package>
+</struts>

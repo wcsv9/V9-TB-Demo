@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="member-services" namespace="/">
+        <global-results>
+            <result name="UserAccountEmailActivateNotifyView/0/-3">
+                <param name="direct">true</param>
+                <param name="implClassName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommandImpl</param>
+                <param name="interfaceName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommand</param>
+                <param name="location">/UserRegistrationEmailActivateNotification.jsp</param>
+                <param name="properties">storeDir=no</param>
+                <param name="resourceClassName">com.ibm.commerce.messaging.viewcommands.MessagingViewCommandImpl</param>
+            </result>
+        </global-results>
+        <action class="com.ibm.commerce.struts.v2.AjaxAction" name="AjaxApprovalGroupUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.usermanagement.commands.ApproveGroupUpdateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxAction" name="AjaxMemberGroupMemberUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.usermanagement.commands.MemberGroupMemberUpdateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxAction" name="AjaxMemberRoleAssign">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.usermanagement.commands.MemberRoleAssignCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxAction" name="AjaxMemberRoleUnassign">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.usermanagement.commands.MemberRoleUnassignCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxAction" name="AjaxMemberRoleUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.usermanagement.commands.MemberRoleUpdateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxAction" name="AjaxOrgEntityAdd">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.usermanagement.commands.OrgEntityAddCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxAction" name="AjaxOrgEntityUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.usermanagement.commands.OrgEntityUpdateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxPersonChangeServiceAddressAdd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.addAddressForPerson</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxPersonChangeServiceAddressDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.deleteAddressForPerson</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxPersonChangeServiceAddressUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.updateAddressForPerson</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxPersonChangeServiceCheckoutProfileUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.updateCheckoutProfile</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxPersonChangeServicePasswordReset">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.resetPassword</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxPersonChangeServicePasswordUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.authenticatePassword</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxPersonChangeServicePersonUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.updatePerson</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxPersonChangeServicePersonUpdateWithCheckoutProfile">
+            <param name="https">0:1</param>
+            <param name="parameter">member.updatePersonWithCheckoutProfile</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxPersonProcessServicePersonRegister">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.registerPerson</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxComponentServiceAction" name="AjaxPersonProcessServicePersonRegisterWithCheckoutProfile">
+            <param name="https">0:1</param>
+            <param name="parameter">member.registerPersonWithCheckoutProfile</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxAction" name="AjaxUserRegistrationAdminAdd">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.usermanagement.commands.UserRegistrationAdminAddCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxAction" name="AjaxUserRegistrationAdminUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="csrfProtected">0:1</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.usermanagement.commands.UserRegistrationAdminUpdateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="PersonChangeServiceAddressAdd">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.addAddressForPerson</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="PersonChangeServiceAddressDelete">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.deleteAddressForPerson</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="PersonChangeServiceAddressUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.updateAddressForPerson</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="PersonChangeServiceCheckoutProfileUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.updateCheckoutProfile</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="PersonChangeServicePasswordForgottenReset">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.resetPassword</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="PersonChangeServicePasswordReset">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.resetPassword</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="PersonChangeServicePasswordUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.authenticatePassword</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="PersonChangeServicePersonUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.updatePerson</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="PersonChangeServicePersonUpdateWithCheckoutProfile">
+            <param name="https">0:1</param>
+            <param name="parameter">member.updatePersonWithCheckoutProfile</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.LTPATokenGenerationEnabledComponentServiceAction" name="PersonProcessServicePersonRegister">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.registerPerson</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.LTPATokenGenerationEnabledComponentServiceAction" name="PersonProcessServicePersonRegisterWithCheckoutProfile">
+            <param name="https">0:1</param>
+            <param name="parameter">member.registerPersonWithCheckoutProfile</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="UnauthenticatedPersonChangeServicePasswordReset">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.resetPassword</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="UserAccountEmailActivateNotifyView">
+            <param name="https">0:1</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.BaseAction" name="UserRegistrationEmailActivate">
+            <param name="credentialsAccepted">0:P</param>
+            <param name="https">0:1</param>
+            <param name="parameter">com.ibm.commerce.member.facade.server.commands.UserRegistrationEmailActivateCmd</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.ComponentServiceAction" name="UserRegistrationEmailActivateResend">
+            <param name="credentialsAccepted">0:P</param>
+            <param name="defaultProperties">0:generic=true</param>
+            <param name="https">0:1</param>
+            <param name="parameter">member.resendEmailActivation</param>
+        </action>
+    </package>
+</struts>

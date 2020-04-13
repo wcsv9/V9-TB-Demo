@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ =================================================================
+  Licensed Materials - Property of IBM
+
+  WebSphere Commerce
+
+  (C) Copyright IBM Corp. 2015, 2017 All Rights Reserved.
+
+  US Government Users Restricted Rights - Use, duplication or
+  disclosure restricted by GSA ADP Schedule Contract with
+  IBM Corp.
+ =================================================================
+-->
+
+<Definitions>
+	<BusinessObjectEditor definitionName="cmc/test/TestTool" explorerFilterTypes="Organization" displayName="Test Tool" showStorePreview="false" showStoreSelection="false" showUtilitiesView="false">
+		<ObjectTypeFilter displayName="Organization" filterType="OrganizationExplorer" objectTypes="OrganizationsTop"/>
+
+		<TopObjectDefinition>
+			<Xml name="template">
+				<object objectType="OrganizationsTop"/>
+			</Xml>
+		</TopObjectDefinition>
+		
+		<OrganizationalObjectDefinition displayName="Organizations" objectType="OrganizationsTop" organizedObjectTypes="Organization">
+			<GetChildrenService url="/store/{storeId}/organization?profileName=IBM_Organization_List_Summary&amp;q=organizationsICanAdmin" rest="true">
+				<OrgsResponseHandler package="cmc/test"/>
+				<ServiceParam name="storeId" value="0"/>
+			</GetChildrenService>
+			<NavigationListDefinition definitionName="cmc/test/OrganizationChildList" displayName="Organization List" listDefinition="cmc/test/OrganizationListEditor" listTitle="Organization List" toolbarIcon="listToolbarIcon"/>
+		</OrganizationalObjectDefinition>
+
+		<PrimaryObjectDefinition baseDefinition="cmc/test/OrganizationPrimaryObjectDefinition" creatable="true"/>
+	</BusinessObjectEditor>
+	
+	<PrimaryObjectDefinition definitionName="cmc/test/OrganizationPrimaryObjectDefinition" objectType="Organization" idProperty="organizationId" displayNameProperty="organizationName" propertiesDefinition="cmc/test/OrgProperties" initializeObjectStoreId="false">
+		<CreateService rest="true" url="/store/{storeId}/organization" refresh="true">
+			<OrgRequestHandler package="cmc/test"/>
+			<OrgResponseHandler package="cmc/test"/>
+			<OrgErrorResponseHandler package="cmc/test"/>
+			<ServiceParam name="storeId" value="0"/>
+			<ServiceParam name="orgEntityType" value="O"/>
+			<ServiceParam name="orgEntityName" propertyName="organizationName"/>
+		</CreateService>
+		<UpdateService rest="true" url="/store/{storeId}/organization/{organizationId}" refresh="true">
+			<OrgRequestHandler package="cmc/test"/>
+			<OrgResponseHandler package="cmc/test"/>
+			<OrgErrorResponseHandler package="cmc/test"/>
+			<ServiceParam name="storeId" value="0"/>
+			<ServiceParam name="organizationId" propertyName="organizationId"/>
+			<ServiceParam name="orgEntityName" propertyName="organizationName"/>
+		</UpdateService>
+		<RefreshService rest="true" url="/store/{storeId}/organization/{organizationId}?profileName=IBM_Organization_Details">
+			<RefreshOrgResponseHandler package="cmc/test"/>
+			<ServiceParam name="storeId" value="0"/>
+			<ServiceParam name="organizationId" propertyName="organizationId"/>
+		</RefreshService>
+	</PrimaryObjectDefinition>
+	
+	<ChildListEditor definitionName="cmc/test/OrganizationListEditor" listDefinition="cmc/test/OrganizationGrid" objectTypes="Organization"/>
+
+	<ObjectGrid definitionName="cmc/test/OrganizationGrid">
+		<GridText editable="false" name="organizationId" propertyName="organizationId" text="Organization ID" width="180"/>
+		<GridText editable="false" name="memberId" propertyName="memberId" text="Member ID" width="180"/>
+		<GridText editable="true" name="organizationName" propertyName="organizationName" required="true" text="Name" width="180"/>
+		<GridText editable="false" name="displayName" propertyName="displayName" required="true" text="Display Name" width="180"/>
+		<GridText editable="false" name="distinguishedName" propertyName="distinguishedName" text="Distinguished Name" width="180"/>
+	</ObjectGrid>
+	
+	<ResponseHandler classDefinition="true" definitionName="cmc/test/OrgsResponseHandler">
+		<dependency localName="XMLUtil" moduleName="cmc/foundation/XMLUtil"/>
+
+		<method args="ds, responseData" name="handleResponse">
+			<![CDATA[
+			var response = JSON.parse(responseData);
+			var orgs = response.organizationDataBeans;
+			var xml = "<objects";
+			if (typeof (response.recordSetCompleteIndicator) == "boolean") {
+				xml += " recordSetCompleteIndicator=\"" + response.recordSetCompleteIndicator + "\"";
+			}
+			if (typeof (response.recordSetStartNumber) == "number") {
+				xml += " response.recordSetStartNumber=\"" + response.recordSetStartNumber + "\"";
+			}
+			if (typeof (response.recordSetCount) == "number") {
+				xml += " response.recordSetCount=\"" + response.recordSetCount + "\"";
+			}
+			if (typeof (response.recordSetTotal) == "number") {
+				xml += " response.recordSetTotal=\"" + response.recordSetTotal + "\"";
+			}
+			xml += ">";
+			for (var i = 0; i < orgs.length; i++) {
+				xml += "<object objectType=\"Organization\">";
+				xml += this.serializeProperties(orgs[i]);
+				xml += "</object>";
+			}
+			xml += "</objects>";
+			ds.dataXML = XMLUtil.parseXML(xml,true);
+			]]>
+		</method>
+	</ResponseHandler>
+	
+	<RequestHandler classDefinition="true" definitionName="cmc/test/OrgRequestHandler">
+		<variable name="stringProperties" value="${[
+			&quot;addressType&quot;,
+			&quot;personTitle&quot;,
+			&quot;orgEntityName&quot;,
+			&quot;billingCodeType&quot;,
+			&quot;email2&quot;,
+			&quot;email1&quot;,
+			&quot;distinguishedName&quot;,
+			&quot;city&quot;,
+			&quot;administratorMiddleName&quot;,
+			&quot;middleName&quot;,
+			&quot;administratorLastName&quot;,
+			&quot;state&quot;,
+			&quot;addressField1&quot;,
+			&quot;phone2&quot;,
+			&quot;addressField3&quot;,
+			&quot;addressField2&quot;,
+			&quot;fax2&quot;,
+			&quot;fax1&quot;,
+			&quot;phone1Type&quot;,
+			&quot;orgEntityField1&quot;,
+			&quot;orgEntityField2&quot;,
+			&quot;orgEntityField3&quot;,
+			&quot;phone2Type&quot;,
+			&quot;description&quot;,
+			&quot;publishPhone2&quot;,
+			&quot;taxPayerId&quot;,
+			&quot;URL&quot;,
+			&quot;address1&quot;,
+			&quot;address2&quot;,
+			&quot;address3&quot;,
+			&quot;zipCode&quot;,
+			&quot;packageSuppression&quot;,
+			&quot;bestCallingTime&quot;,
+			&quot;phone1&quot;,
+			&quot;taxGeoCode&quot;,
+			&quot;publishPhone1&quot;,
+			&quot;organizationUnitName&quot;,
+			&quot;firstName&quot;,
+			&quot;organizationName&quot;,
+			&quot;businessCategory&quot;,
+			&quot;preferredDelivery&quot;,
+			&quot;shippingGeoCode&quot;,
+			&quot;country&quot;,
+			&quot;parentMemberId&quot;,
+			&quot;administratorFirstName&quot;,
+			&quot;billingCode&quot;,
+			&quot;lastName&quot;,
+			&quot;orgEntityType&quot;,
+			&quot;legalId&quot;
+		]}"/>
+	
+		<!---
+			@keywords abstract
+			Perform the logic required to prepare a request.
+			@param cmc/foundation/ServiceDataset ds: dataset
+		-->
+		<method args="ds" name="prepareRequest">
+			<![CDATA[
+			var args = ds.args;
+			var body = {};
+			for (var i = 0; i < this.stringProperties.length; i++) {
+				var propertyName = this.stringProperties[i];
+				if (typeof (args[propertyName]) != "undefined") {
+					body[propertyName] = args[propertyName];
+				}
+			}
+			ds.jsonContent = JSON.stringify(body);
+			]]>
+		</method>
+		<!--
+		{
+		  "addressType": "string",
+		  "personTitle": "string",
+		  "orgEntityName": "string",
+		  "billingCodeType": "string",
+		  "customMemberAttributes": [
+		    "string"
+		  ],
+		  "email2": "string",
+		  "email1": "string",
+		  "distinguishedName": "string",
+		  "city": "string",
+		  "administratorMiddleName": "string",
+		  "middleName": "string",
+		  "administratorLastName": "string",
+		  "state": "string",
+		  "addressField1": "string",
+		  "phone2": "string",
+		  "addressField3": "string",
+		  "addressField2": "string",
+		  "fax2": "string",
+		  "fax1": "string",
+		  "phone1Type": "string",
+		  "orgEntityField1": "string",
+		  "orgEntityField2": "string",
+		  "orgEntityField3": "string",
+		  "phone2Type": "string",
+		  "description": "string",
+		  "publishPhone2": "string",
+		  "taxPayerId": "string",
+		  "URL": "string",
+		  "address1": "string",
+		  "address2": "string",
+		  "address3": "string",
+		  "zipCode": "string",
+		  "packageSuppression": "string",
+		  "bestCallingTime": "string",
+		  "phone1": "string",
+		  "taxGeoCode": "string",
+		  "publishPhone1": "string",
+		  "organizationUnitName": "string",
+		  "firstName": "string",
+		  "organizationName": "string",
+		  "businessCategory": "string",
+		  "preferredDelivery": "string",
+		  "shippingGeoCode": "string",
+		  "country": "string",
+		  "parentMemberId": "string",
+		  "administratorFirstName": "string",
+		  "billingCode": "string",
+		  "lastName": "string",
+		  "orgEntityType": "string",
+		  "legalId": "string"
+		} 
+		 -->
+	</RequestHandler>
+	
+	<ResponseHandler classDefinition="true" definitionName="cmc/test/OrgResponseHandler">
+		<dependency localName="XMLUtil" moduleName="cmc/foundation/XMLUtil"/>
+
+		<method args="ds, responseData" name="handleResponse">
+			<![CDATA[
+			var response = JSON.parse(responseData);
+			var xml = "<object>";
+			if (typeof (response.orgEntityId) != "undefined") {
+				xml += "<organizationId>"+response.orgEntityId+"</organizationId>";
+				xml += "<memberId>"+response.orgEntityId+"</memberId>";
+			}
+			xml += "</object>";
+			ds.dataXML = XMLUtil.parseXML(xml,true);
+			]]>
+		</method>
+	</ResponseHandler>
+	
+	<ResponseHandler classDefinition="true" definitionName="cmc/test/RefreshOrgResponseHandler">
+		<dependency localName="XMLUtil" moduleName="cmc/foundation/XMLUtil"/>
+
+		<method args="ds, responseData" name="handleResponse">
+			<![CDATA[
+			var response = JSON.parse(responseData);
+			var xml = "<object>";
+			xml += this.serializeProperties(response);
+			xml += "</object>";
+			ds.dataXML = XMLUtil.parseXML(xml,true);
+			]]>
+		</method>
+	</ResponseHandler>
+	
+	<ErrorResponseHandler classDefinition="true" definitionName="cmc/test/OrgErrorResponseHandler">
+		<dependency localName="XMLUtil" moduleName="cmc/foundation/XMLUtil"/>
+
+		<method args="ds,status,responseData" name="handleErrorResponse">
+			<![CDATA[
+			if (status == 400 && responseData) {
+				var response = JSON.parse(responseData);
+				var xml = "<errors>";
+				if (response.errors) {
+					var errors = response.errors;
+					for (var i = 0; i < errors.length; i++) {
+						var error = errors[i];
+						if (error.errorKey == "_ERR_RDN_ALREADY_EXIST") {
+							xml += serializeValidationError("orgEntityName", error.errorMessage);
+						}
+						else {
+							xml += serializeException(error.errorKey, error.errorMessage);
+						}
+					}
+				}
+				xml += "</errors>";
+				ds.dataXML = XMLUtil.parseXML(xml,true);
+			}
+			]]>
+		</method>
+	</ErrorResponseHandler>
+	
+	<ObjectProperties definitionName="cmc/test/OrgProperties">
+		<PropertyPane>
+			<PropertyGroup groupTitle="General Organization Properties" open="true">
+				<PropertyViewLongText promptText="Member ID" propertyName="memberId"/>
+				<PropertyInputText promptText="Organization Name" propertyName="organizationName" required="true"/>
+				<PropertyInputText promptText="Display Name" propertyName="displayName">
+					<FalseEnablementCondition/>
+				</PropertyInputText>
+				<PropertyInputText promptText="Distinguished Name" propertyName="distinguishedName">
+					<FalseEnablementCondition/>
+				</PropertyInputText>
+			</PropertyGroup>
+		</PropertyPane>
+	</ObjectProperties>
+</Definitions>

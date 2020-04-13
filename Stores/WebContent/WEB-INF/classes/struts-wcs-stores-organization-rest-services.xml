@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package extends="wcs-stores" name="organization-rest-services" namespace="/">
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTApprovalGroupUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">organizationHandler.updateApprovalGroups</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrganizationRegistration">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">organizationHandler.OrganizationRegistration</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrganizationRoleAssign">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">organizationHandler.OrganizationRoleAssign</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.AjaxRESTAction" name="AjaxRESTOrganizationUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:1</param>
+            <param name="parameter">organizationHandler.OrganizationUpdate</param>
+        </action>
+        <action class="com.ibm.commerce.struts.v2.RESTAction" name="RESTApprovalGroupUpdate">
+            <param name="authenticate">0:0</param>
+            <param name="https">0:0</param>
+            <param name="parameter">organizationHandler.updateApprovalGroups</param>
+        </action>
+    </package>
+</struts>

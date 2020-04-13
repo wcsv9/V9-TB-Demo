@@ -1,0 +1,59 @@
+<%--
+ =================================================================
+  Licensed Materials - Property of IBM
+
+  WebSphere Commerce
+
+  (C) Copyright IBM Corp. 2007, 2016 All Rights Reserved.
+
+  US Government Users Restricted Rights - Use, duplication or
+  disclosure restricted by GSA ADP Schedule Contract with
+  IBM Corp.
+ =================================================================
+--%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
+<c:set var="langs" value=""/>
+
+<c:forEach var="description" items="${catalogEntry.description}">
+	<c:if test="${fn:length(langs) > 0 }" >
+		<c:set var="langs" value="${langs},${description.language}"/>
+	</c:if>
+	<c:if test="${fn:length(langs) == 0 }" >
+		<c:set var="langs" value="${description.language}"/>
+	</c:if>
+	<object objectType="CatalogEntryDescription">
+		<languageId><wcf:cdata data="${description.language}"/></languageId>	
+		<catalogEntryId><wcf:cdata data="${catalogEntry.catalogEntryIdentifier.uniqueID}"/></catalogEntryId>
+		<name><wcf:cdata data="${description.name}"/></name>
+	</object>
+
+</c:forEach>
+<%--
+	Need to initialize other language child object in the case were we are
+	loading other languages, otherwise publish flag gets set
+	by default in the UI.
+	Uses dataLanguageIds if specified, otherwise fall back to use defaultLanguageId.
+--%>
+<c:set var="languages" value="${param.dataLanguageIds}"/>
+<c:if test="${empty languages}" >
+	<c:set var="languages" value="${param.defaultLanguageId}"/>
+</c:if>
+<c:if test="${!(empty languages)}" >
+	<c:forTokens var="language" items="${languages}" delims="," >
+		<c:set var="found" value="false" />
+		<c:forTokens var="lang" items="${langs}" delims="," >
+			<c:if test="${lang == language}" >
+				<c:set var="found" value="true" />
+			</c:if>
+		</c:forTokens>
+		<c:if test="${!found}" >
+			<object objectType="CatalogEntryDescription">
+				<languageId><wcf:cdata data="${language}"/></languageId>
+				<objectStoreId><wcf:cdata data="${catalogEntry.catalogEntryIdentifier.externalIdentifier.storeIdentifier.uniqueID}"/></objectStoreId>
+				<catalogEntryId><wcf:cdata data="${catalogEntry.catalogEntryIdentifier.uniqueID}"/></catalogEntryId>
+				<xdesc_published>0</xdesc_published>
+			</object>
+		</c:if>
+	</c:forTokens>
+</c:if>
