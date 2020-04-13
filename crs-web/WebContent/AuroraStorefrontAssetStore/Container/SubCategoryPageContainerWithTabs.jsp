@@ -23,14 +23,7 @@
                         <wcpgl:widgetImport slotId="1" />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col6 acol12" data-slot-id="2">
-                        <wcpgl:widgetImport slotId="2" />
-                    </div>
-                    <div class="col6 acol12" data-slot-id="3">
-                        <wcpgl:widgetImport slotId="3" />
-                    </div>
-                </div>
+              
                 <div class="row margin-true">
                     <div class="col4 acol12 ccol3" data-slot-id="4">
                         <wcpgl:widgetImport slotId="4" />
@@ -61,7 +54,7 @@
 								<c:set var="selectedTabIndex" value="${status.index}" />
 							</c:if>
 						</c:forEach>
-						<div class="tabButtonContainer" role="tablist">
+						<div class="tabButtonContainer" role="tablist" style="display:none;">
 							<div class="tab_header tab_header_double">
 								<c:forEach var="tabSlotId" items="${tabSlotIds}" varStatus="status">
 									<c:set var="tabSlotName" value="Title${tabSlotId}" />

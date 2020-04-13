@@ -16,19 +16,31 @@
 
 <%@include file="../Common/EnvironmentSetup.jspf"%>
 <%@taglib uri="http://commerce.ibm.com/pagelayout" prefix="wcpgl"%>
-
+<style>
+	div#page div#contentWrapper .row .col6.acol12 {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    float: none;
+}
+	div#widget_breadcrumb {
+    
+    margin: -1px -5px;
+}
+	#content .facetWidget.collapsible {
+    padding: 0px 4% 10px 0%;
+    margin-left: -5px;
+   
+}
+	</style>
 <div class="rowContainer" id="container_${pageDesign.layoutId}">
 	<div class="row margin-true">
 		<div class="col12" data-slot-id="1"><wcpgl:widgetImport slotId="1"/></div>
 	</div>
-	<div class="row">
-		<div class="col6 acol12" data-slot-id="2"><wcpgl:widgetImport slotId="2"/></div>
-		<div class="col6 acol12" data-slot-id="3"><wcpgl:widgetImport slotId="3"/></div>
-	</div>
+	
 	<div class="row margin-true">
-		<div class="col8 acol12 ccol9 right" data-slot-id="4"><wcpgl:widgetImport slotId="4"/></div>
-		<div class="col4 acol12 ccol3" data-slot-id="5"><wcpgl:widgetImport slotId="5"/></div>
-		<div class="col8 acol12 ccol9 right" data-slot-id="6"><wcpgl:widgetImport slotId="6"/></div>
+		<div class="col4 acol12 ccol2" data-slot-id="5"><wcpgl:widgetImport slotId="5"/></div>
+		<div class="col8 acol12 ccol10 right" data-slot-id="6"><wcpgl:widgetImport slotId="6"/></div>
 	</div>
 </div>
 

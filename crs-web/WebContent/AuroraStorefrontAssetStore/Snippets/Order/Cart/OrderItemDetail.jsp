@@ -1,4 +1,4 @@
-<%--
+<%--        
  =================================================================
   Licensed Materials - Property of IBM
 
@@ -227,13 +227,14 @@
 
 <c:set var="allContractsValid" value="true" scope="request"/>
 <table id="order_details" cellpadding="0" cellspacing="0" border="0" width="100%" summary="<fmt:message bundle="${storeText}" key="SHOPCART_TABLE_SUMMARY" />">
-	  <tr class="nested">
-		   <th class="align_left" id="shoppingCart_tableCell_productName"><fmt:message bundle="${storeText}" key="SHOPCART_PRODUCT" /></th>
+	   <%-- <tr class="nested">
+		  <th class="align_left" id="shoppingCart_tableCell_productName"><fmt:message bundle="${storeText}" key="SHOPCART_PRODUCT" /></th>
 		   <th class="align_left" id="shoppingCart_tableCell_availability"><fmt:message bundle="${storeText}" key="SHOPCART_AVAILABILITY" /></th>
 		   <th class="align_center" id="shoppingCart_tableCell_quantity" abbr="<fmt:message bundle="${storeText}" key="QUANTITY1" />"><fmt:message bundle="${storeText}" key="SHOPCART_QTY" /></th>
 		   <th class="align_right" id="shoppingCart_tableCell_each" abbr="<fmt:message bundle="${storeText}" key="UNIT_PRICE" />"><fmt:message bundle="${storeText}" key="SHOPCART_EACH" /></th>
-		   <th class="align_right" id="shoppingCart_tableCell_total" abbr="<fmt:message bundle="${storeText}" key="TOTAL_PRICE" />"><fmt:message bundle="${storeText}" key="SHOPCART_TOTAL" /></th>
-	  </tr>
+		  
+		    <th class="align_right" id="shoppingCart_tableCell_total" abbr="<fmt:message bundle="${storeText}" key="TOTAL_PRICE" />"><fmt:message bundle="${storeText}" key="SHOPCART_TOTAL" /></th>
+	  </tr> --%>
 
 	<c:if test="${pagorder.orderItem != null && !empty pagorder.orderItem}">
 		<c:if test="${showDynamicKit eq 'true'}">
@@ -548,7 +549,43 @@
 							<%@ include file="B2BContractSelectExt.jspf" %>
 						</c:if>
 						<br/>
-
+						<table class="prd-detail-cart">
+							<tr>
+								<td>Availability: </td>
+								<td><%@ include file="../../ReusableObjects/CatalogEntryAvailabilityDisplay.jspf" %></td>	
+							</tr>
+							<tr>
+								<td>QTY: </td>
+								<td>
+									<span class="item-quantity">
+						 
+										<c:choose>
+											<c:when test="${orderItem.freeGift}">
+												<%-- This is a free item..can't change the qty --%>
+												<input type="hidden" value="-1" id='freeGift_qty_<c:out value="${status.count}"/>' name='qty_<c:out value="${status.count}"/>'/><span><c:out value="${quickCartOrderItemQuantity}"/></span>
+											</c:when>
+											<c:otherwise>
+												<span class="spanacce" id="Quantity_ACCE_Message"><fmt:message bundle="${storeText}" key='ACCE_Quantity_Update_Message' /></span>
+												<label for='qty_<c:out value="${status.count}"/>' style='display:none'><fmt:message bundle="${storeText}" key="QUANTITY1" /></label>
+												<input id='qty_<c:out value="${status.count}"/>' name='qty_<c:out value="${status.count}"/>' type="tel" aria-labelledby="Quantity_ACCE_Message" size="1" style="width:25px;" value='<c:out value="${quickCartOrderItemQuantity}"/>' onkeydown="JavaScript:setCurrentId('qty_<c:out value='${status.count}'/>'); CheckoutHelperJS.updateCartWait(this, '<c:out value='${orderItem.orderItemId}'/>',event)" />
+											</c:otherwise>
+										</c:choose>
+									</span>
+								</td>	
+							</tr>
+							
+							<tr>
+								<td>Each: </td>
+								<td>
+									<span class="price">
+				
+										<fmt:formatNumber var="formattedUnitPrice" value="${orderItem.unitPrice}" type="currency" maxFractionDigits="${env_currencyDecimal}" currencySymbol="${env_CurrencySymbolToFormat}"/>
+										<c:out value="${formattedUnitPrice}" escapeXml="false" />
+										<c:out value="${CurrencySymbol}"/>
+									</span>
+								</td>	
+							</tr>
+						</table>
 							<%-- displays move to wish list link if user is a registered shopper --%>
 							<flow:ifEnabled feature="SOAWishlist">
 								<%out.flush();%>
@@ -595,14 +632,14 @@
 					</c:if>
 				</div>
 			</th>
-			<td id="WC_OrderItemDetailsf_td_1_<c:out value='${status.count}'/>" class="<c:out value="${nobottom}"/> avail" headers="shoppingCart_tableCell_availability shoppingCart_rowHeader_product<c:out value='${status.count}'/>">
-				<%@ include file="../../ReusableObjects/CatalogEntryAvailabilityDisplay.jspf" %>
+			<%-- <td id="WC_OrderItemDetailsf_td_1_<c:out value='${status.count}'/>" class="<c:out value="${nobottom}"/> avail" headers="shoppingCart_tableCell_availability shoppingCart_rowHeader_product<c:out value='${status.count}'/>">
+			
 			</td>
 			<td id="WC_OrderItemDetailsf_td_2_<c:out value='${status.count}'/>" class="<c:out value="${nobottom}"/> QTY" headers="shoppingCart_tableCell_quantity shoppingCart_rowHeader_product<c:out value='${status.count}'/>">
 				<p class="item-quantity">
 					<c:choose>
 						<c:when test="${orderItem.freeGift}">
-							<%-- This is a free item..can't change the qty --%>
+							This is a free item..can't change the qty
 							<input type="hidden" value="-1" id='freeGift_qty_<c:out value="${status.count}"/>' name='qty_<c:out value="${status.count}"/>'/><span><c:out value="${quickCartOrderItemQuantity}"/></span>
 						</c:when>
 						<c:otherwise>
@@ -615,15 +652,15 @@
 			</td>
 			<td id="WC_OrderItemDetailsf_td_3_<c:out value='${status.count}'/>" class="<c:out value="${nobottom}"/> each" headers="shoppingCart_tableCell_each shoppingCart_rowHeader_product<c:out value='${status.count}'/>">
 
-				<%-- unit price column of order item details table --%>
-				<%-- shows unit price of the order item --%>
+				unit price column of order item details table
+				shows unit price of the order item
 				<span class="price">
 					<fmt:formatNumber var="formattedUnitPrice" value="${orderItem.unitPrice}" type="currency" maxFractionDigits="${env_currencyDecimal}" currencySymbol="${env_CurrencySymbolToFormat}"/>
 					<c:out value="${formattedUnitPrice}" escapeXml="false" />
 					<c:out value="${CurrencySymbol}"/>
 				</span>
 
-			</td>
+			</td> --%>
 			<td id="WC_OrderItemDetailsf_td_4_<c:out value='${status.count}'/>" class="<c:out value="${nobottom}"/> total" headers="shoppingCart_tableCell_total shoppingCart_rowHeader_product<c:out value='${status.count}'/>">
 				<c:choose>
 					<c:when test="${orderItem.freeGift}">

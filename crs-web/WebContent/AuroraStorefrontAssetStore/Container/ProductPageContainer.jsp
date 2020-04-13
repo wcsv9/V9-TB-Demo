@@ -17,6 +17,12 @@
 <%@include file="../Common/EnvironmentSetup.jspf"%>
 <%@taglib uri="http://commerce.ibm.com/pagelayout" prefix="wcpgl"%>
 
+<style>
+.row.margin-true.product_pageDesign_pageGroup {
+    margin: 0 auto;
+    max-width: 1005px;
+}
+</style>
 <!--Start Page Content-->
 <div id="contentWrapper">
 	<c:set var="slotNumber" value="7"/>
@@ -30,19 +36,16 @@
 		<div class="row margin-true">
 			<div class="col12 slot1" data-slot-id="1"><wcpgl:widgetImport slotId="1"/></div>
 		</div>
-		<div class="row">
-			<div class="col6 acol12 slot2" data-slot-id="2"><wcpgl:widgetImport slotId="2"/></div>
-			<div class="col6 acol12 slot3" data-slot-id="3"><wcpgl:widgetImport slotId="3"/></div>
-		</div>
+		
 		<div class="row margin-true ${fn:toLowerCase(pageDesign.pageGroup)}_pageDesign_pageGroup">
 		<c:choose>
 			<c:when test="${foundCurrentSlot7 == true}">
-				<div class="col6 acol6 ccol2 slot4" data-slot-id="4"><wcpgl:widgetImport slotId="4"/></div>
-				<div id="productSlot56" class="acol12 col12 ccol2">
+				<div class="col6 acol6 ccol7 slot4" data-slot-id="4"><wcpgl:widgetImport slotId="4"/></div>
+				<div id="productSlot56" class="acol12 col12 ccol5">
 			</c:when>
 			<c:otherwise>
-				<div class="col6 acol6 ccol3 slot4" data-slot-id="4"><wcpgl:widgetImport slotId="4"/></div>
-				<div id="productSlot56" class="acol12 col12 ccol3">
+				<div class="col6 acol6 ccol7 slot4" data-slot-id="4"><wcpgl:widgetImport slotId="4"/></div>
+				<div id="productSlot56" class="acol12 col12 ccol5">
 			</c:otherwise>
 		</c:choose>
 			<div class="col5 acol6 ccol12 left slot5" data-slot-id="5"><wcpgl:widgetImport slotId="5"/></div>
@@ -76,10 +79,10 @@
 		<c:if test="${!empty tabSlotIds}">
 			<c:choose>
 				<c:when test="${foundCurrentSlot7 == true}">
-					<div class="col12 acol12 ccol4 right tabbedSlots9_10_11">
+					<div class="col12 acol12 ccol12 right tabbedSlots9_10_11">
 				</c:when>
 				<c:otherwise>
-					<div class="col12 acol12 ccol6 right tabbedSlots9_10_11">
+					<div class="col12 acol12 ccol12 right tabbedSlots9_10_11">
 				</c:otherwise>
 			</c:choose>
 			<div class="tabButtonContainer" role="tablist">

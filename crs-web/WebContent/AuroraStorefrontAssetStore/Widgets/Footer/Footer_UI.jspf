@@ -30,8 +30,11 @@
 				<li><a id="footerContactUsLink" href="${fn:escapeXml(ContactUsPageViewURL)}"><fmt:message bundle="${storeText}" key="FOOTER_CONTACT_US"/></a></li>
 				<li><a id="footerReturnPolicyLink" href="${fn:escapeXml(ReturnPolicyPageViewURL)}"><fmt:message bundle="${storeText}" key="FOOTER_RETURN_POLICY"/></a></li>
 				<li><a id="footerPrivacyPolicyLink" href="${fn:escapeXml(PrivacyPolicyPageViewURL)}"><fmt:message bundle="${storeText}" key="FOOTER_PRIVACY_POLICY"/></a></li>
+			<img id="siqurity" src="/wcsstore/AuroraStorefrontAssetStore//images/sequrity.jpg" >
 			</ul>
-		</div><div id="footerCorporateInfoSection" class="section">
+		</div>
+		
+		<div id="footerCorporateInfoSection" class="section">
 			<div class="header">
 				<a class="toggle" href="#" data-toggle="footerCorporateInfoSection" role="button"><span id="footerCorporateInfoSection_div_ACCE_Label" class="spanacce"><fmt:message bundle="${storeText}" key="FOOTER_CORPORATE_INFO"/></span></a>
 				<h3><fmt:message bundle="${storeText}" key="FOOTER_CORPORATE_INFO"/></h3>
@@ -43,7 +46,9 @@
 					<li><a id="footerStoreLocatorLink" href="${fn:escapeXml(StoreLocatorURL)}"><fmt:message bundle="${storeText}" key="FOOTER_STORE_LOCATOR"/></a></li>
 				</flow:ifEnabled>
 			</ul>
-		</div><div id="footerExploreSection" class="section">
+		</div>
+		
+		<div id="footerExploreSection" class="section">
 			<div class="header">
 				<a class="toggle" href="#" data-toggle="footerExploreSection" role="button"><span id="footerExploreSection_div_ACCE_Label" class="spanacce"><fmt:message bundle="${storeText}" key="FOOTER_EXPLORE"/></span></a>
 				<h3><fmt:message bundle="${storeText}" key="FOOTER_EXPLORE"/></h3>
@@ -57,7 +62,89 @@
 					<li><a id="footerAdvancedSearchLink" href="${fn:escapeXml(AdvancedSearchDisplayURL)}"><fmt:message bundle="${storeText}" key="TITLE_ADVANCED_SEARCH"/></a></li>
 				</flow:ifEnabled>
 			</ul>
-		</div><flow:ifEnabled feature="FacebookIntegration"><div id="footerFollowUsSection" class="section">
+		</div>
+		
+		
+		<div id="footerExploreSection" class="section section4">
+			
+			<div class="signupsection md-5 cls">
+
+<div class="sign-up rw collapse" >
+
+<label id="emailUpdatesEmailLabel" for="emailUpdatesEmail">SIGN UP FOR OUR MAILING LIST</label>
+<div class="sm-9 cls">
+<input autocomplete="email" id="emailUpdatesEmail" aria-describedby="emailUpdatesEmailLabel" class="js-email-signup-input" name="emailUpdatesEmail" type="email" required="" aria-required="true" placeholder="ENTER EMAIL ADDRESS" title="Sign up for email tips, deals &amp; more"><button class="button primary postfix js-email-signup-footer">
+Sign up
+</button>
+</div>
+
+
+
+
+</div>
+<div class="mobile-sign-up rw collapse" >
+
+<label id="pref_mobile_num_footer_label" for="pref_mobile_num_footer">SIGN UP FOR TEXTS AND GET AN EXCLUSIVE OFFER!</label>
+<div class="sm-9 cls">
+<input autocomplete="off" class="js-ontype-showlegal mask-inited" id="pref_mobile_num_footer" aria-describedby="pref_mobile_num_footer_label" name="subscribeSmsPhone" type="tel" maxlength="15" placeholder="ENTER PHONE NUMBER">
+
+</div>
+<div class="sm-3 cls">
+<button class="button primary postfix js-sms-signup">
+Sign up
+</button>
+</div>
+<p class="error-message bottom is-hidden" id="errorMobileSignup" role="alert" aria-atomic="true" aria-live="assertive"></p>
+<p class="success-message bottom is-hidden" id="successMobileSignup" role="alert" aria-atomic="true"></p>
+<div style="display: none;" id="js-mobile-legal" class="legal">
+Message and data rates may apply. By providing my mobile number, I agree to receive recurring marketing text messages at the mobile number provided that may be sent using an automated system. Consent is not required to purchase goods or services from Men's Wearhouse.Text STOP to 66960 to opt out at any time. For info text HELP to 66960. See
+<button type="button" class="btn-text">
+Mobile Terms.
+</button>
+</div>
+
+</div>
+<div class="share">
+
+</div>
+</div>
+
+			<div class="social-media">
+			<ul class="nav">
+			<li>
+			<a href="https://twitter.com/mooresclothing" title="Twitter" target="_blank">
+			<img src="/wcsstore/AuroraStorefrontAssetStore/images/twiter.jpg" alt="">
+			</a>
+			</li>
+			<li>
+			<a href="https://www.facebook.com/MooresClothing/" title="Facebook" target="_blank">
+			<img src="/wcsstore/AuroraStorefrontAssetStore/images/facebook.jpg" alt="">
+			</a>
+			</li>
+			<li>
+			<a href="https://www.instagram.com/mooresclothing/" title="Instagram" target="_blank">
+			<img src="/wcsstore/AuroraStorefrontAssetStore/images/instagram.jpg" alt="">
+			</a>
+			</li>
+			<li>
+			<a href="https://www.youtube.com/channel/UC3h4hpX_Y-RpRbZdsAF5gEA" title="Youtube" target="_blank">
+			<img src="/wcsstore/AuroraStorefrontAssetStore/images/youtube.jpg" alt="">
+			</a>
+			</li>
+			<li><a href="https://www.pinterest.com/mooresclothing/
+			" title="Pinterest" target="_blank">
+			<img src="/wcsstore/AuroraStorefrontAssetStore/images/pin.jpg" alt="">
+			</a>
+			</li>
+			</ul>
+			</div>
+		</div>
+		
+		
+		
+		<flow:ifEnabled feature="FacebookIntegration">
+		
+		<div id="footerFollowUsSection" class="section">
 			<div class="header">
 				<a class="toggle" href="#" data-toggle="footerFollowUsSection" role="button"><span id="footerFollowUsSection_div_ACCE_Label" class="spanacce"><fmt:message bundle="${storeText}" key="FOOTER_FOLLOW_US"/></span></a>
 				<h3><fmt:message bundle="${storeText}" key="FOOTER_FOLLOW_US"/></h3>
@@ -67,4 +154,23 @@
 			</ul>
 		</div></flow:ifEnabled>
 	</div>
+
 </div>
+<div class="footer-copyright">
+<ul>
+<li><p>&copy; Copyright 2018 Mooresclothing.com All Rights Reserved.</p></li>
+<li><a href="">Privacy &amp; Security Policy</a></li>
+<li><a href="">Terms of Use</a></li>
+<li><a href="">CA Transparency in Supply Chains Act</a></li>
+</ul>
+</div>
+
+<style>
+
+.social-media {   text-align: left;    max-width: 1100px;    margin: 69px -8px 0 !important;}
+.social-media ul {      border-width: 0 1px;    -webkit-transform: translateY(-50%);    transform: translateY(-50%);}
+.social-media ul {   display: inline-block;    padding: 0px 0px;    background: #FFF;    margin: 0 auto;        text-align: left;}
+.social-media li {    display: inline-block;}
+.social-media img {    font-size: 25px;    padding: 0 20px 0 0px;    color: black;}
+img#siqurity {    margin-top: 32px;}
+</style>
