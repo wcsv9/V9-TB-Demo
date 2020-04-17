@@ -130,11 +130,7 @@
 				"logonPasswordVerify" : "$logonPasswordVerify",
 			  	"firstName" : "$firstName",
 			    "lastName" : "$lastName",
-			    "appendRootOrganizationDN" : "$appendRootOrganizationDN",
-			    "parentMember" : "$parentMember",
-			    "parentMemberId" : "$parentMemberId",
-				"orgizationId" : "$orgizationId",
-				"organizationDistinguishedName" : "$parentMember",
+			   
 				"authToken" : "$authToken",
 			    "receiveEmailPreference": [
 					{
@@ -151,48 +147,10 @@
 						"value": "$receiveSMSNotification"
 					}
 				],
-			   	"bestCallingTime" : "$bestCallingTime",
-		    	"businessTitle" : "$businessTitle",
-		    	"organizationUnitName" : "$organizationUnitName",
-		    	"organizationName" : "$organizationName",
-		    	"personTitle" : "$personTitle",
 	
-			   	"profileType" : "$profileType",
-			    "challengeAnswer":"$challengeAnswer",
-				"challengeQuestion" : "$challengeQuestion",
-	
-				"city" : "$city",
-				"state" : "$state",
-				"country" : "$country",
-				"zipCode" : "$zipCode",
-				"gender" : "$gender",
-			    "preferredLanguage" : "$preferredLanguage",
-				"preferredCurrency" : "$preferredCurrency",
-				"addressLine": [
-			      		"$address1",
-			      		"$address2",
-			      		""
-			      		],
-	
+				
 				"email1" : "$email1",
-		    	"email2" : "$email2",
-		    	"phone1" : "$phone1",
-		    	"fax1" : "$fax1",
-				"mobileDeviceEnabled" : "$mobileDeviceEnabled",
-				"mobilePhone1" : "$mobilePhone1",
-				"mobilePhone1Country" : "$mobilePhone1Country",
-				"mobileCountryCode" : "$mobileCountryCode",
-	
-				"birthdayEnabled" : "$birthdayEnabled",
-				"curr_year" : "$curr_year",
-				"curr_month" : "$curr_month",
-				"curr_date" : "$curr_date",
-				"dateOfBirth" : "$dateOfBirth",
-				"birth_year" : "$birth_year",
-				"birth_month" : "$birth_month",
-				"birth_date" : "$birth_date",
-				"privacyNoticeVersion" : "$privacyNoticeVersion",
-    			"marketingTrackingConsent" : "$marketingTrackingConsent"
+				"phone1" : "$phone1"
 				
 	     			}
 				]]>

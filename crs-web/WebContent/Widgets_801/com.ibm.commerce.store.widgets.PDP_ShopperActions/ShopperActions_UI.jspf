@@ -218,6 +218,9 @@ function addButton(){
 				
 	</div>
 			<div class="clear_float"></div>
+			<%out.flush();%>
+					<c:import url="${env_siteWidgetsDir}com.ibm.commerce.store.widgets.PDP_LongDescription/LongDescription.jsp" />
+				<%out.flush();%>
 			<div class="item_spacer_7px"></div>			
 
 			<%--END : DISPLAY Wish List button --%>

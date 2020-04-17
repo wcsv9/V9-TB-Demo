@@ -11,13 +11,20 @@
   IBM Corp.
  =================================================================
 --%>
- 
+
 <!-- Widget Product Image Viewer -->
+<script type="text/javascript" src="${jspStoreImgDir}javascript/zoomsl.js"></script>
+<script>
+$(function(){
+
+  $(".example").imagezoomsl();
+});
+</script>
 <c:if test="${!empty catalogEntryID}">
 	<div id="widget_product_image_viewer<c:out value="${widgetSuffix}"/>" class="widget_product_image_viewer">
 		<div class="content">
 			<div dataci_toolbar="<c:out value='${param.pgl_widgetId}_product'/>" dataci_product="<c:out value='${param.pgl_widgetId}_${partNumber}'/>" class="image_container">
-				<img id="productMainImage" src="${productFullImage}" alt="<c:out value="${fullImageAltDescription}" escapeXml="${env_escapeXmlFlag}"/>" title="<c:out value="${fullImageAltDescription}" escapeXml="${env_escapeXmlFlag}"/>" class="product_main_image"/>
+				<img id="productMainImage" src="${productFullImage}" alt="<c:out value="${fullImageAltDescription}" escapeXml="${env_escapeXmlFlag}"/>" title="<c:out value="${fullImageAltDescription}" escapeXml="${env_escapeXmlFlag}"/>" class="product_main_image example"/>
 				<div class="clear_float"></div>
 				<div class="hover_text">
 					<span style="display:none;"><wcst:message key="FI_HOVER_OVER_IMAGE_TO_ZOOM" bundle="${widgetText}"/></span>

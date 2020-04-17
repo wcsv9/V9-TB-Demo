@@ -108,7 +108,8 @@
 			<div class="instruction"><fmt:message bundle="${storeText}" key="MAKE_SELECTION" /></div>
 		</c:when>
 	</c:choose>
-			
+	
+
 	<c:if test="${resultNum > 0}">
 
 		<table id="bopis_table" tabindex="-1" summary="<fmt:message bundle="${storeText}" key='STORE_RESULTS_SUMMARY'/>" cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -121,6 +122,7 @@
 			</tr>
             
 			<c:forEach var="i" begin="0" end="${resultNum-1}">
+			${physicalStores.PhysicalStore[i].latitude }----
 				<c:set var="storeHourIndex" value=-1 />
 				<c:set var="attributeNum" value="${fn:length(physicalStores.PhysicalStore[i].Attribute)}" />
 				<c:if test="${attributeNum > 0}">

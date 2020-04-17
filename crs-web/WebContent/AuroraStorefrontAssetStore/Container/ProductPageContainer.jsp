@@ -16,13 +16,21 @@
 
 <%@include file="../Common/EnvironmentSetup.jspf"%>
 <%@taglib uri="http://commerce.ibm.com/pagelayout" prefix="wcpgl"%>
-
+<script type="text/javascript" src="${jspStoreImgDir}javascript/sharer.min.js"></script>
 <style>
 .row.margin-true.product_pageDesign_pageGroup {
     margin: 0 auto;
     max-width: 1005px;
 }
 </style>
+<script>
+ $(document).ready(function() {
+   document.getElementById("fb").data-url = window.location.href;
+   document.getElementById("tw").data-url = window.location.href;
+   document.getElementById("pi").data-url = window.location.href;
+   document.getElementById("em").data-subject = window.location.href;
+    });
+    </script>
 <!--Start Page Content-->
 <div id="contentWrapper">
 	<c:set var="slotNumber" value="7"/>
@@ -85,7 +93,33 @@
 					<div class="col12 acol12 ccol12 right tabbedSlots9_10_11">
 				</c:otherwise>
 			</c:choose>
-			<div class="tabButtonContainer" role="tablist">
+			
+		
+			<div>
+			<a class="sharer" id="fb"
+	        data-sharer="facebook"
+	        data-url="">
+	        Share on Facebook
+			</a>
+			<a class="sharer" id="tw"
+			        data-sharer="twitter"
+			        data-hashtags="Moore"
+			         data-url="">
+			        Share on Twitter
+			</a>
+			<a class="sharer" id="pi"
+			        data-sharer="Pinterest"
+			        data-url="">
+			        Share on Pinterest
+			</a>
+			<a class="sharer" id="em"
+			        data-sharer="email"
+			        data-subject=""
+			        data-to="">
+			        Share via Email
+			</a>
+			</div>
+			<%-- <div class="tabButtonContainer" role="tablist">
 				<div class="tab_header tab_header_double">
 					<c:forEach var="tabSlotId" items="${tabSlotIds}" varStatus="status">
 						<c:set var="tabSlotName" value="Title${tabSlotId}"/>
@@ -118,9 +152,9 @@
 						<c:remove var="tabNumber"/>
 					</c:forEach>
 				</div>
-			</div>
+			</div> --%>
 
-			<c:forEach var="tabSlotId" items="${tabSlotIds}" varStatus="status">
+			<%-- <c:forEach var="tabSlotId" items="${tabSlotIds}" varStatus="status">
 				<c:set var="tabStyle" value=""/>
 				<c:if test="${!status.first}">
 					<c:set var="tabStyle" value="style='display:none'" />
@@ -131,7 +165,7 @@
 					</div>
 				</div>
 				<c:remove var="tabStyle"/>
-			</c:forEach>
+			</c:forEach> --%>
 			</div>
 		</c:if>
 		<div class="clear_float"></div>

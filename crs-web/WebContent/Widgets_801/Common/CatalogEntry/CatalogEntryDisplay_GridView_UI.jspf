@@ -24,7 +24,7 @@
 
 <c:choose>
 	<c:when test="${disableProductCompare == 'false'}">
-		<c:set var="showCompareBox" value="true" />
+		<c:set var="showCompareBox" value="false" />
 	</c:when>
 	<c:otherwise>
 		<c:set var="showCompareBox" value="false" />
@@ -62,7 +62,7 @@
 
 <c:choose>
 	<c:when test="${showCompareBox eq 'true'}">
-		<div id="compare_${fn:escapeXml(catalogEntryID)}" class="compare_target">
+		<div id="compare_${fn:escapeXml(catalogEntryID)}" class="compare_target" style="display:none;">
 			<input id="comparebox_${fn:escapeXml(catalogEntryID)}" type="checkbox" name="comparebox_${fn:escapeXml(catalogEntryID)}" value="${fn:escapeXml(catalogEntryID)}"
 				onchange="javascript:shoppingActionsJS.addOrRemoveFromCompare('${fn:escapeXml(catalogEntryID)}',this.checked)"/>
 			<label for="comparebox_${fn:escapeXml(catalogEntryID)}"><wcst:message key="COMPARE" bundle="${widgetText}"/></label>
@@ -70,7 +70,7 @@
 		</div>
 	</c:when>
 	<c:otherwise>
-		<div id="compare_${fn:escapeXml(catalogEntryID)}" class="compare_target compare_target_hidden">
+		<div id="compare_${fn:escapeXml(catalogEntryID)}" class="compare_target compare_target_hidden" style="display:none;">
 			<input id="comparebox_${fn:escapeXml(catalogEntryID)}" type="checkbox" name="comparebox_${fn:escapeXml(catalogEntryID)}" value="${fn:escapeXml(catalogEntryID)}"
 				onchange="javascript:shoppingActionsJS.addOrRemoveFromCompare('${fn:escapeXml(catalogEntryID)}',this.checked)"/>
 			<label for="comparebox_${fn:escapeXml(catalogEntryID)}"><wcst:message key="COMPARE" bundle="${widgetText}"/></label>

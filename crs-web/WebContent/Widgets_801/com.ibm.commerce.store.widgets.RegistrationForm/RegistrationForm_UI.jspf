@@ -190,9 +190,15 @@
                                 $(document).ready(function() {
                                     setTimeout(function() {$('#UserRegistrationErrorMessage').focus()},2000);
                                 });
+                               
                             </script>
                         </c:if>
-
+						 <script type="text/javascript">
+                                function updateVAlue(){
+                               var email= document.getElementById("WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1").value;
+                               document.getElementById("WC_UserRegistrationAddForm_FormInput_email1_In_Register_1").value = email;
+                                };
+                            </script>
                         <div class="form_2column" id="WC_UserRegistrationAddForm_DivForm_1">
                             <input type="hidden" name="addressType" value="SB" id="WC_UserRegistrationAddForm_FormInput_addressType_In_Register_1"/>
                             <input type="hidden" name="receiveEmail" value="" id="WC_UserRegistrationAddForm_FormInput_receiveEmail_In_Register_1"/>
@@ -205,13 +211,13 @@
                                 <div class="column_label" id="WC_UserRegistrationAddForm_div_11">
                                     <span class="spanacce">
                                         <label for="WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1">
-                                            <wcst:message bundle="${widgetText}" key="LOGON_ID"/>
+                                            Email Address:
                                         </label>
                                     </span>
-                                    <wcst:message bundle="${widgetText}" key="LOGON_ID"/>
+                                    Email Address:
                                     <span class="required-field" id="WC_UserRegistrationAddForm_div_12"> *</span>
                                 </div>
-                                <input class="inputField" type="text" size="35" maxlength="254" aria-required="true" name="logonId" id="WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1"  value="<c:out value="${paramSource.logonId}"/>"/>
+                                <input class="inputField" type="text" size="35" maxlength="254" aria-required="true" name="logonId" id="WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1"  onchange="javascript:updateVAlue();" value="<c:out value="${paramSource.logonId}"/>"/>
                             </div>
 
                             <flow:ifEnabled feature="allowOrgRegistration">
@@ -292,7 +298,7 @@
                                 <jsp:param name="firstName" value="${fn:escapeXml(firstName)}"/>
                                 <jsp:param name="middleName" value="${fn:escapeXml(middleName)}"/>
                                 <jsp:param name="lastName" value="${fn:escapeXml(lastName)}"/>
-                                <jsp:param name="address1" value="${fn:escapeXml(street)}"/>
+                                 <jsp:param name="address1" value="${fn:escapeXml(street)}"/>
                                 <jsp:param name="address2" value="${fn:escapeXml(street2)}"/>
                                 <jsp:param name="city" value="${fn:escapeXml(city)}"/>
                                 <jsp:param name="state" value="${fn:escapeXml(state)}"/>
@@ -307,7 +313,7 @@
                                 <jsp:param name="receiveSMSNotification" value="${fn:escapeXml(receiveSMSNotification)}"/>
                                 <jsp:param name="receiveSMSPreference" value="${fn:escapeXml(receiveSMSNotification)}"/>
                                 <jsp:param name="mobilePhoneNumber1" value="${mobilePhoneNumber1}"/>
-                                <jsp:param name="mobilePhoneNumber1Country" value="${mobilePhone1Country}"/>
+                                <jsp:param name="mobilePhoneNumber1Country" value="${mobilePhone1Country}"/> 
                                 <jsp:param name="pageName" value="${fn:escapeXml(pageName)}"/>
                                 <jsp:param name="formName" value="${fn:escapeXml(formName)}"/>
                             </jsp:include>
@@ -444,7 +450,7 @@
                                 <jsp:param name="firstName" value="${fn:escapeXml(usr_firstName)}"/>
                                 <jsp:param name="middleName" value="${fn:escapeXml(usr_middleName)}"/>
                                 <jsp:param name="lastName" value="${fn:escapeXml(usr_lastName)}"/>
-                                <jsp:param name="address1" value="${fn:escapeXml(usr_street)}"/>
+                         <%--        <jsp:param name="address1" value="${fn:escapeXml(usr_street)}"/>
                                 <jsp:param name="address2" value="${fn:escapeXml(usr_street2)}"/>
                                 <jsp:param name="city" value="${fn:escapeXml(usr_city)}"/>
                                 <jsp:param name="state" value="${fn:escapeXml(usr_state)}"/>
@@ -454,7 +460,7 @@
                                 <jsp:param name="email1" value="${fn:escapeXml(usr_email1)}"/>
                                 <jsp:param name="preferredCurrency" value="${fn:escapeXml(usr_preferredCurrency)}"/>
                                 <jsp:param name="preferredLanguage" value="${fn:escapeXml(usr_preferredLanguage)}"/>
-                                <jsp:param name="flexFlowsFieldOrder" value="${fn:escapeXml(usr_flexFlowsFieldOrder)}"/>
+                                <jsp:param name="flexFlowsFieldOrder" value="${fn:escapeXml(usr_flexFlowsFieldOrder)}"/> --%>
                                 <jsp:param name="pageName" value="${fn:escapeXml(pageName)}"/>
                                 <jsp:param name="formName" value="${fn:escapeXml(formName)}"/>
                                 <jsp:param name="prefix" value="usr_"/>
@@ -467,7 +473,7 @@
                     </div>
 
                     <div class="button_footer_line no_float" id="WC_UserRegistrationAddForm_Buttons_1">
-                        <a href="#" role="button" class="button_primary" id="WC_UserRegistrationAddForm_links_1" tabindex="0" onclick="JavaScript:LogonForm.prepareSubmit(document.Register);return false;">
+                        <a href="#" role="button" class="button_primary" id="WC_UserRegistrationAddForm_links_1" tabindex="0" onclick="JavaScript:LogonForm.prepareXSubmit(document.Register);return false;">
                             <div class="left_border"></div>
                             <div class="button_text"><wcst:message bundle="${widgetText}" key="SUBMIT"/></div>
                             <div class="right_border"></div>
@@ -496,5 +502,6 @@
         </form>
     </div>
 </div>
+
 
 <!-- END RegistrationForm_UI.jspf -->
