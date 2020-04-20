@@ -333,28 +333,7 @@
 		<br clear="all"/>
 	</div>
 </div>
-<script
-    src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-<script>
-var map;
-function initialize() {
- var myLatLng = {lat: -25.363, lng: 131.044};
-  var mapOptions = {
-    zoom: 8,
-    center: myLatLng
-  };
-  map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
-       var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map
-        });
-}
 
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>	
-<div id="map-canvas" style="height:420px; width:700px"></div>	
-${param.geoCodeLatitude}
 <span id="storeLocatorResults_ACCE_Label" class="spanacce"><fmt:message bundle="${storeText}" key="ACCE_Region_Store_Result_List"/></span>
 <div wcType="RefreshArea" id="storeLocatorResults" refreshurl="<c:out value='${AjaxStoreLocatorResultsURL}'/>" ariaMessage="<fmt:message bundle='${storeText}' key='ACCE_Status_Store_Result_List_Updated'/>" ariaLiveId="${ariaMessageNode}" declareFunction="StoreLocatorControllersDeclarationJSStore.storeLocatorResultsRefreshController" role="region" aria-labelledby="storeLocatorResults_ACCE_Label">
 	<% out.flush(); %>

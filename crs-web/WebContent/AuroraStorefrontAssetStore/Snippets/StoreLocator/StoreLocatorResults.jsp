@@ -122,7 +122,7 @@
 			</tr>
             
 			<c:forEach var="i" begin="0" end="${resultNum-1}">
-			${physicalStores.PhysicalStore[i].latitude }----
+		
 				<c:set var="storeHourIndex" value=-1 />
 				<c:set var="attributeNum" value="${fn:length(physicalStores.PhysicalStore[i].Attribute)}" />
 				<c:if test="${attributeNum > 0}">
