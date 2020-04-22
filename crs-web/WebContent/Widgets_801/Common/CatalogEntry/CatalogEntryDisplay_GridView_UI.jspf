@@ -34,7 +34,7 @@
 	<c:set var="showCompareBox" value="false" />
 </c:if>
 
-<div id="CatalogEntryProdImg_${catalogEntryID}" class="product_image">
+<div id="CatalogEntryProdImg_${catalogEntryID}" class="product_image" onmouseover="javascript:QuickInfoJS.showQuickView(quickview_${catalogEntryID})" onmouseleave="javascript:QuickInfoJS.hideQuickView(quickview_${catalogEntryID})">
 	<div dataci_product="<c:out value='${param.pgl_widgetId}_${partNumber}'/>" class="image" id="ci_product_<c:out value='${param.pgl_widgetId}_${partNumber}'/>">
 		<a ${ShowProductInNewWindow} id="catalogEntry_img${catalogEntryID}"
 				href="${fn:escapeXml(catEntryDisplayUrl)}${fn:escapeXml(cmcrurl_productImageLink)}"
@@ -46,6 +46,11 @@
 			</c:forEach>
 		</a>
 	</div>
+	 <button type="button" class="qlook" id="quickview_${catalogEntryID}"
+	  title="Press Enter key to view quick information of the product in a popup."  
+	   wairole="button" onclick="javascript:setCurrentId(quickview_${catalogEntryID});javascript:QuickInfoJS.showDetails(${catalogEntryID}, null, null, null, 'widget_quick_info_popup');" 
+	 >Quick View
+	</button>
 </div>
 <div class="product_info">
 	<div class="product_name">

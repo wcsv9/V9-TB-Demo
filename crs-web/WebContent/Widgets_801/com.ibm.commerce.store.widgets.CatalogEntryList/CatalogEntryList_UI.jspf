@@ -148,6 +148,7 @@
         </div>
 
         <div class="product_listing_container">
+        		<wcpgl:widgetImport useIBMContextInSeparatedEnv="${isStoreServer}" url="${env_siteWidgetsDir}Common/QuickInfo/QuickInfoPopup.jsp"/>
             <c:if test="${totalCount > 0}">
                 <c:choose>
                 <%-- Display the results in either grid mode or in list mode.. grid mode being default --%>

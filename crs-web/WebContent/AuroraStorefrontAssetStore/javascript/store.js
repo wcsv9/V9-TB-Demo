@@ -91343,6 +91343,18 @@ if(typeof(QuickInfoJS) == "undefined" || QuickInfoJS == null || !QuickInfoJS) {
 			this.replaceOrderItemId = replaceOrderItemId;
 		},
 		
+	showQuickView: function( quickViewDiv)  {
+			
+		$(quickViewDiv).show();
+			 			
+		},
+		
+	hideQuickView: function(quickViewDiv)  {
+			
+			$(quickViewDiv).hide();
+			 			
+		},
+		
 		/**
 		 * Sets other values
 		 */
