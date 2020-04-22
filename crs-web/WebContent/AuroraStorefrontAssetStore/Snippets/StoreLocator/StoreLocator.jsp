@@ -117,6 +117,12 @@
 		<wcf:param name="siteLevelSearch" value="false"/>
 	</wcf:rest>
 </c:catch>
+<script
+
+    src="https://maps.googleapis.com/maps/api/js?&v=3.exp&sensor=false"></script>
+    <script> var map;
+    </script>
+
 
 <script type="text/javascript">
 	StoreLocatorControllersDeclarationJSStore.setCommonParameters('<c:out value="${langId}"/>','<c:out value="${WCParam.storeId}"/>','<c:out value="${WCParam.catalogId}"/>','<c:out value="${WCParam.orderId}"/>','<c:out value="${WCParam.fromPage}"/>');
@@ -208,7 +214,7 @@
     	<br clear="all" />
 	</c:if>
 </c:if>
-
+<%-- 
 <c:choose>
 	<c:when test="${fromPage != 'ShoppingCart'}">	
 		<div class="store_locator_title"><span aria-level="1" role="heading"><fmt:message bundle="${storeText}" key="STORELOCATOR_TITLE1"/></span></div>
@@ -233,8 +239,9 @@
 		</div>
 	</c:otherwise>
 </c:choose>
-
+--%>
 <!-- your store list -->
+<%-- 
 <span id="selectedStoreList_ACCE_Label" class="spanacce"><fmt:message bundle="${storeText}" key="ACCE_Region_Your_Store_List"/></span>
 <div wcType="RefreshArea" id="selectedStoreList" refreshurl="<c:out value='${AjaxSelectedStoreListURL}'/>" declareFunction="StoreLocatorControllersDeclarationJSStore.selectedStoreListRefreshController()" style="display:block;" ariaMessage="<fmt:message bundle='${storeText}' key='ACCE_Status_Your_Store_List_Updated'/>" ariaLiveId="${ariaMessageNode}" role="region" aria-labelledby="selectedStoreList_ACCE_Label">
 	<% out.flush(); %>
@@ -245,10 +252,11 @@
 	</c:import>	
 	<% out.flush(); %>
 </div>
-
+--%>
 <!-- your store list -->
 
 <!-- store locator -->
+<%-- 
 <c:choose>
 	<c:when test="${fromPage != 'ShoppingCart'}">	
 		<h2 class="gift_header"><fmt:message bundle="${storeText}" key="STORELOCATOR_TITLE1"/></h2>
@@ -265,9 +273,31 @@
 		<div class="right_border"></div>
 	</a>
 </div>
+--%>
+<wcf:url var="StoreLocatorView1" value="AjaxStoreLocatorDisplayView">
+	<wcf:param name="storeId"   value="${storeId}"  />
+	<wcf:param name="catalogId" value="${catalogId}"/>
+	<wcf:param name="langId" value="${langId}" />
+</wcf:url>
+<div class="inner">
+<ul class="breadcrumb" itemscope="" itemtype="//schema.org/BreadcrumbList">
+<li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="//schema.org/ListItem">
+<a itemprop="item" href="/wcs/shop/en/auroraesite">
+Home
+<meta itemprop="name" content="Home">
+</a>
+<span aria-hidden="true">&bull;</span>
+<meta itemprop="position" content="1">
+</li>
+<li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="//schema.org/ListItem">
+ <a id="storeLocatorQuickLink" href="${fn:escapeXml(StoreLocatorView1)}">Find a Store <!--<fmt:message bundle="${storeText}" key="HEADER_STORE_LOCATOR"/>--> </a>
+<meta itemprop="position" content="2">
+</li>
+</ul>
+</div>
 <div class="gift_content">
-	<span class="instruction"><fmt:message bundle="${storeText}" key="SELECT_ENTER_OPTIONS"/></span>
-	
+	<%--<span class="instruction"><fmt:message bundle="${storeText}" key="SELECT_ENTER_OPTIONS"/></span>  --%>
+	</br>
 	<div id="location">
 		<c:set var="formName" value="searchByGeoNodeForm" />
 		<form id='<c:out value="${formName}" />' name='<c:out value="${formName}" />'>
@@ -323,7 +353,7 @@
 				<div id="WC_StoreLocator_div_39" class="location_select_button">
 					<a href="#" role="button" class="button_primary" id="cityGo" onclick="Javascript:setCurrentId('cityGo'); storeLocatorJSStore.refreshResultsFromCity(document.${formName}, '<c:out value='${fromPage}'/>');">
 						<div class="left_border"></div>
-						<div class="button_text"><fmt:message bundle="${storeText}" key="GO_BUTTON_LABEL" /></div>
+						<div class="button_text">FIND</div>
 						<div class="right_border"></div>
 					</a>
 				</div>
@@ -344,13 +374,16 @@
 	</c:import>	
 	<% out.flush(); %>
 </div>
+<div id="temp-map">
+<div  id="map-canvas" style="height:420px; width:700px"></div>
+</div>
 	
 <c:choose>
 	<c:when test="${!empty fromUrl}">
 		<div class="button_footer_line no_float">
 			<a href="#" role="button" class="button_primary" id="continueShoppingStoreLocator" onclick="javascript:setPageLocation('<c:out value="${fromUrl}"/>')">
 				<div class="left_border"></div>
-				<div class="button_text"><fmt:message bundle="${storeText}" key="CONTINUE_SHOPPING" /></div>
+				<div class="button_text">SHOP NOW</div>
 				<div class="right_border"></div>
 			</a>
 		</div>
@@ -359,7 +392,7 @@
 		<div class="button_footer_line no_float">
 			<a href="#" role="button" class="button_primary" id="continueShoppingStoreLocator" onclick="javascript:setPageLocation('<c:out value="${ProductDisplayURL}"/>')">
 				<div class="left_border"></div>
-				<div class="button_text"><fmt:message bundle="${storeText}" key="CONTINUE_SHOPPING" /></div>
+				<div class="button_text">SHOP NOW</div>
 				<div class="right_border"></div>
 			</a>
 		</div>
@@ -368,11 +401,47 @@
 		<div class="button_footer_line no_float">
 			<a href="#" role="button" class="button_primary" id="continueShoppingStoreLocator" onclick="javascript:setPageLocation('<c:out value="${env_TopCategoriesDisplayURL}"/>')">
 				<div class="left_border"></div>
-				<div class="button_text"><fmt:message bundle="${storeText}" key="CONTINUE_SHOPPING" /></div>
+				<div class="button_text">SHOP NOW</div>
 				<div class="right_border"></div>
 			</a>
 		</div>
 	</c:when>
 </c:choose>
+<div id="WC_CheckoutBottomESpotDisplay_div_2" class="espot_checkout_bottom_right">
+	<%out.flush();%>
+		<wcpgl:widgetImport useIBMContextInSeparatedEnv="${isStoreServer}" url= "${env_siteWidgetsDir}com.ibm.commerce.store.widgets.ContentRecommendation/ContentRecommendation.jsp">
+			<wcpgl:param name="storeId" value="${storeId}" />
+			<wcpgl:param name="catalogId" value="${catalogId}" />
+			<wcpgl:param name="emsName" value="StroeLocatorRecom" />
+		</wcpgl:widgetImport>
+	<%out.flush();%>									
+</div>
+<script>
 
+function initialize() {
+
+var myLatLng = {lat: 51.05000, lng:-114.05800};
+  var mapOptions = {
+
+    zoom: 8,
+
+    center: myLatLng
+
+  };
+
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+
+      mapOptions);
+
+       var marker = new google.maps.Marker({
+
+          position: myLatLng,
+
+          map: map
+
+        });
+}
+
+ google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 <!-- END StoreLocator.jsp -->

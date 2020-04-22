@@ -26,6 +26,7 @@
 <%@ taglib uri="http://commerce.ibm.com/foundation" prefix="wcf" %>
 <%@ include file="../../Common/EnvironmentSetup.jspf" %>
 
+
 <c:set var="fromPage" value="StoreLocator" />
 <c:if test="${!empty WCParam.fromPage}">
 	<c:set var="fromPage" value="${WCParam.fromPage}" />
@@ -58,7 +59,7 @@
 <c:if test="${!empty param.errorMsgKey}">
 	<c:set var="errorMsgKey" value="${fn:escapeXml(param.errorMsgKey)}"/>
 </c:if>
-
+<c:set var="alphabet" value="${fn:split('A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z', ',')}" scope="application" />
 <c:if test="${empty errorMsgKey}">
 	<c:choose>
 		<c:when test="${empty geoCodeLatitude && empty geoCodeLongitude}">
@@ -84,7 +85,6 @@
 		</c:otherwise>
 	</c:choose>
 </c:if>
-
 <c:if test="${cityId != -999 || (!empty geoCodeLatitude && !empty geoCodeLongitude) || !empty errorMsgKey}">
 	<div class="gift_content">
 </c:if>
@@ -94,7 +94,10 @@
 </c:if>
 <c:if test="${empty physicalStoreException}">
 	<c:set var="resultNum" value="${fn:length(physicalStores.PhysicalStore)}" />
-	<c:choose>
+<c:if test="${cityId != -999  && resultNum ==0}">
+No Locations found for this selection!
+</c:if>
+<%--	<c:choose>
 		<c:when test="${resultNum <= 0 && !empty errorMsgKey}">
 			<span class="content_text_title"><fmt:message bundle="${storeText}" key="STORE_RESULTS"/></span>
 			<div class="instruction"><fmt:message bundle="${storeText}" key="${errorMsgKey}" /></div>
@@ -107,22 +110,22 @@
 			<span class="content_text_title"><fmt:message bundle="${storeText}" key="STORE_RESULTS"/></span>
 			<div class="instruction"><fmt:message bundle="${storeText}" key="MAKE_SELECTION" /></div>
 		</c:when>
-	</c:choose>
-	
-
+	</c:choose>  --%>
+			
 	<c:if test="${resultNum > 0}">
-
+<table  cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td>
 		<table id="bopis_table" tabindex="-1" summary="<fmt:message bundle="${storeText}" key='STORE_RESULTS_SUMMARY'/>" cellpadding="0" cellspacing="0" border="0" width="100%">
-			<tr class="nested">
+			<%-- <tr class="nested">
 				<th class="align_left" id="PhysicalStores_tableCell_result1"><fmt:message bundle="${storeText}" key="STORE_RESULTS_COLUMN1" /></th>
 				<th class="align_left" id="PhysicalStores_tableCell_result2"><fmt:message bundle="${storeText}" key="STORE_RESULTS_COLUMN2" /></th>
 				<th class="align_left" id="PhysicalStores_tableCell_result3"><fmt:message bundle="${storeText}" key="STORE_RESULTS_COLUMN3" /></th>
 				<c:if test="${_worklightHybridApp}"><th class="align_left" id="PhysicalStores_tableCell_result3"><fmt:message bundle="${storeText}" key="MST_VIEW_MAP" /></th></c:if>
 				<%@ include file="StoreLocatorResults_title_ext.jspf"%>
 			</tr>
-            
+            --%>
 			<c:forEach var="i" begin="0" end="${resultNum-1}">
-		
 				<c:set var="storeHourIndex" value=-1 />
 				<c:set var="attributeNum" value="${fn:length(physicalStores.PhysicalStore[i].Attribute)}" />
 				<c:if test="${attributeNum > 0}">
@@ -133,8 +136,12 @@
 						</c:if>
 					</c:forEach>
 				</c:if>
-					
 				<tr>
+				<td>
+					<c:out value="${alphabet[i]}" />&nbsp;
+					<input type="hidden" name="maplocs" id="maplocs" value='${alphabet[i]}_<c:out value="${physicalStores.PhysicalStore[i].latitude}" />_<c:out value="${physicalStores.PhysicalStore[i].longitude}" />'>
+				
+				</td>
 					<td headers="PhysicalStores_tableCell_result1" <c:choose><c:when test="${i == resultNum - 1}"><c:out value="class=no_bottom_border"/></c:when><c:otherwise><c:out value="class=dotted_bottom_border"/></c:otherwise></c:choose>>
 						<p><span class="my_account_content_bold"><c:out value="${physicalStores.PhysicalStore[i].Description[0].displayStoreName}" /></span></p>
 						<p><c:out value="${physicalStores.PhysicalStore[i].addressLine[0]}" /></p>
@@ -142,7 +149,7 @@
 						<p><c:out value="${physicalStores.PhysicalStore[i].telephone1}" /></p>
 					</td>
     
-					<c:choose>
+				<%-- 	<c:choose>
 						<c:when test="${storeHoursIndex > -1}">
 							<td headers="PhysicalStores_tableCell_result2" <c:choose><c:when test="${i == resultNum - 1}"><c:out value="class=no_bottom_border"/></c:when><c:otherwise><c:out value="class=dotted_bottom_border"/></c:otherwise></c:choose>>
 								<c:out value="${physicalStores.PhysicalStore[i].Attribute[storeHoursIndex].displayValue}" escapeXml="false"/>
@@ -200,15 +207,24 @@
 							</a>
 						</div>
 					</td>
-					</c:if>
+					</c:if> --%>
 				</tr>
-  
 			</c:forEach>
 		</table>
+		</td>
+		<td>
+		<div  id="map-canvas" style="height:420px; width:700px"></div>
+		</td>
+</tr>
+</table>
+		
 	</c:if>
 </c:if>
 <c:if test="${cityId != -999 || (!empty geoCodeLatitude && !empty geoCodeLongitude) || !empty errorMsgKey}">
 	</div>
 </c:if>
+
+
+
 
 <!-- END StoreLocatorResults.jsp -->
