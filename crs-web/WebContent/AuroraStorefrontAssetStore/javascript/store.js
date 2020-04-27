@@ -85338,7 +85338,6 @@ StoreLocatorControllersDeclarationJSStore = {
 		});
 	},
 
-
 	/* refresh controller declaration for "storeLocatorResultsController" */
 	storeLocatorResultsRefreshController: function () {
 
@@ -85350,11 +85349,15 @@ StoreLocatorControllersDeclarationJSStore = {
 
 			renderContextChangedHandler: function () {
 				cursor_wait();
+				var tempmap = $("#temp-map");
+				if (tempmap != null && tempmap != "undefined") {
+					tempmap.hide();
+				}
 				myWidgetObj.refreshWidget("refresh", myRCProperties);
 			},
 
 			postRefreshHandler: function () {
-
+				
 				var bopisTable = $("#bopis_table");
 				if (bopisTable != null && bopisTable != "undefined") {
 					bopisTable.focus();
@@ -85363,7 +85366,37 @@ StoreLocatorControllersDeclarationJSStore = {
 				if (noStoreMsg != null && noStoreMsg != "undefined") {
 					noStoreMsg.focus();
 				}
+				  var mapLocs =document.getElementsByName('maplocs');
+				
+				geoLat=(mapLocs[0].value).split('_')[1];
+				geoLon=(mapLocs[0].value).split('_')[2];
+				var myLatLng =  {lat: parseFloat(geoLat), lng: parseFloat(geoLon)};
+				  var mapOptions = {
 
+				    zoom: 8,
+
+				    center: myLatLng
+
+				  };
+
+				  map = new google.maps.Map(document.getElementById('map-canvas'),
+
+				      mapOptions);
+				  
+				  
+				  for (var i=0;i<mapLocs.length;i++){
+					  var lab =(mapLocs[i].value).split('_')[0];
+		               var la = (mapLocs[i].value).split('_')[1];
+		               var lo = (mapLocs[i].value).split('_')[2];
+		               var marker = new google.maps.Marker({
+
+					          position:  {lat: parseFloat(la), lng: parseFloat(lo)},
+					          title:lab,
+					          label:lab,
+					          map: map
+				        });
+                   }
+				
 				cursor_clear();
 			}
 
