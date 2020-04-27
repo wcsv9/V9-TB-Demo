@@ -91879,7 +91879,9 @@ if(typeof(QuickInfoJS) == "undefined" || QuickInfoJS == null || !QuickInfoJS) {
 				// Resolve ProductBean to an ItemBean based on the attributes in the main page
 				var sku = this.resolveSKU();
 				if(-1 == sku){
-					MessageHelper.displayErrorMessage(Utils.getLocalizationMessage['ERR_RESOLVING_SKU']);
+				//	MessageHelper.displayErrorMessage(Utils.getLocalizationMessage['ERR_RESOLVING_SKU']);
+				
+					MessageHelper.displayErrorMessage(MessageHelper.messages.ERR_RESOLVING_SKU);
 					return;
 				} else {
 					updateParamObject(this.params,"catEntryId",sku,false,-1);
