@@ -48,7 +48,7 @@
 	</div>
 	 <button type="button" class="qlook" id="quickview_${catalogEntryID}"
 	  title="Press Enter key to view quick information of the product in a popup."  
-	   wairole="button" onclick="javascript:setCurrentId(quickview_${catalogEntryID});javascript:QuickInfoJS.showDetails(${catalogEntryID}, null, null, null, 'widget_quick_info_popup');" 
+	   wairole="button" onclick="javascript:setCurrentId('quickview_${catalogEntryID}');javascript:QuickInfoJS.showDetails(${catalogEntryID}, null, null, null, 'widget_quick_info_popup');" 
 	 >Quick View
 	</button>
 </div>

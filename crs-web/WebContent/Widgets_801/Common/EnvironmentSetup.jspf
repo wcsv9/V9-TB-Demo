@@ -589,3 +589,6 @@ jspStoreDir - /<sharedstorefrontassetstoredir>/
 <c:if test="${CommandContext.user.userId eq '-1002'}">
 	<c:set var="anonymousUser" value="true" scope="request"/>
 </c:if>
+
+<fmt:setLocale value="${CommandContext.locale}" />
+<fmt:setBundle basename="/${sdb.jspStoreDir}/storetext_v2" var="storeText" scope="request"/>
