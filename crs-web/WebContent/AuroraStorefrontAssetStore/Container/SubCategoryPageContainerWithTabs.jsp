@@ -16,19 +16,38 @@
 
     <%@include file="../Common/EnvironmentSetup.jspf"%>
     <%@taglib uri="http://commerce.ibm.com/pagelayout" prefix="wcpgl"%>
-
+    
+  <style>
+  
+  .srch_ccol9 {
+  	width: 100%;
+  }
+  
+  
+  </style>
+  <c:set var="searchccol9" value="col8 acol12 ccol9 right" />
+       <c:if test = "${requestScope.pageGroup == 'Search'}">
+   			<c:set var="searchccol9" value="col8 acol12 srch_ccol9 right" />
+   </c:if>
+  
             <div class="subCat_page_tab_content rowContainer" id="container_${pageDesign.layoutId}">
+            <c:if test = "${requestScope.pageGroup != 'Search'}">
+           
                 <div class="row margin-true">
                     <div class="col12" data-slot-id="1">
                         <wcpgl:widgetImport slotId="1" />
                     </div>
                 </div>
+           </c:if> 
+         
               
                 <div class="row margin-true">
+                   <c:if test = "${requestScope.pageGroup != 'Search'}">
                     <div class="col4 acol12 ccol3" data-slot-id="4">
                         <wcpgl:widgetImport slotId="4" />
                     </div>
-                    <div class="col8 acol12 ccol9 right" data-slot-id="5">
+                </c:if>
+                    <div class="${searchccol9}" data-slot-id="5">
                         <wcpgl:widgetImport slotId="5" />
                     </div>
                     <div class="col8 acol12 ccol9 right">
@@ -46,7 +65,7 @@
 								</c:if>
 							</c:forEach>
 						</c:forEach>
-
+	
 						<%-- Find the index of the selected tab --%>
 						<c:set var="selectedTabIndex" value="${0}" />
 						<c:forEach var="tabSlotId" items="${tabSlotIds}" varStatus="status">
@@ -104,5 +123,6 @@
                     </div>
                 </div>
             </div>
+      
 
             <!-- END SubCategoryPageContainerWithTabs.jsp -->

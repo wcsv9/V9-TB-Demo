@@ -31,7 +31,9 @@
 			<%@ include file="/Widgets_801/Common/SearchSetup.jspf" %>
 		</c:when>
 	</c:choose>
-	<%@ include file="CategoryNavigation_Data.jspf" %>
+	<c:if test = "${requestScope.pageGroup != 'Search'}">
+		<%@ include file="CategoryNavigation_Data.jspf" %>
+	</c:if>
 </c:if>
 
 <c:if test="${env_inPreview && !env_storePreviewLink}">	
