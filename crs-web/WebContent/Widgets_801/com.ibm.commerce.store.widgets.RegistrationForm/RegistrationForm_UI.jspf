@@ -47,14 +47,45 @@
         
     });
 </script>
+<style>
 
-<div id="box">
+div.content_wrapper>div.content_left_shadow>div.content_right_shadow>div.main_content {padding: 0px 0;}
+.sign_in_registration {
+    
+    max-width: 651px;
+   
+    
+}
+</style>
+<div id="box" class="inner">
+
+	<div class="signup-sidebar"> 
+		 
+		 <div class="or-sign-in"><p>Already have an account?  <a id="register-sign-in" href="/wcs/shop/AjaxLogonForm">Sign In</a></p></div>
+		<h2>Online Account &amp; Perfect Fit® Benefits</h2>
+		<div class="pf-notification">
+		<p>
+		<strong>Perfect Fit Members</strong><br>
+		Please create an online account in order to earn points on your online purchases, see online order history and more. Already have a Perfect Fit Account? Please link your accounts below.
+		</p> 
+		</div>
+		<ul>
+		<li>Quick and easy checkout</li>
+		<li>Track your orders</li>
+		<li>Get personalized recommendations</li>	
+		</ul>
+		<p><a href="/wcs/shop/en/auroraesite/privacy-policy" >Security &amp; Privacy Policies</a></p>
+	
+	</div>
+
+
     <div class="sign_in_registration" id="WC_UserRegistrationAddForm_div_1">
         <div class="title" id="WC_UserRegistrationAddForm_div_5">
             <h1>
-                <wcst:message bundle="${widgetText}" key="UR_PROFILE"/>
+             <wcst:message bundle="${widgetText}" key="UR_PROFILE"/>
             </h1>
         </div>
+        
 
         <form name="Register" method="post" action="<c:out value="${actionURL}"/>" id="Register">
             <input type="hidden" name="authToken" value="${authToken}" id="WC_UserRegistrationAddForm_FormInput_authToken_In_Register_1"/>
@@ -203,9 +234,13 @@
                             <input type="hidden" name="addressType" value="SB" id="WC_UserRegistrationAddForm_FormInput_addressType_In_Register_1"/>
                             <input type="hidden" name="receiveEmail" value="" id="WC_UserRegistrationAddForm_FormInput_receiveEmail_In_Register_1"/>
 
-                            <span class="provideInfo" id="WC_UserRegistrationAddForm_div_8"><wcst:message bundle="${widgetText}" key="PROVIDE_INFO"/></span><br />
-                            <span class="required-field" id="WC_UserRegistrationAddForm_div_9"> *</span>
-                            <wcst:message bundle="${widgetText}" key="REQUIRED_FIELDS"/><br />
+                            <p class="provideInfo" id="WC_UserRegistrationAddForm_div_8"><wcst:message bundle="${widgetText}" key="PROVIDE_INFO"/>
+                            
+                             <span class="required-field" id="WC_UserRegistrationAddForm_div_9"> * Required</span>
+                            </p>
+                           
+                           
+							<%--<wcst:message bundle="${widgetText}" key="REQUIRED_FIELDS"/><br /> --%>
                             <br />
                             <div class="column" id="WC_UserRegistrationAddForm_div_10">
                                 <div class="column_label" id="WC_UserRegistrationAddForm_div_11">
@@ -218,6 +253,7 @@
                                     <span class="required-field" id="WC_UserRegistrationAddForm_div_12"> *</span>
                                 </div>
                                 <input class="inputField" type="text" size="35" maxlength="254" aria-required="true" name="logonId" id="WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1"  onchange="javascript:updateVAlue();" value="<c:out value="${paramSource.logonId}"/>"/>
+                           			<span class="user-name">This will be your username</span>
                             </div>
 
                             <flow:ifEnabled feature="allowOrgRegistration">
@@ -291,7 +327,7 @@
                                 </c:otherwise>
                             </c:choose>
 
-                            <br clear="all" />
+							<!--<br clear="all" />-->
                             <c:set var="pageName" value="UserRegistrationAddForm"/>
 
                             <jsp:include page="../com.ibm.commerce.store.widgets.AddressForm/AddressForm.jsp" flush="true">
@@ -319,6 +355,7 @@
                             </jsp:include>
 
                             <br clear="all" />
+                            
                             <div class="column" id="WC_UserRegistrationAddForm_div_36">
                                 <div class="row" id="WC_UserRegistrationAddForm_div_37">
                                     <input class="checkbox" type="hidden" name="rememberMe" value="false" id="WC_UserRegistrationAddForm_FormInput_rememberMe_In_Register_1"/>
@@ -339,6 +376,7 @@
                             </div>
                         </div>
                         <div class="clear_float"></div>
+                        
                         <div class="form_2column nodisplay" id="WC_OrganizationRegistration_DivForm_1">
                             <input type="hidden" name="approvalGroups" value="orderProcess"/>
                             <input type="hidden" name="registerOrg" id="WC_OrganizationRegistration_17" value="true"/>
@@ -362,11 +400,11 @@
                                 </div>
                                 <input class="inputField" id="<c:out value='WC_${pageName}_AddressEntryForm_FormInput_${paramPrefix}orgname'/>" name="<c:out value="org_orgEntityName"/>" type="text" size="35" value="<c:out value="${WCParam.org_orgEntityName}"/>"/>
                             </div>
-
+								
                             <c:set var="B2BShowNameField" value="false" scope="request"/>
                             <c:set var="B2BShowUseOrgAddress" value="false" scope="request"/>
                             <c:set var="pageName" value="OrganizationRegistrationAddForm"/>
-
+							
                             <jsp:include page="../com.ibm.commerce.store.widgets.AddressForm/AddressForm.jsp" flush="true">
                                 <jsp:param name="address1" value="${fn:escapeXml(org_street)}"/>
                                 <jsp:param name="address2" value="${fn:escapeXml(org_street2)}"/>
@@ -471,18 +509,21 @@
                             <br clear="all"/>
                         </div>
                     </div>
-
+								<div class="border-btm">&nbsp;</div>
                     <div class="button_footer_line no_float" id="WC_UserRegistrationAddForm_Buttons_1">
                         <a href="#" role="button" class="button_primary" id="WC_UserRegistrationAddForm_links_1" tabindex="0" onclick="JavaScript:LogonForm.prepareXSubmit(document.Register);return false;">
                             <div class="left_border"></div>
-                            <div class="button_text"><wcst:message bundle="${widgetText}" key="SUBMIT"/></div>
+                            <div class="button_text">Create Account<!-- <wcst:message bundle="${widgetText}" key="SUBMIT"/> --></div>
                             <div class="right_border"></div>
                         </a>
-                        <a role="button" class="button_secondary button_left_padding" id="WC_UserRegistrationAddForm_links_2" tabindex="0" href="javascript:setPageLocation('<c:out value="${env_TopCategoriesDisplayURL}"/>')">
+                        <a style="display:none" role="button" class="button_secondary button_left_padding" id="WC_UserRegistrationAddForm_links_2" tabindex="0" href="javascript:setPageLocation('<c:out value="${env_TopCategoriesDisplayURL}"/>')">
                             <div class="left_border"></div>
                             <div class="button_text"><wcst:message bundle="${widgetText}" key="CANCEL"/></div>
                             <div class="right_border"></div>
                         </a>
+                        
+                        <span class="agree">By creating an account I agree to the <a href="/wcs/shop/en/auroraesite/privacy-policy" >Terms &amp; Conditions</a></span>
+                        
                     </div>
 
                     <div class="button_footer_line no_float nodisplay" id="WC_OrganizationRegistration_Buttons_1">

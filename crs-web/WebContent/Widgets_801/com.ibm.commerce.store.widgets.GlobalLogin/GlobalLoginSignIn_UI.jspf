@@ -62,12 +62,13 @@ var xp = document.getElementById("drop");
 </wcf:url>
 <a href="#" onmouseover="javascript:openDialog();" id="nQuickLink" tabIndex="0" class="panelLinkSelected" >ACCOUNT</a>
 <div style="display:none;" id="drop" role="dialog">
+<span class="arrow-login"></span>
 <ul>
 <li>
 <a href="#" onclick="javascript:GlobalLoginJS.InitHTTPSecure('<c:out value="${widgetId}"/>');" id="${widgetId}_signInQuickLink" tabIndex="0" class="panelLinkSelected" aria-label="<wcst:message bundle="${widgetText}" key="GLOBALLOGIN_SIGN_IN_OR_REGISTER"/>">Sign in/Register</a>
 </li>
 <li>
-<a id="WishListViewLink" href="${fn:escapeXml(WishListView)}">WishList<img id="contentImage_1"></a>
+<a id="WishListViewLink" href="${fn:escapeXml(WishListView)}"><img src="/wcsstore/AuroraStorefrontAssetStore/images/heart.png" alt=""> WishList<img id="contentImage_1"></a>
 </li>
 </ul>
 

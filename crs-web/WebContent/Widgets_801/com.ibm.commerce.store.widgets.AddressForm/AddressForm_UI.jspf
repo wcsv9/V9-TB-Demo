@@ -313,10 +313,13 @@
 		<c:when test="${field == 'phone1'}">
 		<c:choose>
 		<c:when test="${ pageName eq 'UserRegistrationAddForm'}">
-		<div class="column" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>div_22">
-		
-         <label for="ph1"> Mobile Alerts</label>
-         <input type="checkbox" id="ph1" name="ph1" value="" onclick="javascript:hi();"><br>
+		<div class="column create-pref" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>div_22">
+		<div class="border-btm">&nbsp;</div>
+		<h3>Communication Preferences</h3>
+
+		<label class="pref_mobile_label" for="ph1">Mobile Alerts</label>
+         
+         <input type="checkbox" id="ph1" name="ph1" value="" onclick="javascript:hi();"/><span> Text me about exclusive sales and promotions </span><br>
 				<div id="hide-me" style="display:none;">
 				
 				<div class="column_label" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>div_23" >
@@ -375,12 +378,12 @@
 			<flow:ifEnabled  feature="EmailOption">
 				<div class="column" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>div_24">
 					<div class="input_label" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>div_25">
-						<div class="checkboxField">
-							<input class="nodisplay" type="checkbox" name="sendMeEmail" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1" />
-							<img id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Img" class="checkedCheckBox" role="checkbox" alt="" 
-									aria-checked="false" aria-label="<wcst:message bundle="${widgetText}" key="REGNEW_SENDMEEMAIL"/>" tabindex="0" 
-									src="${jspStoreImgDir}images/checkbox.png" onclick="javascript:AddressHelper.changeCheckboxState('${jspStoreImgDir}','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Img','on','off')"
-									onkeypress="javascript:if(event.keyCode == 0 || event.keyCode == 13 || event.keyCode == 32){event.preventDefault();AddressHelper.changeCheckboxState('${jspStoreImgDir}','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Img','on','off');}" />
+						<div class="checkboxField"><label class="pref_email_label" for="pref_email">Email</label>
+							<input class="display" type="checkbox" name="sendMeEmail" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1" />
+<%-- 							<img id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Img" class="checkedCheckBox" role="checkbox" alt=""  --%>
+<%-- 									aria-checked="false" aria-label="<wcst:message bundle="${widgetText}" key="REGNEW_SENDMEEMAIL"/>" tabindex="0"  --%>
+<%-- 									src="${jspStoreImgDir}images/checkbox.png" onclick="javascript:AddressHelper.changeCheckboxState('${jspStoreImgDir}','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Img','on','off')" --%>
+<%-- 									onkeypress="javascript:if(event.keyCode == 0 || event.keyCode == 13 || event.keyCode == 32){event.preventDefault();AddressHelper.changeCheckboxState('${jspStoreImgDir}','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Img','on','off');}" /> --%>
 							<label class="checkboxLabel" for="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Label"><wcst:message bundle="${widgetText}" key="REGNEW_SENDMEEMAIL"/></label>
 						</div>
 						<c:if test="${sendMeEmail eq 'on' || bnEmailUserReceive.userReceive}">
@@ -392,7 +395,8 @@
 						</c:if>
 					</div>
 				</div>
-				<br clear="all" />
+				<div class="border-btm">&nbsp;</div>
+				
 			</flow:ifEnabled>
 		</c:when>
 
@@ -447,7 +451,7 @@
 							</script>
 						</div>
 					</div>
-				<br clear="all" />
+				<div class="clear"></div>
 				</flow:ifEnabled>
 			</flow:ifEnabled>
 		</c:when>
@@ -534,7 +538,7 @@
 						</c:forEach>
 					</select>
 				</div>
-				<br clear="all" />
+				<div class="clear"></div>
 			</flow:ifEnabled>
 			<flow:ifDisabled feature="preferredCurrency">
 				<%-- The value is set to the previously entered preferredCurrency if available.  Otherwise, the value is set to the currency in the CommandContext. --%>				
@@ -600,7 +604,7 @@
 						</c:choose>
 					</select>
 				</div>
-				<br clear="all" />
+				<div class="clear"></div>
 			</flow:ifEnabled>
 		</c:when>
 
@@ -669,7 +673,6 @@
 							<span class="spanacce"><label for="WC_PersonalInfoExtension<c:out value='_${paramPrefix}'/>birth_year"><wcst:message bundle="${widgetText}" key="REG_BIRTHDAY_YEAR_NODISPLAY"/></label></span>
 							<span id="age_check_year<c:out value='_${paramPrefix}'/>" style="display:none;"><wcst:message bundle="${widgetText}" key="REG_BIRTHDAY_POPUP_WARNING"/></span>
 								<c:set var="selectOptions" value='{"wcMenuClass": "wcSelectMenu"}' />
-								<select data-widget-type="wc.Select" class="wcSelect inputField" data-widget-options="${fn:escapeXml(selectOptions)}" aria-describedby="age_check_year<c:out value='_${paramPrefix}'/>" onChange="javascript:LogonForm.validateAge(document.Register)" name="birth_year" id="WC_PersonalInfoExtension<c:out value='_${paramPrefix}'/>birth_year" size="1">
 								<option <c:if test="${DOBYearReset eq myDOBYear}"> selected="selected" </c:if> value="0">----</option>
 								<c:forEach var="year" begin="${this_year - 100}" end="${this_year}" step="1">
 									<option <c:if test="${year eq myDOBYear}"> selected="selected" </c:if> value="${year}">

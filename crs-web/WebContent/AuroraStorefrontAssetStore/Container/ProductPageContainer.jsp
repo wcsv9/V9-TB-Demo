@@ -102,7 +102,7 @@
 	        Share on Facebook
 			</a>
 			<a class="sharer" id="tw"
-			        data-sharer="twitter"
+			        data-via="twitter"
 			        data-hashtags="Moore"
 			         data-url="">
 			        Share on Twitter
@@ -119,7 +119,7 @@
 			        Share via Email
 			</a>
 			</div>
-			<%-- <div class="tabButtonContainer" role="tablist">
+<%-- 			 <div class="tabButtonContainer" role="tablist">
 				<div class="tab_header tab_header_double">
 					<c:forEach var="tabSlotId" items="${tabSlotIds}" varStatus="status">
 						<c:set var="tabSlotName" value="Title${tabSlotId}"/>
@@ -152,9 +152,9 @@
 						<c:remove var="tabNumber"/>
 					</c:forEach>
 				</div>
-			</div> --%>
+			</div> 
 
-			<%-- <c:forEach var="tabSlotId" items="${tabSlotIds}" varStatus="status">
+		 <c:forEach var="tabSlotId" items="${tabSlotIds}" varStatus="status">
 				<c:set var="tabStyle" value=""/>
 				<c:if test="${!status.first}">
 					<c:set var="tabStyle" value="style='display:none'" />
@@ -165,7 +165,19 @@
 					</div>
 				</div>
 				<c:remove var="tabStyle"/>
-			</c:forEach> --%>
+			</c:forEach> 
+			----- --%>
+			<div class="content">
+						
+			<div id="tab1" tabindex="0" class="tab_container active_tab focused_tab" 
+			aria-labelledby="contentRecommendationWidget_Title10_-3005_1039" aria-controls="tab1Widget" role="tab" aria-setsize="2" aria-posinset="1" aria-selected="true" >
+								People Also Searching For
+						</div>
+							<div role="tabpanel" class="tab left" data-slot-id="10" id="tab1Widget" aria-labelledby="tab1" style="display:block;">
+					<div class="content">
+						<wcpgl:widgetImport slotId="10"/>
+					</div>
+					</div>
 			</div>
 		</c:if>
 		<div class="clear_float"></div>
