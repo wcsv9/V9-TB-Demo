@@ -22,6 +22,9 @@
     margin: 0 auto;
     max-width: 1005px;
 }
+.pdp-roduct-detail div#addToShoppingListBtn {
+    display: none;
+}
 </style>
 <script>
  $(document).ready(function() {
@@ -57,7 +60,23 @@
 			</c:otherwise>
 		</c:choose>
 			<div class="col5 acol6 ccol12 left slot5" data-slot-id="5"><wcpgl:widgetImport slotId="5"/></div>
-			<div class="col5 acol12 ccol12 left slot6" data-slot-id="6"><wcpgl:widgetImport slotId="6"/></div>
+			<div class="col5 acol12 ccol12 left slot6 pdp-roduct-detail" data-slot-id="6"><wcpgl:widgetImport slotId="6"/></div>
+			
+			
+			<div class="pdp-share-wishlist-section">
+			<div class="sharelist">
+			<span class="share">Share:</span> 
+			<a class="sharer" id="fb" data-sharer="facebook" data-url="">&nbsp;</a>
+			<a class="sharer" id="tw"  data-via="twitter"    data-hashtags="Moore"  data-url="">&nbsp;</a>
+			<a class="sharer" id="pi" data-sharer="Pinterest" data-url="">&nbsp;</a>
+			<a class="sharer" id="em" data-sharer="email" data-subject="" data-to=""> &nbsp;</a>
+			</div>
+			
+			<div class="save-look">
+			
+			<%out.flush();%><c:import url="${env_jspStoreDir}Widgets/ShoppingList/ShoppingList.jsp"/><%out.flush();%>
+			</div>
+			</div>
 			</div>		
 
 		<c:choose>
@@ -95,30 +114,7 @@
 			</c:choose>
 			
 		
-			<div>
-			<a class="sharer" id="fb"
-	        data-sharer="facebook"
-	        data-url="">
-	        Share on Facebook
-			</a>
-			<a class="sharer" id="tw"
-			        data-via="twitter"
-			        data-hashtags="Moore"
-			         data-url="">
-			        Share on Twitter
-			</a>
-			<a class="sharer" id="pi"
-			        data-sharer="Pinterest"
-			        data-url="">
-			        Share on Pinterest
-			</a>
-			<a class="sharer" id="em"
-			        data-sharer="email"
-			        data-subject=""
-			        data-to="">
-			        Share via Email
-			</a>
-			</div>
+			
 <%-- 			 <div class="tabButtonContainer" role="tablist">
 				<div class="tab_header tab_header_double">
 					<c:forEach var="tabSlotId" items="${tabSlotIds}" varStatus="status">

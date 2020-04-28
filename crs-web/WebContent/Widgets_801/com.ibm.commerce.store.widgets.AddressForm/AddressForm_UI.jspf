@@ -315,25 +315,54 @@
 		<c:when test="${ pageName eq 'UserRegistrationAddForm'}">
 		<div class="column create-pref" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>div_22">
 		<div class="border-btm">&nbsp;</div>
+		
 		<h3>Communication Preferences</h3>
+			<flow:ifEnabled  feature="EmailOption">
+				<div class="column" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>div_24">
+					<div class="input_label" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>div_25">
+						<div class="checkboxField"><label class="pref_email_label" for="pref_email">Email</label>
+							<input class="display" type="checkbox" name="sendMeEmail" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1" />
+<%-- 							<img id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Img" class="checkedCheckBox" role="checkbox" alt=""  --%>
+<%-- 									aria-checked="false" aria-label="<wcst:message bundle="${widgetText}" key="REGNEW_SENDMEEMAIL"/>" tabindex="0"  --%>
+<%-- 									src="${jspStoreImgDir}images/checkbox.png" onclick="javascript:AddressHelper.changeCheckboxState('${jspStoreImgDir}','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Img','on','off')" --%>
+<%-- 									onkeypress="javascript:if(event.keyCode == 0 || event.keyCode == 13 || event.keyCode == 32){event.preventDefault();AddressHelper.changeCheckboxState('${jspStoreImgDir}','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Img','on','off');}" /> --%>
+							<label class="checkboxLabel" for="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Label"><wcst:message bundle="${widgetText}" key="REGNEW_SENDMEEMAIL"/></label>
+						</div>
+						<c:if test="${sendMeEmail eq 'on' || bnEmailUserReceive.userReceive}">
+							<script type="text/javascript">
+								$( document ).ready(function() { 
+									AddressHelper.changeCheckboxState('${jspStoreImgDir}','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Img','on','off');
+								});
+							</script>
+						</c:if>
+					</div>
+				</div>
+				
+				
+			</flow:ifEnabled>
+		
+		
+		
 
 		<label class="pref_mobile_label" for="ph1">Mobile Alerts</label>
          
          <input type="checkbox" id="ph1" name="ph1" value="" onclick="javascript:hi();"/><span> Text me about exclusive sales and promotions </span><br>
-				<div id="hide-me" style="display:none;">
+				<div class="sms-subscribe-number" id="hide-me" style="display:none;">
 				
 				<div class="column_label" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>div_23" >
 					<span class="spanacce">
 						<label for="WC_UserRegistrationAddForm_FormInput_${paramPrefix}phoneNum_In_Register_1">
-							<wcst:message bundle="${widgetText}" key="PHONE_NUMBER2"/>
+							<%-- <wcst:message bundle="${widgetText}" key="PHONE_NUMBER2"/> --%>
+							Mobile Phone:
 						</label>
 					</span>
-					<wcst:message bundle="${widgetText}" key="PHONE_NUMBER2"/>
+					
 				</div>
 				<input class="inputField" type="tel" size="35" maxlength="32" id="WC_UserRegistrationAddForm_FormInput_${paramPrefix}phoneNum_In_Register_1" name="${paramPrefix}phone1" value="<c:out value='${phone1}'/>"/>
 			<span class="agree" style=" width: 172px;color: #999;float: left;font-size: 10px;line-height: 1.4em;width: 235px;">Message and data rates may apply. By providing my mobile number, I agree to receive recurring marketing text messages at the mobile number provided that may be sent using an automated system. Consent is not required to purchase goods or services from Men's Wearhouse.Text STOP to 66960 to opt out at any time. For info text HELP to 66960. See <a href="#">Mobile Terms.</a></span>
 			</div>
 			</div>
+			<div class="border-btm">&nbsp;</div>
 		</c:when>
 		<c:otherwise>
 		<div class="column" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>div_22">
@@ -374,32 +403,7 @@
 		
 <c:forTokens items="${flexFlowsFieldOrder}" delims="," var="field">
 	<c:choose>
-		<c:when test="${field == 'EmailOption'}">
-			<flow:ifEnabled  feature="EmailOption">
-				<div class="column" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>div_24">
-					<div class="input_label" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>div_25">
-						<div class="checkboxField"><label class="pref_email_label" for="pref_email">Email</label>
-							<input class="display" type="checkbox" name="sendMeEmail" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1" />
-<%-- 							<img id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Img" class="checkedCheckBox" role="checkbox" alt=""  --%>
-<%-- 									aria-checked="false" aria-label="<wcst:message bundle="${widgetText}" key="REGNEW_SENDMEEMAIL"/>" tabindex="0"  --%>
-<%-- 									src="${jspStoreImgDir}images/checkbox.png" onclick="javascript:AddressHelper.changeCheckboxState('${jspStoreImgDir}','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Img','on','off')" --%>
-<%-- 									onkeypress="javascript:if(event.keyCode == 0 || event.keyCode == 13 || event.keyCode == 32){event.preventDefault();AddressHelper.changeCheckboxState('${jspStoreImgDir}','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Img','on','off');}" /> --%>
-							<label class="checkboxLabel" for="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1" id="WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Label"><wcst:message bundle="${widgetText}" key="REGNEW_SENDMEEMAIL"/></label>
-						</div>
-						<c:if test="${sendMeEmail eq 'on' || bnEmailUserReceive.userReceive}">
-							<script type="text/javascript">
-								$( document ).ready(function() { 
-									AddressHelper.changeCheckboxState('${jspStoreImgDir}','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1','WC_UserRegistrationAddForm<c:out value='_${paramPrefix}'/>EmailOption_Checkbox_1_Img','on','off');
-								});
-							</script>
-						</c:if>
-					</div>
-				</div>
-				<div class="border-btm">&nbsp;</div>
-				
-			</flow:ifEnabled>
-		</c:when>
-
+		
 		<c:when test="${field == 'MarketingConsent'}">
 			<flow:ifEnabled feature="ConsentOptions">
 				<flow:ifEnabled feature="MarketingConsent">

@@ -83,7 +83,7 @@
 		<div class="drop">
 		<div class="white_line"></div>
 			<a id="<c:out value="${param.parentPage}"/>addToShoppingListDropdown" onmouseover="javascript: shoppingListJS<c:out value="${param.parentPage}"/>.mouseOnArrow = true;" onmouseout="javascript: shoppingListJS<c:out value="${param.parentPage}"/>.mouseOnArrow = false;" href="javascript:shoppingListJS<c:out value="${param.parentPage}"/>.showDropDown();" class="dropdown_arrow tlignore" title="<fmt:message bundle="${storeText}" key="SL_MULTIPLE_SHOPPING_LIST_DD" />" role="button">
-					<img src="${jspStoreImgDir}${env_vfileColor}widget_quick_info_popup/dropdown_arrow.png" alt="<fmt:message bundle="${storeText}" key="SL_MULTIPLE_SHOPPING_LIST_DD" />"/>
+					<img style="display:none;" src="" alt="<fmt:message bundle="${storeText}" key="SL_MULTIPLE_SHOPPING_LIST_DD" />"/>
 				</a>
 			<div class="right_border"></div>
 		</div>

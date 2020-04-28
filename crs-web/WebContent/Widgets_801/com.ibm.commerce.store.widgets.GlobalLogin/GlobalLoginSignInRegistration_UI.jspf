@@ -129,11 +129,14 @@
 			</a>
 			<span class="forget-sec">
 			<a id="<c:out value='${widgetId}'/>_WC_AccountDisplay_links_1" class="link" href="<c:out value="${ForgetPasswordURL}"/>" aria-label="<wcst:message bundle="${widgetText}" key="GLOBALLOGIN_FORGOT_PASSWORD_TEXT"/>" class="link"><wcst:message bundle="${widgetText}" key="GLOBALLOGIN_FORGOT_PASSWORD_TEXT"/></a>								
-			<c:if test="${accountActivationFlag == 'true'}">
+			<span class="need">Need Help? <a href="/wcs/shop/en/auroraesite/corporate-contact-us">Contact Us »</a></span>
+    
+			
+			<!-- <c:if test="${accountActivationFlag == 'true'}">
 				<p id="<c:out value='${widgetId}'/>_resendActivationLink">
 				<br clear="all">
 				<a href="<c:out value="${ResendActivationURL}"/>" class="link" id="<c:out value='${widgetId}'/>_WC_AccountDisplay_links_4" aria-label="<wcst:message bundle="${widgetText}" key="RESEND_ACTIVATION" />"><wcst:message bundle="${widgetText}" key="RESEND_ACTIVATION" /></a></p>
-			</c:if>
+			</c:if>-->
 			</span>
 		</div>	
 		</div>						

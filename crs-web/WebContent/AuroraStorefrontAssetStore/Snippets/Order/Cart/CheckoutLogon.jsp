@@ -136,7 +136,7 @@
 						<div class="button_align" id="WC_CheckoutLogonf_div_3">
 							<a href="#" role="button" class="button_primary" id="guestShopperContinue" onclick="javascript:if(CheckoutHelperJS.canCheckoutContinue('<c:out value="${userType}"/>') && CheckoutHelperJS.updateShoppingCart(document.ShopCartForm)){TealeafWCJS.processDOMEvent(event);ShipmodeSelectionExtJS.guestShopperContinue('<c:out value='${guestUserURL}'/>', '<c:out value='${PhysicalStoreSelectionURL}'/>');}return false;">
 								<div class="left_border"></div>
-								<div class="button_text"><fmt:message bundle="${storeText}" key="SHOPCART_CONTINUE" /></div>
+								<div class="button_text"><fmt:message bundle="${storeText}" key="SHOPCART_GUEST" /></div>
 								<div class="right_border"></div>
 							</a>
 						</div>

@@ -11,6 +11,51 @@
   IBM Corp.
  =================================================================
 --%>
+<script>
+$(document).ready(function(){ $("#btndes").click(function(){ $("#pdpdes").toggleClass("main"); }); });
+</script>
+<script>
+function myFunction() {
+  var x = document.getElementById("btndes");
+  if (x.innerHTML === "SEE LESS") {
+    x.innerHTML = "SEE MORE";
+  } else {
+    x.innerHTML = "SEE LESS";
+  }
+}
+</script>
+
+<div class="product-info-sub-title clearfix">
+<h2>Product Details</h2>
+<p><button id="btndes" onclick="myFunction()">SEE MORE</button></p>
+</div>
+<div class="special-feature">
+	
+	<span class="special-feature__item mwat015-Fit">
+        <svg class="special-feature__icon" version="1.1" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false">
+            <defs>
+                <path id="d" d="M0 19.964h20.764V.253H0z"></path>
+            </defs>
+            <g fill-rule="evenodd">
+                <path d="M7.21 2.415L8.69 5.15l1.187-2.146L7.68 1.037l-.47 1.378zm1.476 3.613h-.001a.285.285 0 01-.25-.15L6.65 2.578a.285.285 0 01-.019-.228L7.28.446a.285.285 0 01.46-.12l2.686 2.405c.1.088.124.233.06.35l-1.55 2.8a.285.285 0 01-.249.147z" fill="#020303"></path>
+                <path d="M3.237 11.109a.285.285 0 01-.282-.244L2.05 4.64a.285.285 0 01.156-.296l4.382-2.158a.284.284 0 11.251.51L2.643 4.764l.876 6.02a.285.285 0 01-.282.326M10.382 19.964H4.525a.285.285 0 01-.282-.244l-.43-2.957a.285.285 0 01.564-.082l.394 2.713h5.326V16.68a.285.285 0 01.57 0v3a.285.285 0 01-.285.285M10.382 11.11a.285.285 0 01-.285-.284V3.67a.285.285 0 01.57 0v7.157a.285.285 0 01-.285.285" fill="#020303"></path>
+                <path d="M10.887 3.004l1.187 2.146 1.479-2.735-.469-1.377-2.197 1.966zm1.19 3.024a.285.285 0 01-.249-.147l-1.55-2.8a.285.285 0 01.06-.35L13.025.325a.284.284 0 01.46.12l.647 1.903a.283.283 0 01-.02.228l-1.784 3.302a.284.284 0 01-.25.149z" fill="#020303"></path>
+                <path d="M17.532 11.07a.286.286 0 01-.282-.325l.87-5.982-4.196-2.066a.285.285 0 11.252-.511l4.382 2.158c.11.054.173.174.156.296l-.9 6.187a.285.285 0 01-.282.244M16.238 19.964h-5.856a.285.285 0 01-.285-.285v-3a.285.285 0 01.57 0v2.715h5.325l.418-2.874a.285.285 0 11.564.082l-.454 3.118a.285.285 0 01-.282.244M10.382 11.11a.285.285 0 01-.285-.284V3.273a.285.285 0 01.57 0v7.553a.285.285 0 01-.285.285M7.67.823a.285.285 0 010-.57h5.545a.285.285 0 010 .57H7.67z" fill="#020303"></path>
+                <mask id="c" fill="#fff">
+                    <use xlink:href="#d"></use>
+                </mask>
+                <path d="M.696 16.31h19.371v-5.114H.697v5.114zm19.72.696H.347A.348.348 0 010 16.658v-5.81c0-.193.156-.349.348-.349h20.067c.193 0 .349.156.349.348v5.81a.348.348 0 01-.349.349z" fill="#231F20" mask="url(#c)"></path>
+                <path d="M17.158 14.516a.348.348 0 01-.348-.348v-3.062a.348.348 0 11.696 0v3.062a.348.348 0 01-.348.348M14.563 13.155v-2.05a.348.348 0 11.696 0v2.05a.348.348 0 11-.696 0zM12.665 14.516a.348.348 0 01-.348-.348v-3.062a.348.348 0 11.696 0v3.062a.348.348 0 01-.348.348M10.418 12.49a.348.348 0 01-.348-.347v-1.037a.348.348 0 01.696 0v1.037a.348.348 0 01-.348.348M8.171 14.516a.348.348 0 01-.348-.348v-3.062a.348.348 0 01.697 0v3.062a.348.348 0 01-.349.348M5.925 13.504a.348.348 0 01-.348-.349v-2.05a.348.348 0 01.696 0v2.05a.348.348 0 01-.348.349M3.678 14.516a.348.348 0 01-.348-.348v-3.062a.348.348 0 01.696 0v3.062a.348.348 0 01-.348.348" fill="#231F20" mask="url(#c)"></path>
+            </g>
+        </svg>
+      
+        <span class="special-feature__label">Slim Fit</span> 
+      </span>
+</div>
 <c:if test="${!empty catalogEntryID}">
-	<div id="product_longdescription_<c:out value='${catalogEntryID}'/>"><c:out value="${longDescription}" escapeXml="false"/></div>
+	<div id="product_longdescription_<c:out value='${catalogEntryID}'/>">
+	<span id="pdpdes">
+	<c:out value="${longDescription}" escapeXml="false"/>
+	</span>
+	</div>
 </c:if>	
