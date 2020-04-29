@@ -18,14 +18,10 @@
 <%@taglib uri="http://commerce.ibm.com/pagelayout" prefix="wcpgl"%>
 <script type="text/javascript" src="${jspStoreImgDir}javascript/sharer.min.js"></script>
 <style>
-.row.margin-true.product_pageDesign_pageGroup {
-    margin: 0 auto;
-    max-width: 1005px;
-}
-.pdp-roduct-detail div#addToShoppingListBtn {
-    display: none;
-}
+.row.margin-true.product_pageDesign_pageGroup {margin: 0 auto;max-width: 1005px;}
+.pdp-roduct-detail div#addToShoppingListBtn {display: none;}
 </style>
+
 <script>
  $(document).ready(function() {
    document.getElementById("fb").data-url = window.location.href;

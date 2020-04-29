@@ -85,7 +85,7 @@
 			<c:otherwise>
 			<c:choose>
 			<c:when test="${pageName == 'UserRegistrationAddForm'}">
-			<c:set var="addressFieldOrder" value="first_name,LAST_NAME,new_line,EMAIL1,phone1" />
+			<c:set var="addressFieldOrder" value="new_line,EMAIL1,phone1" />
 			</c:when>
 			<c:otherwise>
 			<c:set var="addressFieldOrder" value="first_name,LAST_NAME,new_line,ADDRESS,CITY,new_line,COUNTRY/REGION,STATE/PROVINCE,ZIP,new_line,EMAIL1,phone1" />

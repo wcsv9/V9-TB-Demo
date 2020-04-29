@@ -36,7 +36,17 @@
   *  - Tax payer ID
   *****
 --%>
+<script type="text/javascript" src="${jspStoreImgDir}javascript/jquery-input-mask-phone-number.min.js"></script>
+<script>
 
+$(function(){
+  $('#WC_UserRegistrationAddForm_FormInput_phoneNum_In_Register_1').usPhoneFormat({
+  format:'(xxx) xxx-xxxx'
+  });
+  
+
+});
+</script>
 <c:set var="countryBean" value="${requestScope.countryBean}"/>
 
 <c:if test="${empty countryBean || countryBean == null}">
@@ -358,7 +368,7 @@
 					</span>
 					
 				</div>
-				<input class="inputField" type="tel" size="35" maxlength="32" id="WC_UserRegistrationAddForm_FormInput_${paramPrefix}phoneNum_In_Register_1" name="${paramPrefix}phone1" value="<c:out value='${phone1}'/>"/>
+				<input class="inputField" type="tel" onkeypress='return event.charCode >= 48 && event.charCode <= 57' size="35" maxlength="32" id="WC_UserRegistrationAddForm_FormInput_${paramPrefix}phoneNum_In_Register_1" name="${paramPrefix}phone1" value="<c:out value='${phone1}'/>"/>
 			<span class="agree" style=" width: 172px;color: #999;float: left;font-size: 10px;line-height: 1.4em;width: 235px;">Message and data rates may apply. By providing my mobile number, I agree to receive recurring marketing text messages at the mobile number provided that may be sent using an automated system. Consent is not required to purchase goods or services from Men's Wearhouse.Text STOP to 66960 to opt out at any time. For info text HELP to 66960. See <a href="#">Mobile Terms.</a></span>
 			</div>
 			</div>

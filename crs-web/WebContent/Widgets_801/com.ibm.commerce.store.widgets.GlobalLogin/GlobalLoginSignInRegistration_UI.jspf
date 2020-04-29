@@ -165,7 +165,7 @@
 			<wcst:message key="GLOBALLOGIN_SIGN_IN_PANEL_REGISTER" bundle="${widgetText}" />							
 			
 		</a>
-		<span class="privacyp"><a href="">Privacy & Security Policy</a></span>
+		<span class="privacyp"><a href="/wcs/shop/en/auroraesite/privacy-policy">Privacy & Security Policy</a></span>
 		</div>
 	</div>
 	<div class="clear"></div>	

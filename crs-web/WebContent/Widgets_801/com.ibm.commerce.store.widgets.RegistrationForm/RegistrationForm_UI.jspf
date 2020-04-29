@@ -61,7 +61,7 @@ div.content_wrapper>div.content_left_shadow>div.content_right_shadow>div.main_co
 
 	<div class="signup-sidebar"> 
 		 
-		 <div class="or-sign-in"><p>Already have an account?  <a id="register-sign-in" href="/wcs/shop/AjaxLogonForm">Sign In</a></p></div>
+		 <div class="or-sign-in"><p>Already have an account?  <a id="register-sign-in" href="#" onclick="javascript:GlobalLoginJS.InitHTTPSecure('Header_GlobalLogin');">Sign In</a></p></div>
 		<h2>Online Account &amp; Perfect Fit® Benefits</h2>
 		<div class="pf-notification">
 		<p>
@@ -242,6 +242,34 @@ div.content_wrapper>div.content_left_shadow>div.content_right_shadow>div.main_co
                            
 							<%--<wcst:message bundle="${widgetText}" key="REQUIRED_FIELDS"/><br /> --%>
                             <br />
+                            <div class="column" id="WC_AddressEntryForm_div_firstname">
+				<div id="WC_AddressEntryForm_div_17" class="column_label">
+					<span class="spanacce">
+						<label for="WC_UserRegistrationAddForm_NameEntryForm_FormInput_firstName_1">
+							<wcst:message bundle="${widgetText}" key="FIRST_NAME"/>
+						</label>
+					</span>
+					<wcst:message bundle="${widgetText}" key="FIRST_NAME"/>
+					
+						<span class="required-field"  id="WC_AddressEntryForm_div_18"> *</span>
+				
+				</div>
+				<input class="inputField" type="text" maxlength="40" size="35" id="WC_UserRegistrationAddForm_NameEntryForm_FormInput_firstName_1" name="firstName"" value="<c:out value='${firstName}'/>"/>
+			</div>
+			
+			<div class="column" id="WC_AddressEntryForm_div_lastname">
+				<div id="WC_AddressEntryForm_div_20" class="column_label">
+					<span class="spanacce">
+						<label for="WC_UserRegistrationAddForm_NameEntryForm_FormInput_lastName_1">
+							<wcst:message bundle="${widgetText}" key="LAST_NAME"/>
+						</label>
+					</span>
+					<wcst:message bundle="${widgetText}" key="LAST_NAME"/>
+					<span class="required-field" id="WC_AddressEntryForm_div_21"> *</span> 
+				</div>
+				<input class="inputField" type="text" maxlength="40" size="35" aria-required="true" id="WC_UserRegistrationAddForm_NameEntryForm_FormInput_lastName_1" name="lastName" value="<c:out value='${lastName}'/>"/>
+			</div>
+			
                             <div class="column" id="WC_UserRegistrationAddForm_div_10">
                                 <div class="column_label" id="WC_UserRegistrationAddForm_div_11">
                                     <span class="spanacce">
@@ -305,6 +333,7 @@ div.content_wrapper>div.content_left_shadow>div.content_right_shadow>div.main_co
                                             <span class="required-field" id="WC_UserRegistrationAddForm_div_15"> *</span>
                                         </div>
                                         <input class="inputField" size="35" maxlength="50" aria-required="true" name="logonPassword" id="WC_UserRegistrationAddForm_FormInput_logonPassword_In_Register_1" type="password" autocomplete="off" value="<c:out value="${paramSource.logonPassword}"/>" />
+                                   	<span class="user-name">Atleast 6 characters</span>
                                     </div>
                                     <div class="column" id="WC_UserRegistrationAddForm_div_16">
                                         <div class="column_label" id="WC_UserRegistrationAddForm_div_17">
@@ -317,6 +346,7 @@ div.content_wrapper>div.content_left_shadow>div.content_right_shadow>div.main_co
                                             <span class="required-field" id="WC_UserRegistrationAddForm_div_18"> *</span>
                                         </div>
                                         <input class="inputField" size="35" maxlength="50" aria-required="true" name="logonPasswordVerify" id="WC_UserRegistrationAddForm_FormInput_logonPasswordVerify_In_Register_1" type="password" autocomplete="off" value="<c:out value="${paramSource.logonPasswordVerify}"/>" />
+                                   
                                     </div>
                                 </c:when>
                                 <c:otherwise>
