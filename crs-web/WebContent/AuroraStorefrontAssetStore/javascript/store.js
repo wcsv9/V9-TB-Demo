@@ -90912,6 +90912,15 @@ function toggleMiniShopCartDropDown(relativeId, contentId, contentType) {
     }
 }
 
+function displayMiniShopCartDropDown(relativeId, contentId, contentType) {
+    showMiniShopCartDropDown(relativeId, contentId, contentType);
+}
+
+function closeMiniShopCartDropDown(relativeId, contentId, contentType) {
+if (dialogWidget && dialogWidget._isOpen) {
+    dialogWidget.close();
+}
+}
 /*
  * Displays the dropdown content of the mini shopping cart.
  *
@@ -94738,11 +94747,26 @@ $(document).ready(function () {
                 deactivate(document.getElementById(target));
                 Utils.stopEvent(e);
             });
-            $(document).on("click", "a[data-toggle]", function (e) {
+           
+            $(document).on("mouseover", "a[data-toggle]", function (e) {
                 var target = this.getAttribute("data-toggle");
-                toggle(document.getElementById(target));
+                var targetElem = document.getElementById(target);
+                toggle(targetElem);
+                $('[class*="menuLink"]', targetElem)[0].focus();
                 Utils.stopEvent(e);
             });
+            $(".departmentMenu").each(function (i, departmentMenu) {
+                $(departmentMenu).mouseleave(function (e) {
+                    var target = this.getAttribute("widgetId");
+                    if (target !== null) {
+                    	 var targetElem = document.getElementById(target);
+                    	 deactivate(targetElem);
+                    	  Utils.stopEvent(e);
+                    }
+                });
+                
+             });
+          
             $(document).on("keydown", "a[data-toggle]", function (e) {
                 var target;
                 if (e.keyCode === 27) {

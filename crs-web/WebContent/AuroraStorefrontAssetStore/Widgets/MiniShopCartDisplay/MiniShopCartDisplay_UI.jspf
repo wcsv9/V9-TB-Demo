@@ -23,11 +23,13 @@
 	<c:set var="cartTotalDisplayAttribute">class="nodisplay"</c:set>
 	<c:set var="lockDisplayAttribute" value=""/>
 </c:if>
+
 <a id="widget_minishopcart" href="#" role="button"
-		onclick="javascript:toggleMiniShopCartDropDown('widget_minishopcart','quick_cart_container','orderItemsList');"
+		onclick="javascript:toggleMiniShopCartDropDown('widget_minishopcart','quick_cart_container','orderItemsList');" 
+		onmouseover ="javascript:displayMiniShopCartDropDown('widget_minishopcart','quick_cart_container','orderItemsList');"
 		aria-label="<fmt:message bundle="${storeText}" key="MINI_SHOPCART_SHOPPING_CART"/>">
 	<div id="minishopcart_total" ${cartTotalDisplayAttribute}>
-		${orderQuantity}
+		 ${orderQuantity}
 	</div>
 	<img id="minishopcart_lock" ${lockDisplayAttribute} src="${jspStoreImgDir}images/icon_lock_shopping_cart.png" alt=""/>
 	<div class="arrow_button_icon"></div>
@@ -37,9 +39,9 @@
 <div id="MiniShopCartProductAdded">
 	<div id="MiniShopCartProductAddedWrapper" style="display:none;" aria-labelledby="cartDropdownMessage">
 		<div id="widget_minishopcart_popup_1">
-			<div id="cartDropdown">
+			<div id="cartDropdown" onmouseleave="javascript:closeMiniShopCartDropDown('widget_minishopcart','quick_cart_container','orderItemsList');">
 				<h3 id="cartDropdownMessage"><fmt:message bundle="${storeText}" key="MSC_ITEM_ADDED"/></h3>
-				<a id="MiniShopCartCloseButton_2" href="#" class="closeButton"><span> X <span><!--<fmt:message bundle="${storeText}" key="CLOSE"/>--></a>
+				<!--<a id="MiniShopCartCloseButton_2" href="#" class="closeButton"><span> X <span><fmt:message bundle="${storeText}" key="CLOSE"/></a>-->
 				<div class="content">
 					<div class="products added">
 						<c:forEach var="orderItemRecentlyAddedMap" items="${orderItemsRecentlyAddedList}">
