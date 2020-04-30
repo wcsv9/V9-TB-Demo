@@ -117,11 +117,8 @@
 		<wcf:param name="siteLevelSearch" value="false"/>
 	</wcf:rest>
 </c:catch>
-<script
-
-    src="https://maps.googleapis.com/maps/api/js?&v=3.exp&sensor=false"></script>
-    <script> var map;
-    </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvjetzrk_8KJ_QD4Szje_MCtUQ--LabIs&v=3.exp&sensor=false"></script>
+    <script> var map; </script>
 
 
 <script type="text/javascript">
