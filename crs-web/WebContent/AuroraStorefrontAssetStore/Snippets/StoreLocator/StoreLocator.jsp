@@ -81,7 +81,29 @@
 	<wcf:param name="langId" value="${langId}" />
 	<wcf:param name="fromPage" value="${fromPage}" />
 </wcf:url>
+<style>
+<!--
+div.content_wrapper>div.content_left_shadow>div.content_right_shadow>div.main_content {    max-width: 100%;margin: 0 auto;min-height: 100px;padding: 0px 0;}
+div.content_wrapper>div.content_left_shadow>div.content_right_shadow, div.content_wrapper>div.content_left_shadow {padding-right: 0px;padding-left: 0;}
+#gift_registry_box {margin: 8px auto 0;max-width: 1000px;}
+-->
+</style>
+<script>
+$(document).ready(function(){
+  $("#global-message").click(function(){
+    $("#foo").toggle();
+  });
+});
 
+function showhide() {
+  var x = document.getElementById("foo");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
 <c:choose>
 	<%-- If categoryId is empty --%>
 	<c:when test="${empty param.categoryId}">
@@ -171,7 +193,14 @@
 		</div>
 	</c:when>
 </c:choose>
-		
+<a id="global-message" href="#" onclick="toggle_visibility('foo');">Temporary Store Closure Announcement  <img src="http://clipart-library.com/images/8T65ajoRc.png"></a>
+<div id="foo" style="display: none;">
+<p>We take great pride in being part of your most memorable moments and have been working hard to meet your evolving needs throughout the spread of COVID-19 (the coronavirus). That will continue.
+<button id="global-message" onclick="showhide()" class="gb-close x" aria-controls="content-2" aria-expanded="true" aria-label="Close">x</button></p><p>At the same time, nothing is more important than the safety and wellness of our teams, customers and communities. We have been fortunate that there havenât been any reported cases of COVID-19 linked to a Menâs Wearhouse store, but based on the latest guidance from the Centers for Disease Control (CDC) and World Health Organization (WHO), we have made the decision to temporarily close all of our Menâs Wearhouse stores through the end of March to help prevent further spread of the coronavirus in our local communities.</p><p>Our employees will be paid throughout this period, and we will continue to serve our customers through our online business. <br>Specifically:</p><ol><li><strong>You can continue to shop online as usual.</strong> Our website, <a href="http://menswearhouse.com/">menswearhouse.com</a>, is not affected by the store closure. For the safety of our employees and their families, we have however temporarily closed our distribution center until at least March 28 which will delay shipments of orders. Please bear with us during this time and we will get your order to you as soon as possible.</li><li><strong>Rental and custom orders will not be available for pick up in-store.</strong> We will be reaching out directly to customers with existing orders to help them reschedule their order or provide them with either a gift card and an additional 20% discount or a refund. If you currently have a rental garment, please hold on to it. We will provide return instructions when our stores and distribution center reopen.</li><li><strong>Future rental orders can still be placed and managed online.</strong> We are ready to serve you as you prepare for future event dates. Please visit our rental pages on <a href="https://www.menswearhouse.com">menswearhouse.com</a>, to start your rental order.</li></ol><p>If you have any questions, our Customer Support team is ready to connect with you via chat, text, or email at <a href="https://www.menswearhouse.com/support">menswearhouse.com/support</a>.</p><p>We will be actively monitoring the situation and relying on guidance from the CDC, WHO and local health authorities to guide our decision on when we will reopen our stores. Thank you in advance for your understanding and continued support during this interim period.</p><p>We wish you and your loved ones good health and will provide additional updates as we have them.</p>
+
+<div class="footer-top-sec"><button id="global-message" onclick="showhide()" class="gb-close text" aria-controls="content-2" aria-expanded="true" aria-label="Close">Collapse</button></div>
+
+</div>	
 <div id="gift_registry_box">
 
 <c:if test="${fromPage == 'ProductDetails'}">
@@ -276,13 +305,13 @@
 	<wcf:param name="catalogId" value="${catalogId}"/>
 	<wcf:param name="langId" value="${langId}" />
 </wcf:url>
-<div class="inner">
-<ul class="breadcrumb" itemscope="" itemtype="//schema.org/BreadcrumbList">
+
+
+
+<div class="store-breadcrumb">
+<ul class="breadcrumb " itemscope="" itemtype="//schema.org/BreadcrumbList">
 <li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="//schema.org/ListItem">
-<a itemprop="item" href="/wcs/shop/en/auroraesite">
-Home
-<meta itemprop="name" content="Home">
-</a>
+<a itemprop="item" href="/wcs/shop/en/auroraesite">Home 1<meta itemprop="name" content="Home"></a>
 <span aria-hidden="true">&bull;</span>
 <meta itemprop="position" content="1">
 </li>
@@ -292,9 +321,9 @@ Home
 </li>
 </ul>
 </div>
-<div class="gift_content">
+<div class="storelocatr">
 	<%--<span class="instruction"><fmt:message bundle="${storeText}" key="SELECT_ENTER_OPTIONS"/></span>  --%>
-	</br>
+	
 	<div id="location">
 		<c:set var="formName" value="searchByGeoNodeForm" />
 		<form id='<c:out value="${formName}" />' name='<c:out value="${formName}" />'>
@@ -346,13 +375,9 @@ Home
 
 				</div>
 			</div>
-			<div id="WC_StoreLocator_div_38" class="location_select">
+			<div id="WC_StoreLocator_div_38" class="location_selectbtn">
 				<div id="WC_StoreLocator_div_39" class="location_select_button">
-					<a href="#" role="button" class="button_primary" id="cityGo" onclick="Javascript:setCurrentId('cityGo'); storeLocatorJSStore.refreshResultsFromCity(document.${formName}, '<c:out value='${fromPage}'/>');">
-						<div class="left_border"></div>
-						<div class="button_text">FIND</div>
-						<div class="right_border"></div>
-					</a>
+					<a href="#" role="button" class="blue-btn" id="cityGo" onclick="Javascript:setCurrentId('cityGo'); storeLocatorJSStore.refreshResultsFromCity(document.${formName}, '<c:out value='${fromPage}'/>');">FIND</a>
 				</div>
 			</div>
 			<%@ include file="StoreLocator_body_ext.jspf"%>
@@ -372,38 +397,43 @@ Home
 	<% out.flush(); %>
 </div>
 <div id="temp-map">
-<div  id="map-canvas" style="height:420px; width:700px"></div>
+<div  id="map-canvas"></div>
 </div>
-	
+<div class="store-lo-shopnow">
 <c:choose>
 	<c:when test="${!empty fromUrl}">
 		<div class="button_footer_line no_float">
-			<a href="#" role="button" class="button_primary" id="continueShoppingStoreLocator" onclick="javascript:setPageLocation('<c:out value="${fromUrl}"/>')">
+			<a href="#" role="button" class="sl-container-link" id="continueShoppingStoreLocator" onclick="javascript:setPageLocation('<c:out value="${fromUrl}"/>')">
 				<div class="left_border"></div>
-				<div class="button_text">SHOP NOW</div>
+				<div class="button_text">&nbsp;</div>
 				<div class="right_border"></div>
 			</a>
+			<img alt="4 For $119 Dress Shirts" src="https://images.menswearhouse.com/is/image/TMW/20-2142749-042320-SL?scl=1&qlt=90">
 		</div>
 	</c:when>
 	<c:when test="${fromPage == 'ProductDetails' or fromPage == 'InventoryStatus'}">
 		<div class="button_footer_line no_float">
-			<a href="#" role="button" class="button_primary" id="continueShoppingStoreLocator" onclick="javascript:setPageLocation('<c:out value="${ProductDisplayURL}"/>')">
+			<a href="#" role="button" class="sl-container-link" id="continueShoppingStoreLocator" onclick="javascript:setPageLocation('<c:out value="${ProductDisplayURL}"/>')">
 				<div class="left_border"></div>
-				<div class="button_text">SHOP NOW</div>
+				<div class="button_text">&nbsp;</div>
 				<div class="right_border"></div>
 			</a>
+			<img alt="4 For $119 Dress Shirts" src="https://images.menswearhouse.com/is/image/TMW/20-2142749-042320-SL?scl=1&qlt=90">
 		</div>
 	</c:when>
 	<c:when test="${fromPage == 'StoreLocator'}">
 		<div class="button_footer_line no_float">
-			<a href="#" role="button" class="button_primary" id="continueShoppingStoreLocator" onclick="javascript:setPageLocation('<c:out value="${env_TopCategoriesDisplayURL}"/>')">
+			<a href="#" role="button" class="sl-container-link" id="continueShoppingStoreLocator" onclick="javascript:setPageLocation('<c:out value="${env_TopCategoriesDisplayURL}"/>')">
 				<div class="left_border"></div>
-				<div class="button_text">SHOP NOW</div>
+				<div class="button_text">&nbsp;</div>
 				<div class="right_border"></div>
 			</a>
+			<img alt="4 For $119 Dress Shirts" src="https://images.menswearhouse.com/is/image/TMW/20-2142749-042320-SL?scl=1&qlt=90">
 		</div>
 	</c:when>
 </c:choose>
+<div class="clear"></div>
+</div>
 <div id="WC_CheckoutBottomESpotDisplay_div_2" class="espot_checkout_bottom_right">
 	<%out.flush();%>
 		<wcpgl:widgetImport useIBMContextInSeparatedEnv="${isStoreServer}" url= "${env_siteWidgetsDir}com.ibm.commerce.store.widgets.ContentRecommendation/ContentRecommendation.jsp">

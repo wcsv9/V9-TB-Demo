@@ -126,9 +126,9 @@ z-index: 100010 !important;
                         </c:otherwise>
                     </c:choose>
                 </li>
-                    <li>
+                    <%-- <li>
                     <%out.flush();%><c:import url="${env_jspStoreDir}Widgets/LanguageCurrency/LanguageCurrency.jsp"/><%out.flush();%>
-                </li><flow:ifEnabled feature="StoreLocator"><li class="storeLocatorQuickLink"><span class="mystore">MY STORE:</span>
+                </li> --%><flow:ifEnabled feature="StoreLocator"><li class="storeLocatorQuickLink">   <span class="mystore">MY STORE:</span>
                     <a id="storeLocatorQuickLink" href="${fn:escapeXml(StoreLocatorView)}">Find a Store <!--<fmt:message bundle="${storeText}" key="HEADER_STORE_LOCATOR"/>--> <img id="contentImage_1" src="/wcsstore/AuroraStorefrontAssetStore//images/arrowbtm-header.png" alt=""></a>
                 </li></flow:ifEnabled><flow:ifEnabled feature="SOAWishlist"><c:if test="${!(userType == 'G' && env_shopOnBehalfSessionEstablished eq 'true')}"><li>
                     <a id="wishListQuickLink" href="${fn:escapeXml(WishListDisplayURL)}"><fmt:message bundle="${storeText}" key="HEADER_SHOPPING_LIST"/></a>
@@ -187,8 +187,8 @@ z-index: 100010 !important;
 
     <div id="headerRow2">
         <a id="departmentsButton" href="#" class="basicButton" role="button" aria-haspopup="true" data-toggle="departmentsMenu">
-            <span><fmt:message bundle="${storeText}" key="DEPARTMENTS"/></span>
-            <div class="arrow_button_icon"></div>
+<%--             <span><fmt:message bundle="${storeText}" key="DEPARTMENTS"/></span> --%>
+            <img src="/wcsstore/AuroraStorefrontAssetStore//images/menuicon.png">
         </a>
 
         <%-- Start Refresh Area --%>

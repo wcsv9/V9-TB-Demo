@@ -45,7 +45,7 @@
 		<div class="close_text"><wcst:message key="CLOSE" bundle="${widgetText}"/></div>
 	</a>
 	
-	<span class="main_header">${name}</span>
+	<h1 class="main_header">${name}</h1>
 	<div class="clear_float"></div>
 	<span class="sku"><wcst:message key="CurrentOrder_SKU" bundle="${widgetText}"/> ${partNumber}</span>
 	<div class="clear_float"></div>
@@ -64,8 +64,7 @@
 
 	<div class="clear_float"></div>
 
-	<div class="divider"></div>
-	<p>${longDescription}</p>
+
 	<ul>
 		<c:forEach var="descriptiveAttribute" items="${descriptiveAttributeMap}" varStatus="aStatus" >
 			<li>
@@ -247,15 +246,36 @@
 		<div class="clear_float"></div>
 		<div class="divider"></div>
 	</c:if>
-	
+	<script>
+function subButton(){
+     var counter= document.getElementById('WC_QuickInfo_input_quantity').value;
+     if(counter > 0){
+     	counter--;
+        document.getElementById('WC_QuickInfo_input_quantity').value = counter;
+     }
+    };
+    
+function addButton(){
+       var counter= document.getElementById('WC_QuickInfo_input_quantity').value;
+     	counter++;
+        document.getElementById('WC_QuickInfo_input_quantity').value = counter;
+    };
+     
+</script>
 	<div class="purchase_section shopperActions" style="position:relative;${purchase_section}">
 
 		<c:if test="${!updateAttributes && (requestScope.available eq 'true' || (type eq 'dynamickit' and isDKConfigurable))}">
-			<span class="quantity_label"><label for="WC_QuickInfo_input_quantity"><wcst:message key="QI_QUANTITY" bundle="${widgetText}" />&nbsp;</label></span>
-			<div class="content">
+			<%-- <span class="quantity_label"><label for="WC_QuickInfo_input_quantity"><wcst:message key="QI_QUANTITY" bundle="${widgetText}" />&nbsp;</label></span> --%>
+			<!-- <div class="content">
 				<input id="WC_QuickInfo_input_quantity" type="tel" class="quantity_input" value="1" onchange="javascript:QuickInfoJS.setCatEntryQuantity(this.value);">
-			</div>
-			<div class="clear_float"></div>
+			</div> -->
+			<div class="quantity_section">
+							<label for="WC_QuickInfo_input_quantity" class="header">QTY</label>
+							<input type="Button" id='SubButton' value="-" onClick="javascript:subButton();"/>
+							<input id="WC_QuickInfo_input_quantity" type="tel" class="quantity_input" value="1" onchange="javascript:QuickInfoJS.setCatEntryQuantity(this.value);">
+							<input type="Button" id='AddButton' value="+" onClick="javascript:addButton();"/>
+							<div class="clear_float"></div>
+						</div>
 			<div class="item_spacer_7px"></div>
 		</c:if>
 		
@@ -324,7 +344,6 @@
 				</a>
 				<div class="clear_float"></div>
 				<div class="item_spacer_3px"></div>
-				
 				<flow:ifEnabled feature="RequisitionList">
 					<div class="requisitionListBox" id="<c:out value="${parentPage}"/>requisitionList">
 						<div class="addRequisitionList">
@@ -340,7 +359,7 @@
 					<div class="clear_float"></div>
 					<div class="item_spacer_3px"></div>
 				</flow:ifEnabled>
-			
+				
 				<%out.flush();%>
 					<c:import url="${env_siteWidgetsDir}Common/ShoppingList/ShoppingList.jsp">
 						<c:param name="parentPage" value="QuickInfo"/>
@@ -368,8 +387,10 @@
 			</c:otherwise>
 		</c:choose>
 		<input id="catEntryParamsForJS" type="hidden" value="<c:out value='${catEntryParams}'/>"/>
+			<div class="divider"></div>
+	<p>${longDescription}</p>
 	</div>
-
+	
 	<input type="hidden" id="ProductInfoName_<c:out value='${param.productId}'/>" value="<c:out value='${name}'/>"/>
 	<input type="hidden" id="ProductInfoImage_<c:out value='${param.productId}'/>" value="<c:out value='${productFullImage}'/>"/>
 </div>

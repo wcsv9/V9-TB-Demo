@@ -86,7 +86,7 @@
 	</c:choose>
 </c:if>
 <c:if test="${cityId != -999 || (!empty geoCodeLatitude && !empty geoCodeLongitude) || !empty errorMsgKey}">
-	<div class="gift_content">
+	<div class="gift_content store-l-mape">
 </c:if>
 
 <c:if test="${!empty physicalStoreException}">

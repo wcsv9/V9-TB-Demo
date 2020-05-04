@@ -21,11 +21,7 @@
 		<div class="widget_quick_info_popup">
 			
 			<!-- Top Border Styling -->
-			<div class="top">
-				<div class="left_border"></div>
-				<div class="middle"></div>
-				<div class="right_border"></div>
-			</div>
+			
 			<div class="clear_float"></div>
 			<!-- Main Content Area -->
 			<div class="middle">
@@ -56,11 +52,7 @@
 			</div>
 			<div class="clear_float"></div>
 			<!-- Bottom Border Styling -->
-			<div class="bottom">
-				<div class="left_border"></div>
-				<div class="middle"></div>
-				<div class="right_border"></div>
-			</div>
+			
 			<div class="clear_float"></div>
 		</div>
 	</div>

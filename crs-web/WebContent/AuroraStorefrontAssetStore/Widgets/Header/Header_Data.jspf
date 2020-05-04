@@ -54,9 +54,10 @@
 		<wcf:var name="storeId" value="${storeId}" encode="true"/>
 	</wcf:rest>
 </c:if>
+
 <c:set var="userState" value="${person.registrationApprovalStatus}" scope="page"/>
 <c:set var="userLogonState" value="0" scope="page"/>
-<c:set var="userDisplayName" value="${CommandContext.user.displayName}" scope="page"/>
+<c:set var="userDisplayName" value="${person.firstName}" scope="page"/>
 <c:choose>
 	<c:when test="${env_shopOnBehalfSessionEstablished eq 'false' && (userType eq 'G' || userState eq 'PendingApproval')}" > 
 		<c:set var="SIGN_IN_OUT"><fmt:message bundle="${storeText}" key="HEADER_SIGN_IN_REGISTER"/></c:set>

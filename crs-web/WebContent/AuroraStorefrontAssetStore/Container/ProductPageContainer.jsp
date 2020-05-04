@@ -65,11 +65,10 @@
 			<a class="sharer" id="fb" data-sharer="facebook" data-url="">&nbsp;</a>
 			<a class="sharer" id="tw"  data-via="twitter"    data-hashtags="Moore"  data-url="">&nbsp;</a>
 			<a class="sharer" id="pi" data-sharer="Pinterest" data-url="">&nbsp;</a>
-			<a class="sharer" id="em" data-sharer="email" data-subject="" data-to=""> &nbsp;</a>
+			<a class="sharer" id="em" data-sharer="email" data-subject="Moore's Product Share" data-to=""> &nbsp;</a>
 			</div>
 			
 			<div class="save-look">
-			
 			<%out.flush();%><c:import url="${env_jspStoreDir}Widgets/ShoppingList/ShoppingList.jsp"/><%out.flush();%>
 			</div>
 			</div>

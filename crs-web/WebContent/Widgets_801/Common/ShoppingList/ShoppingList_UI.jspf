@@ -65,10 +65,10 @@
 				<div class="shoppping_list_content">
 				<c:choose>
 					<c:when test="${empty param.orderItemId}">
-						<wcst:message key="SL_ADD_TO_SHOPPING_LIST" bundle="${widgetText}" />
+						Save This Look <!-- <wcst:message key="SL_ADD_TO_SHOPPING_LIST" bundle="${widgetText}" /> -->
 					</c:when>
 					<c:otherwise>
-						<wcst:message key="MOVE_TO_WISH_LIST" bundle="${widgetText}" />
+						Save This Look <!-- <wcst:message key="MOVE_TO_WISH_LIST" bundle="${widgetText}" /> -->
 					</c:otherwise>
 				</c:choose>
 			</div>

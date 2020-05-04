@@ -85726,13 +85726,13 @@ AddressBookFormJS = {
 	 * @param {string} toName The name of the Shipping address form.
 	 */
 	copyBillingFormNew: function(fromName,toName){
-		
+	
 			var form = document.forms[fromName];
 			var to = document.forms[toName];
 			var sameaddress = document.getElementById("SameShippingAndBillingAddress");
 			if (sameaddress.checked){
-				hideElementById("shippingAddressCreateEditFormDiv_1");
-			
+				hideElementById("billingAddressCreateEditFormDiv_1");
+				to.nickName.value = form.nickName.value;
 				to.firstName.value = form.firstName.value;
 				to.lastName.value = form.lastName.value;
 				to.address1.value = form.address1.value;
@@ -85749,7 +85749,8 @@ AddressBookFormJS = {
 			}
 
 			if (!sameaddress.checked){
-				showElementById("shippingAddressCreateEditFormDiv_1");
+				showElementById("billingAddressCreateEditFormDiv_1");
+				to.nickName.value = "";
 				to.firstName.value = "";
 				to.lastName.value = "";
 				to.address1.value = "";

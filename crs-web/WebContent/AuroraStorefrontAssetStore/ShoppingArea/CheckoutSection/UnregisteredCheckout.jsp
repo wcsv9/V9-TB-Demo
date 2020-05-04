@@ -133,127 +133,11 @@
 							<div class="body" id="WC_UnregisteredCheckout_div_9">
 								<br/>
 								<div id="unregistered_form">
-									<div class="col1_bill" id="billingCreateEditArea1">
-										<h2><fmt:message bundle="${storeText}" key="UC_BILLINGADDRESS"/></h2>
-
-										<form id="billingAddressCreateEditFormDiv_1" name="billingAddressCreateEditFormDiv_1" class="address">
-											<input type="hidden" name="storeId" value="<c:out value="${storeId}" />" id="WC_UnregisteredCheckout_inputs_1"/>
-											<input type="hidden" name="catalogId" value="<c:out value="${catalogId}" />" id="WC_UnregisteredCheckout_inputs_2"/>
-											<input type="hidden" name="langId" value="<c:out value="${langId}" />" id="WC_UnregisteredCheckout_inputs_3"/>
-											<input type="hidden" name="status" value="Billing" id="WC_UnregisteredCheckout_inputs_4"/>
-											<input type="hidden" name="addressType" value="Billing" id="WC_UnregisteredCheckout_inputs_5"/>
-											<input type="hidden" name="authToken" value="${authToken}" id="WC_UnregisteredCheckout_inputs_authToken_billing" />
-
-											<c:set var="formName" value="billingAddressCreateEditFormDiv_1" />
-											<c:set var="divNum" value="1"/>
-											<c:set var="stateDivName1" value="${paramPrefix}stateDiv${divNum}"/>
-											<fmt:message bundle="${storeText}" key="BILL_BILLING_ADDRESS" var="address"/>
-											<br/>
-
-											<%--
-												1. The hidden field "AddressForm_FieldsOrderByLocale" is to set all the mandatory fields AND the order of the fields
-												that are going to be displayed in each locale-dependent address form, so that the JavaScript
-												used for validation knows which fields to validate and in which order it should validate them.
-												2. Mandatory fields use UPPER CASE, non-mandatory fields use lower case.
-											--%>
-											<%out.flush();%>
-											<c:choose>
-												<c:when test="${locale == 'zh_CN'}">
-													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm_CN.jsp">
-														<c:param name="formName" value="${formName}" />
-														<c:param name="divNum" value="${divNum}"/>
-														<c:param name="stateDivName1" value="${stateDivName1}"/>
-														<c:param name="address" value="${address}"/>
-														<c:param name="paramPrefix" value="${paramPrefix}"/>
-													</c:import>
-													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,LAST_NAME,first_name,COUNTRY/REGION,STATE/PROVINCE,CITY,ADDRESS,ZIP,phone1,EMAIL1"/>
-												</c:when>
-												<c:when test="${locale == 'zh_TW'}">
-													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm_TW.jsp">
-														<c:param name="formName" value="${formName}" />
-														<c:param name="divNum" value="${divNum}"/>
-														<c:param name="stateDivName1" value="${stateDivName1}"/>
-														<c:param name="address" value="${address}"/>
-														<c:param name="paramPrefix" value="${paramPrefix}"/>
-													</c:import>
-													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,LAST_NAME,first_name,COUNTRY/REGION,STATE/PROVINCE,CITY,ZIP,ADDRESS,phone1,EMAIL1"/>
-												</c:when>
-												<c:when test="${locale eq 'ar_EG'}">
-													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm_AR.jsp">
-														<c:param name="formName" value="${formName}" />
-														<c:param name="divNum" value="${divNum}"/>
-														<c:param name="stateDivName1" value="${stateDivName1}"/>
-														<c:param name="address" value="${address}"/>
-														<c:param name="paramPrefix" value="${paramPrefix}"/>
-													</c:import>
-													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,first_name,LAST_NAME,COUNTRY/REGION,CITY,STATE/PROVINCE,ADDRESS,phone1,EMAIL1"/>
-												</c:when>
-												<c:when test="${locale == 'ru_RU'}">
-													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm_RU.jsp">
-														<c:param name="formName" value="${formName}" />
-														<c:param name="divNum" value="${divNum}"/>
-														<c:param name="stateDivName1" value="${stateDivName1}"/>
-														<c:param name="address" value="${address}"/>
-														<c:param name="paramPrefix" value="${paramPrefix}"/>
-													</c:import>
-													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,first_name,middle_name,LAST_NAME,ADDRESS,ZIP,CITY,state/province,COUNTRY/REGION,phone1,EMAIL1"/>
-												</c:when>
-												<c:when test="${locale == 'ja_JP' || locale == 'ko_KR'}">
-													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm_JP_KR.jsp">
-														<c:param name="formName" value="${formName}" />
-														<c:param name="divNum" value="${divNum}"/>
-														<c:param name="stateDivName1" value="${stateDivName1}"/>
-														<c:param name="address" value="${address}"/>
-														<c:param name="paramPrefix" value="${paramPrefix}"/>
-													</c:import>
-													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,LAST_NAME,FIRST_NAME,COUNTRY/REGION,ZIP,STATE/PROVINCE,CITY,ADDRESS,phone1,EMAIL1"/>
-												</c:when>
-												<c:when test="${locale == 'de_DE' || locale == 'es_ES' || locale == 'fr_FR' || locale == 'it_IT' || locale == 'ro_RO'}">
-													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm_DE_ES_FR_IT_RO.jsp">
-														<c:param name="formName" value="${formName}" />
-														<c:param name="divNum" value="${divNum}"/>
-														<c:param name="stateDivName1" value="${stateDivName1}"/>
-														<c:param name="address" value="${address}"/>
-														<c:param name="paramPrefix" value="${paramPrefix}"/>
-													</c:import>
-													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,first_name,LAST_NAME,ADDRESS,ZIP,CITY,state/province,COUNTRY/REGION,phone1,EMAIL1"/>
-												</c:when>
-												<c:when test="${locale == 'pl_PL'}">
-													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm_PL.jsp">
-														<c:param name="formName" value="${formName}" />
-														<c:param name="divNum" value="${divNum}"/>
-														<c:param name="stateDivName1" value="${stateDivName1}"/>
-														<c:param name="address" value="${address}"/>
-														<c:param name="paramPrefix" value="${paramPrefix}"/>
-													</c:import>
-													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,first_name,LAST_NAME,ADDRESS,ZIP,CITY,STATE/PROVINCE,COUNTRY/REGION,phone1,EMAIL1"/>
-												</c:when>
-												<c:otherwise>
-													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm.jsp">
-														<c:param name="formName" value="${formName}" />
-														<c:param name="divNum" value="${divNum}"/>
-														<c:param name="stateDivName1" value="${stateDivName1}"/>
-														<c:param name="address" value="${address}"/>
-														<c:param name="paramPrefix" value="${paramPrefix}"/>
-													</c:import>
-													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,first_name,LAST_NAME,ADDRESS,CITY,COUNTRY/REGION,STATE/PROVINCE,ZIP,phone1,EMAIL1"/>
-												</c:otherwise>
-											</c:choose>
-											<%out.flush();%>
-										</form>
-									</div>
-
-									<div class="col2_ship" id="shippingCreateEditArea1">
+								
+									<div class="col1_bill" id="shippingCreateEditArea1">
 										<h2><fmt:message bundle="${storeText}" key="UC_SHIPPINGADDRESS"/></h2>
 
-										<div id="WC_UnregisteredCheckout_div_12">
-											<input class="checkbox" type="checkbox" name="SameShippingAndBillingAddress" onclick="JavaScript:AddressBookFormJS.copyBillingFormNew('billingAddressCreateEditFormDiv_1','shippingAddressCreateEditFormDiv_1');" id="SameShippingAndBillingAddress"/>
-											<span class="unregisteredCheckbox">
-												<label for="SameShippingAndBillingAddress">
-												<fmt:message bundle="${storeText}" key="UC_SAME"/>
-												</label>
-											</span>
-										</div>
+									
 
 										<form id="shippingAddressCreateEditFormDiv_1" name="shippingAddressCreateEditFormDiv_1" class="address">
 											<input type="hidden" name="storeId" value="<c:out value="${storeId}" />" id="WC_UnregisteredCheckout_inputs_6"/>
@@ -354,12 +238,134 @@
 														<c:param name="address" value="${address}"/>
 														<c:param name="paramPrefix" value="${paramPrefix}"/>
 													</c:import>
-													<input type="hidden" id="AddressForm_FieldsOrderByLocale1" value="NICK_NAME,first_name,LAST_NAME,ADDRESS,CITY,COUNTRY/REGION,STATE/PROVINCE,ZIP,phone1,EMAIL1"/>
+													<input type="hidden" id="AddressForm_FieldsOrderByLocale1" value="NICK_NAME,first_name,LAST_NAME,ADDRESS,CITY,COUNTRY/REGION,STATE/PROVINCE,ZIP,phone1"/>
 												</c:otherwise>
 											</c:choose>
 											<%out.flush();%>
 										</form>
 									</div>
+								
+								
+									<div class="col2_ship" id="billingCreateEditArea1">
+										<h2><fmt:message bundle="${storeText}" key="UC_BILLINGADDRESS"/></h2>
+									
+										<div id="WC_UnregisteredCheckout_div_12">
+											<input class="checkbox" type="checkbox" name="SameShippingAndBillingAddress" onclick="JavaScript:AddressBookFormJS.copyBillingFormNew('shippingAddressCreateEditFormDiv_1','billingAddressCreateEditFormDiv_1');" id="SameShippingAndBillingAddress"/>
+											<span class="unregisteredCheckbox">
+												<label for="SameShippingAndBillingAddress">
+												<fmt:message bundle="${storeText}" key="UC_SAME"/>
+												</label>
+											</span>
+										</div>
+										
+										<form id="billingAddressCreateEditFormDiv_1" name="billingAddressCreateEditFormDiv_1" class="address">
+											<input type="hidden" name="storeId" value="<c:out value="${storeId}" />" id="WC_UnregisteredCheckout_inputs_1"/>
+											<input type="hidden" name="catalogId" value="<c:out value="${catalogId}" />" id="WC_UnregisteredCheckout_inputs_2"/>
+											<input type="hidden" name="langId" value="<c:out value="${langId}" />" id="WC_UnregisteredCheckout_inputs_3"/>
+											<input type="hidden" name="status" value="Billing" id="WC_UnregisteredCheckout_inputs_4"/>
+											<input type="hidden" name="addressType" value="Billing" id="WC_UnregisteredCheckout_inputs_5"/>
+											<input type="hidden" name="authToken" value="${authToken}" id="WC_UnregisteredCheckout_inputs_authToken_billing" />
+
+											<c:set var="formName" value="billingAddressCreateEditFormDiv_1" />
+											<c:set var="divNum" value="1"/>
+											<c:set var="stateDivName1" value="${paramPrefix}stateDiv${divNum}"/>
+											<fmt:message bundle="${storeText}" key="BILL_BILLING_ADDRESS" var="address"/>
+											<br/>
+
+											<%--
+												1. The hidden field "AddressForm_FieldsOrderByLocale" is to set all the mandatory fields AND the order of the fields
+												that are going to be displayed in each locale-dependent address form, so that the JavaScript
+												used for validation knows which fields to validate and in which order it should validate them.
+												2. Mandatory fields use UPPER CASE, non-mandatory fields use lower case.
+											--%>
+											<%out.flush();%>
+											<c:choose>
+												<c:when test="${locale == 'zh_CN'}">
+													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm_CN.jsp">
+														<c:param name="formName" value="${formName}" />
+														<c:param name="divNum" value="${divNum}"/>
+														<c:param name="stateDivName1" value="${stateDivName1}"/>
+														<c:param name="address" value="${address}"/>
+														<c:param name="paramPrefix" value="${paramPrefix}"/>
+													</c:import>
+													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,LAST_NAME,first_name,COUNTRY/REGION,STATE/PROVINCE,CITY,ADDRESS,ZIP,phone1,EMAIL1"/>
+												</c:when>
+												<c:when test="${locale == 'zh_TW'}">
+													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm_TW.jsp">
+														<c:param name="formName" value="${formName}" />
+														<c:param name="divNum" value="${divNum}"/>
+														<c:param name="stateDivName1" value="${stateDivName1}"/>
+														<c:param name="address" value="${address}"/>
+														<c:param name="paramPrefix" value="${paramPrefix}"/>
+													</c:import>
+													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,LAST_NAME,first_name,COUNTRY/REGION,STATE/PROVINCE,CITY,ZIP,ADDRESS,phone1,EMAIL1"/>
+												</c:when>
+												<c:when test="${locale eq 'ar_EG'}">
+													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm_AR.jsp">
+														<c:param name="formName" value="${formName}" />
+														<c:param name="divNum" value="${divNum}"/>
+														<c:param name="stateDivName1" value="${stateDivName1}"/>
+														<c:param name="address" value="${address}"/>
+														<c:param name="paramPrefix" value="${paramPrefix}"/>
+													</c:import>
+													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,first_name,LAST_NAME,COUNTRY/REGION,CITY,STATE/PROVINCE,ADDRESS,phone1,EMAIL1"/>
+												</c:when>
+												<c:when test="${locale == 'ru_RU'}">
+													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm_RU.jsp">
+														<c:param name="formName" value="${formName}" />
+														<c:param name="divNum" value="${divNum}"/>
+														<c:param name="stateDivName1" value="${stateDivName1}"/>
+														<c:param name="address" value="${address}"/>
+														<c:param name="paramPrefix" value="${paramPrefix}"/>
+													</c:import>
+													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,first_name,middle_name,LAST_NAME,ADDRESS,ZIP,CITY,state/province,COUNTRY/REGION,phone1,EMAIL1"/>
+												</c:when>
+												<c:when test="${locale == 'ja_JP' || locale == 'ko_KR'}">
+													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm_JP_KR.jsp">
+														<c:param name="formName" value="${formName}" />
+														<c:param name="divNum" value="${divNum}"/>
+														<c:param name="stateDivName1" value="${stateDivName1}"/>
+														<c:param name="address" value="${address}"/>
+														<c:param name="paramPrefix" value="${paramPrefix}"/>
+													</c:import>
+													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,LAST_NAME,FIRST_NAME,COUNTRY/REGION,ZIP,STATE/PROVINCE,CITY,ADDRESS,phone1,EMAIL1"/>
+												</c:when>
+												<c:when test="${locale == 'de_DE' || locale == 'es_ES' || locale == 'fr_FR' || locale == 'it_IT' || locale == 'ro_RO'}">
+													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm_DE_ES_FR_IT_RO.jsp">
+														<c:param name="formName" value="${formName}" />
+														<c:param name="divNum" value="${divNum}"/>
+														<c:param name="stateDivName1" value="${stateDivName1}"/>
+														<c:param name="address" value="${address}"/>
+														<c:param name="paramPrefix" value="${paramPrefix}"/>
+													</c:import>
+													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,first_name,LAST_NAME,ADDRESS,ZIP,CITY,state/province,COUNTRY/REGION,phone1,EMAIL1"/>
+												</c:when>
+												<c:when test="${locale == 'pl_PL'}">
+													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm_PL.jsp">
+														<c:param name="formName" value="${formName}" />
+														<c:param name="divNum" value="${divNum}"/>
+														<c:param name="stateDivName1" value="${stateDivName1}"/>
+														<c:param name="address" value="${address}"/>
+														<c:param name="paramPrefix" value="${paramPrefix}"/>
+													</c:import>
+													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,first_name,LAST_NAME,ADDRESS,ZIP,CITY,STATE/PROVINCE,COUNTRY/REGION,phone1,EMAIL1"/>
+												</c:when>
+												<c:otherwise>
+													<c:import url="/${sdb.jspStoreDir}/Snippets/ReusableObjects/UnregisteredCheckoutAddressEntryForm.jsp">
+														<c:param name="formName" value="${formName}" />
+														<c:param name="divNum" value="${divNum}"/>
+														<c:param name="stateDivName1" value="${stateDivName1}"/>
+														<c:param name="address" value="${address}"/>
+														<c:param name="paramPrefix" value="${paramPrefix}"/>
+													</c:import>
+													<input type="hidden" id="AddressForm_FieldsOrderByLocale" value="NICK_NAME,first_name,LAST_NAME,ADDRESS,CITY,COUNTRY/REGION,STATE/PROVINCE,ZIP,phone1"/>
+												</c:otherwise>
+											</c:choose>
+											<%out.flush();%>
+										</form>
+									</div>
+
+									
 									<br/>
 									<br/>
 								</div>

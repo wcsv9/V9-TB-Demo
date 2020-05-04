@@ -45,12 +45,12 @@
 
 <%@ include file="../Member/Address/AddressHelperCountrySelection.jspf" %>
 
-<div id="WC_${formName}_requiredfield_div_1" class="denote_required_field">
+<%-- <div id="WC_${formName}_requiredfield_div_1" class="denote_required_field">
 	<span class="required-field"  id="WC_${formName}_requiredfield_div_2"> *</span>
 	<fmt:message bundle="${storeText}" key="REQUIRED_FIELDS"/>
-</div>
+</div> --%>
 
-<div class="label_spacer" id="WC_${formName}_nickName_div_3">
+<%-- <div class="label_spacer" id="WC_${formName}_nickName_div_3">
 	<span class="spanacce">
 	<label for="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}nickName'/>">
 	<fmt:message bundle="${storeText}" key="SHIPPING_AND_BILLING_ADDRESS_LABEL_TEXT2">
@@ -61,7 +61,7 @@
 
 	<span class="required-field"  id="WC_${formName}_nickName_div_4"> *</span>
 	<fmt:message bundle="${storeText}" key="AB_RECIPIENT"/>
-	</div>
+	</div> --%>
 
 <div id="WC_${formName}_nickName_div_5">
 	<c:choose>
@@ -70,7 +70,7 @@
 			<input type="text" readonly="true" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}nickName'/>" name="nickName" size="35" class="form_input" value="<c:out value="${contact.nickName}"/>" />
 		</c:when>
 		<c:otherwise>
-			<input type="text" aria-required="true" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}nickName'/>" name="nickName" size="35" class="form_input" value="" />
+			<input type="text" aria-required="true" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}nickName'/>" placeholder="Recipient" name="nickName" size="35" class="form_input" value="" />
 		</c:otherwise>
 	</c:choose>
 </div>
@@ -83,7 +83,7 @@
 
 
 <%-- first name --%>
-<div class="label_spacer" id="WC_${formName}_firstName_div_6">
+<%-- <div class="label_spacer" id="WC_${formName}_firstName_div_6">
 	<span class="spanacce">
 	<label for="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}firstName_1'/>">
 	<fmt:message bundle="${storeText}" key="SHIPPING_AND_BILLING_ADDRESS_LABEL_TEXT2">
@@ -91,14 +91,14 @@
 	<fmt:param>${address}</fmt:param></fmt:message>
 	</label>
 	</span>
-	<fmt:message bundle="${storeText}" key="FIRST_NAME"/></div>
+	<fmt:message bundle="${storeText}" key="FIRST_NAME"/></div> --%>
 <div id="WC_${formName}_firstName_div_7">
-	<input type="text" name="firstName" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}firstName_1'/>" size="35" class="form_input" value="<c:out value='${contact.firstName}'/>" />
+	<input type="text" name="firstName" placeholder="First Name" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}firstName_1'/>" size="35" class="form_input" value="<c:out value='${contact.firstName}'/>" />
 </div>
 
 
 <%-- last name --%>
-<div class="label_spacer" id="WC_${formName}_lastName_div_8">
+<%-- <div class="label_spacer" id="WC_${formName}_lastName_div_8">
 	<span class="spanacce">
 	<label for="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}lastName_1'/>">
 	<fmt:message bundle="${storeText}" key="SHIPPING_AND_BILLING_ADDRESS_LABEL_TEXT2">
@@ -107,14 +107,14 @@
 	</label>
 	</span>
 	<span class="required-field"  id="WC_${formName}_lastName_div_9"> *</span>
-	<fmt:message bundle="${storeText}" key="LAST_NAME"/></div>
+	<fmt:message bundle="${storeText}" key="LAST_NAME"/></div> --%>
 <div id="WC_${formName}_lastName_div_10">
-	<input type="text" aria-required="true" name="lastName" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}lastName_1'/>" size="35" class="form_input" value="<c:out value='${contact.lastName}'/>" />
+	<input type="text" aria-required="true" placeholder="Last Name" name="lastName" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}lastName_1'/>" size="35" class="form_input" value="<c:out value='${contact.lastName}'/>" />
 </div>
 
 
 <%-- address --%>
-<div class="label_spacer" id="WC_${formName}_address1_div_11">
+<%-- <div class="label_spacer" id="WC_${formName}_address1_div_11">
 	<span class="spanacce">
 	<label for="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}address1_1'/>">
 	<fmt:message bundle="${storeText}" key="SHIPPING_AND_BILLING_ADDRESS_LABEL_TEXT2">
@@ -123,9 +123,9 @@
 	</label>
 	</span>
 	<span class="required-field"  id="WC_${formName}_address1_div_12"> *</span>
-	<fmt:message bundle="${storeText}" key="STREET_ADDRESS"/></div>
+	<fmt:message bundle="${storeText}" key="STREET_ADDRESS"/></div> --%>
 <div id="WC_${formName}_address1_div_13">
-	<input type="text" aria-required="true" name="address1" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}address1_1'/>" size="35" class="form_input" value="<c:out value='${contact.addressLine[0]}'/>" />
+	<input type="text" aria-required="true" placeholder="Address" name="address1" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}address1_1'/>" size="35" class="form_input" value="<c:out value='${contact.addressLine[0]}'/>" />
 	<span class="spanacce">
 		<label for="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}address2_1'/>">
 			<fmt:message bundle="${storeText}" key="SHIPPING_AND_BILLING_ADDRESS_LABEL_TEXT2">
@@ -133,12 +133,12 @@
 			<fmt:param>${address}</fmt:param></fmt:message>
 		</label>
 	</span>
-	<input type="text" name="address2" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}address2_1'/>" size="35" class="form_input" value="<c:out value='${contact.addressLine[1]}'/>" />
+	<input type="text" placeholder="Address2 (Optional)" name="address2" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}address2_1'/>" size="35" class="form_input" value="<c:out value='${contact.addressLine[1]}'/>" />
 </div>
 
 
 <%-- city --%>
-<div class="label_spacer" id="WC_${formName}_city_div_14">
+ <%-- <div class="label_spacer" id="WC_${formName}_city_div_14">
 	<span class="spanacce">
 	<label for="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}city_1'/>">
 	<fmt:message bundle="${storeText}" key="SHIPPING_AND_BILLING_ADDRESS_LABEL_TEXT2">
@@ -147,14 +147,14 @@
 	</label>
 	</span>
 	<span class="required-field"  id="WC_${formName}_city_div_15"> *</span>
-	<fmt:message bundle="${storeText}" key="CITY2"/></div>
+	<fmt:message bundle="${storeText}" key="CITY2"/></div> --%> 
 <div id="WC_${formName}_city_div_16">
-	<input type="text" aria-required="true" name="city" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}city_1'/>" size="35" class="form_input" value="<c:out value='${contact.city}'/>" />
+	<input type="text" aria-required="true" placeholder="City" name="city" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}city_1'/>" size="35" class="form_input" value="<c:out value='${contact.city}'/>" />
 </div>
 
 
 <%-- country/region --%>
-<div class="label_spacer" id="WC_${formName}_country_div_17">
+<%-- <div class="label_spacer" id="WC_${formName}_country_div_17">
 	<span class="spanacce">
 	<label for="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}country_1'/>">
 	<fmt:message bundle="${storeText}" key="SHIPPING_AND_BILLING_ADDRESS_LABEL_TEXT_COUNTRY2_ACCE">
@@ -163,7 +163,7 @@
 	</label>
 	</span>
 	<span class="required-field"  id="WC_${formName}_country_div_18"> *</span>
-	<fmt:message bundle="${storeText}" key="COUNTRY2"/></div>
+	<fmt:message bundle="${storeText}" key="COUNTRY2"/></div>  --%>
 	<div id="WC_${formName}_country_div_19">
 		<c:set var="lang" value="${locale}" />
 		<c:set var="country_language_select" value="${fn:split(lang, '_')}" />	
@@ -192,7 +192,7 @@
 	</div>
 
 <%-- state/province --%>
-<div class="label_spacer" id="WC_${formName}_state_div_20">
+<%-- <div class="label_spacer" id="WC_${formName}_state_div_20">
 	<span class="spanacce">
 	<label for="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}state_1'/>">
 	<fmt:message bundle="${storeText}" key="SHIPPING_AND_BILLING_ADDRESS_LABEL_TEXT2">
@@ -202,7 +202,7 @@
 	</span>
 	<span class="required-field"  id="WC_${formName}_state_div_21"> *</span>
 	<fmt:message bundle="${storeText}" key="REG_STATE"/>
-</div>
+</div> --%>
 
 <div id="<c:out value='${paramPrefix}stateDiv${divNum}'/>">
 
@@ -213,29 +213,13 @@
 	</c:if>
 </c:forEach>
 
-<c:choose>
-	<c:when test="${!empty countryCodeStates}">
-		<select aria-required="true" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}state_1'/>" name="state" class="drop_down_checkout">
-			<c:forEach var="state" items="${countryCodeStates}">
-				<option value="<c:out value='${state.code}'/>" 
-					<c:if test="${state.code eq contact.state || state.displayName eq contact.state}">
-						selected="selected"
-					</c:if>
-				>
-					<c:out value="${state.displayName}"/>
-				</option>
-			</c:forEach>
-		</select>
-	</c:when>
-	<c:otherwise>
-		<input type="text" aria-required="true" name="state" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}state_1'/>" size="35" class="form_input" value="<c:out value='${contact.state}'/>" />
-	</c:otherwise>
-</c:choose>
+		<input type="text" placeholder="State" aria-required="true" name="state" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}state_1'/>" size="35" class="form_input" value="<c:out value='${contact.state}'/>" />
+
 </div>
 
 
 <%-- zipcode --%>
-<div class="label_spacer" id="WC_${formName}_zipCode_div_22">
+<%--  <div class="label_spacer" id="WC_${formName}_zipCode_div_22">
 	<span class="spanacce">
 	<label for="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}zipCode_1'/>">
 		<fmt:message bundle="${storeText}" key="SHIPPING_AND_BILLING_ADDRESS_LABEL_TEXT2">
@@ -245,14 +229,14 @@
 	</span>
 	<span class="required-field"  id="WC_${formName}_zipCode_div_23"> *</span>
 	<fmt:message bundle="${storeText}" key="ZIP_CODE"/>
-</div>
+</div> --%>
 <div id="WC_${formName}_zipCode_div_24">
-	<input type="text" aria-required="true" name="zipCode" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}zipCode_1'/>" size="35" class="form_input" value="<c:out value='${contact.zipCode}'/>" />
+	<input type="text" placeholder="Zip Code" aria-required="true" name="zipCode" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}zipCode_1'/>" size="35" class="form_input" value="<c:out value='${contact.zipCode}'/>" />
 </div>
 
 
 <%-- phone --%>
-<div class="label_spacer" id="WC_${formName}_phone1_div_25">
+<%-- <div class="label_spacer" id="WC_${formName}_phone1_div_25">
 <span class="spanacce">
 <label for="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}phone1_1'/>">
 <fmt:message bundle="${storeText}" key="SHIPPING_AND_BILLING_ADDRESS_LABEL_TEXT2">
@@ -261,14 +245,14 @@
 </label>
 </span>
 <fmt:message bundle="${storeText}" key="PHONE_NUMBER2"/>
-</div>
+</div>  --%>
 <div id="WC_${formName}_phone1_div_26">
-	<input type="tel" name="phone1" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}phone1_1'/>" size="35" class="form_input" value="<c:out value='${contact.phone1}'/>" />
+	<input type="tel" placeholder="Telephone" name="phone1" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}phone1_1'/>" size="35" class="form_input" value="<c:out value='${contact.phone1}'/>" />
 </div>
 
 
 <%-- email --%>
-<div class="label_spacer" id="WC_${formName}_email1_div_27">
+<%--  <div class="label_spacer" id="WC_${formName}_email1_div_27">
 	<span class="spanacce">
 	<label for="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}email1_1'/>">
 	<fmt:message bundle="${storeText}" key="SHIPPING_AND_BILLING_ADDRESS_LABEL_TEXT2">
@@ -277,9 +261,9 @@
 	</label>
 	</span>
 	<span class="required-field"  id="WC_${formName}_email1_div_28"> *</span>
-	<fmt:message bundle="${storeText}" key="EMAIL"/></div>
+	<fmt:message bundle="${storeText}" key="EMAIL"/></div>  --%>
 <div id="WC_${formName}_email1_div_29">
-	<input type="text" aria-required="true" name="email1" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}email1_1'/>" size="35" class="form_input" value="<c:out value='${contact.email1}'/>" />
+	<input type="text" placeholder="Email" aria-required="true" name="email1" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}email1_1'/>" size="35" class="form_input" value="<c:out value='${contact.email1}'/>" />
 </div>
 <br />
 <!-- END UnregisteredCheckoutAddressEntryForm.jsp-->

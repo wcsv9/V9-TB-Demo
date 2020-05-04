@@ -74,7 +74,7 @@ div.content_wrapper>div.content_left_shadow>div.content_right_shadow>div.main_co
 		<li>Track your orders</li>
 		<li>Get personalized recommendations</li>	
 		</ul>
-		<p><a href="/wcs/shop/en/auroraesite/privacy-policy" >Security &amp; Privacy Policies</a></p>
+		<p style="color:#6498c8;"><a href="/wcs/shop/en/auroraesite/privacy-policy" >Security &amp; Privacy Policies</a></p>
 	
 	</div>
 
@@ -229,6 +229,40 @@ div.content_wrapper>div.content_left_shadow>div.content_right_shadow>div.main_co
                                var email= document.getElementById("WC_UserRegistrationAddForm_FormInput_logonId_In_Register_1_1").value;
                                document.getElementById("WC_UserRegistrationAddForm_FormInput_email1_In_Register_1").value = email;
                                 };
+                                function alphanumeric1()
+								{
+								 var letterNumber = /[a-zA-Z]+$/;
+								 var y = document.getElementById("WC_UserRegistrationAddForm_NameEntryForm_FormInput_firstName_1").value;
+								 if(y.match(letterNumber)) 
+								  {
+								    document.getElementById("error").style.display="none";
+									 document.getElementById("WC_UserRegistrationAddForm_NameEntryForm_FormInput_firstName_1").style.borderColor = "";
+									   return true;
+								  }
+								else
+								  { 
+								document.getElementById("error").style.display="block";
+								 document.getElementById("WC_UserRegistrationAddForm_NameEntryForm_FormInput_firstName_1").style.borderColor = "red";
+								 return false;
+								  }
+								  };
+								   function alphanumeric2()
+								{
+								 var letterNumber = /[a-zA-Z]+$/;
+								 var y = document.getElementById("WC_UserRegistrationAddForm_NameEntryForm_FormInput_lastName_1").value;
+								 if(y.match(letterNumber)) 
+								  {
+								    document.getElementById("error").style.display="none";
+									 document.getElementById("WC_UserRegistrationAddForm_NameEntryForm_FormInput_lastName_1").style.borderColor = "";
+									   return true;
+								  }
+								else
+								  { 
+								document.getElementById("error").style.display="block";
+								 document.getElementById("WC_UserRegistrationAddForm_NameEntryForm_FormInput_lastName_1").style.borderColor = "red";
+								 return false;
+								  }
+								  };
                             </script>
                         <div class="form_2column" id="WC_UserRegistrationAddForm_DivForm_1">
                             <input type="hidden" name="addressType" value="SB" id="WC_UserRegistrationAddForm_FormInput_addressType_In_Register_1"/>
@@ -242,6 +276,7 @@ div.content_wrapper>div.content_left_shadow>div.content_right_shadow>div.main_co
                            
 							<%--<wcst:message bundle="${widgetText}" key="REQUIRED_FIELDS"/><br /> --%>
                             <br />
+                            <div class="error" style="display:none;color:red;" id="error">Only letters, spaces and "-" symbols allowed.</div><br/>
                             <div class="column" id="WC_AddressEntryForm_div_firstname">
 				<div id="WC_AddressEntryForm_div_17" class="column_label">
 					<span class="spanacce">
@@ -254,7 +289,7 @@ div.content_wrapper>div.content_left_shadow>div.content_right_shadow>div.main_co
 						<span class="required-field"  id="WC_AddressEntryForm_div_18"> *</span>
 				
 				</div>
-				<input class="inputField" type="text" maxlength="40" size="35" id="WC_UserRegistrationAddForm_NameEntryForm_FormInput_firstName_1" name="firstName"" value="<c:out value='${firstName}'/>"/>
+				<input class="inputField" type="text" maxlength="40" size="35" id="WC_UserRegistrationAddForm_NameEntryForm_FormInput_firstName_1" name="firstName" value="<c:out value='${firstName}'/>"  onchange="javascript:alphanumeric1();return false;"/>
 			</div>
 			
 			<div class="column" id="WC_AddressEntryForm_div_lastname">
@@ -267,7 +302,7 @@ div.content_wrapper>div.content_left_shadow>div.content_right_shadow>div.main_co
 					<wcst:message bundle="${widgetText}" key="LAST_NAME"/>
 					<span class="required-field" id="WC_AddressEntryForm_div_21"> *</span> 
 				</div>
-				<input class="inputField" type="text" maxlength="40" size="35" aria-required="true" id="WC_UserRegistrationAddForm_NameEntryForm_FormInput_lastName_1" name="lastName" value="<c:out value='${lastName}'/>"/>
+				<input class="inputField" type="text" maxlength="40" size="35" aria-required="true" id="WC_UserRegistrationAddForm_NameEntryForm_FormInput_lastName_1" name="lastName" value="<c:out value='${lastName}'/>"  onchange="javascript:alphanumeric2();return false;"/>
 			</div>
 			
                             <div class="column" id="WC_UserRegistrationAddForm_div_10">
