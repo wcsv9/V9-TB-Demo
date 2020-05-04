@@ -323,58 +323,20 @@ function showhide() {
 </div>
 <div class="storelocatr">
 	<%--<span class="instruction"><fmt:message bundle="${storeText}" key="SELECT_ENTER_OPTIONS"/></span>  --%>
-	
+	</br>
 	<div id="location">
 		<c:set var="formName" value="searchByGeoNodeForm" />
 		<form id='<c:out value="${formName}" />' name='<c:out value="${formName}" />'>
 
 			<div id="WC_StoreLocator_div_29" class="location_select">
-				<div id="WC_StoreLocator_div_30" class="location_select_label"><label for="selectCountry"><fmt:message bundle="${storeText}" key="SELECT_COUNTRY" /></label></div>
-				<div id="WC_StoreLocator_div_31" class="location_select_form">
-					<select name="selectCountry" id="selectCountry" title="<fmt:message bundle="${storeText}" key='ACCE_COUNTRY_CHANGE'/>" class="drop_down_country" onchange="JavaScript:storeLocatorJSStore.changeCountrySelection(this.options[this.selectedIndex].value);">
-						<c:if test="${empty topGeoNodeException}">
-							<c:set var="resultNum" value="${fn:length(topGeoNodes.GeoNode)}" />
-							<c:if test="${resultNum > 0}">
-								<c:forEach var="i" begin="0" end="${resultNum-1}">
-									<option value='<c:out value="${topGeoNodes.GeoNode[i].uniqueID}" />'><c:out value="${topGeoNodes.GeoNode[i].Description[0].shortDescription}" /></option>
-								</c:forEach>
-							</c:if>
-							<c:if test="${resultNum == 0 && !empty topGeoNodes.uniqueID}">
-						    	<option value='<c:out value="${topGeoNodes.uniqueID}" />'><c:out value="${topGeoNodes.Description[0].shortDescription}" /></option>
-						    </c:if>
-						</c:if>
-					</select>
-				</div>
+							 <input class="searchbox" id="zipCityInput" type="text" placeholder="Enter State, City or Zipcode" name="zipCityInput" value="${ zipCityInputValue}" aria-label="Enter State, City or Zipcode" />
+			
 			</div>
-			<div id="WC_StoreLocator_div_32" class="location_select">
-				<div id="WC_StoreLocator_div_33" class="location_select_label"><label for="selectState"><fmt:message bundle="${storeText}" key="SELECT_STATEPROVINCE" /></label></div>
-				<div id="WC_StoreLocator_div_34" class="location_select_form">
-					<div wcType="RefreshArea" id="provinceSelections" refreshurl="<c:out value="${AjaxProvinceSelectionDisplayURL}"/>" declareFunction="StoreLocatorControllersDeclarationJSStore.provinceSelectionsRefreshArea()">
-						<% out.flush(); %>
-						<c:import url="/${sdb.jspStoreDir}/Snippets/StoreLocator/ProvinceSelectionDisplay.jsp">
-							<c:param name="storeId" value="${param.storeId}" />
-							<c:param name="catalogId" value="${param.catalogId}" />
-							<c:param name="langId" value="${langId}" />
-						</c:import>	
-						<% out.flush(); %>
-					</div>						
-				</div>
-			</div>
-			<div id="WC_StoreLocator_div_35" class="location_select">
-				<div id="WC_StoreLocator_div_36" class="location_select_label"><label for="selectCity"><fmt:message bundle="${storeText}" key="SELECT_CITY" /></label></div>
-				<div id="WC_StoreLocator_div_37" class="location_select_form">
-					<div wcType="RefreshArea" id="citySelections" refreshurl="<c:out value="${AjaxCitySelectionDisplayURL}"/>" declareFunction="StoreLocatorControllersDeclarationJSStore.citySelectionsRefreshController()">
-						<% out.flush(); %>
-						<c:import url="/${sdb.jspStoreDir}/Snippets/StoreLocator/CitySelectionDisplay.jsp">
-							<c:param name="storeId" value="${param.storeId}" />
-							<c:param name="catalogId" value="${param.catalogId}" />
-							<c:param name="langId" value="${langId}" />
-						</c:import>	
-						<% out.flush(); %>
-					</div>
-
-				</div>
-			</div>
+                    <!-- <div class="ctnr-find-btn">
+                        <button class="btn btn-action btn-search icon-search" type="submit">
+                            <span class="icon-text">Search store</span>
+                        </button>
+                    </div> -->
 			<div id="WC_StoreLocator_div_38" class="location_selectbtn">
 				<div id="WC_StoreLocator_div_39" class="location_select_button">
 					<a href="#" role="button" class="blue-btn" id="cityGo" onclick="Javascript:setCurrentId('cityGo'); storeLocatorJSStore.refreshResultsFromCity(document.${formName}, '<c:out value='${fromPage}'/>');">FIND</a>

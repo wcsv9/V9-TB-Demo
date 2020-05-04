@@ -62,7 +62,7 @@
 <c:set var="alphabet" value="${fn:split('A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z', ',')}" scope="application" />
 <c:if test="${empty errorMsgKey}">
 	<c:choose>
-		<c:when test="${empty geoCodeLatitude && empty geoCodeLongitude}">
+		<c:when test="${empty latitude[0] && empty longitude[0]}">
 			<c:catch var="physicalStoreException">
 				<wcf:rest var="physicalStores" url="store/{storeId}/storelocator/byGeoNode/{geoId}">
 					<wcf:var name="storeId" value="${storeId}" encode="true"/>
@@ -74,8 +74,8 @@
 			<c:catch var="physicalStoreException">
 				<wcf:rest var="physicalStores" url="store/{storeId}/storelocator/latitude/{latitude}/longitude/{longitude}">
 					<wcf:var name="storeId" value="${storeId}" encode="true"/>
-					<wcf:var name="latitude" value="${geoCodeLatitude}" encode="true"/>
-					<wcf:var name="longitude" value="${geoCodeLongitude}" encode="true"/>
+					<wcf:var name="latitude" value="${latitude[0]}" encode="true"/>
+					<wcf:var name="longitude" value="${longitude[0]}" encode="true"/>
 					<wcf:param name="siteLevelStoreSearch" value="false"/>
 					<c:if test="${!empty radius}"><wcf:param name="radius" value="${radius}" /></c:if>                   
 					<c:if test="${!empty uom}"><wcf:param name="radiusUOM" value="${uom}" /></c:if>                   
@@ -125,6 +125,15 @@ No Locations found for this selection!
 				<%@ include file="StoreLocatorResults_title_ext.jspf"%>
 			</tr>
             --%>
+             <thead>
+            <tr>
+            <th>
+				</th>
+				<th>
+				</th>
+			</tr>
+			 </thead>
+			 <tbody>
 			<c:forEach var="i" begin="0" end="${resultNum-1}">
 				<c:set var="storeHourIndex" value=-1 />
 				<c:set var="attributeNum" value="${fn:length(physicalStores.PhysicalStore[i].Attribute)}" />
@@ -136,6 +145,7 @@ No Locations found for this selection!
 						</c:if>
 					</c:forEach>
 				</c:if>
+				
 				<tr>
 				<td>
 					<c:out value="${alphabet[i]}" />&nbsp;
@@ -210,6 +220,7 @@ No Locations found for this selection!
 					</c:if> --%>
 				</tr>
 			</c:forEach>
+			</tbody>
 		</table>
 		</td>
 		<td>
@@ -224,7 +235,30 @@ No Locations found for this selection!
 	</div>
 </c:if>
 
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
 
 
+<script>
+
+$(document).ready(function () {
+  $('#bopis_table').DataTable({
+  "fnDrawCallback": function(oSettings) {                 
+        if (4 >= oSettings.fnRecordsDisplay()) {
+          $(oSettings.nTableWrapper).find('.dataTables_paginate').hide();
+        }
+    },
+  
+    "pageLength": "4",
+     "bFilter": false,
+   "bLengthChange": false,
+   "binfo": false,
+     "pagingType": "full_numbers",
+     "aoColumns": [
+{ "bSortable": false },
+{ "bSortable": false }
+]
+             });
+});
+</script>
 <!-- END StoreLocatorResults.jsp -->

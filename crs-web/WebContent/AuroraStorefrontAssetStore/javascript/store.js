@@ -84895,23 +84895,48 @@ storeLocatorJSStore = {
      *
      */
     refreshResultsFromCity: function (form, fromPage) {
-        if (form.selectCity.selectedIndex < 0) {
-            MessageHelper.formErrorHandleClient(form.selectCity.id, MessageHelper.messages["MISSING_CITY"]);
-            return;
-        }
+	       /* if (form.selectCity.selectedIndex < 0) {
+	            MessageHelper.formErrorHandleClient(form.selectCity.id, MessageHelper.messages["MISSING_CITY"]);
+	            return;
+	        }
+	*/
+	        /* manage cookie values */
+	        storeLocatorJSStore.manageCookieFromCity();
+	        
+	        var latitude = -999999, longitude = -999999;
+	        var zipCityInput = (form.zipCityInput.value).trim();
+	       /// storeLocatorJS.deleteOverlays();
+	        if (zipCityInput == '' || zipCityInput == 'Enter State, City or Zipcode' ) {
+	            MessageHelper.formErrorHandleClient(form.zipCityInput.id, MessageHelper.messages["ZIP_CITY_INPUT_INVALID"]);
+	            cursor_clear();
+	            return;
+	        }
+	        var radius = 20;
 
-        /* manage cookie values */
-        storeLocatorJSStore.manageCookieFromCity();
+	        /* manage cookie values */
+	        storeLocatorJS.manageCookieFromCity();
+	        /* use geocoder to resolve latitude longitude of the address provided */
+	        var geocoder = new google.maps.Geocoder();
+	        geocoder.geocode( { 'address': zipCityInput}, function(results, status) {
+	            if (status == google.maps.GeocoderStatus.OK) {
+	                map.setCenter(results[0].geometry.location);
+	                map.setZoom(9);
 
-        /* refresh the result area */
-        wcRenderContext.updateRenderContext('storeLocatorResultsContext', {
-            'cityId': form.selectCity.options[form.selectCity.selectedIndex].value,
-            'fromPage': fromPage,
-            'geoCodeLatitude': '',
-            'geoCodeLongitude': '',
-            'errorMsgKey': ''
-        });
-    },
+	                storeLocatorJS.storeResultsIndex = 0;
+	               // storeLocatorJS.addMarker(results[0].geometry.location,"https://maps.google.com/mapfiles/ms/micons/blue.png");
+	                latitude = results[0].geometry.location.lat();
+	                longitude = results[0].geometry.location.lng();
+	                /* refresh the result area */
+	                if (latitude != -999999 && longitude != -999999) {
+	                	wcRenderContext.updateRenderContext('storeLocatorResultsContext', {'latitude': latitude, 'longitude': longitude, 'fromPage':fromPage, 'radius': radius, 'cityId': zipCityInput});
+	                }
+	              } else {
+	                  MessageHelper.formErrorHandleClient(form.zipCityInput.id, MessageHelper.messages["ZIP_CITY_INPUT_INVALID"]);
+	                  cursor_clear();
+	                  return;
+	              }
+	        });
+},
 
     /**
      * This function refreshes the result area when the geolocation feature is used.  It refreshes the
