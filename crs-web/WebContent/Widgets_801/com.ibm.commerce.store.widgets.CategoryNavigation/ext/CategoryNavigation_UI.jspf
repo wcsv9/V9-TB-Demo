@@ -11,3 +11,115 @@
   IBM Corp.
  =================================================================
 --%>
+<style type="text/css">
+
+.side-nav .top-category {
+    border-bottom: 1px solid;
+    padding-bottom: 3px;
+    margin: 10px 0 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    max-width:194px;
+}
+
+
+.side-nav ul {
+    list-style: none;
+    color: #000;
+    margin-left: 0;
+}
+
+ ul {
+    margin: 0;
+    padding: 0;
+}
+.side-nav .sub-menu-section li.special-deals-list, .side-nav .sub-menu-section li.submenu-list {
+    margin-top: 10px;
+}
+
+.side-nav .submenu-list .submenu-list li {
+    text-transform: none;
+}
+.side-nav .section-label {
+    display: block;
+    font-weight: 300;
+    letter-spacing: normal;
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-transform: none;
+}
+.section-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    position: relative;
+      margin-right: 4px;
+    margin-bottom: 12px;
+}
+
+.side-nav .section-label.current {
+    font-weight: 700;
+}
+
+.side-nav .section-label.current:before {
+    content: '> ';
+    display: inline;
+    padding-right: 3px;
+}
+
+</style>
+
+<div class="side-nav">
+<h3 class="top-category">
+
+
+<c:forEach var="topCateogry" items="${topCategoryNav.catalogGroupView}">
+
+	<wcf:url var="CategoryDisplayURL" patternName="CanonicalCategoryURL" value="Category3">
+		<wcf:param name="langId" value="${langId}" />
+		<wcf:param name="storeId" value="${storeId}" />
+		<wcf:param name="catalogId" value="${catalogId}" />
+		<wcf:param name="categoryId" value="${WCParam.top_category}" />	
+		<wcf:param name="urlLangId" value="${urlLangId}" />		
+		<wcf:param name="top" value="Y" />					
+	</wcf:url>
+<a data-gtm-menu="first-level" class="top-category-link" href="${CategoryDisplayURL}">${topCateogry.name}</a>
+</c:forEach>
+</h3>
+<ul class="sub-menu-section">
+<li class="submenu-list">
+<ul class="submenu-list">
+
+<c:forEach var="subcatNav" items="${subCategoryHirearchy.catalogGroupView}">
+		<wcf:url var="categoryURL" value="Category3" patternName="CategoryURLWithParentCategory">
+				<wcf:param name="storeId" value="${storeId}"/>
+				<wcf:param name="catalogId" value="${catalogId}"/>
+				<wcf:param name="langId" value="${langId}"/>
+				<wcf:param name="urlLangId" value="${urlLangId}"/>
+				<wcf:param name="categoryId" value="${subcatNav.uniqueID}"/>
+				<wcf:param name="parent_category_rn" value="${WCParam.parent_category_rn}"/>
+					<wcf:param name="top_category" value="${WCParam.top_category}"/>
+				<wcf:param name="pageView" value="${env_defaultPageView}"/>
+				<wcf:param name="beginIndex" value="0"/>
+			</wcf:url>
+			
+	<c:set var ="subCatClass" value ="section-label" />
+	<c:if test ="${subcatNav.name == categoryName}" >
+		<c:set var ="subCatClass" value ="section-label current" />
+	</c:if>
+	
+	<li class="${subCatClass} ">
+
+	<a data-gtm-menu="second-level" data-gtm-mtype="sidebar" href="${categoryURL}">
+	${subcatNav.name} 
+	</a>
+</li>	
+</c:forEach>
+
+
+</ul>
+</li>
+</ul>
+</div>

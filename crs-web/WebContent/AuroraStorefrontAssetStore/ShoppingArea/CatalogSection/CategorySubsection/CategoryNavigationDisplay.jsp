@@ -188,7 +188,8 @@ xmlns:waistate="http://www.w3.org/2005/07/aaa" lang="${shortLocale}" xml:lang="$
 					<c:set var="pageDesign" value="${getPageDesignResponse.resultList[0]}" scope="request"/>
 					<c:set var="PAGE_DESIGN_DETAILS_JSON_VAR" value="pageDesign" scope="request"/>
 					<c:set var="rootWidget" value="${pageDesign.widget}"/>
-					<wcpgl:widgetImport uniqueID="${rootWidget.widgetDefinitionId}" debug=false/>
+					<c:set var="categoryName" value="${categoryName}" scope="request"/>
+					<wcpgl:widgetImport uniqueID="${rootWidget.widgetDefinitionId}"  debug=false/>
 				</div>
 			</div>
 			

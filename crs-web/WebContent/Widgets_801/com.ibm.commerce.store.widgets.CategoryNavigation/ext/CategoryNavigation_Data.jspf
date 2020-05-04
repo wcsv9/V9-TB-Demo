@@ -11,3 +11,43 @@
   IBM Corp.
  =================================================================
 --%>
+
+
+<c:set var="departmentId" value="${param.categoryId}"/>
+<c:set var="uniqueID" value="${param.uniqueID}"/>
+<c:set var="subcategoryLimit" value="10"/>
+<c:set var="depthAndLimit" value="${subcategoryLimit + 1},${subcategoryLimit + 1}"/>
+<c:catch var="searchServerException">
+	<wcf:rest var="subCategoryHirearchy" url="${searchHostNamePath}${searchContextPath}/store/${WCParam.storeId}/categoryview/byParentCategory/${WCParam.parent_category_rn}" >
+		<c:if test="${!empty WCParam.langId}">
+		<wcf:param name="langId" value="${WCParam.langId}"/>
+		</c:if>
+		<c:if test="${empty WCParam.langId}">
+		<wcf:param name="langId" value="${langId}"/>
+		</c:if>
+
+		<wcf:param name="responseFormat" value="json"/>		
+		<wcf:param name="catalogId" value="${WCParam.catalogId}"/>
+		<wcf:param name="depthAndLimit" value="${depthAndLimit}"/>
+		<c:forEach var="contractId" items="${env_activeContractIds}">
+			<wcf:param name="contractId" value="${contractId}"/>
+		</c:forEach>
+		</wcf:rest>
+		
+		<wcf:rest var="topCategoryNav" url="${searchHostNamePath}${searchContextPath}/store/${WCParam.storeId}/categoryview/byId/${WCParam.top_category}" >
+		<c:if test="${!empty WCParam.langId}">
+		<wcf:param name="langId" value="${WCParam.langId}"/>
+		</c:if>
+		<c:if test="${empty WCParam.langId}">
+		<wcf:param name="langId" value="${langId}"/>
+		</c:if>
+
+		<wcf:param name="responseFormat" value="json"/>		
+		<wcf:param name="catalogId" value="${WCParam.catalogId}"/>
+		<wcf:param name="depthAndLimit" value="${depthAndLimit}"/>
+		<c:forEach var="contractId" items="${env_activeContractIds}">
+			<wcf:param name="contractId" value="${contractId}"/>
+		</c:forEach>
+		</wcf:rest>
+</c:catch>
+
