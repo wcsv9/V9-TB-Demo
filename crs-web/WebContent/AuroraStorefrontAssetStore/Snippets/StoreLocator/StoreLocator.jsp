@@ -311,12 +311,11 @@ function showhide() {
 <div class="store-breadcrumb">
 <ul class="breadcrumb " itemscope="" itemtype="//schema.org/BreadcrumbList">
 <li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="//schema.org/ListItem">
-<a itemprop="item" href="/wcs/shop/en/auroraesite">Home 1<meta itemprop="name" content="Home"></a>
-<span aria-hidden="true">&bull;</span>
-<meta itemprop="position" content="1">
+<a itemprop="item" href="/wcs/shop/en/auroraesite">Home<meta itemprop="name" content="Home"> </a>
+<span aria-hidden="true">&bull;</span> <meta itemprop="position" content="1">
 </li>
 <li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="//schema.org/ListItem">
- <a id="storeLocatorQuickLink" href="${fn:escapeXml(StoreLocatorView1)}">Find a Store <!--<fmt:message bundle="${storeText}" key="HEADER_STORE_LOCATOR"/>--> </a>
+ <a id="storeLocatorQuickLink" href="${fn:escapeXml(StoreLocatorView1)}">&nbsp;Find a Store <!--<fmt:message bundle="${storeText}" key="HEADER_STORE_LOCATOR"/>--> </a>
 <meta itemprop="position" content="2">
 </li>
 </ul>
@@ -329,7 +328,7 @@ function showhide() {
 		<form id='<c:out value="${formName}" />' name='<c:out value="${formName}" />'>
 
 			<div id="WC_StoreLocator_div_29" class="location_select">
-							 <input class="searchbox" id="zipCityInput" type="text" placeholder="Enter State, City or Zipcode" name="zipCityInput" value="${ zipCityInputValue}" aria-label="Enter State, City or Zipcode" />
+							 <input class="searchbox" id="zipCityInput" type="text" placeholder="ZIP or City, State" name="zipCityInput" value="${ zipCityInputValue}" aria-label="Enter State, City or Zipcode" />
 			
 			</div>
                     <!-- <div class="ctnr-find-btn">

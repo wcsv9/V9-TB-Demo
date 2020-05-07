@@ -96,7 +96,7 @@
 	<c:if test="${currentOrderLocked != 'true' || env_shopOnBehalfSessionEstablished eq 'true'}">	   
 	
 	<div class="promotion_code" id="WC_PromotionCodeDisplay_div_1">
-			<label for="promoCode"><fmt:message bundle="${storeText}" key="PROMOTION_CODE"/></label>
+			<label for="promoCode">Promo Code<!--<fmt:message bundle="${storeText}" key="PROMOTION_CODE"/>--></label>
 		</div>
 			 
 		<div class="promotion_input" id="WC_PromotionCodeDisplay_div_2">

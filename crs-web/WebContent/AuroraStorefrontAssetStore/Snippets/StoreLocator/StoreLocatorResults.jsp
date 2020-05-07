@@ -112,10 +112,10 @@ No Locations found for this selection!
 		</c:when>
 	</c:choose>  --%>
 			
-	<c:if test="${resultNum > 0}">
-<table  cellpadding="0" cellspacing="0" border="0" width="100%">
-<tr>
-<td>
+		<c:if test="${resultNum > 0}">
+		<table  cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+		<td>
 		<table id="bopis_table" tabindex="-1" summary="<fmt:message bundle="${storeText}" key='STORE_RESULTS_SUMMARY'/>" cellpadding="0" cellspacing="0" border="0" width="100%">
 			<%-- <tr class="nested">
 				<th class="align_left" id="PhysicalStores_tableCell_result1"><fmt:message bundle="${storeText}" key="STORE_RESULTS_COLUMN1" /></th>

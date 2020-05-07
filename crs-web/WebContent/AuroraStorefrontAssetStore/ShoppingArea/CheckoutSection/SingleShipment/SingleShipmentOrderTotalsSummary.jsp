@@ -56,20 +56,7 @@
 
 <div id="total_breakdown">
 	
-	<%-- promotion code area --%>
-	<flow:ifEnabled feature="promotionCode">
-		<c:if test="${param.fromPage != 'orderSummaryPage' && param.fromPage != 'orderConfirmationPage' && param.fromPage != 'pendingOrderDisplay'}">
-			<div id="promotions">
-				<%-- Flush the buffer so this fragment JSP is not cached twice --%>
-				<%out.flush();%>
-				<c:import url="/${sdb.jspStoreDir}/Snippets/Marketing/Promotions/PromotionCodeDisplay.jsp">
-					<c:param name="orderId" value="${order.orderId}" />
-					<c:param name="returnView" value="${param.returnView}" />
-				</c:import>
-				<%out.flush();%>
-			</div>
-		</c:if>
-	</flow:ifEnabled>
+	
 	
 	<table id="order_total" cellpadding="0" cellspacing="0" border="0" role="presentation">
 		
@@ -224,6 +211,21 @@
 		</tr>
 	</c:if>
 	</table>
+	
+	<%-- promotion code area --%>
+	<flow:ifEnabled feature="promotionCode">
+		<c:if test="${param.fromPage != 'orderSummaryPage' && param.fromPage != 'orderConfirmationPage' && param.fromPage != 'pendingOrderDisplay'}">
+			<div id="promotions">
+				<%-- Flush the buffer so this fragment JSP is not cached twice --%>
+				<%out.flush();%>
+				<c:import url="/${sdb.jspStoreDir}/Snippets/Marketing/Promotions/PromotionCodeDisplay.jsp">
+					<c:param name="orderId" value="${order.orderId}" />
+					<c:param name="returnView" value="${param.returnView}" />
+				</c:import>
+				<%out.flush();%>
+			</div>
+		</c:if>
+	</flow:ifEnabled>
 
 </div>
 <%-- APPLEPAY BEGIN --%>

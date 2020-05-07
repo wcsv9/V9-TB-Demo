@@ -58,11 +58,11 @@
     right: 29px !important;
     left: auto !important;
     width: 258px;
-    z-index: 99;
+    z-index: 99;display: none;
 }
 .container_content_rightsidebar.shop_cart {
     position: relative;
-    top: -24px;
+    top: 0px;
 }
 </style>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -247,6 +247,7 @@ $(document).ready(
 						</form>
 					</div>
 				</flow:ifEnabled>
+				
 				<span id="ShopCartPagingDisplay_ACCE_Label" class="spanacce"><fmt:message bundle="${storeText}" key="ACCE_Region_Order_Item_List"/></span>
 				<div wcType="RefreshArea" widgetId="ShopCartPagingDisplay" id="ShopCartPagingDisplay" refreshurl="<c:out value="${currentShoppingCartLink}"/>" declareFunction="CommonControllersDeclarationJS.declareShopCartPagingDisplayRefreshArea()" ariaMessage="<fmt:message bundle="${storeText}" key="ACCE_Status_Order_Item_List_Updated"/>" ariaLiveId="${ariaMessageNode}" role="region" aria-labelledby="ShopCartPagingDisplay_ACCE_Label">
 					<%out.flush();%>
@@ -257,32 +258,7 @@ $(document).ready(
 					</c:import>
 					<%out.flush();%>
 				</div>
-				<div class="free_gifts_block">
-					<%out.flush();%>
-					<c:import url="/${sdb.jspStoreDir}/Snippets/Marketing/Promotions/PromotionPickYourFreeGift.jsp"/>
-					<%out.flush();%>
-				</div>
-				<div id="WC_ShopCartDisplay_div_5a" class="espot_payment left">
-					<%out.flush();%>
-						<wcpgl:widgetImport useIBMContextInSeparatedEnv="${isStoreServer}" url= "${env_siteWidgetsDir}com.ibm.commerce.store.widgets.ContentRecommendation/ContentRecommendation.jsp">
-							<wcpgl:param name="storeId" value="${storeId}" />
-							<wcpgl:param name="catalogId" value="${catalogId}" />
-							<wcpgl:param name="emsName" value="ShoppingCartCenter_Content" />
-						</wcpgl:widgetImport>
-					<%out.flush();%>
-				</div>
-
-				<%out.flush();%>
-				<c:import url="/${sdb.jspStoreDir}/ShoppingArea/CheckoutSection/SingleShipment/SingleShipmentOrderTotalsSummary.jsp">
-					<c:param name="returnView" value="AjaxOrderItemDisplayView"/>
-					<c:param name="fromPage" value="shoppingCartDisplay"/>
-				</c:import>
-				<%out.flush();%>
-				<br clear="all" />
-				<%out.flush();%>
-				<c:import url="/${sdb.jspStoreDir}/Snippets/Order/Cart/CheckoutLogon.jsp"/>
-				<%out.flush();%>
-				<%@ include file="../../Snippets/ReusableObjects/CheckoutBottomESpotDisplay.jspf"%>
+				
 			</div>
 		</c:when>
 		<c:otherwise>
@@ -299,4 +275,13 @@ $(document).ready(
 		<div class="right_corner" id="WC_ShopCartDisplay_div_10"></div>
 	</div>
 </div>
+<div class="widget_recommended_position">
+											<% out.flush(); %>
+												<wcpgl:widgetImport useIBMContextInSeparatedEnv="${isStoreServer}" url="${env_siteWidgetsDir}com.ibm.commerce.store.widgets.CatalogEntryRecommendation/CatalogEntryRecommendation.jsp">
+													<wcpgl:param name="emsName" value="ShoppingCartRight_CatEntries"/>
+													<wcpgl:param name="widgetOrientation" value="vertical"/>
+													<wcpgl:param name="pageSize" value="2"/>
+												</wcpgl:widgetImport>
+											<% out.flush(); %>
+										</div>
 <!-- END ShopCartDisplay.jsp -->

@@ -47,7 +47,9 @@
 <flow:ifEnabled feature="BOPIS">
 	<c:set var="isBOPISEnabled" value="true"/>
 </flow:ifEnabled>
-
+<style>
+#breadcrumb { display: none;}
+</style>
 <!-- BEGIN OrderItemDisplay.jsp -->
 <html xmlns:wairole="http://www.w3.org/2005/01/wai-rdf/GUIRoleTaxonomy#" xmlns:waistate="http://www.w3.org/2005/07/aaa" lang="${shortLocale}" xml:lang="${shortLocale}">
 	<head>
@@ -213,6 +215,7 @@
 								<%out.flush();%>
 								<div class="container_content_rightsidebar shop_cart">
 									<div class="left_column">
+									<h1 class="onheading">Shopping Cart</h1>
 										<span id="ShopCartDisplay_ACCE_Label" class="spanacce"><fmt:message bundle="${storeText}" key="ACCE_Region_Shopping_Cart_Content"/></span>
 										<div wcType="RefreshArea" widgetId="ShopCartDisplay" id="ShopCartDisplay" refreshurl="<c:out value="${ShopCartDisplayViewURL}"/>" declareFunction="CommonControllersDeclarationJS.declareShopCartDisplayRefreshArea()" ariaMessage="<fmt:message bundle="${storeText}" key="ACCE_Status_Shopping_Cart_Content_Updated"/>" ariaLiveId="${ariaMessageNode}" role="region" aria-labelledby="ShopCartDisplay_ACCE_Label">
 											<%out.flush();%>
@@ -243,15 +246,42 @@
 									</div>
 									<div class="right_column">
 										<!-- Vertical Recommendations Widget -->
-										<div class="widget_recommended_position">
-											<% out.flush(); %>
-												<wcpgl:widgetImport useIBMContextInSeparatedEnv="${isStoreServer}" url="${env_siteWidgetsDir}com.ibm.commerce.store.widgets.CatalogEntryRecommendation/CatalogEntryRecommendation.jsp">
-													<wcpgl:param name="emsName" value="ShoppingCartRight_CatEntries"/>
-													<wcpgl:param name="widgetOrientation" value="vertical"/>
-													<wcpgl:param name="pageSize" value="2"/>
+										
+										<div class="cart-page-right">
+										<h1 class="order-summary">ORDER SUMMARY</h1>
+										<div id="WC_ShopCartDisplay_div_5a" class="espot_payment left">
+											<%out.flush();%>
+												<wcpgl:widgetImport useIBMContextInSeparatedEnv="${isStoreServer}" url= "${env_siteWidgetsDir}com.ibm.commerce.store.widgets.ContentRecommendation/ContentRecommendation.jsp">
+													<wcpgl:param name="storeId" value="${storeId}" />
+													<wcpgl:param name="catalogId" value="${catalogId}" />
+													<wcpgl:param name="emsName" value="ShoppingCartCenter_Content" />
 												</wcpgl:widgetImport>
-											<% out.flush(); %>
+											<%out.flush();%>
 										</div>
+										<div class="free_gifts_block">
+											<%out.flush();%>
+											<c:import url="/${sdb.jspStoreDir}/Snippets/Marketing/Promotions/PromotionPickYourFreeGift.jsp"/>
+											<%out.flush();%>
+										</div>
+										
+										<%out.flush();%>
+										<c:import url="/${sdb.jspStoreDir}/ShoppingArea/CheckoutSection/SingleShipment/SingleShipmentOrderTotalsSummary.jsp">
+											<c:param name="returnView" value="AjaxOrderItemDisplayView"/>
+											<c:param name="fromPage" value="shoppingCartDisplay"/>
+										</c:import>
+										<%out.flush();%>
+										
+										<br clear="all" />
+										
+										<%out.flush();%>
+										<c:import url="/${sdb.jspStoreDir}/Snippets/Order/Cart/CheckoutLogon.jsp"/>
+										<%out.flush();%>
+										
+										<%@ include file="../../Snippets/ReusableObjects/CheckoutBottomESpotDisplay.jspf"%>
+										
+										</div>
+				
+									
 									</div>
 								</div>
 							</div>

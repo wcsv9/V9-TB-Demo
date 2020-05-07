@@ -124,39 +124,31 @@
 		<input type="hidden" name="errorViewName" value="AjaxOrderItemDisplayView" id="WC_RememberMeLogonForm_FormInput_errorViewName_In_AjaxLogon_1"/>	
 
 		<div class="top_border" id="WC_CheckoutLogonf_div_0">
-			<div id="customers_new_or_returning">
-				<div class="new" id="WC_CheckoutLogonf_div_1">
-					<h2><fmt:message bundle="${storeText}" key="SHOPCART_NEW_CUSTOMER"/></h2>
+					<div class=text-login><h2><fmt:message bundle="${storeText}" key="SHOPCART_NEW_CUSTOMER"/></h2>
 					<p><fmt:message bundle="${storeText}" key="SHOPCART_CHECKOUT_WITHOUT_SIGNING"/></p>
 					<br />
 					<p><fmt:message bundle="${storeText}" key="SHOPCART_TEXT1"/></p>
 					<br />
-					<p><fmt:message bundle="${storeText}" key="SHOPCART_TEXT2"/></p>
-					<div class="new_returning_button" id="WC_CheckoutLogonf_div_2">
-						<div class="button_align" id="WC_CheckoutLogonf_div_3">
-							<a href="#" role="button" class="button_primary" id="guestShopperContinue" onclick="javascript:if(CheckoutHelperJS.canCheckoutContinue('<c:out value="${userType}"/>') && CheckoutHelperJS.updateShoppingCart(document.ShopCartForm)){TealeafWCJS.processDOMEvent(event);ShipmodeSelectionExtJS.guestShopperContinue('<c:out value='${guestUserURL}'/>', '<c:out value='${PhysicalStoreSelectionURL}'/>');}return false;">
-								<div class="left_border"></div>
-								<div class="button_text"><fmt:message bundle="${storeText}" key="SHOPCART_GUEST" /></div>
-								<div class="right_border"></div>
-							</a>
-						</div>
-					</div>
-				</div>
+					<p><fmt:message bundle="${storeText}" key="SHOPCART_TEXT2"/></p> </div>
+			<div id="customers_new_or_returning">
+				
 				
 				<c:if test="${env_shopOnBehalfSessionEstablished eq 'false'}">
 					<%-- If onBehalf session is established, then it is CSR shopping as guest. So cannot log-in as user. --%>
 					<div class="returning" id="WC_CheckoutLogonf_div_4">
-						<h2><fmt:message bundle="${storeText}" key="SHOPCART_TEXT3"/></h2>
-						<p><fmt:message bundle="${storeText}" key="SHOPCART_TEXT4"/></p>
+						
+						<div class="signin-cart">
+						<!-- <h2><fmt:message bundle="${storeText}" key="SHOPCART_TEXT3"/></h2>
+						<p><fmt:message bundle="${storeText}" key="SHOPCART_TEXT4"/></p> -->
 						<br />
-						<p><label for="WC_CheckoutLogon_FormInput_logonId"><fmt:message bundle="${storeText}" key="SHOPCART_USERNAME"/></label></p>
+						<!--<p><label for="WC_CheckoutLogon_FormInput_logonId"></label></p> -->
 						<p>
-							<input id="WC_CheckoutLogon_FormInput_logonId" name="logonId" type="text" size="25" onchange="javaScript:TealeafWCJS.processDOMEvent(event);" onkeypress="if(event.keyCode==13){javascript:if(CheckoutHelperJS.canCheckoutContinue() && CheckoutHelperJS.updateShoppingCart(document.ShopCartForm)){ShipmodeSelectionExtJS.guestShopperLogon('javascript:LogonForm.SubmitAjaxLogin(document.AjaxLogon)', '<c:out value='${OrderCalculateURL}'/>', '<c:out value='${PhysicalStoreSelectionURL}'/>');}}" />
+							<input placeholder="<fmt:message bundle="${storeText}" key="SHOPCART_USERNAME"/>" id="WC_CheckoutLogon_FormInput_logonId" name="logonId" type="text" size="25" onchange="javaScript:TealeafWCJS.processDOMEvent(event);" onkeypress="if(event.keyCode==13){javascript:if(CheckoutHelperJS.canCheckoutContinue() && CheckoutHelperJS.updateShoppingCart(document.ShopCartForm)){ShipmodeSelectionExtJS.guestShopperLogon('javascript:LogonForm.SubmitAjaxLogin(document.AjaxLogon)', '<c:out value='${OrderCalculateURL}'/>', '<c:out value='${PhysicalStoreSelectionURL}'/>');}}" />
 						</p>
 						<br />
-						<p><label for="WC_CheckoutLogon_FormInput_logonPassword"><fmt:message bundle="${storeText}" key="SHOPCART_PASSWORD"/></label></p>
+						<!--<p><label for="WC_CheckoutLogon_FormInput_logonPassword"></label></p> -->
 						<p>
-							<input id="WC_CheckoutLogon_FormInput_logonPassword" name="logonPassword" type="password" autocomplete="off" size="25" onchange="javaScript:TealeafWCJS.processDOMEvent(event);" onkeypress="if(event.keyCode==13){javascript:if(CheckoutHelperJS.canCheckoutContinue() && CheckoutHelperJS.updateShoppingCart(document.ShopCartForm)){ShipmodeSelectionExtJS.guestShopperLogon('javascript:LogonForm.SubmitAjaxLogin(document.AjaxLogon)', '<c:out value='${OrderCalculateURL}'/>', '<c:out value='${PhysicalStoreSelectionURL}'/>');}}" />
+							<input placeholder="<fmt:message bundle="${storeText}" key="SHOPCART_PASSWORD"/>" id="WC_CheckoutLogon_FormInput_logonPassword" name="logonPassword" type="password" autocomplete="off" size="25" onchange="javaScript:TealeafWCJS.processDOMEvent(event);" onkeypress="if(event.keyCode==13){javascript:if(CheckoutHelperJS.canCheckoutContinue() && CheckoutHelperJS.updateShoppingCart(document.ShopCartForm)){ShipmodeSelectionExtJS.guestShopperLogon('javascript:LogonForm.SubmitAjaxLogin(document.AjaxLogon)', '<c:out value='${OrderCalculateURL}'/>', '<c:out value='${PhysicalStoreSelectionURL}'/>');}}" />
 						</p>
 						<p><a href="<c:out value="${ForgetPasswordURL}"/>" class="myaccount_link hover_underline" id="WC_CheckoutLogonf_links_1"><fmt:message bundle="${storeText}" key="SHOPCART_FORGOT"/></a></p>
 						<div class="new_returning_button" id="WC_CheckoutLogonf_div_5">
@@ -168,8 +160,23 @@
 								</a>
 							</div>
 						</div>
+						</div>
+						
 					</div>
 				</c:if>
+				<div class="or">OR</div>
+				<div class="new" id="WC_CheckoutLogonf_div_1">
+					
+					<div class="new_returning_button" id="WC_CheckoutLogonf_div_2">
+						<div class="button_align" id="WC_CheckoutLogonf_div_3">
+							<a href="#" role="button" class="button_primary" id="guestShopperContinue" onclick="javascript:if(CheckoutHelperJS.canCheckoutContinue('<c:out value="${userType}"/>') && CheckoutHelperJS.updateShoppingCart(document.ShopCartForm)){TealeafWCJS.processDOMEvent(event);ShipmodeSelectionExtJS.guestShopperContinue('<c:out value='${guestUserURL}'/>', '<c:out value='${PhysicalStoreSelectionURL}'/>');}return false;">
+								<div class="left_border"></div>
+								<div class="button_text"><fmt:message bundle="${storeText}" key="SHOPCART_GUEST" /></div>
+								<div class="right_border"></div>
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	 	<br clear="all" />
