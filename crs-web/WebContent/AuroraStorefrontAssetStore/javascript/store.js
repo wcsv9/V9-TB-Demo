@@ -48630,7 +48630,7 @@ $(document).ready(function () {
 
                         if ($("#" + idPrefix + "signOutQuickLink").length) {
                             var logonUserName = logonUserCookie.toString();
-                            $("#" + idPrefix + "signOutQuickLinkUser").html(escapeXml(logonUserName, true));
+                            $("#" + idPrefix + "signOutQuickLinkUser").html(escapeXml(logonUserName.split(" ")[0], true));
 	                        
                             if (Utils.varExists(GlobalLoginShopOnBehalfJS)) {
                                 GlobalLoginShopOnBehalfJS.updateSignOutLink(registeredWidgetId);
@@ -48765,7 +48765,7 @@ function declareSignOutRefreshArea(thisRefreshAreaId) {
                 widgetIds.forEach(function(registeredWidgetId) {
                     idPrefix = registeredWidgetId + "_";
                     Utils.ifSelectorExists("#" + idPrefix + "signOutQuickLink", function(signOutLink) {
-                        $("#" + idPrefix + "signOutQuickLinkUser").html(escapeXml(logonUserName, true));
+                        $("#" + idPrefix + "signOutQuickLinkUser").html(escapeXml(logonUserName.split(" ")[0], true));
 
                         if (Utils.varExists(GlobalLoginShopOnBehalfJS)) {
                             GlobalLoginShopOnBehalfJS.updateSignOutLink(registeredWidgetId);
@@ -49596,7 +49596,7 @@ GlobalLoginShopOnBehalfJS = {
                 logonUser = logonUserCookie;
             }
             // TODO: test
-            signOutLink.html(escapeXml(logonUser, true));
+            signOutLink.html(escapeXml(logonUser.split(" ")[0], true));
             var buyerUserName = "",
                 buyOnBehalfCookie = getCookie("WC_BuyOnBehalf_" + WCParamJS.storeId);
             if (typeof buyOnBehalfCookie != 'undefined') {
@@ -87815,7 +87815,7 @@ MyAccountDisplay={
             // LogonUserId will be of CSR in that case and it doesn't match with shopper name read from personal information form.
             var shopperName = getCookie("WC_LogonUserId_"+WCParamJS.storeId);
             if (trim(shopperName) != (form.firstName.value + " " + form.lastName.value)){
-                setCookie("WC_LogonUserId_"+WCParamJS.storeId, form.firstName.value + " " + form.lastName.value , {path:'/', domain:cookieDomain});
+                setCookie("WC_LogonUserId_"+WCParamJS.storeId, form.firstName.value , {path:'/', domain:cookieDomain});
             }
         }
     },

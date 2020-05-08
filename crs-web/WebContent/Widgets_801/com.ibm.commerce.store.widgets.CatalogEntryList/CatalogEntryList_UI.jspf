@@ -11,7 +11,53 @@
   IBM Corp.
  =================================================================
 --%>
+<style>
+<!--
+.ui-selectmenu-menu .ui-menu {
+    overflow: auto;
+    overflow-x: hidden;
+    padding: 20px 2px 25px 2px;
+    background: #fff;
+    width: 100% !important;
+    max-width: 916px;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    /* box-shadow: 0 0px 0px 0px #000; */
+    float: none;
+    background: #fff;
+    -webkit-box-shadow: 0 5px 6px 0 rgba(0,0,0,.2);
+    box-shadow: 0 5px 6px 0 rgba(0,0,0,.2);
+    border: 0;
+}
 
+.ui-selectmenu-open {
+    display: block;
+    width: 990px;
+    left: 241px !important;
+}
+
+.ui-selectmenu-menu .ui-menu li.ui-menu-item {
+        width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+.ui-menu-item-wrapper {
+    padding: 9px 8px;
+    border-bottom: 1px solid #E0E0E0;
+    background: #fff;
+    border: .5px solid #888;
+    color: #101820;
+    letter-spacing: 1.5px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+-->
+</style>
 <script>
     $(document).ready(function(){
         if(window.initialMinPrice == null && window.initialMaxPrice == null)
@@ -97,7 +143,7 @@
             
                 <div class="sorting_view_controls_container">
                     <div class="sorting_controls">
-                        <span class="order_by_label"><label for="orderBy${widgetSuffix}"><wcst:message key="SN_SORT_BY" bundle="${widgetText}"/></label>:</span>
+                        <span class="order_by_label">SORT:<!-- <label for="orderBy${widgetSuffix}"><wcst:message key="SN_SORT_BY" bundle="${widgetText}"/></label>: --></span>
                         <div id="orderByDropdown${widgetSuffix}" class="orderByDropdown selectWrapper">
                             <c:set var="selectOptions" value='{"useValueAsLink": true}' />
                             <select data-widget-type="wc.Select" data-widget-options="${fn:escapeXml(selectOptions)}" title="<wcst:message key='SN_SORT_BY_USAGE' bundle='${widgetText}'/>" id="orderBy${widgetSuffix}" 

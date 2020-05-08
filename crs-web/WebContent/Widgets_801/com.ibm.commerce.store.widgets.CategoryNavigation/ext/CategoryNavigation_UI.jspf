@@ -28,12 +28,10 @@
     list-style: none;
     color: #000;
     margin-left: 0;
+    padding-left: 0;
 }
 
- ul {
-    margin: 0;
-    padding: 0;
-}
+
 .side-nav .sub-menu-section li.special-deals-list, .side-nav .sub-menu-section li.submenu-list {
     margin-top: 10px;
 }
@@ -42,8 +40,8 @@
     text-transform: none;
 }
 .side-nav .section-label {
-    display: block;
-    font-weight: 300;
+        display: block;
+    font-weight: 400;
     letter-spacing: normal;
     font-size: 12px;
     margin-bottom: 5px;

@@ -125,6 +125,7 @@
 
 		<div class="top_border" id="WC_CheckoutLogonf_div_0">
 			<div id="customers_new_or_returning">
+			
 				<div class="new" id="WC_CheckoutLogonf_div_1">
 					<h2><fmt:message bundle="${storeText}" key="SHOPCART_NEW_CUSTOMER"/></h2>
 					<p><fmt:message bundle="${storeText}" key="SHOPCART_CHECKOUT_WITHOUT_SIGNING"/></p>
@@ -132,6 +133,7 @@
 					<p><fmt:message bundle="${storeText}" key="SHOPCART_TEXT1"/></p>
 					<br />
 					<p><fmt:message bundle="${storeText}" key="SHOPCART_TEXT2"/></p>
+					
 					<div class="new_returning_button" id="WC_CheckoutLogonf_div_2">
 						<div class="button_align" id="WC_CheckoutLogonf_div_3">
 							<a href="#" role="button" class="button_primary" id="guestShopperContinue" onclick="javascript:if(CheckoutHelperJS.canCheckoutContinue('<c:out value="${userType}"/>') && CheckoutHelperJS.updateShoppingCart(document.ShopCartForm)){TealeafWCJS.processDOMEvent(event);ShipmodeSelectionExtJS.guestShopperContinue('<c:out value='${guestUserURL}'/>', '<c:out value='${PhysicalStoreSelectionURL}'/>');}return false;">
