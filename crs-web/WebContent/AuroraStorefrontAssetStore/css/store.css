@@ -149,7 +149,7 @@
     padding: 5px 9px 10px 0;
     text-align: right;
     display: inline-block;
-    vertical-align: top
+    vertical-align: top;
 }
 
     #total_breakdown .promotion_button, #total_breakdown .promotion_code, #total_breakdown .promotion_input {
@@ -179,15 +179,15 @@
         }
 
     #total_breakdown #promotions {
-        float: left;
-        padding-right: 20px;
+        /* float: left; */
+        padding-right: 0px;
         padding-top: 3px;
     }
 
     #total_breakdown .promotion_code {
         height: 23px;
         padding-right: 4px;
-        padding-top: 3px
+        padding-top: 3px;
     }
 
     #total_breakdown .promotion_input {
@@ -3929,9 +3929,10 @@ dl, ol, ul {
 #searchBar {
     position: absolute;
     right: -63px;
-    top: -46px;
+    top: -33px;
     width: 100%;
-    padding: 2px; /* display: none; */
+    padding: 2px;
+    /* display: none; */
     background-image: url(/wcsstore/AuroraStorefrontAssetStore//images/arrowtop.png);
     background-repeat: no-repeat;
     background-position: 150px 3px;
@@ -4238,14 +4239,14 @@ dl, ol, ul {
     }
 
     .carousel > .carouselWrapper > div > .nextPageButton, .carousel > .carouselWrapper > div > .prevPageButton, .carousel > .nextPageButton, .carousel > .prevPageButton {
-        display: block;
+        display: block !important;
         position: absolute;
         top: 50%;
         z-index: 1;
         width: 21px;
         height: 42px;
         margin-top: -21px;
-        overflow: hidden
+        overflow: hidden;
     }
 
     .carousel > .carouselWrapper > div > .prevPageButton, .carousel > .prevPageButton {
@@ -16370,8 +16371,8 @@ li.ui-block-f, li.ui-block-g, li.ui-block-h, li.ui-block-i, ul.ui-grid-e, ul.ui-
 }
 
 .owl-carousel, .owl-carousel .owl-wrapper {
-    display: none;
-    position: relative
+    /* display: none; */
+    position: relative;
 }
 
 .owl-carousel {
@@ -18120,11 +18121,12 @@ h1.order-summary {
     color: #000;
     position: relative;
     font-family: "Open Sans",sans-serif!important;
+    margin-top: 5px;
 }
 .cart-page-right form#PromotionCodeForm .promotion_input {
     padding: 0;
     float: left;
-    width: 78%;
+    width: 72%;
 }
 
 .cart-page-right form#PromotionCodeForm .promotion_input input#promoCode {
@@ -18152,6 +18154,8 @@ h1.order-summary {
 }
 .container_content_rightsidebar.shop_cart > .right_column div#total_breakdown {
     padding: 0;
+    float: none;
+    display: block;
 }
 .container_content_rightsidebar.shop_cart > .right_column div#total_breakdown table#order_total .total_details {
     text-align: left;
@@ -18178,11 +18182,17 @@ h1.order-summary {
     width: 100%;
     /* padding: 3px; */
     text-align: center;
+    background: #fff;
+    color: #002849 !important;
+    border: solid 1px #002849;
 }
 .container_content_rightsidebar.shop_cart .cart-page-right .top_border div#customers_new_or_returning .new .new_returning_button a#guestShopperContinue .button_text {
     text-align: center;
     display: block;
-    padding: 14px 3px 0px 3px;
+    padding: 10px 3px 15px 3px;
+    font-size: 15px;
+    letter-spacing: 1.0px;
+    font-weight: 500;
 }
 .container_content_rightsidebar.shop_cart .cart-page-right .top_border div#customers_new_or_returning .returning {
     padding: 0;
@@ -18226,6 +18236,10 @@ h1.order-summary {
     height: auto;
     padding: 14px;
     /* background: #002849; */
+    padding: 13px 3px 15px 3px;
+    font-size: 15px;
+    letter-spacing: 1.0px;
+    font-weight: 500;
 }
 .container_content_rightsidebar.shop_cart .cart-page-right .top_border div#customers_new_or_returning .returning .new_returning_button .button_align a#guestShopperLogon {
     display: inline-block;
@@ -18376,4 +18390,67 @@ div#temp-map div#map-canvas button {
 }
 .sorting_view_controls_container .sorting_controls .selectWrapper .orderBySelect span.ui-selectmenu-text {
     padding: 4px 6px 4px;
+}
+.container_content_rightsidebar.shop_cart .cart-page-right .top_border div#customers_new_or_returning .new .new_returning_button a#guestShopperContinue .button_text .checkoutbtn {
+    display: block;
+    font-weight: 600;
+}
+.container_content_rightsidebar.shop_cart .cart-page-right .top_border div#customers_new_or_returning .new .new_returning_button a#guestShopperContinue .button_text span.guestbt {
+    font-size: 12px;
+}
+.container_content_rightsidebar.shop_cart .cart-page-right .top_border div#customers_new_or_returning .new .new_returning_button a#guestShopperContinue:hover {
+    background: #002849;
+    color: #FFF !important;
+}
+
+.container_content_rightsidebar.shop_cart .cart-page-right .top_border div#customers_new_or_returning .returning .new_returning_button .button_align a#guestShopperLogon span.checkoutbtn {display: block;font-weight: 600;}
+
+
+.container_content_rightsidebar.shop_cart .cart-page-right .top_border div#customers_new_or_returning .returning .new_returning_button .button_align a#guestShopperLogon span.guestbt {font-size: 12px;}
+
+.cart-page-right form#PromotionCodeForm .promotion_code a#btndes {
+    display: block;
+}
+
+
+
+.arrow-down {
+        content: '';
+        position: absolute;
+        right: 17px;
+        top: 4px;
+        vertical-align: top;
+        width: 10px;
+        height: 10px;
+        border: 1.5px solid #000;
+        border-right: none;
+        border-bottom: none;
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+        -webkit-transition: .1s;
+        transition: .1s;
+}
+
+.arrow-up {
+        content: '';
+    position: absolute;
+    right: 17px;
+    top: 4px;
+    vertical-align: top;
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid #000;
+    border-right: none;
+    border-bottom: none;
+    -webkit-transition: .1s;
+    transition: .1s;
+    top: 11px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+	
+}
+.container_content_rightsidebar.shop_cart .left_column .widget_recommended_position .header .controlBar {
+    margin: 0 auto;
+    float: none;
+    width: 157px;
 }

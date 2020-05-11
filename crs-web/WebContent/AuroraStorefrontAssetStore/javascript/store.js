@@ -31726,7 +31726,7 @@ var widgetsTooltip = $.ui.tooltip;
 			'<span aria-label="' + 'Next' + '">&#x203a;</span>'
 		],
 		navSpeed: false,
-		navElement: 'button type="button" role="presentation"',
+		navElement: 'button type="button" role="presentation" style="visibility: hidden;" ',
 		navContainer: false,
 		navContainerClass: 'owl-nav',
 		navClass: [

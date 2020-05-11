@@ -65,7 +65,7 @@
 			<a class="sharer" id="fb" data-sharer="facebook" data-url="">&nbsp;</a>
 			<a class="sharer" id="tw"  data-via="twitter"    data-hashtags="Moore"  data-url="">&nbsp;</a>
 			<a class="sharer" id="pi" data-sharer="Pinterest" data-url="">&nbsp;</a>
-			<a class="sharer" id="em" data-sharer="email" data-title="Moore's Product Share" data-url="Share" data-subject="Moore's Product Share" data-to=""> &nbsp;</a>
+			<a class="sharer" id="em" data-sharer="email" data-title="Moore's Product Share" data-url="Share" data-subject="v" data-to=""> &nbsp;</a>
 			</div>
 			
 			<div class="save-look">
@@ -164,7 +164,7 @@
 			aria-labelledby="contentRecommendationWidget_Title10_-3005_1039" aria-controls="tab1Widget" role="tab" aria-setsize="2" aria-posinset="1" aria-selected="true" >
 								People Also Searching For
 						</div>
-							<div role="tabpanel" class="tab left" data-slot-id="10" id="tab1Widget" aria-labelledby="tab1" style="display:block;">
+			<div role="tabpanel" class="tab left" data-slot-id="10" id="tab1Widget" aria-labelledby="tab1" style="display:block;">
 					<div class="content">
 						<wcpgl:widgetImport slotId="10"/>
 					</div>

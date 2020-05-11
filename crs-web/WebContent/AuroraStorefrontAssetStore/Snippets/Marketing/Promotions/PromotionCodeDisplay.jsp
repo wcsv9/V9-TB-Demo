@@ -87,7 +87,24 @@
 		</c:if>       
 	}
 </script>
+<script>
+$(document).ready(function(){ $("#btndes").click(function(){ $("#pdpdes").toggleClass("main"); }); });
+</script>
+<script>
+$('#btndes').click(function(){
+$(this).children('span').toggleClass('arrow-down arrow-up')
+});
+</script>
+<style>
 
+div#pdpdes.main {
+    display: block;
+}
+
+div#pdpdes {
+    display: none;
+}
+</style>
 <form name="PromotionCodeForm" id="PromotionCodeForm" method="post" action="<c:out value="${PromotionCodeManage}"/>" onsubmit="javascript: return false;">
 	<%-- the "onsubmit" option in the form tag above is to handle problems when a user apply a promotion code by pressing the Enter key in the promotion code input area:
 			1) when in an AJAX checkout flow
@@ -96,9 +113,9 @@
 	<c:if test="${currentOrderLocked != 'true' || env_shopOnBehalfSessionEstablished eq 'true'}">	   
 	
 	<div class="promotion_code" id="WC_PromotionCodeDisplay_div_1">
-			<label for="promoCode">Promo Code<!--<fmt:message bundle="${storeText}" key="PROMOTION_CODE"/>--></label>
-		</div>
-			 
+	<a for="promoCode" id="btndes" class="promo-code">Promo Code <span class="arrow-down"></span></a>
+	</div>
+		<div id="pdpdes">
 		<div class="promotion_input" id="WC_PromotionCodeDisplay_div_2">
 			<input type="text" class="input" size="6" name="promoCode" id="promoCode" onchange="javaScript:TealeafWCJS.processDOMEvent(event);" onkeypress="if(event.keyCode==13) JavaScript:CheckoutHelperJS.applyPromotionCode('PromotionCodeForm','<c:out value="${orderId}"/>')"/>
 		</div>
@@ -114,7 +131,9 @@
 			<c:set var="promoCodeString" value=""/>
 			<br clear="all"/>
 		</div>
+		
 	</c:if>
+	
 	<div id="appliedPromotionCodes" class="hover_underline">                                   
 		<c:forEach var="promotionCode" items="${promoCodeListBean.promotionCode}" varStatus="status">
 			<c:set var="promoCodeString" value="${promoCodeString},${promotionCode.code}"/>
@@ -155,5 +174,6 @@
 		</c:forEach>
 	</div>
 	<br clear="left" />
+	</div>
 </form>
 <!-- END PromotionCodeDisplay.jsp -->

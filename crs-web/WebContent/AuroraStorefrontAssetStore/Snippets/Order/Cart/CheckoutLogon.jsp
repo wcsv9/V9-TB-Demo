@@ -154,9 +154,14 @@
 						<div class="new_returning_button" id="WC_CheckoutLogonf_div_5">
 							<div class="button_align" id="WC_CheckoutLogonf_div_6">
 								<a href="#" role="button" class="button_primary" id="guestShopperLogon" onclick="javascript:TealeafWCJS.processDOMEvent(event);if(CheckoutHelperJS.canCheckoutContinue() && CheckoutHelperJS.updateShoppingCart(document.ShopCartForm)){ShipmodeSelectionExtJS.guestShopperLogon('javascript:LogonForm.SubmitAjaxLogin(document.AjaxLogon)','<c:out value='${OrderCalculateURL}'/>', '<c:out value='${PhysicalStoreSelectionURL}'/>');}return false;">
-									<div class="left_border"></div>
-									<div class="button_text"><fmt:message bundle="${storeText}" key="SHOPCART_SIGNIN" /></div>
-									<div class="right_border"></div>
+									
+									<div class="button_text">
+
+								<%-- <fmt:message bundle="${storeText}" key="SHOPCART_SIGNIN" /> --%>
+									<span class="checkoutbtn">SIGN IN</span>
+								    <span class="guestbt">TO CHECKOUT</span>
+									</div>
+									
 								</a>
 							</div>
 						</div>
@@ -170,9 +175,14 @@
 					<div class="new_returning_button" id="WC_CheckoutLogonf_div_2">
 						<div class="button_align" id="WC_CheckoutLogonf_div_3">
 							<a href="#" role="button" class="button_primary" id="guestShopperContinue" onclick="javascript:if(CheckoutHelperJS.canCheckoutContinue('<c:out value="${userType}"/>') && CheckoutHelperJS.updateShoppingCart(document.ShopCartForm)){TealeafWCJS.processDOMEvent(event);ShipmodeSelectionExtJS.guestShopperContinue('<c:out value='${guestUserURL}'/>', '<c:out value='${PhysicalStoreSelectionURL}'/>');}return false;">
-								<div class="left_border"></div>
-								<div class="button_text"><fmt:message bundle="${storeText}" key="SHOPCART_GUEST" /></div>
-								<div class="right_border"></div>
+								
+								<div class="button_text">
+								<span class="checkoutbtn">CHECKOUT</span>
+								<span class="guestbt">AS GUEST</span>
+<%-- 								<fmt:message bundle="${storeText}" key="SHOPCART_GUEST" /> --%>
+								
+								</div>
+								
 							</a>
 						</div>
 					</div>

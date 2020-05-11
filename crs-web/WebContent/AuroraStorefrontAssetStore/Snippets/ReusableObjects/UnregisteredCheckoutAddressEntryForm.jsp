@@ -262,9 +262,9 @@
 	</span>
 	<span class="required-field"  id="WC_${formName}_email1_div_28"> *</span>
 	<fmt:message bundle="${storeText}" key="EMAIL"/></div>  --%>
-<div id="WC_${formName}_email1_div_29">
-	<input type="text" placeholder="Email" aria-required="true" name="email1" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}email1_1'/>" size="35" class="form_input" value="<c:out value='${contact.email1}'/>" />
-</div>
+<%-- <div id="WC_${formName}_email1_div_29"> --%>
+<%-- 	<input type="text" placeholder="Email" aria-required="true" name="email1" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}email1_1'/>" size="35" class="form_input" value="<c:out value='${contact.email1}'/>" /> --%>
+<!-- </div> -->
 <br />
 <!-- END UnregisteredCheckoutAddressEntryForm.jsp-->
 
