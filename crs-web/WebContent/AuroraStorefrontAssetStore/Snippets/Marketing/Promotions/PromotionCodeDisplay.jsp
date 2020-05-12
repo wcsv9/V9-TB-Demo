@@ -77,7 +77,18 @@
 </c:choose>
 
 
-
+<script>
+$(document).ready(function () {
+  $('a.promo-code').click(function () {
+  if ($(this).hasClass('clicked')) {
+    $(this).removeClass('clicked');
+    }
+  else {
+    $(this).addClass("clicked");$(this);
+    }
+});
+});
+</script>
 <script type="text/javascript">
 	$(document).ready(initPromotionAssets); 
        
@@ -90,11 +101,7 @@
 <script>
 $(document).ready(function(){ $("#btndes").click(function(){ $("#pdpdes").toggleClass("main"); }); });
 </script>
-<script>
-$('#btndes').click(function(){
-$(this).children('span').toggleClass('arrow-down arrow-up')
-});
-</script>
+
 <style>
 
 div#pdpdes.main {
@@ -113,11 +120,11 @@ div#pdpdes {
 	<c:if test="${currentOrderLocked != 'true' || env_shopOnBehalfSessionEstablished eq 'true'}">	   
 	
 	<div class="promotion_code" id="WC_PromotionCodeDisplay_div_1">
-	<a for="promoCode" id="btndes" class="promo-code">Promo Code <span class="arrow-down"></span></a>
+	<a for="promoCode" id="btndes" class="promo-code"><span class="number">Promo Code</span><span class="label">&nbsp;</span></a>
 	</div>
 		<div id="pdpdes">
 		<div class="promotion_input" id="WC_PromotionCodeDisplay_div_2">
-			<input type="text" class="input" size="6" name="promoCode" id="promoCode" onchange="javaScript:TealeafWCJS.processDOMEvent(event);" onkeypress="if(event.keyCode==13) JavaScript:CheckoutHelperJS.applyPromotionCode('PromotionCodeForm','<c:out value="${orderId}"/>')"/>
+			<input placeholder="Promo Code" type="text" class="input" size="6" name="promoCode" id="promoCode" onchange="javaScript:TealeafWCJS.processDOMEvent(event);" onkeypress="if(event.keyCode==13) JavaScript:CheckoutHelperJS.applyPromotionCode('PromotionCodeForm','<c:out value="${orderId}"/>')"/>
 		</div>
 
 		<div class="promotion_button" id="WC_PromotionCodeDisplay_div_3">

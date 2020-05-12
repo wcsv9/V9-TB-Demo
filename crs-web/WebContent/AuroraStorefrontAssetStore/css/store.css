@@ -198,7 +198,7 @@
         #total_breakdown .promotion_input input {
             height: 16px;
             font-family: Arial;
-            color: #4D4D4D
+            color: #4D4D4D;
         }
 
     #total_breakdown .promotion_button > br {
@@ -705,7 +705,7 @@ div#your_store_list .text_padding {
 
 #bopis_table, #bopis_table1 {
     padding-bottom: 4px;
-    margin-top: 5px
+    margin-top: 5px;
 }
 
 #checkout_crumb .crumb, #checkout_crumb .crumb .on, #checkout_crumb .crumb h1 {
@@ -4119,7 +4119,42 @@ dl, ol, ul {
         padding-top: 20px;
     }
 }
+@media (max-width:767px) {
+    #footerRow1 > .section {
+    display: block !important;
+    width: 100% !important;
+    
+    clear: both;
+}
+#footerRow1 > .section4 {
+    display: block !important;
+    width: 100% !important;
+    padding: 0px 16px 10px 16px  !important;
+    text-align: left;
+    vertical-align: top;
+    float: none  !important;
+    max-width: 393px;
+}
+.sign-up.rw input {
+    
+    max-width: 228px  !important;
+    
+}
+.signupsection .mobile-sign-up.rw.collapse input#pref_mobile_num_footer {
+    
+    max-width: 228px  !important;
+   
+}
+.signupsection label {
+    
+    font-size: 82% !important;
+}
+.footer-copyright ul {
+    margin: 0px 0px !important;
+    text-align: left;
+}
 
+}
 @media (min-width:961px) {
     #footerRow1 {
         width: 1020px;
@@ -14564,8 +14599,8 @@ li div.ui-state-active {
 }
 
 li div.ui-state-select {
-    background: #000000 !important;
-    color: #fff !important;
+    /* background: #000000 !important; */
+    /* color: #fff !important; */
 }
 
 .ui-selectmenu-menu {
@@ -14614,12 +14649,12 @@ li div.ui-state-select {
 
     .ui-selectmenu-button span.ui-selectmenu-text {
         text-align: left;
-        display: block;
+        display: inline-block;
         line-height: 1.4;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        padding: 2px
+        padding: 2px;
     }
 
 .selectWrapperPageSize .wcSelect .ui-selectmenu-text, .ui-selectmenu-menu li.ui-state-disabled {
@@ -16603,6 +16638,7 @@ button.searchbtnadd {
     display: inline-block;
     padding: 0px 0px 0px 0px;
     margin-left: 6px;
+    text-decoration: none !important;
 }
 
 #footerRow1 > .section4 {
@@ -17951,14 +17987,17 @@ div#location .location_selectbtn {
 
     .gift_content.store-l-mape table td #bopis_table {
         padding-bottom: 4px;
-        margin-top: 5px;
+        margin-top: 65px;
         position: absolute;
-        width: 240px;
+        width: 100% !important;
         background: #fff;
         z-index: 1;
-        left: 431px;
-        padding: 12px;
+        left: 230px;
+        padding: 6px;
         border-radius: 6px;
+        height: 88%;
+        overflow-x: auto;
+        max-width: 560px;
     }
 
     .gift_content.store-l-mape table td div#map-canvas {
@@ -18137,9 +18176,13 @@ h1.order-summary {
     padding-bottom: .75rem;
     height: auto;
     font-weight: 300;
+    text-transform: uppercase;
+    font: 400 12.3333px Arial;
+    height: 16px;
+    line-height: normal;
 }
 .cart-page-right form#PromotionCodeForm .promotion_button {
-    width: 18%;
+    width: 28%;
     float: left;
 }
 .cart-page-right form#PromotionCodeForm .promotion_button .button_primary {
@@ -18414,8 +18457,8 @@ div#temp-map div#map-canvas button {
 
 
 
-.arrow-down {
-        content: '';
+a.promo-code span.label {
+content: '';
         position: absolute;
         right: 17px;
         top: 4px;
@@ -18430,9 +18473,8 @@ div#temp-map div#map-canvas button {
         -webkit-transition: .1s;
         transition: .1s;
 }
-
-.arrow-up {
-        content: '';
+a.promo-code.clicked span.label {
+content: '';
     position: absolute;
     right: 17px;
     top: 4px;
@@ -18447,10 +18489,18 @@ div#temp-map div#map-canvas button {
     top: 11px;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-	
 }
 .container_content_rightsidebar.shop_cart .left_column .widget_recommended_position .header .controlBar {
     margin: 0 auto;
     float: none;
     width: 157px;
+}
+.sign_in_registration .forgot_password_content .button_primary .button_text {
+    max-width: 330px !important;
+    font-size: 14px !important;
+}
+.gift_content.store-l-mape table td #bopis_table tr.odd, .gift_content.store-l-mape table td #bopis_table tr.even {
+    float: left;
+    display: inline-block;
+    width: 50%;
 }
