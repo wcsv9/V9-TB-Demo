@@ -123,13 +123,33 @@
 		</c:choose>
 		<input type="hidden" name="errorViewName" value="AjaxOrderItemDisplayView" id="WC_RememberMeLogonForm_FormInput_errorViewName_In_AjaxLogon_1"/>	
 
+		<wcf:url var="RegisterURL" value="UserRegistrationForm">
+				<wcf:param name="langId" value="${WCParam.langId}" />
+				<wcf:param name="storeId" value="${WCParam.storeId}" />
+				<wcf:param name="catalogId" value="${WCParam.catalogId}" />
+				<wcf:param name="myAcctMain" value="1" />
+				<wcf:param name="registerNew" value="Y" />
+				<c:if test="${!empty WCParam.nextUrl}">
+					<wcf:param name="nextUrl" value="${WCParam.nextUrl}" />
+				</c:if>    
+				<c:if test="${!empty WCParam.URL}">
+					<wcf:param name="postRegisterURL" value="${WCParam.URL}" />
+				</c:if>                                                
+			</wcf:url>
 		<div class="top_border" id="WC_CheckoutLogonf_div_0">
-					<div class=text-login><h2><fmt:message bundle="${storeText}" key="SHOPCART_NEW_CUSTOMER"/></h2>
+					<div class=text-login>
+					<h2>DON`T MISS OUT!</h2>
+					<p>Free shipping for Perfect Fit® member.</p> 
+					<p>Sign in to start earning rewards!</p> 
+					<p>Not a member? <a href="#" onclick="javascript:window.location.href=('${RegisterURL}');" class="signuplink" role="button">SIGN-UP</a>  now</p> 
+					
+					<!-- 
+					<h2><fmt:message bundle="${storeText}" key="SHOPCART_NEW_CUSTOMER"/></h2>
 					<p><fmt:message bundle="${storeText}" key="SHOPCART_CHECKOUT_WITHOUT_SIGNING"/></p>
 					<br />
 					<p><fmt:message bundle="${storeText}" key="SHOPCART_TEXT1"/></p>
 					<br />
-					<p><fmt:message bundle="${storeText}" key="SHOPCART_TEXT2"/></p> </div>
+					<p><fmt:message bundle="${storeText}" key="SHOPCART_TEXT2"/></p> --> </div>
 			<div id="customers_new_or_returning">
 				
 				

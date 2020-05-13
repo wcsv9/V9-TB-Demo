@@ -236,7 +236,16 @@ No Locations found for this selection!
 </c:if>
 
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-
+<style>
+<!--
+div#bopis_table_info {
+    display: none;
+}
+div#bopis_table_paginate {
+    display: none;
+}
+-->
+</style>
 
 
 <script>

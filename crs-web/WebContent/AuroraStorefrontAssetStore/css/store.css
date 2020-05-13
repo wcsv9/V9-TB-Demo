@@ -523,7 +523,8 @@ div#scheduling_options {
 
     #customers_new_or_returning input {
         font-family: Arial;
-        color: #4D4D4D
+        color: #4D4D4D;
+        width: 92%;
     }
 
 #unregistered_form {
@@ -714,11 +715,11 @@ div#your_store_list .text_padding {
 
 #bopis_table th, #bopis_table1 th {
     border-bottom: 1px solid #e5e5e5;
-    height: 18px;
+    /* height: 18px; */
     vertical-align: top;
     text-align: left;
     color: #777;
-    font-weight: 700
+    font-weight: 700;
 }
 
 #bopis_table td {
@@ -1242,7 +1243,12 @@ div.gift_item_container div.price {
     }
 
 .my_account_content_bold {
-    font-size: 12px
+    color: #000;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    margin-bottom: 5px;
 }
 
 .my_account legend {
@@ -17917,7 +17923,7 @@ div#Header_GlobalLogin_signInDropdown {
             }
 
 div#temp-map div#map-canvas {
-    height: 420px;
+    height: 638px;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -17982,6 +17988,7 @@ div#location .location_selectbtn {
 
 .gift_content.store-l-mape table td {
     display: block;
+    float: left;
     width: 100%;
 }
 
@@ -17993,20 +18000,23 @@ div#location .location_selectbtn {
         background: #fff;
         z-index: 1;
         left: 230px;
-        padding: 6px;
-        border-radius: 6px;
-        height: 88%;
+        padding: 6px 0px 6px 0px;
+        /* border-radius: 6px; */
+        height: auto;
         overflow-x: auto;
-        max-width: 560px;
+        max-width: 330px;
+        border-top: 1px solid #cecece;
+        border-bottom: 1px solid #cecece;
     }
 
     .gift_content.store-l-mape table td div#map-canvas {
         width: 100% !important;
+        height: 630px !important;
     }
 
 .gift_content.store-l-mape {
     padding: 0;
-    height: 420px;
+    height: 640px;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -18267,6 +18277,7 @@ h1.order-summary {
     border: solid 1px #eee;
     padding: 14px;
     width: 100%;
+    /* overflow: hidden; */
 }
 .container_content_rightsidebar.shop_cart .cart-page-right .top_border div#customers_new_or_returning .returning .new_returning_button {
     position: relative;
@@ -18502,5 +18513,45 @@ content: '';
 .gift_content.store-l-mape table td #bopis_table tr.odd, .gift_content.store-l-mape table td #bopis_table tr.even {
     float: left;
     display: inline-block;
-    width: 50%;
+    width: 100%;
+    text-align: left;
+    padding: 0px 9px 0px 0px;
+}
+a.signuplink {
+    border-bottom: 1px dashed;
+}
+.gift_content.store-l-mape table td.dotted_bottom_border {
+    border-bottom: 1px solid #cecece !important;
+    border-left: 1px solid #cecece;
+    border-top: 1px solid #fff;
+    color: #777;
+    float: left;
+    font-size: 13px;
+    font-weight: 400;
+    height: 110px;
+    line-height: 16px;
+    padding: 6px 6px 6px 16px !important;
+    width: 246px;
+}
+.gift_content.store-l-mape table td.sorting_1 {
+    width: 30%;
+    border-bottom: 1px solid #cecece;
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+    color: #6799c8;
+    float: left;
+    font-size: 20px;
+    font-weight: 700;
+    height: 110px;
+    line-height: 105px;
+    padding: 16px 0;
+    text-align: center;
+    width: 45px;
+}
+.gift_content.store-l-mape table td.sorting_1:hover {
+    background: #eee;
+    background-color: #6799c8;
+    border-right: 1px solid #cecece;
+    color: #fff;
+    text-shadow: 0 -1px #3e5c78;
 }
