@@ -65,7 +65,7 @@
 			<a class="sharer" id="fb" data-sharer="facebook" data-url="">&nbsp;</a>
 			<a class="sharer" id="tw"  data-via="twitter"    data-hashtags="Moore"  data-url="">&nbsp;</a>
 			<a class="sharer" id="pi" data-sharer="Pinterest" data-url="">&nbsp;</a>
-			<a class="sharer" id="em" data-sharer="email" data-title="Moore's Product Share" data-url="Share" data-subject="v" data-to=""> &nbsp;</a>
+			<a class="sharer" id="em" data-sharer="email" data-title="https://moores.royalcyber.com<%=request.getAttribute("javax.servlet.forward.request_uri")%>" data-url="Share" data-subject="Moore's Product Share" data-to=""> &nbsp;</a>
 			</div>
 			
 			<div class="save-look">
