@@ -143,7 +143,7 @@
 						<br />
 						<!--<p><label for="WC_CheckoutLogon_FormInput_logonId"></label></p> -->
 						<p>
-							<input placeholder="<fmt:message bundle="${storeText}" key="SHOPCART_USERNAME"/>" id="WC_CheckoutLogon_FormInput_logonId" name="logonId" type="text" size="25" onchange="javaScript:TealeafWCJS.processDOMEvent(event);" onkeypress="if(event.keyCode==13){javascript:if(CheckoutHelperJS.canCheckoutContinue() && CheckoutHelperJS.updateShoppingCart(document.ShopCartForm)){ShipmodeSelectionExtJS.guestShopperLogon('javascript:LogonForm.SubmitAjaxLogin(document.AjaxLogon)', '<c:out value='${OrderCalculateURL}'/>', '<c:out value='${PhysicalStoreSelectionURL}'/>');}}" />
+							<input placeholder="<fmt:message bundle="${storeText}" key="ADDR_EMAIL"/>" id="WC_CheckoutLogon_FormInput_logonId" name="logonId" type="text" size="325" onchange="javaScript:TealeafWCJS.processDOMEvent(event);" onkeypress="if(event.keyCode==13){javascript:if(CheckoutHelperJS.canCheckoutContinue() && CheckoutHelperJS.updateShoppingCart(document.ShopCartForm)){ShipmodeSelectionExtJS.guestShopperLogon('javascript:LogonForm.SubmitAjaxLogin(document.AjaxLogon)', '<c:out value='${OrderCalculateURL}'/>', '<c:out value='${PhysicalStoreSelectionURL}'/>');}}" />
 						</p>
 						<br />
 						<!--<p><label for="WC_CheckoutLogon_FormInput_logonPassword"></label></p> -->
