@@ -728,7 +728,7 @@ div#your_store_list .text_padding {
 }
 
 #bopis_table .dotted_bottom_border {
-    border-bottom: 1px dotted #E5E5E5
+    /* border-bottom: 1px dotted #E5E5E5 */
 }
 
 #bopis_table td.avail img {
@@ -17994,19 +17994,20 @@ div#location .location_selectbtn {
 
     .gift_content.store-l-mape table td #bopis_table {
         padding-bottom: 4px;
-        margin-top: 65px;
-        position: absolute;
+        margin-top: 0px;
+        position: relative;
         width: 100% !important;
         background: #fff;
         z-index: 1;
-        left: 230px;
-        padding: 6px 0px 6px 0px;
+        left: 0px;
+        padding: 2px 0px 6px 0px;
         /* border-radius: 6px; */
         height: auto;
         overflow-x: auto;
-        max-width: 330px;
-        border-top: 1px solid #cecece;
-        border-bottom: 1px solid #cecece;
+        max-width: 329px;
+        /* border-top: 1px solid #cecece; */
+        /* border-bottom: 1px solid #cecece; */
+        float: left;
     }
 
     .gift_content.store-l-mape table td div#map-canvas {
@@ -18024,8 +18025,9 @@ div#location .location_selectbtn {
     padding: 0;
     max-width: 990px;
     margin: 0;
-    margin-top: 50px;
+    margin-top: 42px;
     text-align: center;
+    border: 0;
 }
 
 #foo .gb-close {
@@ -18515,7 +18517,7 @@ content: '';
     display: inline-block;
     width: 100%;
     text-align: left;
-    padding: 0px 9px 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
 a.signuplink {
     border-bottom: 1px dashed;
@@ -18531,7 +18533,7 @@ a.signuplink {
     height: 110px;
     line-height: 16px;
     padding: 6px 6px 6px 16px !important;
-    width: 246px;
+    width: 77%;
 }
 .gift_content.store-l-mape table td.sorting_1 {
     width: 30%;
@@ -18554,4 +18556,47 @@ a.signuplink {
     border-right: 1px solid #cecece;
     color: #fff;
     text-shadow: 0 -1px #3e5c78;
+}
+
+.gift_content.store-l-mape table td.map-result {
+    float: left;
+    background-color: transparent;
+    border-top: 4px double #e5e5e5;
+    height: 638px;
+    left: 0;
+    margin-right: 12px;
+    position: absolute;
+    top: 0;
+    width: 330px;
+}
+.gift_content.store-l-mape table td.map {
+        float: right;
+    width: 66%;
+}
+.gift_content.store-l-mape table td.map-result div#bopis_table_wrapper {
+    height: 626px;
+    overflow-x: auto;
+}
+button.gm-control-active {
+    border: 1px solid #4a81b8;
+    margin-right: 0;
+    background-color: #6395c8;
+    background-image: -o-linear-gradient(top,#6395c8,#547ea9);
+    font-size: 15px;
+    color: #fff;
+    max-width: 154px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-shadow: 0 -1px 0 #5079a3;
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,.4);
+    box-shadow: 0 0 8px rgba(0,0,0,.4);
+    border-radius: 2px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 42px;
+    -webkit-transition: .1s;
+    transition: .1s;
+    overflow: visible;
+    vertical-align: middle;
 }

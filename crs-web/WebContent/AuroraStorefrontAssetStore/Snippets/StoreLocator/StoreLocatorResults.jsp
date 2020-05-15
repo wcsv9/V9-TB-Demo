@@ -115,7 +115,7 @@ No Locations found for this selection!
 		<c:if test="${resultNum > 0}">
 		<table  cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-		<td>
+		<td class="map-result">
 		<table id="bopis_table" tabindex="-1" summary="<fmt:message bundle="${storeText}" key='STORE_RESULTS_SUMMARY'/>" cellpadding="0" cellspacing="0" border="0" width="100%">
 			<%-- <tr class="nested">
 				<th class="align_left" id="PhysicalStores_tableCell_result1"><fmt:message bundle="${storeText}" key="STORE_RESULTS_COLUMN1" /></th>
@@ -152,7 +152,7 @@ No Locations found for this selection!
 					<input type="hidden" name="maplocs" id="maplocs" value='${alphabet[i]}_<c:out value="${physicalStores.PhysicalStore[i].latitude}" />_<c:out value="${physicalStores.PhysicalStore[i].longitude}" />'>
 				
 				</td>
-					<td headers="PhysicalStores_tableCell_result1" <c:choose><c:when test="${i == resultNum - 1}"><c:out value="class=no_bottom_border"/></c:when><c:otherwise><c:out value="class=dotted_bottom_border"/></c:otherwise></c:choose>>
+				<td   headers="PhysicalStores_tableCell_result1" <c:choose><c:when test="${i == resultNum - 1}"><c:out value="class=no_bottom_border"/></c:when><c:otherwise><c:out value="class=dotted_bottom_border"/></c:otherwise></c:choose>>
 						<p><span class="my_account_content_bold"><c:out value="${physicalStores.PhysicalStore[i].Description[0].displayStoreName}" /></span></p>
 						<p><c:out value="${physicalStores.PhysicalStore[i].addressLine[0]}" /></p>
 						<p><c:out value="${physicalStores.PhysicalStore[i].city}" />, <c:out value="${physicalStores.PhysicalStore[i].stateOrProvinceName}" />  <c:out value="${physicalStores.PhysicalStore[i].postalCode}" /></p>
@@ -223,7 +223,7 @@ No Locations found for this selection!
 			</tbody>
 		</table>
 		</td>
-		<td>
+		<td class="map">
 		<div  id="map-canvas" style="height:420px; width:700px"></div>
 		</td>
 </tr>
