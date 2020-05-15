@@ -125,21 +125,19 @@
 						<!-- Breadcrumb End -->
 						<div id="box">
 
-							<h1 class="myaccount_header" id="WC_UnregisteredCheckout_div_5">
-								<fmt:message bundle="${storeText}" key="BCT_ADDRESS"/>
-								<%@ include file="../../Snippets/ReusableObjects/CheckoutTopESpotDisplay.jspf"%>
-							</h1>
+<!-- 							<h1 class="myaccount_header" id="WC_UnregisteredCheckout_div_5"> -->
+<%-- 								<fmt:message bundle="${storeText}" key="BCT_ADDRESS"/> --%>
+<%-- 								<%@ include file="../../Snippets/ReusableObjects/CheckoutTopESpotDisplay.jspf"%> --%>
+<!-- 							</h1> -->
 
 							<div class="body" id="WC_UnregisteredCheckout_div_9">
 								<br/>
 								<div id="unregistered_form">
 								
 									<div class="col1_bill" id="shippingCreateEditArea1">
-										<h2><fmt:message bundle="${storeText}" key="UC_SHIPPINGADDRESS"/></h2>
-
-									
-
-										<form id="shippingAddressCreateEditFormDiv_1" name="shippingAddressCreateEditFormDiv_1" class="address">
+										<h2><span class="no">1</span> <span class="text">Delivery</span></h2>
+										<%--<fmt:message bundle="${storeText}" key="UC_SHIPPINGADDRESS"/> --%>
+                                        <form id="shippingAddressCreateEditFormDiv_1" name="shippingAddressCreateEditFormDiv_1" class="address">
 											<input type="hidden" name="storeId" value="<c:out value="${storeId}" />" id="WC_UnregisteredCheckout_inputs_6"/>
 											<input type="hidden" name="catalogId" value="<c:out value="${catalogId}" />" id="WC_UnregisteredCheckout_inputs_7"/>
 											<input type="hidden" name="langId" value="<c:out value="${langId}" />" id="WC_UnregisteredCheckout_inputs_8"/>
@@ -247,8 +245,8 @@
 								
 								
 									<div class="col2_ship" id="billingCreateEditArea1">
-										<h2><fmt:message bundle="${storeText}" key="UC_BILLINGADDRESS"/></h2>
-									
+										<h2><span class="no">2</span> <span class="text">Payment</span></h2>
+<%-- 									<fmt:message bundle="${storeText}" key="UC_BILLINGADDRESS"/> --%>
 										<div id="WC_UnregisteredCheckout_div_12">
 											<input class="checkbox" type="checkbox" name="SameShippingAndBillingAddress" onclick="JavaScript:AddressBookFormJS.copyBillingFormNew('shippingAddressCreateEditFormDiv_1','billingAddressCreateEditFormDiv_1');" id="SameShippingAndBillingAddress"/>
 											<span class="unregisteredCheckbox">
@@ -375,16 +373,16 @@
 
 
 							<br/>
-							<div id="WC_UnregisteredCheckout_div_16">
-								<a href="#" role="button" class="button_secondary" id="WC_UnregisteredCheckout_links_3" onclick="javascript:setPageLocation('<c:out value="${ShoppingCartURL}"/>')">
-									<div class="left_border"></div>
-									<div class="button_text"><fmt:message bundle="${storeText}" key="UC_BACK" /></div>
-									<div class="right_border"></div>
-								</a>
+							<div id="WC_UnregisteredCheckout_div_16" class="footer-un-reg">
+<%-- 								<a href="#" role="button" class="button_secondary" id="WC_UnregisteredCheckout_links_3" onclick="javascript:setPageLocation('<c:out value="${ShoppingCartURL}"/>')"> --%>
+<!-- 									<div class="left_border"></div> -->
+<%-- 									<div class="button_text"><fmt:message bundle="${storeText}" key="UC_BACK" /></div> --%>
+<!-- 									<div class="right_border"></div> -->
+<!-- 								</a> -->
 								<a href="#" role="button" class="button_primary button_left_padding" id="WC_UnregisteredCheckout_links_4" onclick="JavaScript:setCurrentId('WC_UnregisteredCheckout_links_4'); AddressHelper.saveUnregisteredCheckoutAddress('billingAddressCreateEditFormDiv_1', 'shippingAddressCreateEditFormDiv_1', '<c:out value='${stateDivName1}'/>', '<c:out value='${stateDivName2}'/>');">
-									<div class="left_border"></div>
-									<div class="button_text"><fmt:message bundle="${storeText}" key="UC_NEXT" /></div>
-									<div class="right_border"></div>
+									
+									Continue »
+<%-- 									<fmt:message bundle="${storeText}" key="UC_NEXT" /> --%>
 								</a>
 								<span class="button_right_side_message"><fmt:message bundle="${storeText}" key="UC_NEXTSTEP"/></span>
 							</div>

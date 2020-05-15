@@ -176,8 +176,6 @@
 		</c:if>
 	</c:otherwise>
 </c:choose>
-
-
 <div class="body left" id="WC_ShipmentDisplay_div_16">
 	<div id="shipping">
 		<c:choose>

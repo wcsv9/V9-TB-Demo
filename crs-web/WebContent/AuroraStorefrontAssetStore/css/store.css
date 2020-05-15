@@ -533,7 +533,8 @@ div#scheduling_options {
 
 @media (min-width:960px) {
     #unregistered_form .col1_bill {
-        border-right: 2px dotted #e5e5e5
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 13px;
     }
 
     #unregistered_form .col2_ship {
@@ -543,10 +544,10 @@ div#scheduling_options {
 
 #unregistered_form .col1_bill {
     float: left;
-    width: 410px;
-    padding-left: 8px;
-    padding-right: 25px;
-    margin-right: 50px
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
 }
 
 .col1_bill > h2, .col2_ship > h2 {
@@ -557,8 +558,8 @@ div#scheduling_options {
 }
 
 #unregistered_form .col2_ship {
-    width: 400px;
-    padding-left: 8px
+    width: 100%;
+    padding-left: 0px;
 }
 
 .sixpixels {
@@ -1637,12 +1638,11 @@ div#PreviouslyProcessed, div#WaitingForApproval {
 
 .myaccount_header {
     background-color: #F5F5F5;
-    border-color: #000000 #E5E5E5 #E5E5E5;
-    border-style: solid;
-    border-width: 2px 1px 0;
-    color: #777;
-    font-size: 16px;
-    padding: 8px;
+    color: #a5a5a5;
+    font-size: 14px;
+    padding: 8px 8px 6px 8px;
+    border: solid 1px #e6e6e6cc;
+    text-transform: uppercase;
 }
 
     .myaccount_header:after {
@@ -18239,7 +18239,7 @@ h1.order-summary {
     text-align: center;
     background: #fff;
     color: #002849 !important;
-    border: solid 1px #002849;
+    border: solid 1px #01539f;
 }
 .container_content_rightsidebar.shop_cart .cart-page-right .top_border div#customers_new_or_returning .new .new_returning_button a#guestShopperContinue .button_text {
     text-align: center;
@@ -18455,7 +18455,7 @@ div#temp-map div#map-canvas button {
     font-size: 12px;
 }
 .container_content_rightsidebar.shop_cart .cart-page-right .top_border div#customers_new_or_returning .new .new_returning_button a#guestShopperContinue:hover {
-    background: #002849;
+    background: #01539f;
     color: #FFF !important;
 }
 
@@ -18521,6 +18521,9 @@ content: '';
 }
 a.signuplink {
     border-bottom: 1px dashed;
+}
+a.signuplink:hover {
+    color: #002849;
 }
 .gift_content.store-l-mape table td.dotted_bottom_border {
     border-bottom: 1px solid #cecece !important;
@@ -18599,4 +18602,101 @@ button.gm-control-active {
     transition: .1s;
     overflow: visible;
     vertical-align: middle;
+}
+div#unregistered_form .address input[type=text],div#unregistered_form .address input[type=tel], div#unregistered_form .address input[type=select] 
+
+
+{
+    display: block;
+    width: 96.5%;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid silver;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px 0px 10px 12px;
+    /* height: 40px; */
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+div#unregistered_form .address .drop_down_checkout{
+    display: block;
+    width: 95.5%;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid silver;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px 12px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    color: #000;
+}
+#unregistered_form h2 span.no {
+    background: #000;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    /* vertical-align: text-top; */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 23px;
+    height: 23px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 3px;
+}
+#unregistered_form  h2  {
+   padding-bottom: 20px;
+}
+#unregistered_form  h2 span.text {
+    font-size: 18px;
+    display: inline-block;
+    font-weight: 600;
+    color: #000;
+}
+.divide-reg {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    height: 63px;
+}
+#unregistered_form .col1_bill h2 {
+    padding-bottom: 20px;
+}
+.divide-reg .form_input {
+    width: 93% !important;
+}
+.btn-primaryee:hover {
+    background-color: #000;
+    border-color: #000;
+    opacity: 1;
+}
+.footer-un-reg a.button_primary.button_left_padding {
+        padding: 11px 12px;
+    font-size: 12px;
+    line-height: 1.42857;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    min-width: 356px;
+    background-color: rgba(0,0,0,.75);
+    border-color: rgba(0,0,0,.75);
+    display: inline-block;
+    max-width: 356px;
+    text-align: center;
+    font-family: helvetica neue,Helvetica,Arial,sans-serif;
+}
+.footer-un-reg {
+    text-align: center;
+}
+#unregistered_form .col2_ship h2 {
+    border-bottom: solid 1px #e5e5e5;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
 }

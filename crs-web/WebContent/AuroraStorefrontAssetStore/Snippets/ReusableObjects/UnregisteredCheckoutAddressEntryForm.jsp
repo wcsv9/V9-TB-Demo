@@ -92,8 +92,8 @@
 	</label>
 	</span>
 	<fmt:message bundle="${storeText}" key="FIRST_NAME"/></div> --%>
-<div id="WC_${formName}_firstName_div_7">
-	<input type="text" name="firstName" placeholder="First Name" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}firstName_1'/>" size="35" class="form_input" value="<c:out value='${contact.firstName}'/>" />
+<div id="WC_${formName}_firstName_div_7"  class="divide-reg">
+	<input type="text" name="firstName" placeholder="First Name" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}firstName_1'/>" size="35" class="form_input left-sideinput" value="<c:out value='${contact.firstName}'/>" />
 </div>
 
 
@@ -108,7 +108,7 @@
 	</span>
 	<span class="required-field"  id="WC_${formName}_lastName_div_9"> *</span>
 	<fmt:message bundle="${storeText}" key="LAST_NAME"/></div> --%>
-<div id="WC_${formName}_lastName_div_10">
+<div id="WC_${formName}_lastName_div_10"  class="divide-reg">
 	<input type="text" aria-required="true" placeholder="Last Name" name="lastName" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}lastName_1'/>" size="35" class="form_input" value="<c:out value='${contact.lastName}'/>" />
 </div>
 
@@ -124,7 +124,7 @@
 	</span>
 	<span class="required-field"  id="WC_${formName}_address1_div_12"> *</span>
 	<fmt:message bundle="${storeText}" key="STREET_ADDRESS"/></div> --%>
-<div id="WC_${formName}_address1_div_13">
+<div id="WC_${formName}_address1_div_13" >
 	<input type="text" aria-required="true" placeholder="Address" name="address1" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}address1_1'/>" size="35" class="form_input" value="<c:out value='${contact.addressLine[0]}'/>" />
 	<span class="spanacce">
 		<label for="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}address2_1'/>">
@@ -148,8 +148,8 @@
 	</span>
 	<span class="required-field"  id="WC_${formName}_city_div_15"> *</span>
 	<fmt:message bundle="${storeText}" key="CITY2"/></div> --%> 
-<div id="WC_${formName}_city_div_16">
-	<input type="text" aria-required="true" placeholder="City" name="city" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}city_1'/>" size="35" class="form_input" value="<c:out value='${contact.city}'/>" />
+<div id="WC_${formName}_city_div_16"  class="divide-reg">
+	<input type="text" aria-required="true" placeholder="City" name="city" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}city_1'/>" size="35" class="form_input left-reginput" value="<c:out value='${contact.city}'/>" />
 </div>
 
 
@@ -164,7 +164,7 @@
 	</span>
 	<span class="required-field"  id="WC_${formName}_country_div_18"> *</span>
 	<fmt:message bundle="${storeText}" key="COUNTRY2"/></div>  --%>
-	<div id="WC_${formName}_country_div_19">
+	<div id="WC_${formName}_country_div_19"  class="divide-reg">
 		<c:set var="lang" value="${locale}" />
 		<c:set var="country_language_select" value="${fn:split(lang, '_')}" />	
 		<select aria-required="true" name="country" size="1" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}country_1'/>" class="drop_down_checkout" onkeydown="saveTabPress(event)" onblur="setFocus('WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}state_1')" onchange="javascript:AddressHelper.loadStatesUI('<c:out value='${formName}'/>','<c:out value='${paramPrefix}'/>','<c:out value='${paramPrefix}stateDiv${divNum}'/>','<c:out value="WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}state_1"/>')">
@@ -204,7 +204,7 @@
 	<fmt:message bundle="${storeText}" key="REG_STATE"/>
 </div> --%>
 
-<div id="<c:out value='${paramPrefix}stateDiv${divNum}'/>">
+<div id="<c:out value='${paramPrefix}stateDiv${divNum}'/>" class="divide-reg">
 
 <%-- Retrieve states list from existing databean --%>
 <c:forEach var="country" items="${countryBean.countries}"  varStatus='outerStatus'>
@@ -230,7 +230,7 @@
 	<span class="required-field"  id="WC_${formName}_zipCode_div_23"> *</span>
 	<fmt:message bundle="${storeText}" key="ZIP_CODE"/>
 </div> --%>
-<div id="WC_${formName}_zipCode_div_24">
+<div id="WC_${formName}_zipCode_div_24" class="divide-reg">
 	<input type="text" placeholder="Zip Code" aria-required="true" name="zipCode" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}zipCode_1'/>" size="35" class="form_input" value="<c:out value='${contact.zipCode}'/>" />
 </div>
 
@@ -246,7 +246,7 @@
 </span>
 <fmt:message bundle="${storeText}" key="PHONE_NUMBER2"/>
 </div>  --%>
-<div id="WC_${formName}_phone1_div_26">
+<div id="WC_${formName}_phone1_div_26" class="divide-reg">
 	<input type="tel" placeholder="Telephone" name="phone1" id="<c:out value='WC_${pageName}_ShoppingCartAddressEntryForm_${formName}_${paramPrefix}phone1_1'/>" size="35" class="form_input" value="<c:out value='${contact.phone1}'/>" />
 </div>
 
