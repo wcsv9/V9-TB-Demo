@@ -295,7 +295,7 @@ function addButton(){
 					<c:when test="${requestScope.available eq 'true'}">
 						<c:if test="${isDKPreConfigured}">
 							<a id="WC_QuickInfo_Link_addtocart" class="button primary" href="javascript:QuickInfoJS.add2ShopCart({catalogEntryType: 'dynamicKit'});" wairole="button" role="button" title="<wcst:message key="QI_ADD_TO_CART" bundle="${widgetText}" />">
-								<div class="button_text"><wcst:message key="QI_ADD_TO_CART" bundle="${widgetText}"/></div>
+								<div class="button_text">Add to Bag<%-- <wcst:message key="QI_ADD_TO_CART" bundle="${widgetText}"/> --%></div>
 							</a>
 							<div class="clear_float"></div>
 							<div class="item_spacer_5px"></div>
@@ -340,7 +340,8 @@ function addButton(){
 			</c:when>
 			<c:when test="${requestScope.available eq 'true'}">
 				<a id="WC_QuickInfo_Link_addtocart" class="button primary" href="javascript:QuickInfoJS.add2ShopCart();" wairole="button" role="button" title="<wcst:message key="QI_ADD_TO_CART" bundle="${widgetText}" />">
-					<div class="button_text"><wcst:message key="QI_ADD_TO_CART" bundle="${widgetText}"/></div>
+					<div class="button_text">Add to Bag<%-- <wcst:message key="QI_ADD_TO_CART" bundle="${widgetText}"/> --%>
+					</div>
 				</a>
 				<div class="clear_float"></div>
 				<div class="item_spacer_3px"></div>

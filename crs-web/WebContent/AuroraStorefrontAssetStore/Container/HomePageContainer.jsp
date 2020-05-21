@@ -71,6 +71,7 @@ button.gb-close.x {
     padding: 0.75em 2em; cursor: pointer;
 }
 </style>
+
 <script type="text/javascript">
 <!--
     function toggle_visibility(id) {
@@ -82,6 +83,7 @@ button.gb-close.x {
     }
 //-->
 </script>
+
 <a id="global-message" href="#" onclick="toggle_visibility('foo');">Temporary Store Closure Announcement  <img src="http://clipart-library.com/images/8T65ajoRc.png"></a>
 <div id="foo" style="display: none;">
 <p>We take great pride in being part of your most memorable moments and have been working hard to meet your evolving needs throughout the spread of COVID-19 (the coronavirus). That will continue.
@@ -92,32 +94,160 @@ button.gb-close.x {
 </div>
 <div class="row Container" id="container_${pageDesign.layoutId}">
         
-        <div class="row margin-true">
-                <div class="col12" data-slot-id="3"><img id="contentImage_1" src="/wcsstore/AuroraStorefrontAssetStore//images/one.jpg" alt="AuroraStorefrontAssetStore"></div>
+        
+        <div class="slideshow-container">
+
+		<div class="mySlides fade"><img src="/wcsstore/AuroraStorefrontAssetStore//images/slider/1.jpg" style="width:100%"><div class="text"><a class="btn-bw"href="#" >SHOP NOW</a></div></div>
+		<div class="mySlides fade"><img src="/wcsstore/AuroraStorefrontAssetStore//images/slider/2.jpg"  style="width:100%"><div class="text2"><a class="btn-bw"href="#" >SHOP JOSEPH ABBOUD</a></div></div>
+		
+		<div class="dot-sec"><span class="dot"></span> <span class="dot"></span> 
+		 
+		</div>
+		
+		</div>
+ <div class="row margin-true">       
+<div class="clear"></div>       
+<div class="tb-image color-crush"><div class="tb-text">
+<h1><span>COLOR CRUSH</span> <strong>&nbsp;</strong></h1>
+<p>A sport coat in on-trend hues of burgundy, berry or merlot is a versatile option for work or play. <br><br>ALWAYS STARTING AT<br><b>$99</b>
+</p><br>
+<a class="btn-bw" href="#">SHOP NOW</a></div>
+</div>
+
+</div>
+ <div class="clear"></div>
+     
+<div class="row margin-true">
+<div class="tb-image color-crush" style="background-image: url(/wcsstore/AuroraStorefrontAssetStore//images/spring-you.jpg);height: 86% !important; min-height: 586px;">
+<div class="tb-text" style="left:16.1%;right: 0;top: 50.1%;">
+<h1><span>SPRING SUITS YOU</span> <strong>&nbsp;</strong></h1><p> <span style="font-size: 36px;">SUITS</span>
+	<br><br>
+	<b >BUY 1 GET 1<br> FOR $150</b>
+</p><br>
+	<a class="btn-bw" href="#">SHOP NOW</a></div>
+</div>
+ <div class="clear"></div>         
+</div>
+   
+        
+<!--         <div class="row margin-true"> -->
+<!--                 <div class="col8 acol12" data-slot-id="4"><img id="contentImage_2" src="/wcsstore/AuroraStorefrontAssetStore//images/two.jpg" alt="AuroraStorefrontAssetStore"></div> -->
+<!--                 <div class="col4 acol12" data-slot-id="5"><img id="contentImage_3" src="/wcsstore/AuroraStorefrontAssetStore//images/three.jpg" alt="AuroraStorefrontAssetStore"></div> -->
+<!--         </div> -->
+        <div class="row margin-true spring-special">
+        <h2 class="h2">SPRING ESSENTIALAS</h2>
+				<div class="products-d" data-slot-id="6">
+                
+                <div class="col2 acol12 left">
+                <img id="contentImage_4" src="/wcsstore/AuroraStorefrontAssetStore//images/s1.jpg" alt="AuroraStorefrontAssetStore">
+                <a href="">DRESS SHIRT</a>
+                </div>
+                <div class="col2 acol12 left">
+                <img id="contentImage_4" src="/wcsstore/AuroraStorefrontAssetStore//images/s2.jpg" alt="PAINTS">
+                <a href="">PAINTS</a>
+                </div>
+                <div class="col2 acol12 left">
+                <img id="contentImage_4" src="/wcsstore/AuroraStorefrontAssetStore//images/s3.jpg" alt="JEANS">
+                <a href="">JEANS</a>
+                </div>
+                <div class="col2 acol12 left">
+                <img id="contentImage_4" src="/wcsstore/AuroraStorefrontAssetStore//images/s4.jpg" alt="SHOES">
+                <a href="">SHOES</a>
+                </div>
+                <div class="col2 acol12 left">
+                <img id="contentImage_4" src="/wcsstore/AuroraStorefrontAssetStore//images/s5.jpg" alt="CAUSAL SHIRT">
+                <a href="">CAUSAL SHIRT</a>
+                </div>
+                <div class="clear"></div>
+                </div>
         </div>
-        <div class="row margin-true">
-                <div class="col8 acol12" data-slot-id="4"><img id="contentImage_2" src="/wcsstore/AuroraStorefrontAssetStore//images/two.jpg" alt="AuroraStorefrontAssetStore"></div>
-                <div class="col4 acol12" data-slot-id="5"><img id="contentImage_3" src="/wcsstore/AuroraStorefrontAssetStore//images/three.jpg" alt="AuroraStorefrontAssetStore"></div>
-        </div>
-        <div class="row margin-true">
-                <div class="col4 acol12" data-slot-id="6"><img id="contentImage_4" src="/wcsstore/AuroraStorefrontAssetStore//images/four.jpg" alt="AuroraStorefrontAssetStore"></div>
-        </div>
-        <div class="row margin-true">
-                <div class="col4 acol12" data-slot-id="7"><img id="contentImage_4" src="/wcsstore/AuroraStorefrontAssetStore//images/5.jpg" alt="AuroraStorefrontAssetStore"></div>
-        </div>
-    <div class="row margin-true">
+<!--         <div class="row margin-true"> -->
+<!--                 <div class="col4 acol12" data-slot-id="7"><img id="contentImage_4" src="/wcsstore/AuroraStorefrontAssetStore//images/5.jpg" alt="AuroraStorefrontAssetStore"></div> -->
+<!--         </div> -->
+    <div class="row margin-true casual-keep">
+    <h2 class="h2">KEEP IT CASUAL</h2>
                 <div class="col4 acol12" data-slot-id="8"><img id="contentImage_4" src="/wcsstore/AuroraStorefrontAssetStore//images/6.jpg" alt="AuroraStorefrontAssetStore"></div>
         </div>
-    <div class="brands row margin-true">
-                <div class="col4 acol12" ><img id="contentImage_4" src="/wcsstore/AuroraStorefrontAssetStore//images/7.jpg" alt="AuroraStorefrontAssetStore"></div>
-        </div>
+<!--     <div class="brands row margin-true"> -->
+<!--                 <div class="col4 acol12" ><img id="contentImage_4" src="/wcsstore/AuroraStorefrontAssetStore//images/7.jpg" alt="AuroraStorefrontAssetStore"></div> -->
+<!--         </div> -->
     
-    
+    <div class="home-espot  row margin-true" style="max-height: 473px;overflow: hidden;margin-bottom: 102px;">
+<h2 class="h2">WE'RE HERE FOR YOU</h2>
+<div class="home-espotin left">
+
+<div class="tb-image color-crush" style="background-image: url(/wcsstore/AuroraStorefrontAssetStore//images/just-got.jpg);height: 100% !important;background-size: cover;margin: 0;">
+<div class="tb-text" style="left: 50.0%;right: 0;top: 52.1%;width: 80%;color: #fff;">
+<h1 style="
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 5px #000;
+    line-height: normal;
+    font-weight: 600;
+    font-size: 36px;
+"><span style="
+    transform: none;
+">JUST GOT ENGAGED?</span> </h1>
+
+
+<p> <span style="font-size: 20px;display: block;">We've got everything you need for your big day.</span><br>
+	<a class="btn-bw" href="#">SHOP NOW</a></p></div>
+</div>
+
+
+
+
+</div>
+<div class="home-espotin right">
+
+<div class="tb-image color-crush" style="background-image: url(/wcsstore/AuroraStorefrontAssetStore//images/just-got2.jpg);height: 100% !important;background-size: cover;margin: 0;">
+<div class="tb-text" style="left: 50.0%;right: 0;top: 52.1%;width: 80%;color: #fff;">
+<h1 style="
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 5px #000;
+    line-height: normal;
+    font-weight: 600;
+    font-size: 36px;
+"><span style="
+    transform: none;
+">RENT ONLINE</span> </h1>
+<p > <span style="font-size: 20px;display: block;">We'll ship for free directly to you.</span>
+
+</p><br>
+	<a class="btn-bw" href="#">SHOP NOW</a></div>
+</div>
+
+
+
+
+</div>
+
+</div>
     
     
         <div class="row">
                 <div class="col12" data-slot-id="9"><wcpgl:widgetImport slotId="9"/></div>
         </div>
 </div>
+<script>
+var slideIndex = 0;
+showSlides();
 
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 6000); // Change image every 2 seconds
+}
+
+</script>
 <!-- END HomePageContainer.jsp -->
