@@ -381,7 +381,7 @@
 <!-- 								</a> -->
 								<a href="#" role="button" class="button_primary button_left_padding" id="WC_UnregisteredCheckout_links_4" onclick="JavaScript:setCurrentId('WC_UnregisteredCheckout_links_4'); AddressHelper.saveUnregisteredCheckoutAddress('billingAddressCreateEditFormDiv_1', 'shippingAddressCreateEditFormDiv_1', '<c:out value='${stateDivName1}'/>', '<c:out value='${stateDivName2}'/>');">
 									
-									Continue »
+									Continue <span class="arrow-c"> » </span> 
 <%-- 									<fmt:message bundle="${storeText}" key="UC_NEXT" /> --%>
 								</a>
 								<span class="button_right_side_message"><fmt:message bundle="${storeText}" key="UC_NEXTSTEP"/></span>

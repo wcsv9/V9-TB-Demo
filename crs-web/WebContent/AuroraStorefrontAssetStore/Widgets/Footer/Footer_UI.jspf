@@ -142,17 +142,17 @@ Mobile Terms.
 		
 		
 		
-		<flow:ifEnabled feature="FacebookIntegration">
+<!-- 		<flow:ifEnabled feature="FacebookIntegration"> -->
 		
-		<div id="footerFollowUsSection" class="section">
-			<div class="header">
-				<a class="toggle" href="#" data-toggle="footerFollowUsSection" role="button"><span id="footerFollowUsSection_div_ACCE_Label" class="spanacce"><fmt:message bundle="${storeText}" key="FOOTER_FOLLOW_US"/></span></a>
-				<h3><fmt:message bundle="${storeText}" key="FOOTER_FOLLOW_US"/></h3>
-			</div>
-			<ul>
-				<li><a id="footerFacebookLink" href="${facebookURL}"><fmt:message bundle="${storeText}" key="FOOTER_FACEBOOK"/></a></li>
-			</ul>
-		</div></flow:ifEnabled>
+<!-- 		<div id="footerFollowUsSection" class="section"> -->
+<!-- 			<div class="header"> -->
+<%-- 				<a class="toggle" href="#" data-toggle="footerFollowUsSection" role="button"><span id="footerFollowUsSection_div_ACCE_Label" class="spanacce"><fmt:message bundle="${storeText}" key="FOOTER_FOLLOW_US"/></span></a> --%>
+<%-- 				<h3><fmt:message bundle="${storeText}" key="FOOTER_FOLLOW_US"/></h3> --%>
+<!-- 			</div> -->
+<!-- 			<ul> -->
+<%-- 				<li><a id="footerFacebookLink" href="${facebookURL}"><fmt:message bundle="${storeText}" key="FOOTER_FACEBOOK"/></a></li> --%>
+<!-- 			</ul> -->
+<!-- 		</div></flow:ifEnabled> -->
 	</div>
 
 </div>

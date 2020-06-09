@@ -320,6 +320,7 @@ function showhide() {
 </li>
 </ul>
 </div>
+<div class="banner-locator"><img alt="4 For $119 Dress Shirts" src="/wcsstore/AuroraStorefrontAssetStore//images/store-locator-banner.png"></div>
 <div class="storelocatr">
 	<%--<span class="instruction"><fmt:message bundle="${storeText}" key="SELECT_ENTER_OPTIONS"/></span>  --%>
 	</br>
